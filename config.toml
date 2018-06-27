@@ -1,0 +1,14 @@
+baseURL = "https://metadonors.github.io/odoo.workshop/"
+languageCode = "it-it"
+title = "Odoo Workshop"
+theme = "hugo-theme-learn"
+
+[params]
+editURL = ""
+# Author of the site, will be used in meta information
+author = "Metadonors"
+description = "Odoo Workshop"
+themeVariant = "metadonors"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]

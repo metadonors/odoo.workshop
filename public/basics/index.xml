@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iniziare on Odoo Workshop</title>
+    <link>https://metadonors.github.io/odoo.workshop/basics/</link>
+    <description>Recent content in Iniziare on Odoo Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>it-it</language>
+    <lastBuildDate>Wed, 27 Jun 2018 15:32:30 +0200</lastBuildDate>
+    
+	<atom:link href="https://metadonors.github.io/odoo.workshop/basics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installazione</title>
+      <link>https://metadonors.github.io/odoo.workshop/basics/installazione/</link>
+      <pubDate>Wed, 27 Jun 2018 15:33:28 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/basics/installazione/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
