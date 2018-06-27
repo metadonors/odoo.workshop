@@ -8,7 +8,7 @@ Prima di arrivare al corso sarebbe opportuno avere già installati e funzionanti
 
 ## Editor di testo
 
-Non ci sono preferenze per l'editor di testo, ovviamente è opportuno usarne uno che aiuti a lavvorare con codice python e javascript
+Non ci sono preferenze per l'editor di testo, ovviamente è opportuno usarne uno che aiuti a lavorare con codice python e javascript
 
 Un elenco di alcuni possibili editor:
 
@@ -47,7 +47,7 @@ brew doctor
 
 Vi chiedera di installare la _Command Line Developer Tool_ di Apple. Cliccate _Install_ per confermare. Una volta terminato premete _Invio_ per terminare l'installazione di Homebrew.
 
-Una volta effettuato queso passaggio potete installare Git da terminale con il comando:
+Effettuato queso passaggio potete installare Git da terminale con il comando:
 
 ```
 brew install git
@@ -60,12 +60,11 @@ Su Windows scaricate l'applicazione [Git for Windows](https://gitforwindows.org/
 ## Docker e Docker Compose
 
 **Docker** è uno strumento di pacchetizzazione generico per le nostre applicazioni. Semplifica l'installazione di ambienti complessi sia in fase di sviluppo che di produzione. Per noi è utile per riuscire ad avere una piattaforma uguale per tutti su cui lavorare.
-Il risulatato di una pacchettizzazione con Docker è chiamata _Container_.
+Il risultato di una pacchettizzazione con Docker è chiamato _Container_. Un container è a tutti gli effetti un eseguibile che potete lanciare da linea di comando passandogli parametri secondo necessità.
 
 Non è necessario utilizzare la versione Enterprise (EE), utilizzeremo la Community Edition (CE) che ha tutte le funzionalità necessarie (ma senza la stessa assistenza)
 
-**Docker Compose** invece serve a definire e lanciare diversi container in maniera orchestrata. Con compose si utilizza un file di configurazione YAML per definire tutti i servizi di cui è composta la nostra applicazione, per esempio: odoo, il database e il server web. In seguito con un singolo comando è possibile creare e lanciare tutti i servizi definiti nella configurazione.
-
+**Docker Compose** invece serve a definire e lanciare diversi container in maniera orchestrata. Con compose si utilizza un file di configurazione YAML per definire tutti i servizi di cui è composta la nostra applicazione, per esempio: odoo, il database e il server web. Una volta terminata la configurazione è possibile creare e lanciare tutti i servizi di cui abbiamo bisogno con un singolo comando.
 
 Anche per questi strumenti l'installazione varia in base al sistema operativo usato.
 

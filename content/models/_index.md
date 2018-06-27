@@ -6,8 +6,8 @@ chapter = true
 pre = "<b>2. </b>"
 +++
 
-### Chapter X
+### Chapter2
 
-# Some Chapter title
+# Modellazione dei Dati
 
-Lorem Ipsum.
+Odoo è un framework [MVC](https://it.wikipedia.org/wiki/Model-view-controller), i Modelli sono la M del paradigma e ci permettono di rappresentare i nostri dati in maniera strutturata, come per esempio i Prodotti, le Vendite, le Fatture o i Clienti. Vediamo come vengono definiti in Odoo.

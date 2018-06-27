@@ -18,7 +18,7 @@
       
       <guid>https://metadonors.github.io/odoo.workshop/basics/precorso/</guid>
       <description>Prima di arrivare al corso sarebbe opportuno avere già installati e funzionanti un edito di testo, Git, Docker e Docker Compose
-Editor di testo Non ci sono preferenze per l&amp;rsquo;editor di testo, ovviamente è opportuno usarne uno che aiuti a lavvorare con codice python e javascript
+Editor di testo Non ci sono preferenze per l&amp;rsquo;editor di testo, ovviamente è opportuno usarne uno che aiuti a lavorare con codice python e javascript
 Un elenco di alcuni possibili editor:
  VSCode https://code.visualstudio.com/ Atom https://atom.io/ Sublime Text https://www.sublimetext.com/  Git L&amp;rsquo;installazione di Git varia in base al sistema operativo utilizzato, ecco come procedere:</description>
     </item>
@@ -37,12 +37,24 @@ $ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, 
     </item>
     
     <item>
+      <title>Concetti Base</title>
+      <link>https://metadonors.github.io/odoo.workshop/basics/concetti/</link>
+      <pubDate>Wed, 27 Jun 2018 23:17:43 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/basics/concetti/</guid>
+      <description>Prima di cominciare è necessario affrontare un po&amp;rsquo; di teoria che sta alla base del framework Odoo. Odoo è un framework applicativo modulare, i suoi principali componenti sono i moduli e le applicazioni.
+Moduli I moduli sono i componenti essenziali che possono essere aggiunti a Odoo. Ogni modulo può implementare nuove funzionalità oppure modificare quelle esistenti. Ogni modulo è costituito da una cartella contenente un file __manfifest.py__ più altri file che implementano le sue funzionalità.</description>
+    </item>
+    
+    <item>
       <title>La prima applicazione</title>
       <link>https://metadonors.github.io/odoo.workshop/basics/primo_modulo/</link>
       <pubDate>Wed, 27 Jun 2018 17:59:32 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/basics/primo_modulo/</guid>
-      <description></description>
+      <description>In questa sezione andremo a creare il nostro primo modulo. L&amp;rsquo;applicazione d&amp;rsquo;esempio che creeremo durante il corso è una classica Todo App. Per realizzarla attraverseremo le classiche fasi di sviluppo di un applicazione Odoo.
+Lo scheletro del modulo Odoo offre un suo meccanismo di scaffolding piuttosto primitivo per creare nuovi moduli, è possibile visualizzare il suo funzionamento lanciando questo comando dalla cartella contente l&amp;rsquo;ambiente odoo.dockerenv:
+$ docker-compose run odoo odoo scaffold --help  Nella pratica la comunità si è però concentrata su un altro strumento di scaffolding, mrbob con i template specifici per gli addon Odoo.</description>
     </item>
     
   </channel>

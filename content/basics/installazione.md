@@ -44,4 +44,4 @@ Password: **admin**
 
 ## Continua...
 
-Una volta terminata l'installazione possiamo procere a creare [la nostra prima applicazione](/odoo.workshop/basics/primo_modulo/)
+Una volta terminata l'installazione possiamo affrontare [i concetti base](/odoo.workshop/basics/concetti/)

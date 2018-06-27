@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/odoo.workshop/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/x-icon" />
-    <title>Modelli e Campi :: Odoo Workshop</title>
+    <title>Concetti Base :: Odoo Workshop</title>
     
     
     <link href="/odoo.workshop/css/nucleus.css?1530140607" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/odoo.workshop/models/">
+  <body class="" data-url="/odoo.workshop/basics/concetti/">
     <nav id="sidebar" class="">
 
 
@@ -76,7 +76,7 @@
   
     
     <li data-nav-id="/odoo.workshop/basics/" title="Iniziare" class="dd-item 
-        
+        parent
         
         
         ">
@@ -138,7 +138,7 @@
  
   
     
-      <li data-nav-id="/odoo.workshop/basics/concetti/" title="Concetti Base" class="dd-item ">
+      <li data-nav-id="/odoo.workshop/basics/concetti/" title="Concetti Base" class="dd-item active">
         <a href="/odoo.workshop/basics/concetti/">
         Concetti Base
         
@@ -184,8 +184,8 @@
   
     
     <li data-nav-id="/odoo.workshop/models/" title="Modelli e Campi" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/odoo.workshop/models/">
@@ -298,6 +298,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
                   <span class="links">
                     
           
@@ -306,7 +308,13 @@
             
           
           
-            <a href='/odoo.workshop/'>Index</a> > Modelli e Campi
+            
+            
+          
+          
+            <a href='/odoo.workshop/'>Index</a> > <a href='/odoo.workshop/basics/'>Iniziare</a> > Concetti Base
+          
+         
           
          
           
@@ -314,14 +322,35 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#moduli">Moduli</a></li>
+<li><a href="#applicazioni">Applicazioni</a></li>
+<li><a href="#adattare-il-sistema">Adattare il sistema</a></li>
+<li><a href="#installiamo-il-nostro-primo-modulo">Installiamo il nostro primo modulo</a></li>
+<li><a href="#continua">Continua</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
 
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>Concetti Base</h1>
           
 
         
@@ -329,19 +358,54 @@
 
 
 
-<h3 id="chapter2">Chapter2</h3>
+<p>Prima di cominciare è necessario affrontare un po&rsquo; di teoria che sta alla base del framework Odoo. Odoo è un framework applicativo modulare, i suoi principali componenti sono i <strong>moduli</strong> e le <strong>applicazioni</strong>.</p>
 
-<h1 id="modellazione-dei-dati">Modellazione dei Dati</h1>
+<h3 id="moduli">Moduli</h3>
 
-<p>Odoo è un framework <a href="https://it.wikipedia.org/wiki/Model-view-controller">MVC</a>, i Modelli sono la M del paradigma e ci permettono di rappresentare i nostri dati in maniera strutturata, come per esempio i Prodotti, le Vendite, le Fatture o i Clienti. Vediamo come vengono definiti in Odoo.</p>
+<p>I moduli sono i componenti essenziali che possono essere aggiunti a Odoo. Ogni modulo può implementare nuove funzionalità oppure modificare quelle esistenti. Ogni modulo è costituito da una cartella contenente un file <em>__manfifest.py__</em> più altri file che implementano le sue funzionalità.</p>
+
+<h3 id="applicazioni">Applicazioni</h3>
+
+<p>Le applicazioni sono moduli di ordine maggiore, che implementano funzionalità a più alto livello o sempliccemente più complesse. Sono gli elementi essenziali dell&rsquo;aspetto funzionale, come per esempio l&rsquo;applicazione CRM o Contabilità e sono a loro volta basate sulle funzionalità di tanti moduli.</p>
+
+<p>Se state implementando un modulo complesso che aggiunge funzionalità specifiche a Odoo è probabile che sia un applicazione. Se state aggiungendo o modificando alcuni semplici aspetti invece è probabile che stiate sscrivendo un modulo.</p>
+
+<p>Tecnicamente non c&rsquo;è nessuna differenza fra i due, semplicemente le applicazioni vengono mostrate nell&rsquo;elenco delle App disponibili all&rsquo;utente.</p>
+
+<h3 id="adattare-il-sistema">Adattare il sistema</h3>
+
+<p>Generalmmente per adattare Odoo alle diverse esigenze <em>non si modifica mai il codice esistente</em>. Piuttosto si creano nuovi moduli che vanno a innestarsi sugli esistenti per modificare le funzionailtà.</p>
+
+<p>In questo corso creeremo un applicazione con pochissime dipendenze, per questioni pratiche, ma nei casi reali è molto più probabile andare a lavorare sui moduli <em>core</em> di odoo oppure su moduli terzi resi disponibili da altri sviluppatori.</p>
+
+<h3 id="installiamo-il-nostro-primo-modulo">Installiamo il nostro primo modulo</h3>
+
+<p>Per fare un esempio, procediamo all&rsquo;installazione di un modulo fornito dalla comunità. Installeremo un modulo che estende la ui del nostro backend rendendola più simile alla versione di Odoo Enterprise.</p>
+
+<p>Il modulo è già stato pacchettizzato e inserito nel codice, possiamo quindi procedere con l&rsquo;installazione da interfaccia web.</p>
+
+<p>Andiamo su <em><a href="http://localhost">http://localhost</a></em> mettiamo username e password e accediamo alla lista delle app.</p>
+
+<p><img src="/odoo.workshop/screen/concetti/apps.png?width=60pc" alt="apps" /></p>
+
+<p>Deselezioniamo il filtro &ldquo;Apps&rdquo; dalla barra di ricerca e inseriamo la stringa &ldquo;Material&rdquo;</p>
+
+<p><img src="/odoo.workshop/screen/concetti/material.png?width=60pc" alt="material" /></p>
+
+<p>Clicchiamo su Install e&hellip;fatto. Abbiamo installato il nostro primo modulo e subito il nostro odoo ha un look più  moderno.</p>
+
+<p><img src="/odoo.workshop/screen/concetti/material2.png?width=60pc" alt="material2" /></p>
+
+<h3 id="continua">Continua</h3>
+
+<p>Ora possiamo andare a creare <a href="/odoo.workshop/basics/primo_modulo/">la nostra prima applicazione</a></p>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
+
         
         </div> 
         
@@ -373,8 +437,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -388,6 +450,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -421,41 +486,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -475,6 +505,25 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -519,6 +568,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
         
@@ -526,10 +591,10 @@
 
 
         
-            <a class="nav nav-prev" href="/odoo.workshop/basics/primo_modulo/" title="La prima applicazione"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/odoo.workshop/basics/installazione/" title="Installazione"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/odoo.workshop/computedfields/" title="Computed Fields e Vincoli" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/odoo.workshop/basics/primo_modulo/" title="La prima applicazione" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -559,3 +624,4 @@
 
   </body>
 </html>
+

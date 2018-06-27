@@ -12,19 +12,19 @@
     <title>Precorso :: Odoo Workshop</title>
     
     
-    <link href="/odoo.workshop/css/nucleus.css?1530116257" rel="stylesheet">
-    <link href="/odoo.workshop/css/font-awesome.min.css?1530116257" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1530116257" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1530116257" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530116257" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1530116257" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1530116257" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1530116257" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1530140607" rel="stylesheet">
+    <link href="/odoo.workshop/css/font-awesome.min.css?1530140607" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1530140607" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1530140607" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530140607" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1530140607" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1530140607" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1530140607" rel="stylesheet">
     
-      <link href="/odoo.workshop/css/theme-metadonors.css?1530116257" rel="stylesheet">
+      <link href="/odoo.workshop/css/theme-metadonors.css?1530140607" rel="stylesheet">
     
 
-    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530116257"></script>
+    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530140607"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530116257"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530116257"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530140607"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530140607"></script>
 <script type="text/javascript">
     
         var baseurl = '\/odoo.workshop\/';
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1530116257"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1530140607"></script>
 
     
   </div>
@@ -122,6 +122,25 @@
       <li data-nav-id="/odoo.workshop/basics/installazione/" title="Installazione" class="dd-item ">
         <a href="/odoo.workshop/basics/installazione/">
         Installazione
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/basics/concetti/" title="Concetti Base" class="dd-item ">
+        <a href="/odoo.workshop/basics/concetti/">
+        Concetti Base
         
         </a>
     </li>
@@ -359,7 +378,7 @@
 
 <h2 id="editor-di-testo">Editor di testo</h2>
 
-<p>Non ci sono preferenze per l&rsquo;editor di testo, ovviamente è opportuno usarne uno che aiuti a lavvorare con codice python e javascript</p>
+<p>Non ci sono preferenze per l&rsquo;editor di testo, ovviamente è opportuno usarne uno che aiuti a lavorare con codice python e javascript</p>
 
 <p>Un elenco di alcuni possibili editor:</p>
 
@@ -397,7 +416,7 @@ brew doctor
 
 <p>Vi chiedera di installare la <em>Command Line Developer Tool</em> di Apple. Cliccate <em>Install</em> per confermare. Una volta terminato premete <em>Invio</em> per terminare l&rsquo;installazione di Homebrew.</p>
 
-<p>Una volta effettuato queso passaggio potete installare Git da terminale con il comando:</p>
+<p>Effettuato queso passaggio potete installare Git da terminale con il comando:</p>
 
 <pre><code>brew install git
 </code></pre>
@@ -409,11 +428,11 @@ brew doctor
 <h2 id="docker-e-docker-compose">Docker e Docker Compose</h2>
 
 <p><strong>Docker</strong> è uno strumento di pacchetizzazione generico per le nostre applicazioni. Semplifica l&rsquo;installazione di ambienti complessi sia in fase di sviluppo che di produzione. Per noi è utile per riuscire ad avere una piattaforma uguale per tutti su cui lavorare.
-Il risulatato di una pacchettizzazione con Docker è chiamata <em>Container</em>.</p>
+Il risultato di una pacchettizzazione con Docker è chiamato <em>Container</em>. Un container è a tutti gli effetti un eseguibile che potete lanciare da linea di comando passandogli parametri secondo necessità.</p>
 
 <p>Non è necessario utilizzare la versione Enterprise (EE), utilizzeremo la Community Edition (CE) che ha tutte le funzionalità necessarie (ma senza la stessa assistenza)</p>
 
-<p><strong>Docker Compose</strong> invece serve a definire e lanciare diversi container in maniera orchestrata. Con compose si utilizza un file di configurazione YAML per definire tutti i servizi di cui è composta la nostra applicazione, per esempio: odoo, il database e il server web. In seguito con un singolo comando è possibile creare e lanciare tutti i servizi definiti nella configurazione.</p>
+<p><strong>Docker Compose</strong> invece serve a definire e lanciare diversi container in maniera orchestrata. Con compose si utilizza un file di configurazione YAML per definire tutti i servizi di cui è composta la nostra applicazione, per esempio: odoo, il database e il server web. Una volta terminata la configurazione è possibile creare e lanciare tutti i servizi di cui abbiamo bisogno con un singolo comando.</p>
 
 <p>Anche per questi strumenti l&rsquo;installazione varia in base al sistema operativo usato.</p>
 
@@ -581,6 +600,22 @@ docker-compose version 1.21.2, build 1719ceb
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -667,20 +702,20 @@ docker-compose version 1.21.2, build 1719ceb
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1530116257"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530116257"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530116257"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1530116257"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1530116257"></script>
-    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530116257"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1530116257"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1530140607"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530140607"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530140607"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1530140607"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1530140607"></script>
+    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530140607"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1530140607"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530116257"></script>
-    <script src="/odoo.workshop/js/learn.js?1530116257"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1530116257"></script>
+    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530140607"></script>
+    <script src="/odoo.workshop/js/learn.js?1530140607"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1530140607"></script>
 
-    <link href="/odoo.workshop/mermaid/mermaid.css?1530116257" type="text/css" rel="stylesheet" />
-    <script src="/odoo.workshop/mermaid/mermaid.js?1530116257"></script>
+    <link href="/odoo.workshop/mermaid/mermaid.css?1530140607" type="text/css" rel="stylesheet" />
+    <script src="/odoo.workshop/mermaid/mermaid.js?1530140607"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
