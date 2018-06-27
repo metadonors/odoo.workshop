@@ -20,7 +20,7 @@ Il modulo che svilupperemo:
 
 Il nostro repository di riferimento:
 
-[Odoo 11 - Immagine Docker](https://metadonors.github.com/odoo.docker)
+[Odoo 11 - Immagine Docker](https://github.com/metadonors/odoo.docker)
 
 La documentazione ufficiale di odoo:
 

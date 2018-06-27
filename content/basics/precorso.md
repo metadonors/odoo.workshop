@@ -2,7 +2,6 @@
 title: "Precorso"
 date: 2018-06-27T16:37:24+02:00
 weight: 1
-draft: true
 ---
 
 Prima di arrivare al corso sarebbe opportuno avere già installati e funzionanti un edito di testo, Git, Docker e Docker Compose
