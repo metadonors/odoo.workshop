@@ -17,7 +17,11 @@
       <pubDate>Wed, 27 Jun 2018 15:33:28 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/basics/installazione/</guid>
-      <description></description>
+      <description>Una volta installati gli strumenti di sviluppo come descritto nella sezione Precorso possiamo procedere ad installare l&amp;rsquo;ambiente di odoo che utilizzeremo in questo corso.
+Installazione dell&amp;rsquo;ambiente di sviluppo Scaricate l&amp;rsquo;ambiente docker che utilizzeremo dal github in una cartella sul nostro computer. Aprite un terminale e digitate:
+$ git clone https://github.com/metadonors/odoo.docker.git  Entriamo nella cartella appena scaricata:
+$ cd odoo.docker  Infine diciamo a compose di tirare su l&amp;rsquo;ambiente:
+$ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, odoo, nginx e il database.</description>
     </item>
     
   </channel>

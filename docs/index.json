@@ -1,24 +1,52 @@
 [
 {
-	"uri": "https://metadonors.github.io/odoo.workshop/",
-	"title": "Index",
-	"tags": [],
-	"description": "",
-	"content": " Mantova, 4 Luglio 2018 Odoo WorkShop Fabrizio Arzeni Riferimenti La documentazione ufficiale di odoo:\nDocumentazione Odoo\nIl nostro repository di riferimento:\nOdoo 11 - Immagine Docker\nQuesta pagina di documentazione:\nDocumentazione WorkShop\nLa nostra azienda:\nMetadonors\n"
-},
-{
 	"uri": "https://metadonors.github.io/odoo.workshop/basics/",
 	"title": "Iniziare",
 	"tags": [],
 	"description": "",
-	"content": " Capitolo 1 Iniziare Per cominciare è necessario poterci mettere le mani sopra, quindi installiamo il necessario\n"
+	"content": " Capitolo 1 Iniziare Per imparare è necessario poterci mettere le mani sopra, quindi installiamo il necessario\n"
+},
+{
+	"uri": "https://metadonors.github.io/odoo.workshop/models/",
+	"title": "Modelli e Campi",
+	"tags": [],
+	"description": "",
+	"content": " Chapter X Some Chapter title Lorem Ipsum.\n"
 },
 {
 	"uri": "https://metadonors.github.io/odoo.workshop/basics/installazione/",
 	"title": "Installazione",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": " Una volta installati gli strumenti di sviluppo come descritto nella sezione Precorso possiamo procedere ad installare l\u0026rsquo;ambiente di odoo che utilizzeremo in questo corso.\nInstallazione dell\u0026rsquo;ambiente di sviluppo Scaricate l\u0026rsquo;ambiente docker che utilizzeremo dal github in una cartella sul nostro computer. Aprite un terminale e digitate:\n$ git clone https://github.com/metadonors/odoo.docker.git  Entriamo nella cartella appena scaricata:\n$ cd odoo.docker  Infine diciamo a compose di tirare su l\u0026rsquo;ambiente:\n$ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, odoo, nginx e il database. La procedura può metterci diversi minuti in base alla connessione a internet disponibile.\nIn seguito verranno avviati i vari componenti: odoo, postgres - il database - e nginx - il server web. Al primo avvio odoo dovrà inizializzare la struttura del database (anche questa operazione potrebbe impiegare qualche minuto).\nUna volta terminata, aprite il vostro browser all\u0026rsquo;indirizzo:\nhttp://localhost\ndovreste vedere la schermata di accesso di Odoo. Per entrare inserite le credenziali predefinite:\nUsername: admin Password: admin\nContinua\u0026hellip; Una volta terminata l\u0026rsquo;installazione possiamo procere a creare la nostra prima applicazione\n"
+},
+{
+	"uri": "https://metadonors.github.io/odoo.workshop/computedfields/",
+	"title": "Computed Fields e Vincoli",
+	"tags": [],
+	"description": "",
+	"content": " Chapter X Some Chapter title Lorem Ipsum.\n"
+},
+{
+	"uri": "https://metadonors.github.io/odoo.workshop/views/",
+	"title": "Views e Actions",
+	"tags": [],
+	"description": "",
+	"content": " Chapter X Some Chapter title Lorem Ipsum.\n"
+},
+{
+	"uri": "https://metadonors.github.io/odoo.workshop/inheritance/",
+	"title": "Inheritance",
+	"tags": [],
+	"description": "",
+	"content": " Chapter X Some Chapter title Lorem Ipsum.\n"
+},
+{
+	"uri": "https://metadonors.github.io/odoo.workshop/",
+	"title": "Index",
+	"tags": [],
+	"description": "",
+	"content": " Mantova, 4 Luglio 2018 Odoo WorkShop Fabrizio Arzeni Riferimenti Il modulo che svilupperemo:\nTodo List App\nIl nostro repository di riferimento:\nOdoo 11 - Immagine Docker\nLa documentazione ufficiale di odoo:\nDocumentazione Odoo\nLa nostra azienda:\nMetadonors\n"
 },
 {
 	"uri": "https://metadonors.github.io/odoo.workshop/categories/",
