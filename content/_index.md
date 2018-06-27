@@ -15,18 +15,18 @@ pre = "<b>X. </b>"
 
 
 ### Riferimenti
-La documentazione ufficiale di odoo:
 
-[Documentazione Odoo](https://www.odoo.com/documentation/11.0/index.html)
+Il modulo che svilupperemo:
+
+[Todo List App](https://github.com/metadonors/odoo.workshop.todo)
 
 Il nostro repository di riferimento:
 
 [Odoo 11 - Immagine Docker](https://metadonors.github.com/odoo.docker)
 
-Questa pagina di documentazione:
+La documentazione ufficiale di odoo:
 
-[Documentazione WorkShop](https://metadonors.github.io/odoo.workshop)
-
+[Documentazione Odoo](https://www.odoo.com/documentation/11.0/index.html)
 
 La nostra azienda:
 

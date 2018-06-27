@@ -1,6 +1,7 @@
 baseURL = "https://metadonors.github.io/odoo.workshop/"
 languageCode = "it-it"
 title = "Odoo Workshop"
+publishDir = "docs"
 theme = "hugo-theme-learn"
 
 [params]
@@ -9,6 +10,8 @@ editURL = ""
 author = "Metadonors"
 description = "Odoo Workshop"
 themeVariant = "metadonors"
+ordersectionsby = "weight"
+
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
