@@ -10,8 +10,6 @@ pre = "<b>X. </b>"
 
 # Odoo WorkShop
 
-### Fabrizio Arzeni
-
 
 
 ### Riferimenti
