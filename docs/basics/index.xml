@@ -12,6 +12,18 @@
     
     
     <item>
+      <title>Precorso</title>
+      <link>https://metadonors.github.io/odoo.workshop/basics/precorso/</link>
+      <pubDate>Wed, 27 Jun 2018 16:37:24 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/basics/precorso/</guid>
+      <description>Prima di arrivare al corso sarebbe opportuno avere già installati e funzionanti un edito di testo, Git, Docker e Docker Compose
+Editor di testo Non ci sono preferenze per l&amp;rsquo;editor di testo, ovviamente è opportuno usarne uno che aiuti a lavvorare con codice python e javascript
+Un elenco di alcuni possibili editor:
+ VSCode https://code.visualstudio.com/ Atom https://atom.io/ Sublime Text https://www.sublimetext.com/  Git L&amp;rsquo;installazione di Git varia in base al sistema operativo utilizzato, ecco come procedere:</description>
+    </item>
+    
+    <item>
       <title>Installazione</title>
       <link>https://metadonors.github.io/odoo.workshop/basics/installazione/</link>
       <pubDate>Wed, 27 Jun 2018 15:33:28 +0200</pubDate>
@@ -22,6 +34,15 @@ Installazione dell&amp;rsquo;ambiente di sviluppo Scaricate l&amp;rsquo;ambiente
 $ git clone https://github.com/metadonors/odoo.docker.git  Entriamo nella cartella appena scaricata:
 $ cd odoo.docker  Infine diciamo a compose di tirare su l&amp;rsquo;ambiente:
 $ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, odoo, nginx e il database.</description>
+    </item>
+    
+    <item>
+      <title>La prima applicazione</title>
+      <link>https://metadonors.github.io/odoo.workshop/basics/primo_modulo/</link>
+      <pubDate>Wed, 27 Jun 2018 17:59:32 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/basics/primo_modulo/</guid>
+      <description></description>
     </item>
     
   </channel>
