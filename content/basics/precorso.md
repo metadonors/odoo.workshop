@@ -142,4 +142,6 @@ Come per Mac è sufficiente scaricare [l'applicazione ufficiale dall'Docker Stor
 Per maggiori informazioni qui trovate la [pagina di documentazione specifica]
 (https://docs.docker.com/docker-for-windows/install/#where-to-go-next)
 
+## Continua...
 
+Una volta terminata questa procedura siete pronti ad iniziare il corso [installando l'ambiete di sviluppo Odoo](/odoo.workshop/basics/installazione/)
