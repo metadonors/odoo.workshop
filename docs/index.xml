@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Teoria</title>
+      <link>https://metadonors.github.io/odoo.workshop/inheritance/teoria/</link>
+      <pubDate>Thu, 28 Jun 2018 16:39:19 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/inheritance/teoria/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Scaffolding</title>
       <link>https://metadonors.github.io/odoo.workshop/first_app/primo_modulo/</link>
       <pubDate>Wed, 27 Jun 2018 17:59:32 +0200</pubDate>
@@ -32,6 +41,15 @@ $ docker-compose run odoo odoo scaffold --help  Nella pratica la comunità si è
 Editor di testo Non ci sono preferenze per l&amp;rsquo;editor di testo, ovviamente è opportuno usarne uno che aiuti a lavorare con codice python e javascript
 Un elenco di alcuni possibili editor:
  VSCode https://code.visualstudio.com/ Atom https://atom.io/ Sublime Text https://www.sublimetext.com/  Git L&amp;rsquo;installazione di Git varia in base al sistema operativo utilizzato, ecco come procedere:</description>
+    </item>
+    
+    <item>
+      <title>Estendere i Modelli</title>
+      <link>https://metadonors.github.io/odoo.workshop/inheritance/estendere_modelli/</link>
+      <pubDate>Thu, 28 Jun 2018 16:39:19 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_modelli/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -59,6 +77,15 @@ $ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, 
     </item>
     
     <item>
+      <title>Estendere le Viste</title>
+      <link>https://metadonors.github.io/odoo.workshop/inheritance/estendere_viste/</link>
+      <pubDate>Thu, 28 Jun 2018 16:39:23 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_viste/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Le viste</title>
       <link>https://metadonors.github.io/odoo.workshop/first_app/prime_viste/</link>
       <pubDate>Thu, 28 Jun 2018 10:38:52 +0200</pubDate>
@@ -76,6 +103,15 @@ Nelle viste abbiamo dei menu item che ci permettono di attivare funzionalità o 
       <guid>https://metadonors.github.io/odoo.workshop/basics/concetti/</guid>
       <description>Prima di cominciare è necessario affrontare un po&amp;rsquo; di teoria che sta alla base del framework Odoo. Odoo è un framework applicativo modulare, i suoi principali componenti sono i moduli e le applicazioni.
 Moduli I moduli sono i componenti essenziali che possono essere aggiunti a Odoo. Ogni modulo può implementare nuove funzionalità oppure modificare quelle esistenti. Ogni modulo è costituito da una cartella contenente un file __manfifest.py__ più altri file che implementano le sue funzionalità.</description>
+    </item>
+    
+    <item>
+      <title>Estendere i Dati</title>
+      <link>https://metadonors.github.io/odoo.workshop/inheritance/estendere_dati/</link>
+      <pubDate>Thu, 28 Jun 2018 16:39:25 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_dati/</guid>
+      <description></description>
     </item>
     
     <item>

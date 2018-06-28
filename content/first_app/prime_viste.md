@@ -12,7 +12,7 @@ Per ogni modello sono disponibili diversi tipi di viste, le principali che utili
 
 ### Creazione del MenuItem e della ActWindow
 
-Generalemente le viste sono raggruppate nella cartella _views_ all'interno del modulo. Quindi creiamo la cartella e otteniamo questa struttura:
+Generalemente le viste sono raggruppate nella cartella _views_ all'interno del modulo. Prima della creazione della vista vera e propria, abbiamo bisogno di un _menu item_ che ci permetta di navigare alla nostra applicazione _Todo Task_. Per farlo creiamo la cartella _views_ e al suo interno il file _todo\_menu.xml_ ottenendo la seguente struttura
 
 ```
 todo_app/
@@ -20,11 +20,12 @@ todo_app/
         __init__.py
         todo_model.py
     views/
+        todo_menu.xml
     __init__.py
     __manifest__.py
 ```
 
-Prima della creazione della vista vera e propria, abbiamo bisogno di un _menu item_ che ci permetta di navigare alla nostra applicazione _Todo Task_. Per farlo creiamo all'interno della cartella _views_ il file _todo\_menu.xml_ e aggiungiamo il seguente contenuto che definisce l'oggetto menu e l'azione necessaria per navigare verso l'applicazione:
+e aggiungiamo il seguente contenuto che definisce l'oggetto menu e l'azione necessaria per navigare verso l'applicazione:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -110,6 +111,8 @@ todo_app/
         todo_model.py
         todo_views.py
     views/
+        todo_menu.xml
+        todo_views.xml
     __init__.py
     __manifest__.py
 ```

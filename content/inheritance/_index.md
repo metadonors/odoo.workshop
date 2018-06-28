@@ -6,8 +6,8 @@ chapter = true
 pre = "<b>3. </b>"
 +++
 
-### Chapter 3
+### Capitolo 3
 
-# Some Chapter title
+# ESTENDERE L'ESISTENTE
 
-Lorem Ipsum.
+La vera potenza di Odoo si esprime nel riutilizzo delle applicazioni e dei moduli esistenti e nell'adattarli alle esigenze specifiche del momento. Vediamo ora come è strutturato il meccanismo di eredità che il framework ci offre.
