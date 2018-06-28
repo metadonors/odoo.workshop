@@ -11,4 +11,4 @@ pre = "<b>1. </b>"
 
 # Iniziare
 
-Per imparare è necessario poterci mettere le mani sopra, quindi installiamo il necessario
+Per imparare è necessario poterci mettere le mani sopra, quindi installiamo il necessario.
