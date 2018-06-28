@@ -14,6 +14,10 @@ pre = "<b>X. </b>"
 
 ### Riferimenti
 
+L'inizio del corso:
+
+[Odoo Workshoop](/odoo.workshop/basics/)
+
 Il modulo che svilupperemo:
 
 [Todo List App](https://github.com/metadonors/odoo.workshop.todo)
