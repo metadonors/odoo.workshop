@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://metadonors.github.io/odoo.workshop/first_app/primo_modulo/</loc>
+    <lastmod>2018-06-27T17:59:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://metadonors.github.io/odoo.workshop/basics/precorso/</loc>
     <lastmod>2018-06-27T16:37:24+02:00</lastmod>
   </url>
@@ -13,7 +18,12 @@
   </url>
   
   <url>
-    <loc>https://metadonors.github.io/odoo.workshop/models/</loc>
+    <loc>https://metadonors.github.io/odoo.workshop/first_app/primo_modello/</loc>
+    <lastmod>2018-06-28T10:36:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/first_app/</loc>
     <lastmod>2018-06-27T16:13:21+02:00</lastmod>
   </url>
   
@@ -23,23 +33,13 @@
   </url>
   
   <url>
+    <loc>https://metadonors.github.io/odoo.workshop/first_app/prime_viste/</loc>
+    <lastmod>2018-06-28T10:38:52+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://metadonors.github.io/odoo.workshop/basics/concetti/</loc>
     <lastmod>2018-06-27T23:17:43+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://metadonors.github.io/odoo.workshop/computedfields/</loc>
-    <lastmod>2018-06-27T16:13:45+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://metadonors.github.io/odoo.workshop/basics/primo_modulo/</loc>
-    <lastmod>2018-06-27T17:59:32+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://metadonors.github.io/odoo.workshop/views/</loc>
-    <lastmod>2018-06-27T16:13:55+02:00</lastmod>
   </url>
   
   <url>
@@ -48,8 +48,48 @@
   </url>
   
   <url>
+    <loc>https://metadonors.github.io/odoo.workshop/first_app/prima_funzione/</loc>
+    <lastmod>2018-06-28T10:38:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/models/</loc>
+    <lastmod>2018-06-27T16:13:21+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/first_app/controllo_accessi/</loc>
+    <lastmod>2018-06-28T10:40:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/views/</loc>
+    <lastmod>2018-06-27T16:13:55+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://metadonors.github.io/odoo.workshop/</loc>
     <lastmod>2018-06-27T15:32:30+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/application_logic/</loc>
+    <lastmod>2018-06-27T16:13:55+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/api/</loc>
+    <lastmod>2018-06-28T10:46:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/website/</loc>
+    <lastmod>2018-06-28T10:46:58+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/resources/</loc>
+    <lastmod>2018-06-28T10:51:28+02:00</lastmod>
   </url>
   
   <url>

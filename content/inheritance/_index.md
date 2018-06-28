@@ -1,12 +1,12 @@
 +++
-title = "Inheritance"
+title = "Estendere i moduli"
 date = 2018-06-27T16:14:07+02:00
-weight = 5
+weight = 3
 chapter = true
-pre = "<b>5. </b>"
+pre = "<b>3. </b>"
 +++
 
-### Chapter X
+### Chapter 3
 
 # Some Chapter title
 

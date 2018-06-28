@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.42.1" />
+    <meta name="description" content="Odoo Workshop">
+<meta name="author" content="Metadonors">
+
+    <link rel="shortcut icon" href="/odoo.workshop/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/x-icon" />
+    <title>Scaffolding :: Odoo Workshop</title>
+    
+    
+    <link href="/odoo.workshop/css/nucleus.css?1530193598" rel="stylesheet">
+    <link href="/odoo.workshop/css/font-awesome.min.css?1530193598" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1530193598" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1530193598" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530193598" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1530193598" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1530193598" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1530193598" rel="stylesheet">
+    
+      <link href="/odoo.workshop/css/theme-metadonors.css?1530193598" rel="stylesheet">
+    
+
+    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530193598"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/odoo.workshop/first_app/primo_modulo/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/odoo.workshop">
+    <img src="/odoo.workshop/images/logo.png"/>
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530193598"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530193598"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/odoo.workshop\/';
+    
+</script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1530193598"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/basics/" title="Iniziare" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/basics/">
+          <b>1. </b>Iniziare
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/basics/precorso/" title="Precorso" class="dd-item ">
+        <a href="/odoo.workshop/basics/precorso/">
+        Precorso
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/basics/installazione/" title="Installazione" class="dd-item ">
+        <a href="/odoo.workshop/basics/installazione/">
+        Installazione
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/basics/concetti/" title="Concetti Base" class="dd-item ">
+        <a href="/odoo.workshop/basics/concetti/">
+        Concetti Base
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/first_app/" title="La prima applicazione" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/odoo.workshop/first_app/">
+          <b>2. </b>La prima applicazione
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/primo_modulo/" title="Scaffolding" class="dd-item active">
+        <a href="/odoo.workshop/first_app/primo_modulo/">
+        Scaffolding
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/primo_modello/" title="I modelli" class="dd-item ">
+        <a href="/odoo.workshop/first_app/primo_modello/">
+        I modelli
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/prime_viste/" title="Le viste" class="dd-item ">
+        <a href="/odoo.workshop/first_app/prime_viste/">
+        Le viste
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/prima_funzione/" title="La logica" class="dd-item ">
+        <a href="/odoo.workshop/first_app/prima_funzione/">
+        La logica
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/controllo_accessi/" title="Controllo Accessi" class="dd-item ">
+        <a href="/odoo.workshop/first_app/controllo_accessi/">
+        Controllo Accessi
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/inheritance/" title="Estendere i moduli" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/inheritance/">
+          <b>3. </b>Estendere i moduli
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/models/" title="I Modelli" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/models/">
+          <b>4. </b>I Modelli
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/views/" title="Le Viste" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/views/">
+          <b>5. </b>Le Viste
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/application_logic/" title="Logica applicativa" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/application_logic/">
+          <b>6. </b>Logica applicativa
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/api/" title="Api esterne" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/api/">
+          <b>7. </b>Api esterne
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/website/" title="Sito Web Esterno" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/website/">
+          <b>8. </b>Sito Web Esterno
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/resources/" title="Altre Risorse" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/resources/">
+          <b>9. </b>Altre Risorse
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/odoo.workshop/'>Index</a> > <a href='/odoo.workshop/first_app/'>La prima applicazione</a> > Scaffolding
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#lo-scheletro-del-modulo">Lo scheletro del modulo</a>
+<ul>
+<li><a href="#quindi-cominciamo">Quindi cominciamo</a></li>
+<li><a href="#i-path-degli-addon">I path degli addon</a></li>
+<li><a href="#installazione-del-modulo">Installazione del modulo</a>
+<ul>
+<li><a href="#la-modalità-sviluppatore">La modalità sviluppatore</a></li>
+</ul></li>
+<li><a href="#nota-bene">Nota bene</a></li>
+<li><a href="#continua">Continua</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Scaffolding</h1>
+          
+
+        
+
+
+
+
+<p>In questa sezione andremo a creare il nostro primo modulo. L&rsquo;applicazione d&rsquo;esempio che creeremo durante il corso è una classica Todo App. Per realizzarla attraverseremo le classiche fasi di sviluppo di un applicazione Odoo.</p>
+
+<h2 id="lo-scheletro-del-modulo">Lo scheletro del modulo</h2>
+
+<p>Odoo offre un suo meccanismo di scaffolding piuttosto primitivo per creare nuovi moduli, è possibile visualizzare il suo funzionamento lanciando questo comando dalla cartella contente l&rsquo;ambiente odoo.dockerenv:</p>
+
+<pre><code>$ docker-compose run odoo odoo scaffold --help
+</code></pre>
+
+<p>Nella pratica la comunità si è però concentrata su un altro strumento di scaffolding, <a href="http://mrbob.readthedocs.io/en/latest/">mrbob</a> con i template specifici per gli <a href="https://github.com/acsone/bobtemplates.odoo">addon Odoo</a>.</p>
+
+<p>Vi può essere utile quando affronterete il vostro primo modulo in autonomia, ma durante questo corso creeremo tutta la struttura manualmente in modo da capirne meglio i vari aspetti.</p>
+
+<h3 id="quindi-cominciamo">Quindi cominciamo</h3>
+
+<p>Un modulo Odoo è una cartella contenente un file <em>__manifest__.py</em>. La cartella deve essere anche un modulo python valido, deve quindi contenere un file <em>__init__.py</em>.</p>
+
+<p>Il nome della cartella del modulo è un nome tecnico non visibile all&rsquo;utente, deve essere valido in python quindi niente deve cominciare con una lettera e sono validi solo lettere, numeri e underscore. Nel nostro caso useremo quindi il nome <em>todo_app</em>.</p>
+
+<p>All&rsquo;interno della cartella addons dell&rsquo;ambiente docker che abbiamo scaricato, creiamo la cartella <em>todo_app</em> con la seguente struttura:</p>
+
+<pre><code>todo_app/
+    __init__.py
+    __manifest__.py
+</code></pre>
+
+<p>A questo punto è ora di aprire il nostro editor di testo per modificare il file <em>__manifest__.py</em>, dove inseriremo il seguente contenuto:</p>
+
+<pre><code class="language-python">{
+    'name': 'Applicazione TODO',
+    'description': 'Gestisci i tuoi TODO',
+    'author': 'Fabrizio Arzeni',
+    'depends': ['base'],
+    'application': True
+}
+</code></pre>
+
+<p>Il campo <em>depends</em> indica i moduli da cui dipende la nostra applicazione, se non sono presenti quando verra installata, Odoo li installerà automaticamente. È necessario inserirla soprattutto quando si fa riferimento a funzionalità di terze parti.</p>
+
+<p>In questo caso abbiamo usato solo alcuni dei valori definibili nel manifesto di un modulo, nei casi reali questo file è sarà più complesso. Per una spiegazione più dettagliata del suo contenuto potete consultare la pagina della <a href="https://www.odoo.com/documentation/11.0/reference/module.html">documentazione di Odoo sul file manifest</a>.</p>
+
+<h3 id="i-path-degli-addon">I path degli addon</h3>
+
+<p>Nel nostro caso Odoo sarà in grado di trovare questa applicazione perchè l&rsquo;abbiamo creata nella cartella addons dell&rsquo;ambiente. Ma quella cartella è stata configurata per essere fra quelle papabili dove Odoo cerca gli addon all&rsquo;avvio. È possibile specificare diversi percorsi dove odoo cerca gli addons disponibili ad essere installati, fate riferimento alla variabile <em>addons-path</em> disponibile sia nel file di confiurazione di odoo che da linea di comando.</p>
+
+<h3 id="installazione-del-modulo">Installazione del modulo</h3>
+
+<p>A questo punto è possibile installare il modulo. Come abbiamo fatto nella sezione precedente possiamo andare nella lista delle App, scrive <em>todo</em> nella barra di ricerca e cliccare sul pulsante installa sul nostro modulo.</p>
+
+<p>Ma&hellip;il nostro modulo non c&rsquo;è.</p>
+
+<h4 id="la-modalità-sviluppatore">La modalità sviluppatore</h4>
+
+<p>Il nostro modulo non c&rsquo;è perchè Odoo nella sua fase iniziale mette in cache tutti i moduli che sono presenti in quel momento. Per far apparire il nostro modulo dobbiamo dirgli di ricaricare la lista delle applicazioni.</p>
+
+<p>Per farlo dobbiamo entrare nella <strong>modalità sviluppatore</strong> che sarà essenziale per tutto il nostro lavoro.</p>
+
+<p>Per attivarla bisogna andare nell&rsquo;applicazione &lsquo;Settings&rsquo; e premere sulla scritta &lsquo;Activate the developer mode&rsquo; presente sulla destra sotto la versione di Odoo.</p>
+
+<p><img src="/odoo.workshop/screen/primo_modulo/devmode.png?width=60pc" alt="devmode" /></p>
+
+<p>Una volta fatto possiamo tornare nella lista delle App e a questo punto sarà presente il bottone &lsquo;Update App List&rsquo;. Premetelo e rieffettuate la ricerca del modulo todo che dovrebbe essere ora disponibile per essere installato</p>
+
+<p><img src="/odoo.workshop/screen/primo_modulo/todo.png?width=60pc" alt="todo" /></p>
+
+<p>Cliccate su installa ed il primo passo è compiuto</p>
+
+<h3 id="nota-bene">Nota bene</h3>
+
+<p>Sviluppare moduli è un processo iterativo e spesso dopo dei cambiamenti, in particolare sul database, sarà necessario riavviare odoo dicendogli esplicitamente di aggiornare i moduli interessati. Se la modifica invece è solo al codice python o a delle viste sarà sufficiente riaggiornare la pagina <strong>perchè il sistema è stato lanciato in modalita di sviluppo</strong> (con l&rsquo;opzione &ndash;dev=all vedi <em>docker-compose.yml</em>). In fase di produzione qualsiasi aggiornamento comporta il riavvio del sistema</p>
+
+<h3 id="continua">Continua</h3>
+
+<p>Ora che abbiamo creato e installato la nostra prima applicazione possiamo continuare andando a modellare i nostri dati definendo <a href="/odoo.workshop/first_app/primo_modello/">Modelli e Campi</a>.</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/odoo.workshop/first_app/" title="La prima applicazione"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/odoo.workshop/first_app/primo_modello/" title="I modelli" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/odoo.workshop/js/clipboard.min.js?1530193598"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530193598"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530193598"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1530193598"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1530193598"></script>
+    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530193598"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1530193598"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530193598"></script>
+    <script src="/odoo.workshop/js/learn.js?1530193598"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1530193598"></script>
+
+    <link href="/odoo.workshop/mermaid/mermaid.css?1530193598" type="text/css" rel="stylesheet" />
+    <script src="/odoo.workshop/mermaid/mermaid.js?1530193598"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

@@ -1,13 +1,12 @@
 +++
-title = "Modelli e Campi"
+title = "I Modelli"
 date = 2018-06-27T16:13:21+02:00
-weight = 2
+weight = 4
 chapter = true
-pre = "<b>2. </b>"
+pre = "<b>4. </b>"
 +++
 
-### Chapter2
+### Chapter 2
 
-# Modellazione dei Dati
-
-Odoo è un framework [MVC](https://it.wikipedia.org/wiki/Model-view-controller), i Modelli sono la M del paradigma e ci permettono di rappresentare i nostri dati in maniera strutturata, come per esempio i Prodotti, le Vendite, le Fatture o i Clienti. Vediamo come vengono definiti in Odoo.
+# Modelli, Controller e Viste
+Odoo è un framework [MVC](https://it.wikipedia.org/wiki/Model-view-controller), i Modelli sono la M del paradigma e ci permettono di rappresentare i nostri dati in maniera strutturata, come per esempio i Prodotti, le Vendite, le Fatture o i Clienti. La C sta per controller che rappresenta la parte funzionale dei nostri dati. La V invece sono le viste, i componenti che descrivono l'interfaccia utente.

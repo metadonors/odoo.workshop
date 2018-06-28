@@ -38,7 +38,7 @@ Deselezioniamo il filtro "Apps" dalla barra di ricerca e inseriamo la stringa "M
 
 ![material](/odoo.workshop/screen/concetti/material.png?width=60pc)
 
-Clicchiamo su Install e...fatto. Abbiamo installato il nostro primo modulo e subito il nostro odoo ha un look più  moderno.
+Clicchiamo su Install e...fatto. Abbiamo installato il nostro primo modulo e subito il nostro Odoo ha un look più  moderno.
 
 ![material2](/odoo.workshop/screen/concetti/material2.png?width=60pc)
 

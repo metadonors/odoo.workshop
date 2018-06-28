@@ -1,7 +1,7 @@
 ---
-title: "La prima applicazione"
+title: "Scaffolding"
 date: 2018-06-27T17:59:32+02:00
-weight: 4
+weight: 1
 ---
 
 In questa sezione andremo a creare il nostro primo modulo. L'applicazione d'esempio che creeremo durante il corso è una classica Todo App. Per realizzarla attraverseremo le classiche fasi di sviluppo di un applicazione Odoo.
@@ -24,20 +24,12 @@ Un modulo Odoo è una cartella contenente un file _\_\_manifest\_\_.py_. La cart
 
 Il nome della cartella del modulo è un nome tecnico non visibile all'utente, deve essere valido in python quindi niente deve cominciare con una lettera e sono validi solo lettere, numeri e underscore. Nel nostro caso useremo quindi il nome _todo\_app_.
 
-Per effetture queste prime operazioni da linea di comando, aprite un terminale e digitate:
+All'interno della cartella addons dell'ambiente docker che abbiamo scaricato, creiamo la cartella _todo\_app_ con la seguente struttura:
 
 ```
-# Entriamo nella cartella degli addons
-$ cd odoo.dockerenv/addons
-
-# Creiamo la cartella del modulo
-$ mkdir todo_app
-
-# Creiamo il file __init__.py
-$ touch todo_app/__init__.py
-
-# Creiamo il file __manifest__.py
-$ touch todo_app/__manifest__.py
+todo_app/
+    __init__.py
+    __manifest__.py
 ```
 
 A questo punto è ora di aprire il nostro editor di testo per modificare il file _\_\_manifest\_\_.py_, dove inseriremo il seguente contenuto:
@@ -88,4 +80,4 @@ Sviluppare moduli è un processo iterativo e spesso dopo dei cambiamenti, in par
 
 ### Continua
 
-Ora che abbiamo creato e installato la nostra prima applicazione possiamo continuare andando a modellare i nostri dati definendo [Modelli e Campi](/odoo.workshop/basics/primo_modello/).
+Ora che abbiamo creato e installato la nostra prima applicazione possiamo continuare andando a modellare i nostri dati definendo [Modelli e Campi](/odoo.workshop/first_app/primo_modello/).

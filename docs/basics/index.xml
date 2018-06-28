@@ -46,16 +46,5 @@ $ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, 
 Moduli I moduli sono i componenti essenziali che possono essere aggiunti a Odoo. Ogni modulo può implementare nuove funzionalità oppure modificare quelle esistenti. Ogni modulo è costituito da una cartella contenente un file __manfifest.py__ più altri file che implementano le sue funzionalità.</description>
     </item>
     
-    <item>
-      <title>La prima applicazione</title>
-      <link>https://metadonors.github.io/odoo.workshop/basics/primo_modulo/</link>
-      <pubDate>Wed, 27 Jun 2018 17:59:32 +0200</pubDate>
-      
-      <guid>https://metadonors.github.io/odoo.workshop/basics/primo_modulo/</guid>
-      <description>In questa sezione andremo a creare il nostro primo modulo. L&amp;rsquo;applicazione d&amp;rsquo;esempio che creeremo durante il corso è una classica Todo App. Per realizzarla attraverseremo le classiche fasi di sviluppo di un applicazione Odoo.
-Lo scheletro del modulo Odoo offre un suo meccanismo di scaffolding piuttosto primitivo per creare nuovi moduli, è possibile visualizzare il suo funzionamento lanciando questo comando dalla cartella contente l&amp;rsquo;ambiente odoo.dockerenv:
-$ docker-compose run odoo odoo scaffold --help  Nella pratica la comunità si è però concentrata su un altro strumento di scaffolding, mrbob con i template specifici per gli addon Odoo.</description>
-    </item>
-    
   </channel>
 </rss>

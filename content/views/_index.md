@@ -1,9 +1,9 @@
 +++
-title = "Views e Actions"
+title = "Le Viste"
 date = 2018-06-27T16:13:55+02:00
-weight = 4
+weight = 5
 chapter = true
-pre = "<b>4. </b>"
+pre = "<b>5. </b>"
 +++
 
 ### Chapter X
