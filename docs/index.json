@@ -1,10 +1,17 @@
 [
 {
-	"uri": "https://metadonors.github.io/odoo.workshop/inheritance/teoria/",
-	"title": "Teoria",
+	"uri": "https://metadonors.github.io/odoo.workshop/models/campi_base/",
+	"title": "Campi Base",
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "https://metadonors.github.io/odoo.workshop/inheritance/teoria/",
+	"title": "Preambolo",
+	"tags": [],
+	"description": "",
+	"content": "Per apportare modifiche o aggiungere funzionalità ai moduli e alle applicazioni esistenti, Odoo ci mette a disposizione diversi strumenti in base a cosa e dove vogliamo intervenire.\nOdoo ha dai meccanismi interni specifici che si basano sul concetto di Ereditarietà. Tramite questi meccanismi e\u0026rsquo; possibile modificare Modelli esistenti, Viste oppure Dati (come le regole di accesso).\nIn questo capito andremo ad aggiungere una funzionalità all\u0026rsquo;applicazione Todo creata in precedenza. Attualmente ogni utente può lavorare solo sui suoi task, perchè non aggiungere qualche funzionalità di social networking come la possibilità di condividere i task e di commentarli con diversi utenti?\nPer affrontare i meccanismi di eredità implementeremo queste funzionalità in un nuovo modulo che estende quello precedentemente creato.\nQuesto è il nostro piano:\n Estendere il modello TodoTask aggiungendo l\u0026rsquo;utente attualmente in carico Modificare la logica applicativa per far si che ogni utente lavori solo sui task di cui è incaricato Estendere le viste per aggiungere i campi nessari a quanto sopra Aggingere un wall di messaggi in fondo a ogni Task dove gli utenti possono commentare e seguire (tipo Twitter follow) l\u0026rsquo;evoluzione del task  Per procedere dobbiamo creare un nuovo modulo nella stessa cartella contenente il modulo todo_app. Lo chiameremo todo_user e creeremo al suo interno il file __manifest__.py\n todo_user/ __init__.py __manifest__.py  Nel file di manifesto inseriemo questo contenuto\n{ 'name': 'Multiuser TODO', 'description': 'Estende la Todo app per farla diventare Multi Utente', 'author': 'Fabrizio Arzeni', 'depends': ['todo_app'], }  Notate che abbiamo messo una dipendenza esplicita sul modulo todo_app, questo permettera a Odoo di inizializzare questo modulo dopo aver inizializzato todo_app.\nUn\u0026rsquo;altra differenza è che non abbiamo esplicitato application=True in quanto con questo modulo non andremo a creare una nuova applicazione ma apporteremo solo modifiche a un\u0026rsquo;altra già esistente.\nUna volta fatto questo possiamo aggiornare la lista dei moduli e installare il modulo todo_user nel nostro Odoo.\nA questo punto possiamo andare a vedere come si estende il modello TodoTask\n"
 },
 {
 	"uri": "https://metadonors.github.io/odoo.workshop/first_app/primo_modulo/",
@@ -28,11 +35,18 @@
 	"content": " Capitolo 1 Iniziare Per imparare è necessario poterci mettere le mani sopra, quindi installiamo il necessario\n"
 },
 {
+	"uri": "https://metadonors.github.io/odoo.workshop/models/relazioni/",
+	"title": "Relazioni",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://metadonors.github.io/odoo.workshop/inheritance/estendere_modelli/",
 	"title": "Estendere i Modelli",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": " In Odoo i nuovi modelli, o le estensioni di quelli esistenti, si creano definendo delle classi Python specifiche. Il meccanismo di ereditarietà di Odoo non si base su quello delle classi Python, ma su un suo approccio interno che si basa sull\u0026rsquo;attributo _inherit specificato nella class.\nIn base a come viene utilizzato si possono ottenere differeneti meccanismi di ereditarietà.\nNoi cominceremo con il più semplice dove la classe figlia eredita tutte le funzionalità del padre e dove noi possiamo semplicemente apportare le modifiche che ci interessano.\nPer prima cosa andiamo a creare la cartella models/ con il file __init__.py e il file todo_task.py che ospiterà le nostre modifiche, ottenendo questa struttura:\n todo_user/ models/ __init__.py todo_task.py __init__.py __manifest__.py  Inseriamo gli import necessari per far funzionare il codice Python mettendo all\u0026rsquo;interno del file todo_user/__init__.py\nfrom . import models  e all\u0026rsquo;interno del file todo_user/models/__init__.py\nfrom . import todo_task  Aggiungere campi a un modello A questo punto siamo pronti a modificare il file todo_task.py per estendere il nostro precedente modello. Aprimo il file e scriviamo quanto segue\n# -*- coding: utf-8 -*- from odoo import models, fields, api class TodoTask(models.Model): _inherit = 'todo.task' user_id = fields.Many2one('res.users', 'Assigned to') deadline_date = fields.Date('Deadline')  Come vedete non c\u0026rsquo;è nessun meccanismo python di eredità e anche il nome della classe è irrilevante a questi fini. Il punto chiave è l\u0026rsquo;attributo _inherit che dice ad Odoo di estendere il modello todo.task. Le altre linee sono normali dichiarazioni di campi.\nModificare campi esistenti Aggiungere campi è piuttosto semplice, ma è anche possibile apportare modifiche a campi esitenti. Per farlo è sufficiente ridichiara il campo e passare solo gli attributi che si vogliono andare a modificare.\nPer esempio per modificare il tooltip del campo name possiamo aggiungere il campo\nname = fields.Char(help=\u0026quot;Cosa bisogna fare?\u0026quot;)  Per vedere se le modifiche che abbiamo apportato sono corrette dobbiamo effettuare l\u0026rsquo;upgrade del modulo todo_user, ricaricare la pagina e controllare che il tooltip presente nella Form View dei Todo Task sia aggiornata con quando abbiamo scritto, come nell\u0026rsquo;immagine che segue\nModificare i metodi del modello Con l\u0026rsquo;eredità dei modelli, oltre ai campi, è posssibile anche i metodi associati. Aggiungere un nuovo metodo è semplice: è sufficiente dichiarare una nuova funzione. Se invece si vuole modificare il comportamento di un metodo esistente, si può procedere sovrascrivendo il metodo stesso ed è possibile, se necessario, invocare comunque il metodo padre con la funzione super() di Python.\nCambiare gli argomenti dei metodi esistenti può essere pericoloso perchè non potete sapere chi li sta già invocando. In caso sia necessario è opportuno inizializare gli argomenti con un valore predefinito.\n Nel nostro caso vogliamo che quando un utente invoca il metodo do_clear_done non vengano chiusi tutti i task completati ma solo quelli assegnati all\u0026rsquo;utente stesso oppure quelli non assegnati.\nPer farlo aggiungiamo il seguente metodo all\u0026rsquo;oggetto TodoTask nel file models/todo_task.py\n@api.multi def do_clear_done(self): dones = self.search([ ('is_done', '=', True), '|', ('user_id', '=', self.env.uid), ('user_id', '=', False) ]) dones.write({'active': False})  Vediamo invece come estendere un metodo, senza sovrascrivere completamente la logica presente nel modello originale. Per la funzione do_toggle_done vogliamo aggiungere un controllo in caso l\u0026rsquo;utente stia cercando di chiudere un task che non gli è assegnato. In quel caso lanciamo un errore, altrimenti procediamo come consueto.\nPer ottenere questo comportamente modifichiamo il file models/todo_task.py, aggiungendo neglle importazioni iniziali\nfrom odoo.exceptions import ValidationError  e nel corpo della classe il metodo\n@api.multi def do_toggle_done(self): for task in self: if tast.user_id != self.env.user: raise ValidationError(\u0026quot;Solo l'incaricato può chiudere questo task\u0026quot;) return super(TodoTask, self).do_toggle_done()  Continua A questo punto per poter testare queste modifiche è necessario apportare delle modifiche alle viste di questo modello estendendo le Viste\n"
 },
 {
 	"uri": "https://metadonors.github.io/odoo.workshop/first_app/primo_modello/",
@@ -56,11 +70,18 @@
 	"content": " Una volta installati gli strumenti di sviluppo come descritto nella sezione Precorso possiamo procedere ad installare l\u0026rsquo;ambiente di odoo che utilizzeremo in questo corso.\nInstallazione dell\u0026rsquo;ambiente di sviluppo Scaricate l\u0026rsquo;ambiente docker che utilizzeremo dal github in una cartella sul nostro computer. Aprite un terminale e digitate:\n$ git clone https://github.com/metadonors/odoo.docker.git  Entriamo nella cartella appena scaricata:\n$ cd odoo.docker  Infine diciamo a compose di tirare su l\u0026rsquo;ambiente:\n$ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, odoo, nginx e il database. La procedura può metterci diversi minuti in base alla connessione a internet disponibile.\nIn seguito verranno avviati i vari componenti: odoo, postgres - il database - e nginx - il server web. Al primo avvio odoo dovrà inizializzare la struttura del database (anche questa operazione potrebbe impiegare qualche minuto).\nUna volta terminata, aprite il vostro browser all\u0026rsquo;indirizzo:\nhttp://localhost\ndovreste vedere la schermata di accesso di Odoo. Per entrare inserite le credenziali predefinite:\nUsername: admin Password: admin\nContinua\u0026hellip; Una volta terminata l\u0026rsquo;installazione possiamo affrontare i concetti base\n"
 },
 {
+	"uri": "https://metadonors.github.io/odoo.workshop/models/computed_fields/",
+	"title": "Computed Fields",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://metadonors.github.io/odoo.workshop/inheritance/estendere_viste/",
 	"title": "Estendere le Viste",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Le viste Form, List e Search sono definite nel campo XML arch della loro definizione. Per estenderle dobbiamo modificare quelle definizioni XML. Farlo significa localizzare i tag XML e introdurre delle modifiche in quei punti.\n"
 },
 {
 	"uri": "https://metadonors.github.io/odoo.workshop/first_app/prime_viste/",

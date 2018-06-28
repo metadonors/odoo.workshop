@@ -12,12 +12,23 @@
     
     
     <item>
-      <title>Teoria</title>
+      <title>Campi Base</title>
+      <link>https://metadonors.github.io/odoo.workshop/models/campi_base/</link>
+      <pubDate>Thu, 28 Jun 2018 16:52:23 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/models/campi_base/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Preambolo</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/teoria/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:19 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/teoria/</guid>
-      <description></description>
+      <description>Per apportare modifiche o aggiungere funzionalità ai moduli e alle applicazioni esistenti, Odoo ci mette a disposizione diversi strumenti in base a cosa e dove vogliamo intervenire.
+Odoo ha dai meccanismi interni specifici che si basano sul concetto di Ereditarietà. Tramite questi meccanismi e&amp;rsquo; possibile modificare Modelli esistenti, Viste oppure Dati (come le regole di accesso).
+In questo capito andremo ad aggiungere una funzionalità all&amp;rsquo;applicazione Todo creata in precedenza. Attualmente ogni utente può lavorare solo sui suoi task, perchè non aggiungere qualche funzionalità di social networking come la possibilità di condividere i task e di commentarli con diversi utenti?</description>
     </item>
     
     <item>
@@ -44,12 +55,23 @@ Un elenco di alcuni possibili editor:
     </item>
     
     <item>
+      <title>Relazioni</title>
+      <link>https://metadonors.github.io/odoo.workshop/models/relazioni/</link>
+      <pubDate>Thu, 28 Jun 2018 16:52:26 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/models/relazioni/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Estendere i Modelli</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/estendere_modelli/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:19 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_modelli/</guid>
-      <description></description>
+      <description>In Odoo i nuovi modelli, o le estensioni di quelli esistenti, si creano definendo delle classi Python specifiche. Il meccanismo di ereditarietà di Odoo non si base su quello delle classi Python, ma su un suo approccio interno che si basa sull&amp;rsquo;attributo _inherit specificato nella class.
+In base a come viene utilizzato si possono ottenere differeneti meccanismi di ereditarietà.
+Noi cominceremo con il più semplice dove la classe figlia eredita tutte le funzionalità del padre e dove noi possiamo semplicemente apportare le modifiche che ci interessano.</description>
     </item>
     
     <item>
@@ -77,12 +99,21 @@ $ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, 
     </item>
     
     <item>
+      <title>Computed Fields</title>
+      <link>https://metadonors.github.io/odoo.workshop/models/computed_fields/</link>
+      <pubDate>Thu, 28 Jun 2018 16:52:30 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/models/computed_fields/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Estendere le Viste</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/estendere_viste/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:23 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_viste/</guid>
-      <description></description>
+      <description>Le viste Form, List e Search sono definite nel campo XML arch della loro definizione. Per estenderle dobbiamo modificare quelle definizioni XML. Farlo significa localizzare i tag XML e introdurre delle modifiche in quei punti.</description>
     </item>
     
     <item>

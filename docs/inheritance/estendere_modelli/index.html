@@ -12,19 +12,19 @@
     <title>Estendere i Modelli :: Odoo Workshop</title>
     
     
-    <link href="/odoo.workshop/css/nucleus.css?1530197114" rel="stylesheet">
-    <link href="/odoo.workshop/css/font-awesome.min.css?1530197114" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1530197114" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1530197114" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530197114" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1530197114" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1530197114" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1530197114" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1530201830" rel="stylesheet">
+    <link href="/odoo.workshop/css/font-awesome.min.css?1530201830" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1530201830" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1530201830" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530201830" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1530201830" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1530201830" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1530201830" rel="stylesheet">
     
-      <link href="/odoo.workshop/css/theme-metadonors.css?1530197114" rel="stylesheet">
+      <link href="/odoo.workshop/css/theme-metadonors.css?1530201830" rel="stylesheet">
     
 
-    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530197114"></script>
+    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530201830"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530197114"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530197114"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530201830"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530201830"></script>
 <script type="text/javascript">
     
         var baseurl = '\/odoo.workshop\/';
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1530197114"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1530201830"></script>
 
     
   </div>
@@ -316,9 +316,9 @@
  
   
     
-      <li data-nav-id="/odoo.workshop/inheritance/teoria/" title="Teoria" class="dd-item ">
+      <li data-nav-id="/odoo.workshop/inheritance/teoria/" title="Preambolo" class="dd-item ">
         <a href="/odoo.workshop/inheritance/teoria/">
-        Teoria
+        Preambolo
         
         </a>
     </li>
@@ -409,6 +409,73 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/models/campi_base/" title="Campi Base" class="dd-item ">
+        <a href="/odoo.workshop/models/campi_base/">
+        Campi Base
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/models/relazioni/" title="Relazioni" class="dd-item ">
+        <a href="/odoo.workshop/models/relazioni/">
+        Relazioni
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/models/computed_fields/" title="Computed Fields" class="dd-item ">
+        <a href="/odoo.workshop/models/computed_fields/">
+        Computed Fields
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -584,7 +651,20 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#aggiungere-campi-a-un-modello">Aggiungere campi a un modello</a></li>
+<li><a href="#modificare-campi-esistenti">Modificare campi esistenti</a></li>
+<li><a href="#modificare-i-metodi-del-modello">Modificare i metodi del modello</a></li>
+<li><a href="#continua">Continua</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -602,6 +682,108 @@
         
 
 
+
+
+<p>In Odoo i nuovi modelli, o le estensioni di quelli esistenti, si creano definendo delle classi Python specifiche. Il meccanismo di ereditarietà di Odoo non si base su quello delle classi Python, ma su un suo approccio interno che si basa sull&rsquo;attributo <em>_inherit</em> specificato nella class.</p>
+
+<p>In base a come viene utilizzato si possono ottenere differeneti meccanismi di ereditarietà.</p>
+
+<p>Noi cominceremo con il più semplice dove la classe figlia eredita tutte le funzionalità del padre e dove noi possiamo semplicemente apportare le modifiche che ci interessano.</p>
+
+<p>Per prima cosa andiamo a creare la cartella <em>models/</em> con il file <em>__init__.py</em> e il file <em>todo_task.py</em> che ospiterà le nostre modifiche, ottenendo questa struttura:</p>
+
+<pre><code>    todo_user/
+        models/
+            __init__.py
+            todo_task.py
+        __init__.py
+        __manifest__.py
+</code></pre>
+
+<p>Inseriamo gli import necessari per far funzionare il codice Python mettendo all&rsquo;interno del file <em>todo_user/__init__.py</em></p>
+
+<pre><code class="language-python">from . import models
+</code></pre>
+
+<p>e all&rsquo;interno del file <em>todo_user/models/__init__.py</em></p>
+
+<pre><code class="language-python">from . import todo_task
+</code></pre>
+
+<h3 id="aggiungere-campi-a-un-modello">Aggiungere campi a un modello</h3>
+
+<p>A questo punto siamo pronti a modificare il file <em>todo_task.py</em> per estendere il nostro precedente modello. Aprimo il file e scriviamo quanto segue</p>
+
+<pre><code class="language-python"># -*- coding: utf-8 -*-
+from odoo import models, fields, api
+
+class TodoTask(models.Model):
+    _inherit = 'todo.task'
+
+    user_id = fields.Many2one('res.users', 'Assigned to')
+    deadline_date = fields.Date('Deadline')
+
+</code></pre>
+
+<p>Come vedete non c&rsquo;è nessun meccanismo python di eredità e anche il nome della classe è irrilevante a questi fini. Il punto chiave è l&rsquo;attributo <em>_inherit</em> che dice ad Odoo di estendere il modello <em>todo.task</em>. Le altre linee sono normali dichiarazioni di campi.</p>
+
+<h3 id="modificare-campi-esistenti">Modificare campi esistenti</h3>
+
+<p>Aggiungere campi è piuttosto semplice, ma è anche possibile apportare modifiche a campi esitenti. Per farlo è sufficiente ridichiara il campo e passare solo gli attributi che si vogliono andare a modificare.</p>
+
+<p>Per esempio per modificare il tooltip del campo name possiamo aggiungere il campo</p>
+
+<pre><code class="language-python">    name = fields.Char(help=&quot;Cosa bisogna fare?&quot;)
+</code></pre>
+
+<p>Per vedere se le modifiche che abbiamo apportato sono corrette dobbiamo effettuare l&rsquo;upgrade del modulo <em>todo_user</em>, ricaricare la pagina e controllare che il tooltip presente nella Form View dei Todo Task sia aggiornata con quando abbiamo scritto, come nell&rsquo;immagine che segue</p>
+
+<p><img src="/odoo.workshop/screen/estendere_modelli/label.png?width=60pc" alt="label" /></p>
+
+<h3 id="modificare-i-metodi-del-modello">Modificare i metodi del modello</h3>
+
+<p>Con l&rsquo;eredità dei modelli, oltre ai campi, è posssibile anche i metodi associati. Aggiungere un nuovo metodo è semplice: è sufficiente dichiarare una nuova funzione. Se invece si vuole modificare il comportamento di un metodo esistente, si può procedere sovrascrivendo il metodo stesso ed è possibile, se necessario, invocare comunque il metodo padre con la funzione <em>super()</em> di Python.</p>
+
+<div class="notices warning" ><p>Cambiare gli argomenti dei metodi esistenti può essere pericoloso perchè non potete sapere chi li sta già invocando. In caso sia necessario è opportuno inizializare gli argomenti con un valore predefinito.</p>
+</div>
+
+
+<p>Nel nostro caso vogliamo che quando un utente invoca il metodo <em>do_clear_done</em> non vengano chiusi tutti i task completati ma solo quelli assegnati all&rsquo;utente stesso oppure quelli non assegnati.</p>
+
+<p>Per farlo aggiungiamo il seguente metodo all&rsquo;oggetto <em>TodoTask</em> nel file <em>models/todo_task.py</em></p>
+
+<pre><code class="language-python">@api.multi
+def do_clear_done(self):
+    dones = self.search([
+        ('is_done', '=', True),
+        '|', ('user_id', '=', self.env.uid),
+             ('user_id', '=', False)
+    ])
+
+    dones.write({'active': False})
+</code></pre>
+
+<p>Vediamo invece come estendere un metodo, senza sovrascrivere completamente la logica presente nel modello originale. Per la funzione <em>do_toggle_done</em> vogliamo aggiungere un controllo in caso l&rsquo;utente stia cercando di chiudere un task che non gli è assegnato. In quel caso lanciamo un errore, altrimenti procediamo come consueto.</p>
+
+<p>Per ottenere questo comportamente modifichiamo il file <em>models/todo_task.py</em>, aggiungendo neglle importazioni iniziali</p>
+
+<pre><code class="language-python">from odoo.exceptions import ValidationError
+</code></pre>
+
+<p>e nel corpo della classe il metodo</p>
+
+<pre><code class="language-python">@api.multi
+def do_toggle_done(self):
+    for task in self:
+        if tast.user_id != self.env.user:
+            raise ValidationError(&quot;Solo l'incaricato può chiudere questo task&quot;)
+
+    return super(TodoTask, self).do_toggle_done()
+</code></pre>
+
+<h3 id="continua">Continua</h3>
+
+<p>A questo punto per poter testare queste modifiche è necessario apportare delle modifiche alle viste di questo modello <a href="/odoo.workshop/inheritance/estendere_viste/">estendendo le Viste</a></p>
 
 
 <footer class=" footline" >
@@ -899,6 +1081,54 @@
                     
 
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -989,7 +1219,7 @@
 
 
         
-            <a class="nav nav-prev" href="/odoo.workshop/inheritance/teoria/" title="Teoria"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/odoo.workshop/inheritance/teoria/" title="Preambolo"> <i class="fa fa-chevron-left"></i></a>
         
         
             <a class="nav nav-next" href="/odoo.workshop/inheritance/estendere_viste/" title="Estendere le Viste" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1001,20 +1231,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1530197114"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530197114"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530197114"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1530197114"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1530197114"></script>
-    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530197114"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1530197114"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1530201830"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530201830"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530201830"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1530201830"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1530201830"></script>
+    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530201830"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1530201830"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530197114"></script>
-    <script src="/odoo.workshop/js/learn.js?1530197114"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1530197114"></script>
+    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530201830"></script>
+    <script src="/odoo.workshop/js/learn.js?1530201830"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1530201830"></script>
 
-    <link href="/odoo.workshop/mermaid/mermaid.css?1530197114" type="text/css" rel="stylesheet" />
-    <script src="/odoo.workshop/mermaid/mermaid.js?1530197114"></script>
+    <link href="/odoo.workshop/mermaid/mermaid.css?1530201830" type="text/css" rel="stylesheet" />
+    <script src="/odoo.workshop/mermaid/mermaid.js?1530201830"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

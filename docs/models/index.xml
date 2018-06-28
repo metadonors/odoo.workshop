@@ -11,5 +11,32 @@
 	<atom:link href="https://metadonors.github.io/odoo.workshop/models/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Campi Base</title>
+      <link>https://metadonors.github.io/odoo.workshop/models/campi_base/</link>
+      <pubDate>Thu, 28 Jun 2018 16:52:23 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/models/campi_base/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Relazioni</title>
+      <link>https://metadonors.github.io/odoo.workshop/models/relazioni/</link>
+      <pubDate>Thu, 28 Jun 2018 16:52:26 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/models/relazioni/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computed Fields</title>
+      <link>https://metadonors.github.io/odoo.workshop/models/computed_fields/</link>
+      <pubDate>Thu, 28 Jun 2018 16:52:30 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/models/computed_fields/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
