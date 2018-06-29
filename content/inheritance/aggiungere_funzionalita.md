@@ -4,9 +4,9 @@ date: 2018-06-28T16:39:25+02:00
 weight: 5
 ---
 
-Finora abbiamo visto come estendere applicazioni esistenti aggiungendo funzionalità create da noi. Ma Odoo permette di fare molto di più: possiamo aggiungere funzionalità implementate di moduli scritti da altre persone.
+Finora abbiamo visto come estendere applicazioni esistenti aggiungendo funzionalità create da noi. Ma Odoo permette di fare molto di più: possiamo aggiungere funzionalità implementate in moduli scritti da altre persone.
 
-Nel nostro caso vogliamo aggiugere la possibilità per gli utenti di commentare i task e di poterli seguire, alla maniera di Twitter. Questa funzionalità in Odoo è implementata nel modulo _mail_, più peccificatamente nel modello _mail.thread_ di quel modulo.
+Nel nostro caso vogliamo aggiugere la possibilità per gli utenti di commentare i task e di poterli seguire, alla maniera di Twitter. Questa funzionalità in Odoo è implementata nel modulo _mail_, più specificatamente nel modello _mail.thread_ di quel modulo.
 
 Per aggiungerlo al nostro modello _todo.task_ dobbiamo procede in questo modo:
 

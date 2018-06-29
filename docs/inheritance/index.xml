@@ -60,8 +60,8 @@ Ogni volta che dichiariamo un &amp;lt;record id=&amp;ldquo;x&amp;rdquo; model=&a
       <pubDate>Thu, 28 Jun 2018 16:39:25 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/aggiungere_funzionalita/</guid>
-      <description>Finora abbiamo visto come estendere applicazioni esistenti aggiungendo funzionalità create da noi. Ma Odoo permette di fare molto di più: possiamo aggiungere funzionalità implementate di moduli scritti da altre persone.
-Nel nostro caso vogliamo aggiugere la possibilità per gli utenti di commentare i task e di poterli seguire, alla maniera di Twitter. Questa funzionalità in Odoo è implementata nel modulo mail, più peccificatamente nel modello mail.thread di quel modulo.</description>
+      <description>Finora abbiamo visto come estendere applicazioni esistenti aggiungendo funzionalità create da noi. Ma Odoo permette di fare molto di più: possiamo aggiungere funzionalità implementate in moduli scritti da altre persone.
+Nel nostro caso vogliamo aggiugere la possibilità per gli utenti di commentare i task e di poterli seguire, alla maniera di Twitter. Questa funzionalità in Odoo è implementata nel modulo mail, più specificatamente nel modello mail.thread di quel modulo.</description>
     </item>
     
   </channel>

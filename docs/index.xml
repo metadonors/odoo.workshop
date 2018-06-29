@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>Campi Base</title>
-      <link>https://metadonors.github.io/odoo.workshop/models/campi_base/</link>
-      <pubDate>Thu, 28 Jun 2018 16:52:23 +0200</pubDate>
-      
-      <guid>https://metadonors.github.io/odoo.workshop/models/campi_base/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Preambolo</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/teoria/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:19 +0200</pubDate>
@@ -29,6 +20,17 @@
       <description>Per apportare modifiche o aggiungere funzionalità ai moduli e alle applicazioni esistenti, Odoo ci mette a disposizione diversi strumenti in base a cosa e dove vogliamo intervenire.
 Odoo ha dai meccanismi interni specifici che si basano sul concetto di Ereditarietà. Tramite questi meccanismi e&amp;rsquo; possibile modificare Modelli esistenti, Viste oppure Dati (come le regole di accesso).
 In questo capito andremo ad aggiungere una funzionalità all&amp;rsquo;applicazione Todo creata in precedenza. Attualmente ogni utente può lavorare solo sui suoi task, perchè non aggiungere qualche funzionalità di social networking come la possibilità di condividere i task e di commentarli con diversi utenti?</description>
+    </item>
+    
+    <item>
+      <title>Preambolo</title>
+      <link>https://metadonors.github.io/odoo.workshop/models/preambolo/</link>
+      <pubDate>Thu, 28 Jun 2018 16:39:19 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/models/preambolo/</guid>
+      <description>Per andare a esplorare cosa possiamo fare con i nostri modelli prepariamoci prima un nuovo modulo che estende gli esistenti. Per analizzare come funzionano le relazioni aggiungeremo anche un paio di modelli.
+ TodoProjects progetti per raggruppare i task TodoTag tag per poter classificare i vari task  Abbiamo gia&amp;rsquo; un modulo preparato con queste modifiche, l&amp;rsquo;unica cosa che dobbiamo fare è scaricarlo nella nostra directory addons.
+Per farlo, da terminale, entriamo nella cartella addons</description>
     </item>
     
     <item>
@@ -55,12 +57,13 @@ Un elenco di alcuni possibili editor:
     </item>
     
     <item>
-      <title>Relazioni</title>
-      <link>https://metadonors.github.io/odoo.workshop/models/relazioni/</link>
-      <pubDate>Thu, 28 Jun 2018 16:52:26 +0200</pubDate>
+      <title>Campi Base</title>
+      <link>https://metadonors.github.io/odoo.workshop/models/campi_base/</link>
+      <pubDate>Thu, 28 Jun 2018 16:52:23 +0200</pubDate>
       
-      <guid>https://metadonors.github.io/odoo.workshop/models/relazioni/</guid>
-      <description></description>
+      <guid>https://metadonors.github.io/odoo.workshop/models/campi_base/</guid>
+      <description>L&amp;rsquo;ORM di Odoo permette di creare modelli complessi composti da attributi basa su tipi di campi semplici. Questi campi mappano direttamente sul database e, in base al tipo, possono avere comportamenti differenti a livello di interfaccia utente. I campi di testo verranno renderizzati come semplici tag &amp;lt;input&amp;gt;, le date presenteranon un calendario, le selezioni multiple un tag &amp;lt;select&amp;gt; e così via.
+Tipi di Campi Ogni tipo di campo ha può accettare una serie di parametri che variano il suo comportamento.</description>
     </item>
     
     <item>
@@ -99,12 +102,13 @@ $ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, 
     </item>
     
     <item>
-      <title>Computed Fields</title>
-      <link>https://metadonors.github.io/odoo.workshop/models/computed_fields/</link>
-      <pubDate>Thu, 28 Jun 2018 16:52:30 +0200</pubDate>
+      <title>Relazioni</title>
+      <link>https://metadonors.github.io/odoo.workshop/models/relazioni/</link>
+      <pubDate>Thu, 28 Jun 2018 16:52:26 +0200</pubDate>
       
-      <guid>https://metadonors.github.io/odoo.workshop/models/computed_fields/</guid>
-      <description></description>
+      <guid>https://metadonors.github.io/odoo.workshop/models/relazioni/</guid>
+      <description>Abbiamo visto come lavoare con tipi di campi non relazionali, ma nelle applicazioni reali una buona parte delle strutture dati descrivono relazioni fra le entità. L&amp;rsquo;ORM di Odoo è in grado di gestire i vari tipi di relazioni fra oggetti, mettendo a disposizione un set di funzionalità pronte all&amp;rsquo;uso.
+Per avere chiaro cosa stiamo per fare, chiariamo cosa vogliamo costruire. Finora abbiamo lavorato con l&amp;rsquo;oggetto TodoTask. Adesso aggiungeremo il modello TodoProject che raggruppa i Task, e il modello TodoTag che li classifica.</description>
     </item>
     
     <item>
@@ -139,6 +143,16 @@ Moduli I moduli sono i componenti essenziali che possono essere aggiunti a Odoo.
     </item>
     
     <item>
+      <title>Computed Fields</title>
+      <link>https://metadonors.github.io/odoo.workshop/models/computed_fields/</link>
+      <pubDate>Thu, 28 Jun 2018 16:52:30 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/models/computed_fields/</guid>
+      <description>Tutti i campi che abbiamo definito fin qui sono gestiti manualmente. L&amp;rsquo;utente entra in modalità modifica di un oggetto, aggiorna i valori e preme salva. Oddo permette però di avere altri campi il cui valore non viene definito direttamente dall&amp;rsquo;utente ma viene invece calcola attraverso una funzione.
+Computed fields Un computed field viene dichiara esattamente come i campi normali con l&amp;rsquo;unica differenza di avere un parametro compute che indica la funzione che Odoo utilizzerà per calcolarne il valore.</description>
+    </item>
+    
+    <item>
       <title>Estendere i Dati</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/estendere_dati/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:25 +0200</pubDate>
@@ -165,8 +179,8 @@ Aggiungere la logica applicativa Nella precedente sezione abbiamo aggiunto due b
       <pubDate>Thu, 28 Jun 2018 16:39:25 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/aggiungere_funzionalita/</guid>
-      <description>Finora abbiamo visto come estendere applicazioni esistenti aggiungendo funzionalità create da noi. Ma Odoo permette di fare molto di più: possiamo aggiungere funzionalità implementate di moduli scritti da altre persone.
-Nel nostro caso vogliamo aggiugere la possibilità per gli utenti di commentare i task e di poterli seguire, alla maniera di Twitter. Questa funzionalità in Odoo è implementata nel modulo mail, più peccificatamente nel modello mail.thread di quel modulo.</description>
+      <description>Finora abbiamo visto come estendere applicazioni esistenti aggiungendo funzionalità create da noi. Ma Odoo permette di fare molto di più: possiamo aggiungere funzionalità implementate in moduli scritti da altre persone.
+Nel nostro caso vogliamo aggiugere la possibilità per gli utenti di commentare i task e di poterli seguire, alla maniera di Twitter. Questa funzionalità in Odoo è implementata nel modulo mail, più specificatamente nel modello mail.thread di quel modulo.</description>
     </item>
     
     <item>
