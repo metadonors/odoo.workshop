@@ -113,7 +113,9 @@ $ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, 
       <pubDate>Thu, 28 Jun 2018 16:39:23 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_viste/</guid>
-      <description>Le viste Form, List e Search sono definite nel campo XML arch della loro definizione. Per estenderle dobbiamo modificare quelle definizioni XML. Farlo significa localizzare i tag XML e introdurre delle modifiche in quei punti.</description>
+      <description>Un po&amp;rsquo; di teoria Le viste Form, List e Search sono definite utilizzando la struttura XML arch. Per estenderle dobbiamo modificare quelle definizioni XML e farlo significa localizzare i tag XML che vogliamo cambiare e introdurre le nostre modifiche in quei punti.
+Cominciamo subito con un esempio di una vista che ne estende un&amp;rsquo;altra:
+&amp;lt;record model=&amp;quot;ir.ui.view&amp;quot; id=&amp;quot;todo_task_form_view_inherited&amp;quot;&amp;gt; &amp;lt;field name=&amp;quot;name&amp;quot;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;quot;model&amp;quot;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;quot;inherit_id&amp;quot; ref=&amp;quot;todo_task_form_view&amp;quot;/&amp;gt; &amp;lt;field name=&amp;quot;arch&amp;quot; type=&amp;quot;xml&amp;quot;&amp;gt; &amp;lt;!-- ...cerca e modifica i tag XML in questo punto.</description>
     </item>
     
     <item>
@@ -142,7 +144,8 @@ Moduli I moduli sono i componenti essenziali che possono essere aggiunti a Odoo.
       <pubDate>Thu, 28 Jun 2018 16:39:25 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_dati/</guid>
-      <description></description>
+      <description>A differenza delle viste i file xml contenenti dati, come i menuitem oppure le security rules, non hanno l&amp;rsquo;elemento arch e non possono quindi essere modificati utilizzanto XPath. Ma possono comunque essere modificati, rimpiazzando i valori contenuti nei loro campi.
+Ogni volta che dichiariamo un &amp;lt;record id=&amp;ldquo;x&amp;rdquo; model=&amp;ldquo;y&amp;rdquo;&amp;gt; Odoo effettua una insert o una update nel database, quindi riutilizzando gli stessi id possiamo andare ad aggiornare i dati inseriti dai moduli genitori.</description>
     </item>
     
     <item>
@@ -154,6 +157,16 @@ Moduli I moduli sono i componenti essenziali che possono essere aggiunti a Odoo.
       <description>A questo punto è arrivato il momento di aggiungere della logica applicativa al nostro modulo. Per farlo possiamo sfruttare i bottoni che abbiamo aggiunto nella sezione precedente relativa alle viste.
 Aggiungere la logica applicativa Nella precedente sezione abbiamo aggiunto due bottoni per invocare delle funzioni Python sul nostro backend. Riporto qui il codice interessato per comodità.
 &amp;lt;button name=&amp;quot;do_toggle_button&amp;quot; type=&amp;quot;object&amp;quot; string=&amp;quot;Toggle Done&amp;quot; class=&amp;quot;oe_highlight&amp;quot;/&amp;gt;  In questo tag stiamo definendo alcuni attributi, vediamoli nel dettaglio:</description>
+    </item>
+    
+    <item>
+      <title>Aggiungere funzionalità</title>
+      <link>https://metadonors.github.io/odoo.workshop/inheritance/aggiungere_funzionalita/</link>
+      <pubDate>Thu, 28 Jun 2018 16:39:25 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/inheritance/aggiungere_funzionalita/</guid>
+      <description>Finora abbiamo visto come estendere applicazioni esistenti aggiungendo funzionalità create da noi. Ma Odoo permette di fare molto di più: possiamo aggiungere funzionalità implementate di moduli scritti da altre persone.
+Nel nostro caso vogliamo aggiugere la possibilità per gli utenti di commentare i task e di poterli seguire, alla maniera di Twitter. Questa funzionalità in Odoo è implementata nel modulo mail, più peccificatamente nel modello mail.thread di quel modulo.</description>
     </item>
     
     <item>

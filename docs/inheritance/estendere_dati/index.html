@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.42.1" />
+    <meta name="generator" content="Hugo 0.42.2" />
     <meta name="description" content="Odoo Workshop">
 <meta name="author" content="Metadonors">
 
@@ -12,19 +12,19 @@
     <title>Estendere i Dati :: Odoo Workshop</title>
     
     
-    <link href="/odoo.workshop/css/nucleus.css?1530201830" rel="stylesheet">
-    <link href="/odoo.workshop/css/font-awesome.min.css?1530201830" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1530201830" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1530201830" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530201830" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1530201830" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1530201830" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1530201830" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1530266206" rel="stylesheet">
+    <link href="/odoo.workshop/css/font-awesome.min.css?1530266206" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1530266206" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1530266206" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530266206" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1530266206" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1530266206" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1530266206" rel="stylesheet">
     
-      <link href="/odoo.workshop/css/theme-metadonors.css?1530201830" rel="stylesheet">
+      <link href="/odoo.workshop/css/theme-metadonors.css?1530266206" rel="stylesheet">
     
 
-    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530201830"></script>
+    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530266206"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530201830"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530201830"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530266206"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530266206"></script>
 <script type="text/javascript">
     
         var baseurl = '\/odoo.workshop\/';
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1530201830"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1530266206"></script>
 
     
   </div>
@@ -385,6 +385,25 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/inheritance/aggiungere_funzionalita/" title="Aggiungere funzionalità" class="dd-item ">
+        <a href="/odoo.workshop/inheritance/aggiungere_funzionalita/">
+        Aggiungere funzionalità
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -617,6 +636,17 @@
               <div>
                 <div id="top-bar">
                 
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/metadonors/odoo.workshop/tree/master/content/inheritance/estendere_dati.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
                     <span id="sidebar-toggle-span">
@@ -651,7 +681,19 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#modificare-i-menuitem-e-le-action">Modificare i Menuitem e le Action</a></li>
+<li><a href="#modficare-le-regole-di-sicurezza">Modficare le regole di sicurezza</a></li>
+<li><a href="#continua">Continua</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -669,6 +711,94 @@
         
 
 
+
+
+<p>A differenza delle viste i file xml contenenti dati, come i menuitem oppure le security rules, non hanno l&rsquo;elemento <em>arch</em> e non possono quindi essere modificati utilizzanto XPath. Ma possono comunque essere modificati, rimpiazzando i valori contenuti nei loro campi.</p>
+
+<p>Ogni volta che dichiariamo un <em>&lt;record id=&ldquo;x&rdquo; model=&ldquo;y&rdquo;&gt;</em> Odoo effettua una <em>insert</em> o una <em>update</em> nel database, quindi riutilizzando gli stessi id possiamo andare ad aggiornare i dati inseriti dai moduli genitori.</p>
+
+<p>Vediamo nel dettaglio cosa significa.</p>
+
+<h3 id="modificare-i-menuitem-e-le-action">Modificare i Menuitem e le Action</h3>
+
+<p>Per fare un esempio modifichiamo l&rsquo;elemento del menu creato dalla <em>todo_app</em> andando a modificare la sua stringa in <em>I miei Todo</em>. Per farlo possiamo aggiungere in fondo al file <em>views/todo_task.xml</em></p>
+
+<pre><code class="language-xml">&lt;!-- Modifica l'elemento del menu --&gt;
+&lt;record id=&quot;todo_app.menu_todo_task&quot; model=&quot;ir.ui.menu&quot;&gt;
+    &lt;field name=&quot;name&quot;&gt;I miei Todo&lt;/field&gt;
+&lt;/record&gt;
+</code></pre>
+
+<p>Possiamo anche modificare la <em>action</em> che abbiamo creato precedentemente. Le <em>action</em> possono avere un parametro <em>context</em> opzionale che va a modificare il comportamento della stessa, per esempio aggiungendogli dei valori di default che verranno utilizzati per popolare <em>field</em> o <em>filters</em>. Quello che faremo sarà modificare la action per far si che venga visualizzata la pagina della lista Todo con il filtro <em>I miei Task</em> preselezionato. Aggiungiamo quindi in fondo al file <em>views/todo_task.xml</em></p>
+
+<pre><code class="language-xml">&lt;!-- Modifica la action --&gt;
+&lt;record id=&quot;todo_app.action_todo_task&quot; model=&quot;ir.actions.act_window&quot;&gt;
+    &lt;field name=&quot;context&quot;&gt;{'search_default_filter_my_tasks': True}&lt;/field&gt;
+&lt;/record&gt;
+</code></pre>
+
+<p>Se abbiamo fatto tutto correttamente dopo un upgrade del modulo</p>
+
+<pre><code>    $ docker-compose run odoo upgrade todo_user
+</code></pre>
+
+<p>dovremmo vedere:</p>
+
+<p><img src="/odoo.workshop/screen/estendere_dati/menuactions.png?width=60pc" alt="menuactions" /></p>
+
+<h3 id="modficare-le-regole-di-sicurezza">Modficare le regole di sicurezza</h3>
+
+<p>La nostra applicazione precedente permette agli utenti di vedere solo i Task creati da loro stessi. Ora vogliamo che i task siano accessibili all&rsquo;incaricato e a tutti i <em>follower</em> del task. Come per i <em>menuitem</em> e le <em>actions</em> andremo a sovrascriere la regola precedentemente creata modificando il suo campo <em>domain_force</em>.</p>
+
+<p>Essendo una regola di sicurezza, per convenzione, la metteremo nella sottocartella <em>security/</em> in un file che chiameremo <em>todo_access_rules.xml</em></p>
+
+<pre><code>    todo_user/
+        models/
+            __init__.py
+            todo_task.py
+        views/
+            todo_task.xml
+        security/
+            todo_access_rules.xml
+        __init__.py
+        __manifest__.py
+</code></pre>
+
+<p>che andremo successivamente ad aggiungere anche al manifesto dell&rsquo;applicazione:</p>
+
+<pre><code class="language-python">{
+    'name': 'Multiuser TODO',
+    'description': 'Estende la Todo app per farla diventare Multi Utente',
+    'author': 'Metadonors',
+    'depends': ['todo_app'],
+    'data': [
+        'security/todo_access_rules.xml', # &lt;-- Aggiungiamo questa riga
+        'views/todo_task.xml'
+    ]
+}
+</code></pre>
+
+<p>Il contenuto del file per la regola di accesso sarà quindi il seguente:</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;odoo&gt;
+    &lt;data noupdate=&quot;1&quot;&gt;
+        &lt;record model=&quot;ir.rule&quot; id=&quot;todo_app.todo_task_user_rule&quot;&gt;
+            &lt;field name=&quot;name&quot;&gt;todo.task.user.rule&lt;/field&gt;
+            &lt;field name=&quot;model_id&quot; ref=&quot;model_todo_task&quot;/&gt;
+            &lt;field name=&quot;groups&quot; eval=&quot;[4, ref('base.group_user')]&quot;/&gt;
+            &lt;field name=&quot;domain_force&quot;&gt;
+                ['|', ('user_id', 'in', (user.id, False)),
+                      ('message_follower_ids', 'in', [user.partner_id.id])]
+            &lt;/field&gt;
+        &lt;/record&gt;
+    &lt;/data&gt;
+&lt;/odoo&gt;
+</code></pre>
+
+<h3 id="continua">Continua</h3>
+
+<p>Abbiamo parlato di Follower, perchè mettevamo le basi per la prossima funzionalità: aggiungere un pizzico di social networking dando agli utenti la possibilità di commentare e seguire l&rsquo;evoluzione dei nostri task. Questa è una funzionalità già presente in Odoo implementarla ci permette di vedere come <a href="/odoo.workshop/inheritance/aggiungere_funzionalita/">riutilizzare il codice di terzi moduli</a></p>
 
 
 <footer class=" footline" >
@@ -947,9 +1077,6 @@
             
         
                     
-            
-        
-                    
                         
             
             
@@ -957,6 +1084,25 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1107,7 +1253,7 @@
             <a class="nav nav-prev" href="/odoo.workshop/inheritance/estendere_viste/" title="Estendere le Viste"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/odoo.workshop/models/" title="I Modelli" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/odoo.workshop/inheritance/aggiungere_funzionalita/" title="Aggiungere funzionalità" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1116,20 +1262,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1530201830"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530201830"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530201830"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1530201830"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1530201830"></script>
-    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530201830"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1530201830"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1530266206"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530266206"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530266206"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1530266206"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1530266206"></script>
+    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530266206"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1530266206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530201830"></script>
-    <script src="/odoo.workshop/js/learn.js?1530201830"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1530201830"></script>
+    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530266206"></script>
+    <script src="/odoo.workshop/js/learn.js?1530266206"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1530266206"></script>
 
-    <link href="/odoo.workshop/mermaid/mermaid.css?1530201830" type="text/css" rel="stylesheet" />
-    <script src="/odoo.workshop/mermaid/mermaid.js?1530201830"></script>
+    <link href="/odoo.workshop/mermaid/mermaid.css?1530266206" type="text/css" rel="stylesheet" />
+    <script src="/odoo.workshop/mermaid/mermaid.js?1530266206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

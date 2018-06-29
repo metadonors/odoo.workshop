@@ -5,7 +5,7 @@ publishDir = "docs"
 theme = "hugo-theme-learn"
 
 [params]
-editURL = ""
+editURL = "https://github.com/metadonors/odoo.workshop/tree/master/content/"
 # Author of the site, will be used in meta information
 author = "Metadonors"
 description = "Odoo Workshop"

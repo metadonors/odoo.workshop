@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.42.1" />
+    <meta name="generator" content="Hugo 0.42.2" />
     <meta name="description" content="Odoo Workshop">
 <meta name="author" content="Metadonors">
 
@@ -12,19 +12,19 @@
     <title>Estendere le Viste :: Odoo Workshop</title>
     
     
-    <link href="/odoo.workshop/css/nucleus.css?1530201830" rel="stylesheet">
-    <link href="/odoo.workshop/css/font-awesome.min.css?1530201830" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1530201830" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1530201830" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530201830" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1530201830" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1530201830" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1530201830" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1530266206" rel="stylesheet">
+    <link href="/odoo.workshop/css/font-awesome.min.css?1530266206" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1530266206" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1530266206" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530266206" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1530266206" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1530266206" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1530266206" rel="stylesheet">
     
-      <link href="/odoo.workshop/css/theme-metadonors.css?1530201830" rel="stylesheet">
+      <link href="/odoo.workshop/css/theme-metadonors.css?1530266206" rel="stylesheet">
     
 
-    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530201830"></script>
+    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530266206"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530201830"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530201830"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530266206"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530266206"></script>
 <script type="text/javascript">
     
         var baseurl = '\/odoo.workshop\/';
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1530201830"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1530266206"></script>
 
     
   </div>
@@ -385,6 +385,25 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/inheritance/aggiungere_funzionalita/" title="Aggiungere funzionalità" class="dd-item ">
+        <a href="/odoo.workshop/inheritance/aggiungere_funzionalita/">
+        Aggiungere funzionalità
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -617,6 +636,17 @@
               <div>
                 <div id="top-bar">
                 
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/metadonors/odoo.workshop/tree/master/content/inheritance/estendere_viste.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
                     <span id="sidebar-toggle-span">
@@ -651,7 +681,22 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#un-po-di-teoria">Un po&rsquo; di teoria</a></li>
+<li><a href="#estendere-le-nostre-viste">Estendere le nostre viste</a></li>
+<li><a href="#estendere-la-form-view">Estendere la Form View</a></li>
+<li><a href="#estendere-la-list-view">Estendere la List View</a></li>
+<li><a href="#estendere-la-search-view">Estendere la Search View</a></li>
+<li><a href="#continua">Continua</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -669,7 +714,202 @@
         
 
 
-<p>Le viste Form, List e Search sono definite nel campo XML <em>arch</em> della loro definizione. Per estenderle dobbiamo modificare quelle definizioni XML. Farlo significa localizzare i tag XML e introdurre delle modifiche in quei punti.</p>
+
+
+<h3 id="un-po-di-teoria">Un po&rsquo; di teoria</h3>
+
+<p>Le viste Form, List e Search sono definite utilizzando la struttura XML <em>arch</em>. Per estenderle dobbiamo modificare quelle definizioni XML e farlo significa localizzare i tag XML che vogliamo cambiare e introdurre le nostre modifiche in quei punti.</p>
+
+<p>Cominciamo subito con un esempio di una vista che ne estende un&rsquo;altra:</p>
+
+<pre><code class="language-xml">&lt;record model=&quot;ir.ui.view&quot; id=&quot;todo_task_form_view_inherited&quot;&gt;
+    &lt;field name=&quot;name&quot;&gt;todo.task.form&lt;/field&gt;
+    &lt;field name=&quot;model&quot;&gt;todo.task&lt;/field&gt;
+    &lt;field name=&quot;inherit_id&quot; ref=&quot;todo_task_form_view&quot;/&gt;
+    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;
+        &lt;!-- ...cerca e modifica i tag XML in questo punto... --&gt;
+    &lt;/field&gt;
+&lt;/record&gt;
+</code></pre>
+
+<p>Si nota che l&rsquo;unica differenza dalla dichiarazione di una vista normale è la presenza del compo <em>inherit_id</em> in cui si definisce l&rsquo;identificativo della vista che si vuole estendere.</p>
+
+<p>Il metodo standard per indicare gli elementi XML da modificare è utilizzare un espressione <a href="https://it.wikipedia.org/wiki/XPath">XPath</a> per identificare un
+ elemento presente nella vista. Una volta identificato si può decidere che tipo di modifica apportare.</p>
+
+<p>Per fare un esempio, se nel nostro form del modello TodoTask volessimo aggiungere il campo <em>deadline_date</em> <strong>prima</strong> del campo <em>is_done</em> aggiungeremmo questa righa al nostro campo <em>arch</em></p>
+
+<pre><code class="language-xml"> &lt;!-- Localizza il campo is_done con xpath e specifica la posizione--&gt; 
+&lt;xpath expr=&quot;//field[@name]='is_done'&quot; position=&quot;before&quot;&gt;
+    &lt;!-- Aggiunge il campo deadline_date in quel determinato punto --&gt;
+    &lt;field name=&quot;deadline_date&quot;/&gt;
+&lt;/xpath&gt;
+</code></pre>
+
+<p>XPath è uno strumento molto potente ed espressivo, ma spesso troppo prolisso. In questo esempio, come nella maggior parte dei casi, il nostro intento è quello di localizzare uno specifico tag <em>field</em> all&rsquo;interno della vista, quindi le nostre espressioni xpath saranno spesso molto simili. Per semplificare il lavoro, Odoo fornisce una scorciatoia per questo tipo di espressione:</p>
+
+<pre><code class="language-xml"> &lt;field name=&quot;is_done&quot; position=&quot;before&quot;&gt;
+    &lt;field name=&quot;deadline_date&quot;/&gt;
+&lt;/field&gt;
+</code></pre>
+
+<p>Utilizzando xpath possiamo in compenso localizzare quasiasi altro tag all&rsquo;interno della vista come <em>&lt;sheet&gt;</em>, <em>&lt;form&gt;</em>, <em>&lt;group&gt;</em> ma anche i classsici <em>&lt;div&gt;</em>.</p>
+
+<p>L&rsquo;attributo <em>position</em> può assumere diversi valori:</p>
+
+<ul>
+<li><strong>after</strong> aggiunge all&rsquo;elemnto padre, dopo il nodo indicato</li>
+<li><strong>beforer</strong> aggiunge all&rsquo;elemnto padre, prima il nodo indicato</li>
+<li><strong>inside</strong> aggiunge all&rsquo;interno del nodo indicato (default)</li>
+<li><strong>replace</strong> sostituisce l&rsquo;elemento indicato</li>
+<li><strong>attributo</strong> modifica gli attributi XML dell&rsquo;elemento indicato</li>
+</ul>
+
+<h3 id="estendere-le-nostre-viste">Estendere le nostre viste</h3>
+
+<p>Prima di procedere dobbiamo aggiungere al nostro modulo il file XML che conterrè le definizione delle nostre viste ereditate. Come per il precedente modulo aggiungiamo la cartella <em>views/</em> e al suo interno creiamo il file <em>todo_task.xml</em></p>
+
+<pre><code>    todo_user/
+        models/
+            __init__.py
+            todo_task.py
+        views/
+            todo_task.xml
+        __init__.py
+        __manifest__.py
+</code></pre>
+
+<p>Successivamente dobbiamo dichiarare il nuovo file aggiunto nel manifesto dell&rsquo;applicazione</p>
+
+<pre><code class="language-python">{
+    'name': 'Multiuser TODO',
+    'description': 'Estende la Todo app per farla diventare Multi Utente',
+    'author': 'Metadonors',
+    'depends': ['todo_app'],
+    
+    # Aggiungiamo questa sezione
+    'data': [
+        'views/todo_task.xml'
+    ]
+}
+</code></pre>
+
+<p>Inizializziamo il nostro file todo_task.xml con questo contenuto:</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;odoo&gt;
+&lt;/odoo&gt;
+</code></pre>
+
+<h3 id="estendere-la-form-view">Estendere la Form View</h3>
+
+<p>Per mettere insieme quello che abbiamo detto fin&rsquo;ora possiamo procedere a modificare la nostra Form View aggiungendo i campi nuovi e andando a nascondere il campo active. Aggiungiamo quindi la nostra vista ereditata dentro il tag &lt;odoo&gt; del file <em>todo_task.xml</em>:</p>
+
+<pre><code class="language-xml">&lt;record model=&quot;ir.ui.view&quot; id=&quot;todo_task_form_view_inherited&quot;&gt;
+    &lt;field name=&quot;name&quot;&gt;todo.task.form&lt;/field&gt;
+    &lt;field name=&quot;model&quot;&gt;todo.task&lt;/field&gt;
+    &lt;field name=&quot;inherit_id&quot; ref=&quot;todo_app.todo_task_form_view&quot;/&gt;
+    
+    &lt;!-- ...cerca e modifica i tag XML in questo punto... --&gt;
+    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;
+        &lt;!-- Dopo il campo 'name' aggiungi il campo 'user_id' --&gt;
+        &lt;field name=&quot;name&quot; position=&quot;after&quot;&gt;
+            &lt;field name=&quot;user_id&quot;/&gt;
+        &lt;/field&gt;
+
+        &lt;!-- prima del campo 'is_done' aggiungi il campo 'deadline_date' --&gt;
+        &lt;field name=&quot;is_done&quot; position=&quot;before&quot;&gt;
+            &lt;field name=&quot;deadline_date&quot;/&gt;
+        &lt;/field&gt;
+
+        &lt;!-- modifica gli attributi del campo 'active' per rederlo invisibile --&gt;
+        &lt;field name=&quot;active&quot; positiion=&quot;attributes&quot;&gt;
+            &lt;attribute name=&quot;invisible&quot;&gt;1&lt;/attribute&gt;
+        &lt;/field&gt;
+    &lt;/field&gt;
+&lt;/record&gt;
+</code></pre>
+
+<p>Una volta effettuata la modifica possiamo aggiornare il nostro modulo con</p>
+
+<pre><code>    $ docker-compose run odoo upgrade todo_user
+</code></pre>
+
+<p>ricaricare la pagine nel nostro browser e ottenere questo form</p>
+
+<p><img src="/odoo.workshop/screen/estendere_viste/form.png?width=60pc" alt="form" /></p>
+
+<h3 id="estendere-la-list-view">Estendere la List View</h3>
+
+<p>Nello stesso modo procediamo a modificare la List View andando ad aggiungere il campo dell&rsquo;incaricato subito dopo il nome del task. Per farlo aggiungiamo un altro record al nostro file <em>todo_task.xml</em></p>
+
+<pre><code class="language-xml">&lt;record model=&quot;ir.ui.view&quot; id=&quot;todo_task_tree_view_inherited&quot;&gt;
+    &lt;field name=&quot;name&quot;&gt;todo.task.tree&lt;/field&gt;
+    &lt;field name=&quot;model&quot;&gt;todo.task&lt;/field&gt;
+    &lt;field name=&quot;inherit_id&quot; ref=&quot;todo_app.todo_task_tree_view&quot;/&gt;
+    &lt;!-- ...cerca e modifica i tag XML in questo punto... --&gt;
+    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;
+        &lt;!-- Dopo il campo 'name' aggiungi il campo 'user_id' --&gt;
+        &lt;field name=&quot;name&quot; position=&quot;after&quot;&gt;
+            &lt;field name=&quot;user_id&quot;/&gt;
+        &lt;/field&gt;
+    &lt;/field&gt;
+&lt;/record&gt;
+</code></pre>
+
+<p>aggiorniamo il nostro modulo con</p>
+
+<pre><code>    $ docker-compose run odoo upgrade todo_user
+</code></pre>
+
+<p>ricaricare la pagine nel nostro browser e visualizziamo la lista</p>
+
+<p><img src="/odoo.workshop/screen/estendere_viste/list.png?width=60pc" alt="list" /></p>
+
+<h3 id="estendere-la-search-view">Estendere la Search View</h3>
+
+<p>Per finire aggiungiamo la possibilita di ricercare per utente nella nostra Search View</p>
+
+<pre><code class="language-xml">&lt;record model=&quot;ir.ui.view&quot; id=&quot;todo_task_search_view_inherited&quot;&gt;
+    &lt;field name=&quot;name&quot;&gt;todo.task.search&lt;/field&gt;
+    &lt;field name=&quot;model&quot;&gt;todo.task&lt;/field&gt;
+    &lt;field name=&quot;inherit_id&quot; ref=&quot;todo_app.todo_task_search_view&quot;/&gt;
+    &lt;!-- ...cerca e modifica i tag XML in questo punto... --&gt;
+    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;
+        &lt;field name=&quot;name&quot; position=&quot;after&quot;&gt;
+            &lt;!-- Aggiungi il campo 'user_id' all ricerca libera--&gt;
+            &lt;field name=&quot;user_id&quot;/&gt;
+
+            &lt;!-- Aggiungi il filtro predefinito &quot;I miei task&quot; --&gt;
+
+            &lt;filter 
+                name=&quot;filter_my_tasks&quot; 
+                string=&quot;I miei Tasks&quot; 
+                domain=&quot;[('user_id','=',uid)]&quot; /&gt;
+            
+            &lt;!-- Aggiungi il filtro predefinito &quot;Task non assegnati&quot; --&gt;
+            &lt;filter 
+                name=&quot;filter_not_assigned&quot; 
+                string=&quot;Non assegnati&quot; 
+                domain=&quot;[('user_id','=', False)]&quot; /&gt;
+        &lt;/field&gt;
+    &lt;/field&gt;
+&lt;/record&gt;
+
+</code></pre>
+
+<p>aggiorniamo il nostro modulo con</p>
+
+<pre><code>    $ docker-compose run odoo upgrade todo_user
+</code></pre>
+
+<p>ricaricare la pagine nel nostro browser e controlliamo come e&rsquo; cambiato il form di ricerca</p>
+
+<p><img src="/odoo.workshop/screen/estendere_viste/search.png?width=60pc" alt="search" /></p>
+
+<h3 id="continua">Continua</h3>
+
+<p>Ora possiamo continuare andando a vedere come modificare i <a href="/odoo.workshop/inheritance/estendere_dati/">dati dei moduli</a></p>
 
 
 <footer class=" footline" >
@@ -951,6 +1191,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1117,20 +1373,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1530201830"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530201830"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530201830"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1530201830"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1530201830"></script>
-    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530201830"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1530201830"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1530266206"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530266206"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530266206"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1530266206"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1530266206"></script>
+    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530266206"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1530266206"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530201830"></script>
-    <script src="/odoo.workshop/js/learn.js?1530201830"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1530201830"></script>
+    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530266206"></script>
+    <script src="/odoo.workshop/js/learn.js?1530266206"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1530266206"></script>
 
-    <link href="/odoo.workshop/mermaid/mermaid.css?1530201830" type="text/css" rel="stylesheet" />
-    <script src="/odoo.workshop/mermaid/mermaid.js?1530201830"></script>
+    <link href="/odoo.workshop/mermaid/mermaid.css?1530266206" type="text/css" rel="stylesheet" />
+    <script src="/odoo.workshop/mermaid/mermaid.js?1530266206"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
