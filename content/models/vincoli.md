@@ -44,3 +44,4 @@ def _check_name_length(self):
 ```
 
 Controlla che il titolo di ogni task sia lungo almeno 10 caratteri.
+
