@@ -12,19 +12,19 @@
     <title>Computed Fields :: Odoo Workshop</title>
     
     
-    <link href="/odoo.workshop/css/nucleus.css?1530288993" rel="stylesheet">
-    <link href="/odoo.workshop/css/font-awesome.min.css?1530288993" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1530288993" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1530288993" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530288993" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1530288993" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1530288993" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1530288993" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1530368767" rel="stylesheet">
+    <link href="/odoo.workshop/css/font-awesome.min.css?1530368767" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1530368767" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1530368767" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530368767" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1530368767" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1530368767" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1530368767" rel="stylesheet">
     
-      <link href="/odoo.workshop/css/theme-metadonors.css?1530288993" rel="stylesheet">
+      <link href="/odoo.workshop/css/theme-metadonors.css?1530368767" rel="stylesheet">
     
 
-    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530288993"></script>
+    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530368767"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530288993"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530288993"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530368767"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530368767"></script>
 <script type="text/javascript">
     
         var baseurl = '\/odoo.workshop\/';
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1530288993"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1530368767"></script>
 
     
   </div>
@@ -512,6 +512,25 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/models/vincoli/" title="Vincoli" class="dd-item ">
+        <a href="/odoo.workshop/models/vincoli/">
+        Vincoli
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -707,7 +726,12 @@
 <li>
 <ul>
 <li><a href="#computed-fields">Computed fields</a></li>
+<li><a href="#filtrare-i-computed-fields">Filtrare i Computed Fields</a></li>
+<li><a href="#scrivere-i-computed-fields">Scrivere i Computed Fields</a></li>
+<li><a href="#salvare-i-computed-fields">Salvare i Computed Fields</a></li>
+<li><a href="#related-fields">Related Fields</a></li>
 </ul></li>
+<li><a href="#continua">Continua</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -734,43 +758,30 @@
 
 <h3 id="computed-fields">Computed fields</h3>
 
-<p>Un <em>computed field</em> viene dichiara esattamente come i campi normali con l&rsquo;unica differenza di avere un parametro <em>compute</em> che indica la funzione che Odoo utilizzerà per calcolarne il valore.</p>
+<p>Un <em>computed field</em> viene dichiarato esattamente come i campi normali con l&rsquo;unica differenza di avere un parametro <em>compute</em> che indica la funzione che Odoo utilizzerà per calcolarne il valore.</p>
 
-<p>Immaginiamo per esempio di voler aggiungere ai <em>TodoProject</em> un contatore che indica quanti <em>TodoTask</em> sono correlati al progetto. Gestire questo contatore a mano sarebbe piuttosto oneroso, un <em>computed field</em> invece risolve il problema egregiamente.</p>
+<p>Immaginiamo per esempio di voler mantenere nei <em>TodoTask</em> l&rsquo;informazione relativa allora stato del progetto a cui appartengono. Gestire questo dato a mano sarebbe piuttosto oneroso, un <em>computed field</em> invece risolve il problema egregiamente.</p>
 
-<p>Per aggiunger questo campo al nostro modello dei progetti aprima il file <em>models/todo_project.py</em> e aggiungiamo nel corpo della classe:</p>
+<p>Per aggiunger questo campo al nostro modello dei progetti apriamo il file <em>models/todo_project.py</em> e aggiungiamo nel corpo della classe:</p>
 
-<pre><code class="language-python">    todo_counter = fields.Integer(string='Totale Todo', compute='_compute_total_todos')
+<pre><code class="language-python">project_state = fields.Char(string='Stato progetto', compute='_compute_project_state')
 
-    @api.depends('todo_ids')
-    def _compute_total_todos(self):
-        for project in self:
-            project.todo_counter = len(project.todo_ids)
+@api.depends('project_id')
+def _compute_project_state(self):
+    for todo in self:
+        todo.project_state = todo.project_id.state
 </code></pre>
 
-<p>Il decoratore <em>@api.depends</em> indica a Odoo di calcolore il valore del campo sono dopo aver modificato il valore dei campi espressi nel decoratore. Quindi in questo caso verrà ricalcolato il contatore solo quando modificheremo il valore del campo <em>todo_ids</em>.</p>
+<p>Il decoratore <em>@api.depends</em> indica a Odoo di calcolore il valore del campo solo dopo aver modificato il valore dei campi espressi nel decoratore. Quindi in questo caso verrà ricalcolato il contatore solo quando modificheremo il valore del campo <em>project_id</em>.</p>
 
-<p>E nel file delle viste dei progetti <em>views/todo_project.xml</em> modifichiamo la Form View per visualizzare questo valore:</p>
+<p>Nel file delle viste dei progetti <em>views/todo_tak.xml</em> modifichiamo la <em>Form View</em> per visualizzare questo valore. Aggiungiamo nel campo <em>arch</em>:</p>
 
-<pre><code class="language-xml">&lt;record model=&quot;ir.ui.view&quot; id=&quot;todo_project_form_view&quot;&gt;
-    &lt;field name=&quot;name&quot;&gt;todo.project.form&lt;/field&gt;
-    &lt;field name=&quot;model&quot;&gt;todo.project&lt;/field&gt;
-    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;
-        &lt;form string=&quot;ToDo Project Form&quot;&gt;
-            &lt;sheet&gt;
-                &lt;!-- Raggruppiamo i campi su due colonne e assegnamo un identificativo ai vari gruppi --&gt;
-                &lt;group name=&quot;group_top&quot;&gt;
-                    &lt;group name=&quot;group_left&quot;&gt;
-                        &lt;field name=&quot;name&quot;/&gt;
-                        &lt;field name=&quot;todo_counter&quot;/&gt; &lt;!-- Contatore di todo --&gt;
-                    &lt;/group&gt;
-                &lt;/group&gt;
+<pre><code class="language-xml">
+&lt;field name='name' position='after'&gt;
+    &lt;field name='project_id'/&gt;
+    &lt;field name='project_state'/&gt;
+&lt;/field&gt;
 
-                &lt;field name='todo_ids'/&gt;
-            &lt;/sheet&gt;
-        &lt;/form&gt;
-    &lt;/field&gt;
-&lt;/record&gt;
 </code></pre>
 
 <p>Aggiorniamo il modulo</p>
@@ -780,9 +791,64 @@
 
 <p>e ricarichiamo la pagina</p>
 
-<p><img src="/odoo.workshop/screen/computed_fields/todo_counter.png?width=60pc" alt="todo_counter" /></p>
+<p><img src="/odoo.workshop/screen/computed_fields/project_state.png?width=60pc" alt="project_state" /></p>
 
-<p>Ora è presente il nostro contatore di Todo, se proviamo ad aggiungerne o a toglierne vedremo che il contantore si aggiorna automaticamente.</p>
+<p>Ora è presente il lo stato del progetto, se proviamo a chiudere il progetto vedremo che la stessa informazione si aggiornera anche su tutti i suoi Todo.</p>
+
+<h3 id="filtrare-i-computed-fields">Filtrare i Computed Fields</h3>
+
+<p>I computed field non possono essere usati come filtro sull&rsquo;oggetto in cui vengono definiti a meno di non implementare esplicitamente una funzione di ricerca. Quindi a fianco al parametro <em>compute</em>, dobbiamo passargli anche un argomento <em>search</em> specificado il nome della funzione che vogliamo utilizzare.</p>
+
+<p>Nella nostra class <em>TodoTask</em> modifichiamo l&rsquo;attributo <em>project_state</em></p>
+
+<pre><code class="language-python">project_state = fields.Char(string='Stato progetto', 
+                            compute='_compute_project_state',
+                            search='_search_project_state',)
+</code></pre>
+
+<p>e tra i metodi aggiungiamo:</p>
+
+<pre><code class="language-python">def _search_project_state(self, operator, value):
+    return [('project_id', operator, value)]
+</code></pre>
+
+<h3 id="scrivere-i-computed-fields">Scrivere i Computed Fields</h3>
+
+<p>È anche possibile specificare una funzione che permetta di scrivere i computed fields. Questa funzione si prende carico di normalizzare l&rsquo;input per forlo arrivare al database nel modo corretto. Al pari di <em>compute</em> e <em>search</em>, la funzione si specifica tra i parametri del campo con il nome di <em>inverse</em>:</p>
+
+<p>Modifichiamo il campo aggiungendo il parametro <em>inverse</em>:</p>
+
+<pre><code class="language-python">project_state = fields.Char(string='Stato progetto', 
+                            compute='_compute_project_state',
+                            search='_search_project_state',
+                            inverse='_wrtie_project_state')
+</code></pre>
+
+<p>e tra i metodi aggiungiamo:</p>
+
+<pre><code class="language-python">def _wrtie_project_state(self):
+    self.project_id.state = self.project_state
+</code></pre>
+
+<h3 id="salvare-i-computed-fields">Salvare i Computed Fields</h3>
+
+<p>Un&rsquo;altra possibilità è quella di comunicare ad Odoo di salvare il valore del computed field in database. Dal momento che i valori vengono salvati a database non sarà più necessario specificare le funzioni <em>search</em> e <em>inverse</em> perchè Odoo sarà già in grado di gestirle in autonomia.
+Per salvare un computed field in database è sufficiente specificare <em>store=True</em> tra i parametri del campo.</p>
+
+<h3 id="related-fields">Related Fields</h3>
+
+<p>Il computed field che abbiamo implementato è un classico: si occupa semplicemente di copiare il valore di un campo di un oggetto correlato al nostro. Questo tipo di comportamento può essere gestito in completa autonomia da Odoo, senza dover per forza esplicitare tutte le funzioni necessarie.</p>
+
+<p>I <em>related fields</em> si dichiarano nello stesso modo dei <em>computed field</em> ma specificanto l&rsquo;argomento <em>related</em> anzichè <em>compute</em>. Il valore dell&rsquo;argomento <em>related</em> sarà una stringa in dotted-notation che identifica il campo che si vuole relazionare.</p>
+
+<p>Nel nostro caso sarebbe:</p>
+
+<pre><code class="language-python">project_state = fields.Char(string='Stato progetto', related='project_id.state')
+</code></pre>
+
+<h2 id="continua">Continua</h2>
+
+<p>Per terminare la nostra panoramica sui modelli, vediamo ora come possiamo <a href="/odoo.workshop/models/vincoli/">esprimere dei vincoli</a> d&rsquo;integrità per i nostri dati.</p>
 
 
 <footer class=" footline" >
@@ -1157,9 +1223,6 @@
             
         
                     
-            
-        
-                    
                         
             
             
@@ -1167,6 +1230,25 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1253,7 +1335,7 @@
             <a class="nav nav-prev" href="/odoo.workshop/models/relazioni/" title="Relazioni"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/odoo.workshop/views/" title="Le Viste" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/odoo.workshop/models/vincoli/" title="Vincoli" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1262,20 +1344,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1530288993"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530288993"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530288993"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1530288993"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1530288993"></script>
-    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530288993"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1530288993"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1530368767"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530368767"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530368767"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1530368767"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1530368767"></script>
+    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530368767"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1530368767"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530288993"></script>
-    <script src="/odoo.workshop/js/learn.js?1530288993"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1530288993"></script>
+    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530368767"></script>
+    <script src="/odoo.workshop/js/learn.js?1530368767"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1530368767"></script>
 
-    <link href="/odoo.workshop/mermaid/mermaid.css?1530288993" type="text/css" rel="stylesheet" />
-    <script src="/odoo.workshop/mermaid/mermaid.js?1530288993"></script>
+    <link href="/odoo.workshop/mermaid/mermaid.css?1530368767" type="text/css" rel="stylesheet" />
+    <script src="/odoo.workshop/mermaid/mermaid.js?1530368767"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -149,7 +149,7 @@ Moduli I moduli sono i componenti essenziali che possono essere aggiunti a Odoo.
       
       <guid>https://metadonors.github.io/odoo.workshop/models/computed_fields/</guid>
       <description>Tutti i campi che abbiamo definito fin qui sono gestiti manualmente. L&amp;rsquo;utente entra in modalità modifica di un oggetto, aggiorna i valori e preme salva. Oddo permette però di avere altri campi il cui valore non viene definito direttamente dall&amp;rsquo;utente ma viene invece calcola attraverso una funzione.
-Computed fields Un computed field viene dichiara esattamente come i campi normali con l&amp;rsquo;unica differenza di avere un parametro compute che indica la funzione che Odoo utilizzerà per calcolarne il valore.</description>
+Computed fields Un computed field viene dichiarato esattamente come i campi normali con l&amp;rsquo;unica differenza di avere un parametro compute che indica la funzione che Odoo utilizzerà per calcolarne il valore.</description>
     </item>
     
     <item>
@@ -171,6 +171,17 @@ Ogni volta che dichiariamo un &amp;lt;record id=&amp;ldquo;x&amp;rdquo; model=&a
       <description>A questo punto è arrivato il momento di aggiungere della logica applicativa al nostro modulo. Per farlo possiamo sfruttare i bottoni che abbiamo aggiunto nella sezione precedente relativa alle viste.
 Aggiungere la logica applicativa Nella precedente sezione abbiamo aggiunto due bottoni per invocare delle funzioni Python sul nostro backend. Riporto qui il codice interessato per comodità.
 &amp;lt;button name=&amp;quot;do_toggle_button&amp;quot; type=&amp;quot;object&amp;quot; string=&amp;quot;Toggle Done&amp;quot; class=&amp;quot;oe_highlight&amp;quot;/&amp;gt;  In questo tag stiamo definendo alcuni attributi, vediamoli nel dettaglio:</description>
+    </item>
+    
+    <item>
+      <title>Vincoli</title>
+      <link>https://metadonors.github.io/odoo.workshop/models/vincoli/</link>
+      <pubDate>Thu, 28 Jun 2018 16:52:30 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/models/vincoli/</guid>
+      <description>Per assicurare l&amp;rsquo;integrità dei nostri dati Odoo ci fornisce due strumenti principali che possiamo applicare ai nostri modelli: Vincoli SQL e Vincoli Python.
+Vincoli SQL I vincoli SQL sono aggunti direttamente alla definizione della tabella a livello di database e sono controllati quindi direttamente da PostgreSQL. Una volta configurati non sarà quindi possibile creare eccezioni per aggirarli.
+Per configurare un vincolo sql si aggiunge un attributo sql_constraints che è un alista di tuple, in ogni tupla viene espresso l&amp;rsquo;identificatore del vincolo, il codice SQL per il vincolo e il messaggio di errore da usare.</description>
     </item>
     
     <item>

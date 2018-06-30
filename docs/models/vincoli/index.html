@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/odoo.workshop/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/x-icon" />
-    <title>Preambolo :: Odoo Workshop</title>
+    <title>Vincoli :: Odoo Workshop</title>
     
     
     <link href="/odoo.workshop/css/nucleus.css?1530368767" rel="stylesheet">
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/odoo.workshop/inheritance/teoria/">
+  <body class="" data-url="/odoo.workshop/models/vincoli/">
     <nav id="sidebar" class="">
 
 
@@ -292,7 +292,7 @@
   
     
     <li data-nav-id="/odoo.workshop/inheritance/" title="Estendere i moduli" class="dd-item 
-        parent
+        
         
         
         ">
@@ -316,7 +316,7 @@
  
   
     
-      <li data-nav-id="/odoo.workshop/inheritance/teoria/" title="Preambolo" class="dd-item active">
+      <li data-nav-id="/odoo.workshop/inheritance/teoria/" title="Preambolo" class="dd-item ">
         <a href="/odoo.workshop/inheritance/teoria/">
         Preambolo
         
@@ -419,7 +419,7 @@
   
     
     <li data-nav-id="/odoo.workshop/models/" title="I Modelli" class="dd-item 
-        
+        parent
         
         
         ">
@@ -519,7 +519,7 @@
  
   
     
-      <li data-nav-id="/odoo.workshop/models/vincoli/" title="Vincoli" class="dd-item ">
+      <li data-nav-id="/odoo.workshop/models/vincoli/" title="Vincoli" class="dd-item active">
         <a href="/odoo.workshop/models/vincoli/">
         Vincoli
         
@@ -678,7 +678,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/metadonors/odoo.workshop/tree/master/content/inheritance/teoria.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/metadonors/odoo.workshop/tree/master/content/models/vincoli.md" target="blank">
                       <i class="fa fa-code-fork"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -707,7 +707,7 @@
             
           
           
-            <a href='/odoo.workshop/'>Index</a> > <a href='/odoo.workshop/inheritance/'>Estendere i moduli</a> > Preambolo
+            <a href='/odoo.workshop/'>Index</a> > <a href='/odoo.workshop/models/'>I Modelli</a> > Vincoli
           
          
           
@@ -719,7 +719,18 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#vincoli-sql">Vincoli SQL</a></li>
+<li><a href="#vincoli-python">Vincoli Python</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -731,53 +742,51 @@
         
         <div id="body-inner">
           
-            <h1>Preambolo</h1>
+            <h1>Vincoli</h1>
           
 
         
 
 
-<p>Per apportare modifiche o aggiungere funzionalità ai moduli e alle applicazioni esistenti, Odoo ci mette a disposizione diversi strumenti in base a cosa e dove vogliamo intervenire.</p>
 
-<p>Odoo ha dai meccanismi interni specifici che si basano sul concetto di <a href="https://it.wikipedia.org/wiki/Ereditariet%C3%A0_(informatica)">Ereditarietà</a>. Tramite questi meccanismi e&rsquo; possibile modificare Modelli esistenti, Viste oppure Dati (come le regole di accesso).</p>
 
-<p>In questo capito andremo ad aggiungere una funzionalità all&rsquo;applicazione Todo creata in precedenza. Attualmente ogni utente può lavorare solo sui suoi task, perchè non aggiungere qualche funzionalità di social networking come la possibilità di condividere i task e di commentarli con diversi utenti?</p>
+<p>Per assicurare l&rsquo;integrità dei nostri dati Odoo ci fornisce due strumenti principali che possiamo applicare ai nostri modelli: <strong>Vincoli SQL</strong> e <strong>Vincoli Python</strong>.</p>
 
-<p>Per affrontare i meccanismi di eredità implementeremo queste funzionalità in un nuovo modulo che estende quello precedentemente creato.</p>
+<h3 id="vincoli-sql">Vincoli SQL</h3>
 
-<p>Questo è il nostro piano:</p>
+<p>I vincoli SQL sono aggunti direttamente alla definizione della tabella a livello di database e sono controllati quindi direttamente da PostgreSQL. Una volta configurati non sarà quindi possibile creare eccezioni per aggirarli.</p>
 
-<ul>
-<li>Estendere il modello TodoTask aggiungendo l&rsquo;utente attualmente in carico</li>
-<li>Modificare la logica applicativa per far si che ogni utente lavori solo sui task di cui è incaricato</li>
-<li>Estendere le viste per aggiungere i campi nessari a quanto sopra</li>
-<li>Aggingere un wall di messaggi in fondo a ogni Task dove gli utenti possono commentare e seguire (tipo Twitter follow) l&rsquo;evoluzione del task</li>
-</ul>
+<p>Per configurare un vincolo sql si aggiunge un attributo <em>sql_constraints</em> che è un alista di tuple, in ogni tupla viene espresso l&rsquo;identificatore del vincolo, il codice SQL per il vincolo e il messaggio di errore da usare.</p>
 
-<p>Per procedere dobbiamo creare un nuovo modulo nella stessa cartella contenente il modulo <em>todo_app</em>. Lo chiameremo <em>todo_user</em> e creeremo al suo interno il file <em>__manifest__.py</em></p>
+<p>Un classico è quello di aggiungere un vincolo di unicità a un campo, per esempio:</p>
 
-<pre><code>    todo_user/
-        __init__.py
-        __manifest__.py
+<pre><code class="language-python">class TodoTask(models.Model):
+    _sql_constraints = [
+        ('todo_task_unique_name',
+         'UNIQUE(name)',
+         'Il titolo del task deve essere unico')
+    ]
 </code></pre>
 
-<p>Nel file di manifesto inseriemo questo contenuto</p>
+<p>Fa si che non sia più possibile aggiungere due task con lo stesso titolo.</p>
 
-<pre><code class="language-python">{
-    'name': 'Multiuser TODO',
-    'description': 'Estende la Todo app per farla diventare Multi Utente',
-    'author': 'Fabrizio Arzeni',
-    'depends': ['todo_app'],
-}
+<h3 id="vincoli-python">Vincoli Python</h3>
+
+<p>I vincoli Python invce possono essere utilizati per fare controlli di qualsiasi tipo utilizzando una funzione specifica. La funzione deve essere dichiarata utilizzando il decoratore <em>@api.constraints</em> indicando la lista di campi che dovranno passare i controlli. La validazione è chiamata ogni volta che si modfificheranno alcuni o tutti i campi dichiarati.</p>
+
+<p>Per esempio</p>
+
+<pre><code class="language-python">from odoo.exception import ValidationError
+
+# all'intterno della classe TodoTask 
+@api.constraints('name')
+def _check_name_length(self):
+    for todo in self:
+        if len(todo.name) &lt; 10:
+            raise ValidationError('Il titolo del task è troppo corto')
 </code></pre>
 
-<p>Notate che abbiamo messo una dipendenza esplicita sul modulo <em>todo_app</em>, questo permettera a Odoo di inizializzare questo modulo dopo aver inizializzato <em>todo_app</em>.</p>
-
-<p>Un&rsquo;altra differenza è che non abbiamo esplicitato <em>application=True</em> in quanto con questo modulo non andremo a creare una nuova applicazione ma apporteremo solo modifiche a un&rsquo;altra già esistente.</p>
-
-<p>Una volta fatto questo possiamo aggiornare la lista dei moduli e installare il modulo <em>todo_user</em> nel nostro Odoo.</p>
-
-<p>A questo punto possiamo andare a vedere come si <a href="/odoo.workshop/inheritance/estendere_modelli/">estende il modello TodoTask</a></p>
+<p>Controlla che il titolo di ogni task sia lungo almeno 10 caratteri.</p>
 
 
 <footer class=" footline" >
@@ -979,107 +988,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -1176,6 +1084,110 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -1258,10 +1270,10 @@
 
 
         
-            <a class="nav nav-prev" href="/odoo.workshop/inheritance/" title="Estendere i moduli"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/odoo.workshop/models/computed_fields/" title="Computed Fields"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/odoo.workshop/inheritance/estendere_modelli/" title="Estendere i Modelli" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/odoo.workshop/views/" title="Le Viste" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

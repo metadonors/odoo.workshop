@@ -49,7 +49,18 @@ Per avere chiaro cosa stiamo per fare, chiariamo cosa vogliamo costruire. Finora
       
       <guid>https://metadonors.github.io/odoo.workshop/models/computed_fields/</guid>
       <description>Tutti i campi che abbiamo definito fin qui sono gestiti manualmente. L&amp;rsquo;utente entra in modalità modifica di un oggetto, aggiorna i valori e preme salva. Oddo permette però di avere altri campi il cui valore non viene definito direttamente dall&amp;rsquo;utente ma viene invece calcola attraverso una funzione.
-Computed fields Un computed field viene dichiara esattamente come i campi normali con l&amp;rsquo;unica differenza di avere un parametro compute che indica la funzione che Odoo utilizzerà per calcolarne il valore.</description>
+Computed fields Un computed field viene dichiarato esattamente come i campi normali con l&amp;rsquo;unica differenza di avere un parametro compute che indica la funzione che Odoo utilizzerà per calcolarne il valore.</description>
+    </item>
+    
+    <item>
+      <title>Vincoli</title>
+      <link>https://metadonors.github.io/odoo.workshop/models/vincoli/</link>
+      <pubDate>Thu, 28 Jun 2018 16:52:30 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/models/vincoli/</guid>
+      <description>Per assicurare l&amp;rsquo;integrità dei nostri dati Odoo ci fornisce due strumenti principali che possiamo applicare ai nostri modelli: Vincoli SQL e Vincoli Python.
+Vincoli SQL I vincoli SQL sono aggunti direttamente alla definizione della tabella a livello di database e sono controllati quindi direttamente da PostgreSQL. Una volta configurati non sarà quindi possibile creare eccezioni per aggirarli.
+Per configurare un vincolo sql si aggiunge un attributo sql_constraints che è un alista di tuple, in ogni tupla viene espresso l&amp;rsquo;identificatore del vincolo, il codice SQL per il vincolo e il messaggio di errore da usare.</description>
     </item>
     
   </channel>
