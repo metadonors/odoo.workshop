@@ -63,6 +63,9 @@ E nel file delle viste dei progetti _views/todo\_project.xml_ aggiungiamo questo
     <field name="model">todo.project</field>
     <field name="arch" type="xml">
         <form string="ToDo Project Form">
+            <header>
+                <field name='state' widget='statusbar'/>
+            </header>
             <sheet>
                 <!-- Raggruppiamo i campi su due colonne e assegnamo un identificativo ai vari gruppi -->
                 <group name="group_top">
