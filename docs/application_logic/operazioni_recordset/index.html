@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.42.2" />
+    <meta name="description" content="Odoo Workshop">
+<meta name="author" content="Metadonors">
+
+    <link rel="shortcut icon" href="/odoo.workshop/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/x-icon" />
+    <title>Operazioni sui Recordset :: Odoo Workshop</title>
+    
+    
+    <link href="/odoo.workshop/css/nucleus.css?1530545032" rel="stylesheet">
+    <link href="/odoo.workshop/css/font-awesome.min.css?1530545032" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1530545032" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1530545032" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530545032" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1530545032" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1530545032" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1530545032" rel="stylesheet">
+    
+      <link href="/odoo.workshop/css/theme-metadonors.css?1530545032" rel="stylesheet">
+    
+
+    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530545032"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/odoo.workshop/application_logic/operazioni_recordset/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/odoo.workshop">
+    <img src="/odoo.workshop/images/logo.png"/>
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530545032"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530545032"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/odoo.workshop\/';
+    
+</script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1530545032"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/basics/" title="Iniziare" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/basics/">
+          <b>1. </b>Iniziare
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/basics/precorso/" title="Precorso" class="dd-item ">
+        <a href="/odoo.workshop/basics/precorso/">
+        Precorso
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/basics/installazione/" title="Installazione" class="dd-item ">
+        <a href="/odoo.workshop/basics/installazione/">
+        Installazione
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/basics/concetti/" title="Concetti Base" class="dd-item ">
+        <a href="/odoo.workshop/basics/concetti/">
+        Concetti Base
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/first_app/" title="La prima applicazione" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/first_app/">
+          <b>2. </b>La prima applicazione
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/primo_modulo/" title="Scaffolding" class="dd-item ">
+        <a href="/odoo.workshop/first_app/primo_modulo/">
+        Scaffolding
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/primo_modello/" title="I modelli" class="dd-item ">
+        <a href="/odoo.workshop/first_app/primo_modello/">
+        I modelli
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/prime_viste/" title="Le viste" class="dd-item ">
+        <a href="/odoo.workshop/first_app/prime_viste/">
+        Le viste
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/prima_funzione/" title="La logica" class="dd-item ">
+        <a href="/odoo.workshop/first_app/prima_funzione/">
+        La logica
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/controllo_accessi/" title="Controllo Accessi" class="dd-item ">
+        <a href="/odoo.workshop/first_app/controllo_accessi/">
+        Controllo Accessi
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/inheritance/" title="Estendere i moduli" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/inheritance/">
+          <b>3. </b>Estendere i moduli
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/inheritance/teoria/" title="Preambolo" class="dd-item ">
+        <a href="/odoo.workshop/inheritance/teoria/">
+        Preambolo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/inheritance/estendere_modelli/" title="Estendere i Modelli" class="dd-item ">
+        <a href="/odoo.workshop/inheritance/estendere_modelli/">
+        Estendere i Modelli
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/inheritance/estendere_viste/" title="Estendere le Viste" class="dd-item ">
+        <a href="/odoo.workshop/inheritance/estendere_viste/">
+        Estendere le Viste
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/inheritance/estendere_dati/" title="Estendere i Dati" class="dd-item ">
+        <a href="/odoo.workshop/inheritance/estendere_dati/">
+        Estendere i Dati
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/inheritance/aggiungere_funzionalita/" title="Aggiungere funzionalità" class="dd-item ">
+        <a href="/odoo.workshop/inheritance/aggiungere_funzionalita/">
+        Aggiungere funzionalità
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/models/" title="I Modelli" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/models/">
+          <b>4. </b>I Modelli
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/models/preambolo/" title="Preambolo" class="dd-item ">
+        <a href="/odoo.workshop/models/preambolo/">
+        Preambolo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/models/campi_base/" title="Campi Base" class="dd-item ">
+        <a href="/odoo.workshop/models/campi_base/">
+        Campi Base
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/models/relazioni/" title="Relazioni" class="dd-item ">
+        <a href="/odoo.workshop/models/relazioni/">
+        Relazioni
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/models/computed_fields/" title="Computed Fields" class="dd-item ">
+        <a href="/odoo.workshop/models/computed_fields/">
+        Computed Fields
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/models/vincoli/" title="Vincoli" class="dd-item ">
+        <a href="/odoo.workshop/models/vincoli/">
+        Vincoli
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/views/" title="Le Viste" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/views/">
+          <b>5. </b>Le Viste
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/views/menu_actions/" title="MenuItem e Actions" class="dd-item ">
+        <a href="/odoo.workshop/views/menu_actions/">
+        MenuItem e Actions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/views/context_domain/" title="Context e Domain" class="dd-item ">
+        <a href="/odoo.workshop/views/context_domain/">
+        Context e Domain
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/views/form_view/" title="Form View" class="dd-item ">
+        <a href="/odoo.workshop/views/form_view/">
+        Form View
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/views/list_view/" title="List e Search View" class="dd-item ">
+        <a href="/odoo.workshop/views/list_view/">
+        List e Search View
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/views/graph_pivot_views/" title="Pivot e Graph View" class="dd-item ">
+        <a href="/odoo.workshop/views/graph_pivot_views/">
+        Pivot e Graph View
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/views/altre_views/" title="Altre Viste" class="dd-item ">
+        <a href="/odoo.workshop/views/altre_views/">
+        Altre Viste
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/application_logic/" title="Logica applicativa" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/odoo.workshop/application_logic/">
+          <b>6. </b>Logica applicativa
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/application_logic/query_records/" title="Interrogare i Record" class="dd-item ">
+        <a href="/odoo.workshop/application_logic/query_records/">
+        Interrogare i Record
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/application_logic/scrivere_record/" title="Scrivere i Record" class="dd-item ">
+        <a href="/odoo.workshop/application_logic/scrivere_record/">
+        Scrivere i Record
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/application_logic/operazioni_recordset/" title="Operazioni sui Recordset" class="dd-item active">
+        <a href="/odoo.workshop/application_logic/operazioni_recordset/">
+        Operazioni sui Recordset
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/application_logic/campi_relazionali/" title="Usare i Campi Relazionali" class="dd-item ">
+        <a href="/odoo.workshop/application_logic/campi_relazionali/">
+        Usare i Campi Relazionali
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/api/" title="Api esterne" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/api/">
+          <b>7. </b>Api esterne
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/api/panoramica/" title="Panoramica" class="dd-item ">
+        <a href="/odoo.workshop/api/panoramica/">
+        Panoramica
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/api/operazioni/" title="Operazioni" class="dd-item ">
+        <a href="/odoo.workshop/api/operazioni/">
+        Operazioni
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/website/" title="Sito Web Esterno" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/website/">
+          <b>8. </b>Sito Web Esterno
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/resources/" title="Altre Risorse" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/resources/">
+          <b>9. </b>Altre Risorse
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/metadonors/odoo.workshop/tree/master/content/application_logic/operazioni_recordset.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/odoo.workshop/'>Index</a> > <a href='/odoo.workshop/application_logic/'>Logica applicativa</a> > Operazioni sui Recordset
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Operazioni sui Recordset</h1>
+          
+
+        
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/odoo.workshop/application_logic/scrivere_record/" title="Scrivere i Record"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/odoo.workshop/application_logic/campi_relazionali/" title="Usare i Campi Relazionali" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/odoo.workshop/js/clipboard.min.js?1530545032"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530545032"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530545032"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1530545032"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1530545032"></script>
+    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530545032"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1530545032"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530545032"></script>
+    <script src="/odoo.workshop/js/learn.js?1530545032"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1530545032"></script>
+
+    <link href="/odoo.workshop/mermaid/mermaid.css?1530545032" type="text/css" rel="stylesheet" />
+    <script src="/odoo.workshop/mermaid/mermaid.js?1530545032"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

@@ -1,5 +1,26 @@
 [
 {
+	"uri": "https://metadonors.github.io/odoo.workshop/application_logic/query_records/",
+	"title": "Interrogare i Record",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://metadonors.github.io/odoo.workshop/views/menu_actions/",
+	"title": "MenuItem e Actions",
+	"tags": [],
+	"description": "",
+	"content": " Gli oggetti del Menu I MenuItem sono oggetti salvati nella modello ir.ui.menu and possono essere visualizzati nel menu tecnico:\nSettings -\u0026gt; Technical -\u0026gt; User Interface -\u0026gt; Menu Items\nSono organizzati in una struttura ad albero. I menu radice (top-level) vengono listati nell\u0026rsquo;elenco completo delle applicazioni, ogni applicazione deve quindi avere almeno un elemento del menu per poter essere visualizzata.\nIl primo sottolivello di menu crea il menu principale dell\u0026rsquo;applicazione, i successivi vengono rappresentati come menu dropdown nei rispettivi padri.\nUn esempio di menu di secondo livello che abbiamo aggiunto con il nostro modulo todo_plus\n\u0026lt;menuitem id=\u0026quot;menu_todo_project\u0026quot; parent=\u0026quot;todo_app.menu_todo_task\u0026quot; name=\u0026quot;Progetti\u0026quot; action=\u0026quot;action_todo_project\u0026quot; sequence=\u0026quot;2\u0026quot; /\u0026gt;  Window Actions Una Window Action comanda le azioni che possono essere compiute attraverso l\u0026rsquo;interfaccia utente e solitamente vengono associate a dei MenuItem oppure a dei bottoni. Principalmente comunicano alla UI su quale tipo di modello andare a lavorare e quali viste del modello rendere disponibili all\u0026rsquo;utente. Ad ogni azione può opzionalmente essere legato un domain e un context che andranno a modificare il comportamente specifico del sistema (vedi la prossima sezione)\nSempre nel nostro modulo todo_plus abbiamo legato al menu dei progetti questa action:\n\u0026lt;act_window id=\u0026quot;action_todo_project\u0026quot; name=\u0026quot;Progetti\u0026quot; res_model=\u0026quot;todo.project\u0026quot; view_mode=\u0026quot;tree,form\u0026quot; /\u0026gt;  "
+},
+{
+	"uri": "https://metadonors.github.io/odoo.workshop/api/panoramica/",
+	"title": "Panoramica",
+	"tags": [],
+	"description": "",
+	"content": " Il server di Odoo fornisce un API esterna che può essere utilizzata da applicazioni terze per integrarsi. L\u0026rsquo;API sono le stesse che utilizza il client web ufficiale di Odoo per funzionare. Quindi qualsiasi funzionalità utlizzata nel client web può essere utilizzita direttamente tramite API.\nLe API di Odoo supportano i protocolli XML-RPC e JSON-RPC, è quindi possibili scrivere integrazioni in qualsiasi linguaggio che supporti questi due protocolli. Per esempio nella documentazione ufficiale ci sono esempi per: Python, PHP, Ruby e Java.\nPer questioni di chiarezza continueremo con i nostri esempi in Python. Inoltre faremo ricorso a una libreria python specifica che crea un\u0026rsquo;astrazione sopra le API base per ricreare un\u0026rsquo;interfaccia quanto più possibile a quella utilizzata direttamente all\u0026rsquo;interno del framework.\nLa libreria a cui faremo ricorso è OdooRPC\nSolitamente potete installarla nel vostro ambiente python con il comando\n$ pip install OdooRPC  Per semplificare però gli esempi di questo corso, abbiamo aggiungo un comando specifico alla nostra immagine docker che ci permette di avviare una shell interattiva ipython con la libreria già installata. Per farlo apriamo un altro terminale e digitiamo:\n$ cd odoo.dockerenv/ $ docker-compose run odoo ipython  Ci comparirà quindi il seguente output:\nodoo.dockerenv (completed) $ docker-compose run odoo ipython Starting odoodockerenv_postgres_1 ... done Python 3.5.3 (default, Jan 19 2017, 14:11:04) Type 'copyright', 'credits' or 'license' for more information IPython 6.4.0 -- An enhanced Interactive Python. Type '?' for help. In [1]: import odoorpc In [2]: odoorpc Out[2]: \u0026lt;module 'odoorpc' from '/usr/local/lib/python3.5/dist-packages/odoorpc/__init__.py'\u0026gt;  Continua A questo punto siamo in grado di effettuare le nostre chiamate, vediamo nel dettaglio come procedere\n"
+},
+{
 	"uri": "https://metadonors.github.io/odoo.workshop/inheritance/teoria/",
 	"title": "Preambolo",
 	"tags": [],
@@ -33,6 +54,27 @@
 	"tags": [],
 	"description": "",
 	"content": " Capitolo 1 Iniziare Per imparare è necessario poterci mettere le mani sopra, quindi installiamo il necessario.\n"
+},
+{
+	"uri": "https://metadonors.github.io/odoo.workshop/application_logic/scrivere_record/",
+	"title": "Scrivere i Record",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://metadonors.github.io/odoo.workshop/views/context_domain/",
+	"title": "Context e Domain",
+	"tags": [],
+	"description": "",
+	"content": " Più volte durante il corso siamo inciampati su context e domain. Abbiamo visto che possono essere legati alle azioni, ma anche usati durante le interrogazioni del database. Vediamo più nel dettaglio che cosa sono.\nContext Il context è un dizionario Python contenente dati che vengono mantenuti durante la sessione e che possono essere utilizzati sia dal client per renderizzare diversi componente della UI, sia dal server per modificare la logica applicativa\nNel client ci sono sia informazioni che riguardano strettamente il funzionamento delle pagine, come per esempio l\u0026rsquo;id della risorsa da visualizzare, sia informazioni che possono modficare il comportamento, come per esempio il filtro preselezionato in una Search View.\nA livello di server invece vengono utilizzate informazioni di sessione come lang che influenza la configurazione della lingua selezionata. Inoltre ci è sempre possibile far riferimento al context per aggiungere variabile legate alla nostra logica.\nDomain I domain in Odoo sono utilizzati per filtrare i dati. Utilizzano una sintassi specifica dell\u0026rsquo;ORM di Odoo e sostanzialmente vengono utilizzati per genereare la parte WHERE delle query SQL.\nUn domain è una lista di condizioni, ogni condizione è composta da una tupla\n(\u0026lt;nome_campo\u0026gt;, \u0026lt;operatore\u0026gt;, \u0026lt;valore\u0026gt;)  come per esempio:\n('is_done', '=', False)  Il nome_campo coniene una string che rappresenta il nome del campo, nei casi di campi relazionali si può fare ricorso alla dot-notation per accedere ai campi dell\u0026rsquo;elemento correlato.\nGli opertori disponibili sono:\n =: uguale a !=: diverso da \u0026gt;: maggiore di \u0026gt;=: maggiore o uguale a \u0026lt;: minore di \u0026lt;=: minore o uguale a =?: ritorna True se il valore e\u0026rsquo; None o False, oppure si comporta come = =like: controlla il valore con un pattern. Un _ nel pattern sta per \u0026lsquo;ogni carattere\u0026rsquo;, una % sta per \u0026lsquo;ogni stringa\u0026rsquo; like: simile a =like ma racchiude il valore in %value% not like: la negazione di like ilike: come like ma senza tenere conto di maiuscolo/minuscolo not ilike: la negazione di ilike =ilike: come ilike ma senza tenere conto di maiuscolo/minuscolo in: ritorna vero se il valore e\u0026rsquo; uguale a almneno uno dei valori contenuti nella lista di comparazione not in: ritorna vero se il valore e\u0026rsquo; diverso da tutti i valori contenuti nella lista di comparazione child_of: ritorna vero se e\u0026rsquo; un figlio dell\u0026rsquo;oggetto passato (controllonado il campo speciale parent_id)  Nell\u0026rsquo;espressione dei domini possono essere utilizzati gli operatori logigici or, and e not rispettivamente con i simboli |, \u0026amp;, !. I domini fanno ricorso alla notazione prefissa per esprimere le connessioni logiche.\nPer esempio per dire:\nTutti i todo in stato done oppure tutti i todo assegnati all\u0026rsquo;utente 3 con titolo contenento \u0026lsquo;Odoo\u0026rsquo;\nsi esprime come\n[ '|',('is_done','=',True), '\u0026amp;', ('user_id', '=', 3), ('name','like','Odoo') ]  che puo\u0026rsquo; essere rappresentato come\ngraph TD; C{OR} C -- D{AND} C -- E[Todo in stato done] D -- F[user_id = 3] D -- G[name like Odoo]  "
+},
+{
+	"uri": "https://metadonors.github.io/odoo.workshop/api/operazioni/",
+	"title": "Operazioni",
+	"tags": [],
+	"description": "",
+	"content": " La documentazione ufficiale ci illustra come procedere ad interrogare le API utilizzando direttamente le librerie XMLRPC disponibili nei vari linguaggi. In questa sezione invece analizziamo come interfacciarci alla nostra applicazione tramite una libreria di più altro livello, che semplifica e ottimizza le nostre chiamate.\nLogin Per effettuare qualsiasi tipo di operazione tramite API è necessario per prima cosa autenticarsi. L\u0026rsquo;autenticazione tramite API avviene utilizzando tre informazioni: username, password e nome del database dei riferimento.\nAbbiamo ovviamente bisogno di conoscere anche indirizzo e porta dove gira il nostro Odoo.\nPer autenticarsi apriamo una shell interattiva con\n$ docker-compose run odoo ipython  e al suo interno scriviamo\nIn [1]: import odoorpc In [2]: odoo = odoorpc.ODOO('odoo',port=8069) In [3]: odoo.login('demo','admin','admin') In [4]: user = odoo.env.user In [5]: print(user.name) Administrator In [6]: print(user.company_id.name) My Company  Nel nostro caso specifico l\u0026rsquo;installazione risponde all\u0026rsquo;indirizzo odoo che abbiamo configurato nel file docker_compose.yml. Nei casi reali corrisponderà all\u0026rsquo;URL della vostra installazione\nLeggere da API Per le operazioni di lettura possiamo utilizzare diverse funzioni, disponibili anche lato backend: browse, search, search_read.\n browser: accetta una lista di id di entità che verranno lette tutte assieme e restituisce degli oggetti rappresentanti le risorse search: accetta un dominio su cui effettuare una ricerca e restituisce gli id degli oggetti trovati (è quindi poi necessario effetturare una chiamata browse per ottenerne il contenuto) search_read: accetta un dominio e un elenco di attributi e restituisce dei dizionari contenenti solo i valori richiesti  Le due funzioni di ricerca accettano anche i parametri offset e limit su cui si può impostare la paginazione.\nDal momento che le richieste API viaggiano su chiamate di rete che sono notoriamenet lente, la funzione search_read acquista una notevole importanza perchè ci permette di ottimizzare i payload che dovranno poi essere scambiati fra gli endpoint, facendoci restituire solo il necessario.\nBrowse Per effettuare una chiamata browse ed accedere alle risorse tramite il loro id, procediamo in questo modo\nIn [10]: todo = odoo.env['todo.task'].browse(3) In [11]: todo.name Out[11]: 'WorkShop su Odoo'  Search Per effettuare una chiamata browse ed accedere alle risorse tramite il loro id, procediamo in questo modo\nIn [12]: todos = odoo.env['todo.task'].search([('name','ilike','odoo')]) In [13]: todos Out[13]: [3]  Search_Read Per effettuare una chiamata browse ed accedere alle risorse tramite il loro id, procediamo in questo modo\nIn [15]: todos = odoo.env['todo.task'].search_read([('name','ilike','odoo')], ['id', 'name','description']) In [16]: todos Out[16]: [{'description': '\u0026lt;p\u0026gt;\u0026lt;b\u0026gt;Un interessante descrizione\u0026lt;/b\u0026gt;\u0026lt;br\u0026gt;\u0026lt;/p\u0026gt;', 'id': 3, 'name': 'WorkShop su Odoo'}]  Creazione di record Per creare nuovi oggetti possiamo ricorrere alla funzione create\nIn [15]: todo_id = odoo.env['todo.task'].create({'name': 'Test da API', 'description': 'Sono un test creato da API'}) In [16]: todo_id Out[16]: 7  Modifica dei record Per modificare oggetti esistenti ricorrere alla funzione write, su un oggetto resistuito da browse\nIn [20]: todo = odoo.env['todo.task'].browse(3) In [21]: todo.write({'name': 'Nuovo titolo'}) Out[21]: True  Cancellazione dei record Per cancellare oggetti esistenti ricorrere alla funzione unlink\nIn [27]: odoo.env['todo.task'].unlink(3) Out[27]: True  Oppure con un approccio Active Record\nIn [20]: todo = odoo.env['todo.task'].browse(3) In [21]: todo.unlink() Out[21]: True  Altre funzioni Ogni volta che dichiariamo un metodo con il decoratore @api.multi o @api.model quello che stiamo facendo è effettivamente dichiarare un nuovo endpoint API su quel modello. Come unica restrizione di sicurezza Odoo non permette a client diversi da il proprio client web di chiamare le funzioni che iniziano con \u0026ldquo;_\u0026rdquo;.\nPer esempio:\n@api.model def io_posso_essere_chiamata_da_client_esterni(self): return \u0026quot;OK\u0026quot; @api.model def _io_non_posso_essere_chiamata_da_client_esterni(self): return \u0026quot;KO\u0026quot;  Permette di effetturare una chiamata API come questa\nIn [20]: todo = odoo.env['todo.task'].browse(3) In [21]: todo.io_posso_essere_chiamata_da_client_esterni() Out[21]: \u0026quot;OK\u0026quot;  "
 },
 {
 	"uri": "https://metadonors.github.io/odoo.workshop/models/campi_base/",
@@ -70,6 +112,20 @@
 	"content": " Una volta installati gli strumenti di sviluppo come descritto nella sezione Precorso possiamo procedere ad installare l\u0026rsquo;ambiente di odoo che utilizzeremo in questo corso.\nInstallazione dell\u0026rsquo;ambiente di sviluppo Scaricate l\u0026rsquo;ambiente docker che utilizzeremo dal github in una cartella sul nostro computer. Aprite un terminale e digitate:\n$ git clone https://github.com/metadonors/odoo.docker.git  Entriamo nella cartella appena scaricata:\n$ cd odoo.docker  Infine diciamo a compose di tirare su l\u0026rsquo;ambiente:\n$ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, odoo, nginx e il database. La procedura può metterci diversi minuti in base alla connessione a internet disponibile.\nIn seguito verranno avviati i vari componenti: odoo, postgres - il database - e nginx - il server web. Al primo avvio odoo dovrà inizializzare la struttura del database (anche questa operazione potrebbe impiegare qualche minuto).\nUna volta terminata, aprite il vostro browser all\u0026rsquo;indirizzo:\nhttp://localhost\ndovreste vedere la schermata di accesso di Odoo. Per entrare inserite le credenziali predefinite:\nUsername: admin Password: admin\nContinua\u0026hellip; Una volta terminata l\u0026rsquo;installazione possiamo affrontare i concetti base\n"
 },
 {
+	"uri": "https://metadonors.github.io/odoo.workshop/application_logic/operazioni_recordset/",
+	"title": "Operazioni sui Recordset",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://metadonors.github.io/odoo.workshop/views/form_view/",
+	"title": "Form View",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://metadonors.github.io/odoo.workshop/models/relazioni/",
 	"title": "Relazioni",
 	"tags": [],
@@ -105,6 +161,20 @@
 	"content": " Capitolo 3 ESTENDERE L\u0026rsquo;ESISTENTE La vera potenza di Odoo si esprime nel riutilizzo delle applicazioni e dei moduli esistenti e nell\u0026rsquo;adattarli alle esigenze specifiche del momento. Vediamo ora come è strutturato il meccanismo di eredità che il framework ci offre.\n"
 },
 {
+	"uri": "https://metadonors.github.io/odoo.workshop/application_logic/campi_relazionali/",
+	"title": "Usare i Campi Relazionali",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://metadonors.github.io/odoo.workshop/views/list_view/",
+	"title": "List e Search View",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://metadonors.github.io/odoo.workshop/models/computed_fields/",
 	"title": "Computed Fields",
 	"tags": [],
@@ -133,6 +203,13 @@
 	"content": " Chapter 2 Modelli Odoo è un framework MVC, i Modelli sono la M del paradigma e ci permettono di rappresentare i nostri dati in maniera strutturata, come per esempio i Prodotti, le Vendite, le Fatture o i Clienti. Vediamo che srtumenti abbiamo per strutturarli al meglio.\n"
 },
 {
+	"uri": "https://metadonors.github.io/odoo.workshop/views/graph_pivot_views/",
+	"title": "Pivot e Graph View",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://metadonors.github.io/odoo.workshop/models/vincoli/",
 	"title": "Vincoli",
 	"tags": [],
@@ -158,7 +235,7 @@
 	"title": "Le Viste",
 	"tags": [],
 	"description": "",
-	"content": " Chapter X Some Chapter title Lorem Ipsum.\n"
+	"content": " Chapter 5 VISTE Come disegnare l\u0026rsquo;interfaccia utente con il framework Odoo\n"
 },
 {
 	"uri": "https://metadonors.github.io/odoo.workshop/",
@@ -166,6 +243,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Mantova, 4 Luglio 2018 Odoo WorkShop Riferimenti L\u0026rsquo;inizio del corso:\nOdoo Workshoop\nIl modulo che svilupperemo:\nTodo List App\nIl nostro repository di riferimento:\nOdoo 11 - Immagine Docker\nLa documentazione ufficiale di odoo:\nDocumentazione Odoo\nLa nostra azienda:\nMetadonors\n"
+},
+{
+	"uri": "https://metadonors.github.io/odoo.workshop/views/altre_views/",
+	"title": "Altre Viste",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "https://metadonors.github.io/odoo.workshop/application_logic/",
@@ -179,7 +263,7 @@
 	"title": "Api esterne",
 	"tags": [],
 	"description": "",
-	"content": " Chapter 7 Some Chapter title Lorem Ipsum.\n"
+	"content": " Chapter 7 Accesso con API Esterne Nessun software è un\u0026rsquo;isola. Ogni applicazione moderna deve avere un API che gli permetta di integrarsi facilemente con l\u0026rsquo;esterno. Di seguito vediamo che tipo di approccio utilizza Odoo.\n"
 },
 {
 	"uri": "https://metadonors.github.io/odoo.workshop/website/",
@@ -193,7 +277,7 @@
 	"title": "Altre Risorse",
 	"tags": [],
 	"description": "",
-	"content": " Chapter 9 Some Chapter title Lorem Ipsum.\n"
+	"content": " Libri Odoo Development Essentials 11 Daniel Reis\nUna lettura essenziale e must-have per lavorare con Odoo. E\u0026rsquo; il libro da cui trae ispirazione questo breve corso e che contiene moltissime altre informazioni che per ragioni di tempo e spazio non potevano essere citate qui.\nOdoo Development Essentials 11\nOdoo Development Cookbook 11 Alexandre Fayolle, Holger Brunn\nAltro manuale utilissimo. Al posto di una strutura lineare a corso, il libro è suddiviso in tanti problemi con la relativa soluzione. Utile se si ha già dimestichezza con il framework.\nOdoo Development Cookbook 11\nWorking with Odoo 11 Greg Moss\nUna lettura molto meno tecnica, si parla molto poco di come sviluppare con Odoo, in compenso contiene molte informazioni sugli aspetti funzionali dei moduli già esistenti, sul loro uso e sulla loro configurazione\nWorking with Odoo\nDocumentazione Online La documentazione ufficiale di Odoo Documentazione ufficiale di Odoo\nLa pagina ufficiale di OCA (Odoo Community Association) Homepage OCA\nProgetto Community di Documentazione Odoo Odoo Development\n"
 },
 {
 	"uri": "https://metadonors.github.io/odoo.workshop/categories/",

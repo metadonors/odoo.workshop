@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://metadonors.github.io/odoo.workshop/application_logic/query_records/</loc>
+    <lastmod>2018-07-02T16:24:21+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/views/menu_actions/</loc>
+    <lastmod>2018-07-02T16:17:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/api/panoramica/</loc>
+    <lastmod>2018-07-02T12:16:01+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://metadonors.github.io/odoo.workshop/inheritance/teoria/</loc>
     <lastmod>2018-06-28T16:39:19+02:00</lastmod>
   </url>
@@ -25,6 +40,21 @@
   <url>
     <loc>https://metadonors.github.io/odoo.workshop/basics/</loc>
     <lastmod>2018-06-27T15:32:30+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/application_logic/scrivere_record/</loc>
+    <lastmod>2018-07-02T16:24:39+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/views/context_domain/</loc>
+    <lastmod>2018-07-02T16:17:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/api/operazioni/</loc>
+    <lastmod>2018-07-02T12:16:04+02:00</lastmod>
   </url>
   
   <url>
@@ -53,6 +83,16 @@
   </url>
   
   <url>
+    <loc>https://metadonors.github.io/odoo.workshop/application_logic/operazioni_recordset/</loc>
+    <lastmod>2018-07-02T16:24:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/views/form_view/</loc>
+    <lastmod>2018-07-02T16:17:37+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://metadonors.github.io/odoo.workshop/models/relazioni/</loc>
     <lastmod>2018-06-28T16:52:26+02:00</lastmod>
   </url>
@@ -78,6 +118,16 @@
   </url>
   
   <url>
+    <loc>https://metadonors.github.io/odoo.workshop/application_logic/campi_relazionali/</loc>
+    <lastmod>2018-07-02T16:25:10+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/views/list_view/</loc>
+    <lastmod>2018-07-02T16:17:53+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://metadonors.github.io/odoo.workshop/models/computed_fields/</loc>
     <lastmod>2018-06-28T16:52:30+02:00</lastmod>
   </url>
@@ -95,6 +145,11 @@
   <url>
     <loc>https://metadonors.github.io/odoo.workshop/models/</loc>
     <lastmod>2018-06-27T16:13:21+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/views/graph_pivot_views/</loc>
+    <lastmod>2018-07-02T16:18:06+02:00</lastmod>
   </url>
   
   <url>
@@ -120,6 +175,11 @@
   <url>
     <loc>https://metadonors.github.io/odoo.workshop/</loc>
     <lastmod>2018-06-27T15:32:30+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://metadonors.github.io/odoo.workshop/views/altre_views/</loc>
+    <lastmod>2018-07-02T16:19:00+02:00</lastmod>
   </url>
   
   <url>

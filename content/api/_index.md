@@ -8,6 +8,6 @@ pre = "<b>7. </b>"
 
 ### Chapter 7
 
-# Some Chapter title
+# Accesso con API Esterne
 
-Lorem Ipsum.
+Nessun software è un'isola. Ogni applicazione moderna deve avere un API che gli permetta di integrarsi facilemente con l'esterno. Di seguito vediamo che tipo di approccio utilizza Odoo.

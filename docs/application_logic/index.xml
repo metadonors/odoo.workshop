@@ -11,5 +11,41 @@
 	<atom:link href="https://metadonors.github.io/odoo.workshop/application_logic/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Interrogare i Record</title>
+      <link>https://metadonors.github.io/odoo.workshop/application_logic/query_records/</link>
+      <pubDate>Mon, 02 Jul 2018 16:24:21 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/application_logic/query_records/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scrivere i Record</title>
+      <link>https://metadonors.github.io/odoo.workshop/application_logic/scrivere_record/</link>
+      <pubDate>Mon, 02 Jul 2018 16:24:39 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/application_logic/scrivere_record/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Operazioni sui Recordset</title>
+      <link>https://metadonors.github.io/odoo.workshop/application_logic/operazioni_recordset/</link>
+      <pubDate>Mon, 02 Jul 2018 16:24:52 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/application_logic/operazioni_recordset/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Usare i Campi Relazionali</title>
+      <link>https://metadonors.github.io/odoo.workshop/application_logic/campi_relazionali/</link>
+      <pubDate>Mon, 02 Jul 2018 16:25:10 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/application_logic/campi_relazionali/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -12,6 +12,37 @@
     
     
     <item>
+      <title>Interrogare i Record</title>
+      <link>https://metadonors.github.io/odoo.workshop/application_logic/query_records/</link>
+      <pubDate>Mon, 02 Jul 2018 16:24:21 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/application_logic/query_records/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MenuItem e Actions</title>
+      <link>https://metadonors.github.io/odoo.workshop/views/menu_actions/</link>
+      <pubDate>Mon, 02 Jul 2018 16:17:22 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/views/menu_actions/</guid>
+      <description>Gli oggetti del Menu I MenuItem sono oggetti salvati nella modello ir.ui.menu and possono essere visualizzati nel menu tecnico:
+Settings -&amp;gt; Technical -&amp;gt; User Interface -&amp;gt; Menu Items
+Sono organizzati in una struttura ad albero. I menu radice (top-level) vengono listati nell&amp;rsquo;elenco completo delle applicazioni, ogni applicazione deve quindi avere almeno un elemento del menu per poter essere visualizzata.
+Il primo sottolivello di menu crea il menu principale dell&amp;rsquo;applicazione, i successivi vengono rappresentati come menu dropdown nei rispettivi padri.</description>
+    </item>
+    
+    <item>
+      <title>Panoramica</title>
+      <link>https://metadonors.github.io/odoo.workshop/api/panoramica/</link>
+      <pubDate>Mon, 02 Jul 2018 12:16:01 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/api/panoramica/</guid>
+      <description>Il server di Odoo fornisce un API esterna che può essere utilizzata da applicazioni terze per integrarsi. L&amp;rsquo;API sono le stesse che utilizza il client web ufficiale di Odoo per funzionare. Quindi qualsiasi funzionalità utlizzata nel client web può essere utilizzita direttamente tramite API.
+Le API di Odoo supportano i protocolli XML-RPC e JSON-RPC, è quindi possibili scrivere integrazioni in qualsiasi linguaggio che supporti questi due protocolli. Per esempio nella documentazione ufficiale ci sono esempi per: Python, PHP, Ruby e Java.</description>
+    </item>
+    
+    <item>
       <title>Preambolo</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/teoria/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:19 +0200</pubDate>
@@ -54,6 +85,35 @@ $ docker-compose run odoo odoo scaffold --help  Nella pratica la comunità si è
 Editor di testo Non ci sono preferenze per l&amp;rsquo;editor di testo, ovviamente è opportuno usarne uno che aiuti a lavorare con codice python e javascript
 Un elenco di alcuni possibili editor:
  VSCode https://code.visualstudio.com/ Atom https://atom.io/ Sublime Text https://www.sublimetext.com/  Git L&amp;rsquo;installazione di Git varia in base al sistema operativo utilizzato, ecco come procedere:</description>
+    </item>
+    
+    <item>
+      <title>Scrivere i Record</title>
+      <link>https://metadonors.github.io/odoo.workshop/application_logic/scrivere_record/</link>
+      <pubDate>Mon, 02 Jul 2018 16:24:39 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/application_logic/scrivere_record/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Context e Domain</title>
+      <link>https://metadonors.github.io/odoo.workshop/views/context_domain/</link>
+      <pubDate>Mon, 02 Jul 2018 16:17:28 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/views/context_domain/</guid>
+      <description>Più volte durante il corso siamo inciampati su context e domain. Abbiamo visto che possono essere legati alle azioni, ma anche usati durante le interrogazioni del database. Vediamo più nel dettaglio che cosa sono.
+Context Il context è un dizionario Python contenente dati che vengono mantenuti durante la sessione e che possono essere utilizzati sia dal client per renderizzare diversi componente della UI, sia dal server per modificare la logica applicativa</description>
+    </item>
+    
+    <item>
+      <title>Operazioni</title>
+      <link>https://metadonors.github.io/odoo.workshop/api/operazioni/</link>
+      <pubDate>Mon, 02 Jul 2018 12:16:04 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/api/operazioni/</guid>
+      <description>La documentazione ufficiale ci illustra come procedere ad interrogare le API utilizzando direttamente le librerie XMLRPC disponibili nei vari linguaggi. In questa sezione invece analizziamo come interfacciarci alla nostra applicazione tramite una libreria di più altro livello, che semplifica e ottimizza le nostre chiamate.
+Login Per effettuare qualsiasi tipo di operazione tramite API è necessario per prima cosa autenticarsi. L&amp;rsquo;autenticazione tramite API avviene utilizzando tre informazioni: username, password e nome del database dei riferimento.</description>
     </item>
     
     <item>
@@ -102,6 +162,24 @@ $ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, 
     </item>
     
     <item>
+      <title>Operazioni sui Recordset</title>
+      <link>https://metadonors.github.io/odoo.workshop/application_logic/operazioni_recordset/</link>
+      <pubDate>Mon, 02 Jul 2018 16:24:52 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/application_logic/operazioni_recordset/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Form View</title>
+      <link>https://metadonors.github.io/odoo.workshop/views/form_view/</link>
+      <pubDate>Mon, 02 Jul 2018 16:17:37 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/views/form_view/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Relazioni</title>
       <link>https://metadonors.github.io/odoo.workshop/models/relazioni/</link>
       <pubDate>Thu, 28 Jun 2018 16:52:26 +0200</pubDate>
@@ -143,6 +221,24 @@ Moduli I moduli sono i componenti essenziali che possono essere aggiunti a Odoo.
     </item>
     
     <item>
+      <title>Usare i Campi Relazionali</title>
+      <link>https://metadonors.github.io/odoo.workshop/application_logic/campi_relazionali/</link>
+      <pubDate>Mon, 02 Jul 2018 16:25:10 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/application_logic/campi_relazionali/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>List e Search View</title>
+      <link>https://metadonors.github.io/odoo.workshop/views/list_view/</link>
+      <pubDate>Mon, 02 Jul 2018 16:17:53 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/views/list_view/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Computed Fields</title>
       <link>https://metadonors.github.io/odoo.workshop/models/computed_fields/</link>
       <pubDate>Thu, 28 Jun 2018 16:52:30 +0200</pubDate>
@@ -174,6 +270,15 @@ Aggiungere la logica applicativa Nella precedente sezione abbiamo aggiunto due b
     </item>
     
     <item>
+      <title>Pivot e Graph View</title>
+      <link>https://metadonors.github.io/odoo.workshop/views/graph_pivot_views/</link>
+      <pubDate>Mon, 02 Jul 2018 16:18:06 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/views/graph_pivot_views/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Vincoli</title>
       <link>https://metadonors.github.io/odoo.workshop/models/vincoli/</link>
       <pubDate>Thu, 28 Jun 2018 16:52:30 +0200</pubDate>
@@ -202,6 +307,15 @@ Nel nostro caso vogliamo aggiugere la possibilità per gli utenti di commentare 
       <guid>https://metadonors.github.io/odoo.workshop/first_app/controllo_accessi/</guid>
       <description>Nella scorsa sezione abbiamo terminato la creazione del nostro modulo base. Al termine abbiamo notato che Odoo si lamentava dicendo che non abbiamo specificato delle regole di accesso per il modello da noi creato
 WARNING demo odoo.modules.loading: The model todo.task has no access rules, consider adding one. E.g. access_todo_task,access_todo_task,model_todo_task,,1,0,0,0  In Odoo tutti i modelli devono avere delle regole di accesso specificate, in caso contrario solo l&amp;rsquo;utente admin potrà accedere ai dati relativi a quel modello.</description>
+    </item>
+    
+    <item>
+      <title>Altre Viste</title>
+      <link>https://metadonors.github.io/odoo.workshop/views/altre_views/</link>
+      <pubDate>Mon, 02 Jul 2018 16:19:00 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/views/altre_views/</guid>
+      <description></description>
     </item>
     
   </channel>

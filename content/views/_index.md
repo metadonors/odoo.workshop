@@ -6,8 +6,8 @@ chapter = true
 pre = "<b>5. </b>"
 +++
 
-### Chapter X
+### Chapter 5
 
-# Some Chapter title
+# VISTE
 
-Lorem Ipsum.
+Come disegnare l'interfaccia utente con il framework Odoo

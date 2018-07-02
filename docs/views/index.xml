@@ -11,5 +11,63 @@
 	<atom:link href="https://metadonors.github.io/odoo.workshop/views/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>MenuItem e Actions</title>
+      <link>https://metadonors.github.io/odoo.workshop/views/menu_actions/</link>
+      <pubDate>Mon, 02 Jul 2018 16:17:22 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/views/menu_actions/</guid>
+      <description>Gli oggetti del Menu I MenuItem sono oggetti salvati nella modello ir.ui.menu and possono essere visualizzati nel menu tecnico:
+Settings -&amp;gt; Technical -&amp;gt; User Interface -&amp;gt; Menu Items
+Sono organizzati in una struttura ad albero. I menu radice (top-level) vengono listati nell&amp;rsquo;elenco completo delle applicazioni, ogni applicazione deve quindi avere almeno un elemento del menu per poter essere visualizzata.
+Il primo sottolivello di menu crea il menu principale dell&amp;rsquo;applicazione, i successivi vengono rappresentati come menu dropdown nei rispettivi padri.</description>
+    </item>
+    
+    <item>
+      <title>Context e Domain</title>
+      <link>https://metadonors.github.io/odoo.workshop/views/context_domain/</link>
+      <pubDate>Mon, 02 Jul 2018 16:17:28 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/views/context_domain/</guid>
+      <description>Più volte durante il corso siamo inciampati su context e domain. Abbiamo visto che possono essere legati alle azioni, ma anche usati durante le interrogazioni del database. Vediamo più nel dettaglio che cosa sono.
+Context Il context è un dizionario Python contenente dati che vengono mantenuti durante la sessione e che possono essere utilizzati sia dal client per renderizzare diversi componente della UI, sia dal server per modificare la logica applicativa</description>
+    </item>
+    
+    <item>
+      <title>Form View</title>
+      <link>https://metadonors.github.io/odoo.workshop/views/form_view/</link>
+      <pubDate>Mon, 02 Jul 2018 16:17:37 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/views/form_view/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>List e Search View</title>
+      <link>https://metadonors.github.io/odoo.workshop/views/list_view/</link>
+      <pubDate>Mon, 02 Jul 2018 16:17:53 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/views/list_view/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pivot e Graph View</title>
+      <link>https://metadonors.github.io/odoo.workshop/views/graph_pivot_views/</link>
+      <pubDate>Mon, 02 Jul 2018 16:18:06 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/views/graph_pivot_views/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Altre Viste</title>
+      <link>https://metadonors.github.io/odoo.workshop/views/altre_views/</link>
+      <pubDate>Mon, 02 Jul 2018 16:19:00 +0200</pubDate>
+      
+      <guid>https://metadonors.github.io/odoo.workshop/views/altre_views/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
