@@ -1,8 +1,8 @@
 +++
 title = "Altre Risorse"
 date = 2018-06-28T10:51:28+02:00
-weight = 9
-pre = "<b>9. </b>"
+weight = 8
+pre = "<b>8. </b>"
 +++
 
 ## Libri

@@ -12,19 +12,19 @@
     <title>Form View :: Odoo Workshop</title>
     
     
-    <link href="/odoo.workshop/css/nucleus.css?1530545032" rel="stylesheet">
-    <link href="/odoo.workshop/css/font-awesome.min.css?1530545032" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1530545032" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1530545032" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530545032" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1530545032" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1530545032" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1530545032" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/font-awesome.min.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1530633673" rel="stylesheet">
     
-      <link href="/odoo.workshop/css/theme-metadonors.css?1530545032" rel="stylesheet">
+      <link href="/odoo.workshop/css/theme-metadonors.css?1530633673" rel="stylesheet">
     
 
-    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530545032"></script>
+    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530633673"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530545032"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530545032"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530633673"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530633673"></script>
 <script type="text/javascript">
     
         var baseurl = '\/odoo.workshop\/';
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1530545032"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1530633673"></script>
 
     
   </div>
@@ -716,9 +716,9 @@
  
   
     
-      <li data-nav-id="/odoo.workshop/application_logic/query_records/" title="Interrogare i Record" class="dd-item ">
-        <a href="/odoo.workshop/application_logic/query_records/">
-        Interrogare i Record
+      <li data-nav-id="/odoo.workshop/application_logic/wizard/" title="Wizard" class="dd-item ">
+        <a href="/odoo.workshop/application_logic/wizard/">
+        Wizard
         
         </a>
     </li>
@@ -735,47 +735,9 @@
  
   
     
-      <li data-nav-id="/odoo.workshop/application_logic/scrivere_record/" title="Scrivere i Record" class="dd-item ">
-        <a href="/odoo.workshop/application_logic/scrivere_record/">
-        Scrivere i Record
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/odoo.workshop/application_logic/operazioni_recordset/" title="Operazioni sui Recordset" class="dd-item ">
-        <a href="/odoo.workshop/application_logic/operazioni_recordset/">
-        Operazioni sui Recordset
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/odoo.workshop/application_logic/campi_relazionali/" title="Usare i Campi Relazionali" class="dd-item ">
-        <a href="/odoo.workshop/application_logic/campi_relazionali/">
-        Usare i Campi Relazionali
+      <li data-nav-id="/odoo.workshop/application_logic/usare_orm/" title="Usare l&#39;ORM" class="dd-item ">
+        <a href="/odoo.workshop/application_logic/usare_orm/">
+        Usare l&#39;ORM
         
         </a>
     </li>
@@ -869,35 +831,13 @@
  
   
     
-    <li data-nav-id="/odoo.workshop/website/" title="Sito Web Esterno" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/odoo.workshop/website/">
-          <b>8. </b>Sito Web Esterno
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-          
-          
-
-
- 
-  
-    
     <li data-nav-id="/odoo.workshop/resources/" title="Altre Risorse" class="dd-item 
         
         
         
         ">
       <a href="/odoo.workshop/resources/">
-          <b>9. </b>Altre Risorse
+          <b>8. </b>Altre Risorse
           
       </a>
       
@@ -977,7 +917,32 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#struttura">Struttura</a>
+<ul>
+<li><a href="#l-intestazione-header">L&rsquo;intestazione: &lt;header&gt;</a></li>
+<li><a href="#il-corpo-sheet">Il Corpo: &lt;sheet&gt;</a>
+<ul>
+<li><a href="#titolo-e-sottotitolo">Titolo e sottotitolo</a></li>
+<li><a href="#gli-smart-buttons">Gli smart buttons</a></li>
+<li><a href="#raggruppare-i-campi">Raggruppare i campi</a></li>
+<li><a href="#il-notebook">Il notebook</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#componenti">Componenti</a>
+<ul>
+<li><a href="#fields">Fields</a></li>
+<li><a href="#label-per-i-fields">Label per i Fields</a></li>
+<li><a href="#relational-fields">Relational Fields</a></li>
+<li><a href="#widget-per-i-fields">Widget per i Fields</a></li>
+</ul></li>
+<li><a href="#button">Button</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -995,6 +960,233 @@
         
 
 
+
+
+<h2 id="struttura">Struttura</h2>
+
+<p>Le applicazioni Business-oriented spesso sono costituite da insiemi di record - i rpodotti in magazzino, le fatture della contabilità, etc. La maggior parte di questi tipi di dati può essere rappresentato come un documento di carta. Odoo quindi riutilizza questa astrazione per rappresentare i suoi record.</p>
+
+<p>Questa è la struttura generale di un record Odoo</p>
+
+<pre><code class="language-xml"> &lt;record model=&quot;ir.ui.view&quot; id=&quot;todo_task_form_view&quot;&gt;
+    &lt;field name=&quot;name&quot;&gt;todo.task.form&lt;/field&gt;
+    &lt;field name=&quot;model&quot;&gt;todo.task&lt;/field&gt;
+    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;
+        &lt;form string=&quot;ToDo task Form&quot;&gt;
+            &lt;header&gt;
+                &lt;!-- Sezione dedicata ai pulsanti e al widget dello stato del record --&gt;
+            &lt;/header&gt;
+            &lt;sheet&gt;
+                &lt;!-- Sezione dedicata al contenuto del form --&gt;
+                
+            &lt;/sheet&gt;
+            &lt;div class='oe_chatter'&gt;
+                &lt;!-- Storico e comunicazioni --&gt;
+                &lt;div class=&quot;oe_chatter&quot;&gt;
+                    &lt;field name=&quot;message_follower_ids&quot; widget=&quot;mail_followers&quot;/&gt;
+                    &lt;field name=&quot;message_ids&quot; widget=&quot;mail_thread&quot;/&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/field&gt;
+&lt;/record&gt;
+</code></pre>
+
+<p>Quindi come si vede ogni documento Odoo è costituito da tre aree principali: <strong>&lt;header&gt;</strong> dedicato al ciclo di vita del record, <strong>&lt;sheet&gt;</strong> per il corpo del record e infine una sezione dedicata allo <strong>storico e alle comunicazioni</strong> chiamato solitamente <strong>chatter</strong>.</p>
+
+<h3 id="l-intestazione-header">L&rsquo;intestazione: &lt;header&gt;</h3>
+
+<p>Nell&rsquo;header solitamente sono presenti due tipi di entità: pulsanti e statusbar. I pulsanti sono normali tag <em>&lt;button&gt;</em> e solitamente l&rsquo;azione principale viene evidenziata passandogli la classe css <em>oe_highlight</em>.</p>
+
+<p>La <em>statusbar</em> invece solitamente fa riferimento all&rsquo;attributo <em>state</em> dell&rsquo;oggetto. L&rsquo;attributo <em>state</em> può essere o una semplice <em>Selection</em> di stati oppure un campo Many2one. Nel secondo caso parliamo di <em>Stage</em> del record. In entrambi i casi però gli attributi possono essere rappresentati con il widget <em>statusbar</em>.</p>
+
+<pre><code class="language-xml"> &lt;header&gt;
+    &lt;!-- Aggiungiamo un pulsante per modificare lo stato Fatto del task --&gt;
+    &lt;button 
+        name=&quot;do_toggle_button&quot; 
+        type=&quot;object&quot;
+        string=&quot;Toggle Done&quot;
+        class=&quot;oe_highlight&quot;/&gt;
+    
+    &lt;!-- Aggiungiamo un pulsante per rimuovere i task in stato fatto --&gt;
+    &lt;button 
+        name=&quot;do_clear_done&quot; 
+        type=&quot;object&quot;
+        string=&quot;Clear All Done&quot;
+        class=&quot;oe_highlight&quot;/&gt;
+    
+    &lt;field name='state' widget='statusbar' clickable=&quot;1&quot;/&gt;
+&lt;/header&gt;
+</code></pre>
+
+<h3 id="il-corpo-sheet">Il Corpo: &lt;sheet&gt;</h3>
+
+<p>Il tag &lt;sheet&gt; è l&rsquo;area principale dedicata alla presentazione dei date. È disegnata in modo da rappresentare un foglio di carta e solitamente è suddivisa in questi componenti:</p>
+
+<ul>
+<li>Titolo e sottotitolo in alto</li>
+<li>Un box di bottoni nella parte superiore (smart buttons)</li>
+<li>Un&rsquo;area con i campi principali del docuemnto</li>
+<li>Una sezione organizzata in tab (notebook)</li>
+</ul>
+
+<p><img src="/odoo.workshop/screen/form_view/odoo_sheet.png?width=60pc" alt="odoo_sheet" /></p>
+
+<h4 id="titolo-e-sottotitolo">Titolo e sottotitolo</h4>
+
+<p>All&rsquo;interno delle viste XML oltre ai tag specifici di Odoo è possibile utilizzare anche i normali tag html. Per esempio per renderizzare l&rsquo;area dedicata a titolo e sottotitolo si fa ricorso a un normale &lt;div&gt; di class <em>oe_title</em>. Per esempio</p>
+
+<pre><code class="language-xml">&lt;sheet&gt;
+    &lt;div class=&quot;oe_title&quot;&gt;
+        &lt;label for=&quot;name&quot; class=&quot;oe_edit_only&quot;/&gt;
+        &lt;h1&gt;&lt;field name=&quot;name&quot;/&gt;&lt;/h1&gt;
+        &lt;h3&gt;
+            &lt;span class=&quot;oe_read_only&quot;&gt;By&lt;/span&gt;
+            &lt;label for=&quot;user_id&quot; class=&quot;oe_edit_only&quot;/&gt;
+            &lt;field name=&quot;user_id&quot; class=&quot;oe_inline&quot;/&gt;
+        &lt;/h3&gt;
+    &lt;/div&gt;    
+    &lt;!-- Il resto del contenuto del docuemnto --&gt;
+&lt;/sheet&gt;
+</code></pre>
+
+<h4 id="gli-smart-buttons">Gli smart buttons</h4>
+
+<p>La zona in alto a destra del documento è dedicato al contenitore degli smart buttons. Sono dei normali bottoni con un estetica dedicata che solitamente contegono informazioni statistiche o contatori e un rimando ai dati che rappresentano.</p>
+
+<p>Per creare un contenitore per questi bottoni si può aggiungere a fianco all&rsquo;eventuale <em>oe_title</em> un altro div di class <em>oe_button_box</em></p>
+
+<pre><code class="language-xml">&lt;div name=&quot;buttons&quot; class=&quot;oe_right oe_button_box&quot;&gt;
+    &lt;!-- L'elenco di smart buttons --&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h4 id="raggruppare-i-campi">Raggruppare i campi</h4>
+
+<p>Il contentuno principale dei form può essere organizzato utilizzando il tag  <em>&lt;group&gt;</em>. Questo tag crea due colonne nella sua area e, di default, i field conenuti vengono rappresentati con la loro label.</p>
+
+<p>Se presente un solo tag <em>&lt;group&gt;</em> i <em>&lt;field&gt;</em> contenuti occuperanno due colonne, una per la label e l&rsquo;altra per l&rsquo;input. Se invece vengono aggiunti altri tag <em>&lt;group&gt;</em>, i field e le loro label saranno distribuiti su altre due colonne.</p>
+
+<pre><code class="language-xml">&lt;group name=&quot;group_top&quot;&gt;
+    &lt;group name=&quot;group_left&quot;&gt;
+        &lt;!-- label + field nella colonna di sinistra --&gt;
+        &lt;field name=&quot;name&quot;/&gt;
+        [...]
+    &lt;/group&gt;
+    &lt;group name=&quot;group_right&quot;&gt;
+        &lt;!-- label + field nella colonna di destra --&gt;
+        &lt;field name=&quot;deadline_date&quot;/&gt;
+        [...]
+    &lt;/group&gt;
+&lt;/group&gt;
+</code></pre>
+
+<h4 id="il-notebook">Il notebook</h4>
+
+<p>Un altro strumento per organizzare i contenuti nei nostri form e&rsquo; l&rsquo;elemento <em>&lt;notebook&gt;</em> che contiene al suo interno altri elementi chiamati pagine. E&rsquo; molto utile per organizzare i dati meno utilizzati in sottosezioni facilmente raggiungibili.</p>
+
+<p>Un esempio di notebook:</p>
+
+<pre><code class="language-xml">&lt;notebook&gt;
+    &lt;page string=&quot;Info&quot; name=&quot;info&quot;&gt;
+        &lt;!-- contenuto prima pagina --&gt;
+        &lt;field name=&quot;other_info&quot;/&gt;
+    &lt;/page&gt;
+    &lt;page string=&quot;Info 2&quot; name=&quot;info2&quot;&gt;
+        &lt;!-- contenuto seconda pagina --&gt;
+    &lt;/page&gt;
+    [...]
+&lt;/notebook&gt;
+</code></pre>
+
+<h2 id="componenti">Componenti</h2>
+
+<p>Odoo fornisce una serie di componenti aggiuntivi al normale HTML, con funzionalità di più alto livello.</p>
+
+<h3 id="fields">Fields</h3>
+
+<p>I <em>fields</em> vengono utilizzati per rappresentare e manipolare i dati dei modelli. Prendono una serie di attributi che solitamente vengono specificati nella dichiarazione del campo nel modello ma che possono essere sovrascritti nella vista:</p>
+
+<p>I principali attributi dei campi:</p>
+
+<ul>
+<li><strong>name</strong>: identifica il nome dell&rsquo;attributo di riferimento</li>
+<li><strong>string</strong>: il testo della label implicita utilizzata per il campo</li>
+<li><strong>help</strong>: testo mostrato in un tooltip sull&rsquo;etichetta del campo quando il curore ci si ferma sopra</li>
+<li><strong>placeholder</strong>: un suggerimento da visualizzare all&rsquo;utente all&rsquo;interno del campo</li>
+<li><strong>widget</strong>: sovrascrive il tipo di wiget da utilizzare per visualizzare il campo</li>
+<li><strong>options</strong>: un dizionario di opzioni da passare eventualmente al widget</li>
+<li><strong>nolabel=True</strong>: disabilita la presentazione automatica della label del campo</li>
+<li><strong>invisible=True</strong>: nasconde il campo, ma i dati relativi sono comunque caricati e disponibili nel form</li>
+<li><strong>readonly=True</strong>: rende il campo non modificabile</li>
+<li><strong>required=True</strong>: rende il campo obbligatorio</li>
+</ul>
+
+<h3 id="label-per-i-fields">Label per i Fields</h3>
+
+<p>Il tag <em>&lt;label&gt;</em> può essere utilizzato per un maggior controllo sulla visualizzazione dell&rsquo;etichetta del campo. Un classico è quello di far visualizzare l&rsquo;etichetta solo in modalità modifica utilizzando la classe CSS <em>oe_edit_only</em></p>
+
+<pre><code class="language-xml">&lt;label for=&quot;name&quot; class=&quot;oe_edit_only&quot; /&gt;
+</code></pre>
+
+<h3 id="relational-fields">Relational Fields</h3>
+
+<p>Anche i campi relazionali hanno alcune opzioni specifiche che ne modificano il comportamento. Di default attraverso un campo relazionale l&rsquo;utente potrà creare, e visualizzare i dati dei modelli collegati. Per disabilitare questa funzione è possibile utilizzare l&rsquo;attributo <em>options</em></p>
+
+<pre><code class="language-xml">&lt;field name=&quot;project_id&quot; options=&quot;{'no_open': True, 'no_create': True}&quot;/&gt;
+</code></pre>
+
+<p>Anche <em>context</em> e <em>domain</em> sono molto utili con i campi relazionali. Attraverso il <em>context</em> è posibile passare valori di default alla creazione di un oggetto collegato, mentre con il <em>domain</em> è possibile filtrare a priori i possibili valori che l&rsquo;oggetto correlato può avere.</p>
+
+<h3 id="widget-per-i-fields">Widget per i Fields</h3>
+
+<p>Ogni tipo di campo viene visualizzato nel form con un widget di default, ma è possibile comunque sovrascrivere questo comportamento utilizzando altri widget (o creandone di specifici) all&rsquo;occorrenza.</p>
+
+<p>Per i campi testuali, abbiamo già disponibili questi widget:</p>
+
+<ul>
+<li><strong>email</strong> renderizza il valore del campo come un link di tipo <em>mailto</em></li>
+<li><strong>url</strong>  renderizza il valore del campo com un link</li>
+<li><strong>html</strong>  renderizza il campo come html, in fase di modifica presente un editor WYSWYG</li>
+</ul>
+
+<p>Per i campi numerici, abbiamo già disponibili questi widget:</p>
+
+<ul>
+<li><strong>handle</strong> utilizzato di solito con i campi che indicano la posizione, renderizza un&rsquo;icona che permette il drag and drop dei record nelle liste</li>
+<li><strong>float_time</strong> renderizza un campo float come ore:minuti</li>
+<li><strong>monetary</strong> renderizza un campo fload con il relativo valore di valuta. Si aspetta anche un opzione <em>currency_id</em> che indica quale attributo del modello utilizzare per indicare la valuta corrente</li>
+<li><strong>proggressbar</strong> renderizza un float come una barra di progresso e il valore espresso in %</li>
+</ul>
+
+<p>Per i campi relazionalie e i Selection, abbiamo già disponibili questi widget:</p>
+
+<ul>
+<li><strong>many2many_tags</strong> renderizza il campo come una lista di label simili a bottoni</li>
+<li><strong>selection</strong> renderizza il campo con un menu a tendina</li>
+<li><strong>radio</strong> rederizza il campo con una lista di radio buttons</li>
+<li><strong>priority</strong> rappresenta il campo con una lista di stelline cliccabili (solitamente i valori in questo caso sono numerici)</li>
+</ul>
+
+<h2 id="button">Button</h2>
+
+<p>I tag <em>&lt;label&gt;</em> accettano questo tipo di attributi:</p>
+
+<ul>
+<li><strong>icon</strong> un&rsquo;icona da utilizzare all&rsquo;interno del bottone, le uniche disponibili sono quelle presenti nella cartella <em>addons/web/static/src/img/icons/</em></li>
+<li><strong>string</strong> il testo da visualizzare all&rsquo;interno del bottone</li>
+<li><strong>type</strong> indica il tipo di azione che verrà scatenata alla pressione del pulsante
+
+<ul>
+<li><strong>object</strong> è utilizzata per invocare un metodo python</li>
+<li><strong>action</strong> è utilizzata per invocare una window action</li>
+</ul></li>
+<li><strong>name</strong> identifica l&rsquo;azione specifica da invocare. Sarà quindi o il nome del metodo o l&rsquo;XMLID della window action</li>
+<li><strong>args</strong> quando il <em>type</em> è <em>object</em>, questo attributo viene usato per passare argomenti al metodo</li>
+<li><strong>context</strong> aggiunge valori al context</li>
+<li><strong>confirm</strong> visualizza una schermata di conferma con un messaggio il cui testo è quello assegnato a questo attributo</li>
+<li><strong>special=&ldquo;cancel&rdquo;</strong> usato nei wizard, si usa sul bottone che annulla l&rsquo;operazione</li>
+</ul>
 
 
 <footer class=" footline" >
@@ -1548,38 +1740,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1627,22 +1787,6 @@
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -1682,20 +1826,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1530545032"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530545032"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530545032"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1530545032"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1530545032"></script>
-    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530545032"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1530545032"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1530633673"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1530633673"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530545032"></script>
-    <script src="/odoo.workshop/js/learn.js?1530545032"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1530545032"></script>
+    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530633673"></script>
+    <script src="/odoo.workshop/js/learn.js?1530633673"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1530633673"></script>
 
-    <link href="/odoo.workshop/mermaid/mermaid.css?1530545032" type="text/css" rel="stylesheet" />
-    <script src="/odoo.workshop/mermaid/mermaid.js?1530545032"></script>
+    <link href="/odoo.workshop/mermaid/mermaid.css?1530633673" type="text/css" rel="stylesheet" />
+    <script src="/odoo.workshop/mermaid/mermaid.js?1530633673"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

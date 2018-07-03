@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.42.2" />
+    <meta name="description" content="Odoo Workshop">
+<meta name="author" content="Metadonors">
+
+    <link rel="shortcut icon" href="/odoo.workshop/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/x-icon" />
+    <title>Wizard :: Odoo Workshop</title>
+    
+    
+    <link href="/odoo.workshop/css/nucleus.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/font-awesome.min.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1530633673" rel="stylesheet">
+    
+      <link href="/odoo.workshop/css/theme-metadonors.css?1530633673" rel="stylesheet">
+    
+
+    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530633673"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/odoo.workshop/application_logic/wizard/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/odoo.workshop">
+    <img src="/odoo.workshop/images/logo.png"/>
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530633673"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530633673"></script>
+<script type="text/javascript">
+    
+        var baseurl = '\/odoo.workshop\/';
+    
+</script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1530633673"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/basics/" title="Iniziare" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/basics/">
+          <b>1. </b>Iniziare
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/basics/precorso/" title="Precorso" class="dd-item ">
+        <a href="/odoo.workshop/basics/precorso/">
+        Precorso
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/basics/installazione/" title="Installazione" class="dd-item ">
+        <a href="/odoo.workshop/basics/installazione/">
+        Installazione
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/basics/concetti/" title="Concetti Base" class="dd-item ">
+        <a href="/odoo.workshop/basics/concetti/">
+        Concetti Base
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/first_app/" title="La prima applicazione" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/first_app/">
+          <b>2. </b>La prima applicazione
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/primo_modulo/" title="Scaffolding" class="dd-item ">
+        <a href="/odoo.workshop/first_app/primo_modulo/">
+        Scaffolding
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/primo_modello/" title="I modelli" class="dd-item ">
+        <a href="/odoo.workshop/first_app/primo_modello/">
+        I modelli
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/prime_viste/" title="Le viste" class="dd-item ">
+        <a href="/odoo.workshop/first_app/prime_viste/">
+        Le viste
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/prima_funzione/" title="La logica" class="dd-item ">
+        <a href="/odoo.workshop/first_app/prima_funzione/">
+        La logica
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/first_app/controllo_accessi/" title="Controllo Accessi" class="dd-item ">
+        <a href="/odoo.workshop/first_app/controllo_accessi/">
+        Controllo Accessi
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/inheritance/" title="Estendere i moduli" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/inheritance/">
+          <b>3. </b>Estendere i moduli
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/inheritance/teoria/" title="Preambolo" class="dd-item ">
+        <a href="/odoo.workshop/inheritance/teoria/">
+        Preambolo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/inheritance/estendere_modelli/" title="Estendere i Modelli" class="dd-item ">
+        <a href="/odoo.workshop/inheritance/estendere_modelli/">
+        Estendere i Modelli
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/inheritance/estendere_viste/" title="Estendere le Viste" class="dd-item ">
+        <a href="/odoo.workshop/inheritance/estendere_viste/">
+        Estendere le Viste
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/inheritance/estendere_dati/" title="Estendere i Dati" class="dd-item ">
+        <a href="/odoo.workshop/inheritance/estendere_dati/">
+        Estendere i Dati
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/inheritance/aggiungere_funzionalita/" title="Aggiungere funzionalità" class="dd-item ">
+        <a href="/odoo.workshop/inheritance/aggiungere_funzionalita/">
+        Aggiungere funzionalità
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/models/" title="I Modelli" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/models/">
+          <b>4. </b>I Modelli
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/models/preambolo/" title="Preambolo" class="dd-item ">
+        <a href="/odoo.workshop/models/preambolo/">
+        Preambolo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/models/campi_base/" title="Campi Base" class="dd-item ">
+        <a href="/odoo.workshop/models/campi_base/">
+        Campi Base
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/models/relazioni/" title="Relazioni" class="dd-item ">
+        <a href="/odoo.workshop/models/relazioni/">
+        Relazioni
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/models/computed_fields/" title="Computed Fields" class="dd-item ">
+        <a href="/odoo.workshop/models/computed_fields/">
+        Computed Fields
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/models/vincoli/" title="Vincoli" class="dd-item ">
+        <a href="/odoo.workshop/models/vincoli/">
+        Vincoli
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/views/" title="Le Viste" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/views/">
+          <b>5. </b>Le Viste
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/views/menu_actions/" title="MenuItem e Actions" class="dd-item ">
+        <a href="/odoo.workshop/views/menu_actions/">
+        MenuItem e Actions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/views/context_domain/" title="Context e Domain" class="dd-item ">
+        <a href="/odoo.workshop/views/context_domain/">
+        Context e Domain
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/views/form_view/" title="Form View" class="dd-item ">
+        <a href="/odoo.workshop/views/form_view/">
+        Form View
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/views/list_view/" title="List e Search View" class="dd-item ">
+        <a href="/odoo.workshop/views/list_view/">
+        List e Search View
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/views/graph_pivot_views/" title="Pivot e Graph View" class="dd-item ">
+        <a href="/odoo.workshop/views/graph_pivot_views/">
+        Pivot e Graph View
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/views/altre_views/" title="Altre Viste" class="dd-item ">
+        <a href="/odoo.workshop/views/altre_views/">
+        Altre Viste
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/application_logic/" title="Logica applicativa" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/odoo.workshop/application_logic/">
+          <b>6. </b>Logica applicativa
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/application_logic/wizard/" title="Wizard" class="dd-item active">
+        <a href="/odoo.workshop/application_logic/wizard/">
+        Wizard
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/application_logic/usare_orm/" title="Usare l&#39;ORM" class="dd-item ">
+        <a href="/odoo.workshop/application_logic/usare_orm/">
+        Usare l&#39;ORM
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/api/" title="Api esterne" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/api/">
+          <b>7. </b>Api esterne
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/api/panoramica/" title="Panoramica" class="dd-item ">
+        <a href="/odoo.workshop/api/panoramica/">
+        Panoramica
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/odoo.workshop/api/operazioni/" title="Operazioni" class="dd-item ">
+        <a href="/odoo.workshop/api/operazioni/">
+        Operazioni
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/odoo.workshop/resources/" title="Altre Risorse" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/odoo.workshop/resources/">
+          <b>8. </b>Altre Risorse
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fa fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/metadonors/odoo.workshop/tree/master/content/application_logic/wizard.md" target="blank">
+                      <i class="fa fa-code-fork"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/odoo.workshop/'>Index</a> > <a href='/odoo.workshop/application_logic/'>Logica applicativa</a> > Wizard
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#creare-un-wizard">Creare un wizard</a></li>
+<li><a href="#il-modello-del-wizard">Il modello del wizard</a></li>
+<li><a href="#la-vista-del-wizard">La vista del wizard</a></li>
+<li><a href="#la-logica-applicativa-del-wizard">La logica applicativa del wizard</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Wizard</h1>
+          
+
+        
+
+
+
+
+<p>I wizard sono uno strumento molto utile per fornire agli utenti un interfaccia per effettuare operazioni complesse sui dati. Per esempio chiedendogli dati aggiuntivi rispetto alle operazioni che stanno facendo oppure semplicemente per avere uno strumento di validazione delle operazioni da effettuare.</p>
+
+<h2 id="creare-un-wizard">Creare un wizard</h2>
+
+<p>I wizard di solito risiedono nella cartella <em>wizards/</em> all&rsquo;interno dei moduli. Cominciamo a creare il nosto wizard nella cartella del modulo <em>todo_plus</em>
+creando la seguente struttura</p>
+
+<pre><code class="language-bash">todo_plus/
+    models/
+        [...]
+    security/
+        [...]
+    views/
+        [...]
+    # Aggiungiamo questo
+    wizards/
+        __init__.py
+        todo_wizard.py
+        todo_wizard.xml
+    __init__.py
+    __manifest__.py
+</code></pre>
+
+<p>All&rsquo;interno del file <em>todo_plus/__init.py__</em> aggiungiamo</p>
+
+<pre><code class="language-python">from . import wizards
+</code></pre>
+
+<p>All&rsquo;interno del file <em>todo_plus/wizards/__init.py__</em> aggiungiamo</p>
+
+<pre><code class="language-python">from . import todo_wizard
+</code></pre>
+
+<p>All&rsquo;interno del file <em>todo_plus/__manifest.py__</em> aggiungiamo</p>
+
+<pre><code class="language-python">{
+    'name': 'TODO Plus',
+    'description': &quot;Maggiori funzionalita per l'app TODO&quot;,
+    'author': 'Metadonors',
+    'depends': ['todo_user'],
+    'data': [
+        'security/todo_project_acl.xml',
+        'security/todo_tag_acl.xml',
+        'views/todo_task.xml',
+        'views/todo_project.xml',
+        'wizards/todo_wizard.xml' # &lt;--- Aggiungiamo questo
+    ]
+}
+</code></pre>
+
+<h2 id="il-modello-del-wizard">Il modello del wizard</h2>
+
+<p>Un wizard visualizza una Form View all&rsquo;utente, solitamente all&rsquo;interno di una finestra modale. Questa vista è implementata con la stessa architattura che abbiamo visto finora con l&rsquo;unica differenza che il modello del wizard erediterà dalla classe <em>models.TransientModel</em> anzichè dalla classe <em>models.Models</em>. Questo tipo di modelli vengono salvati in database come i modelli classici con l&rsquo;unica differenza che vengono automaticamente cancellati ogni giorno.</p>
+
+<p>Quindi apriamo il file <em>todo_plus/wizards/todo_wizard.py</em> e scriviamo</p>
+
+<pre><code class="language-python"># -*- coding: utf-8 -*-
+from odoo import models, fields, api
+
+class TodoWizard(models.TransientModel):
+    _name = 'todo.wizard'
+    _desctiption = 'Todo Wizard per assegnazioni massive'
+
+    todo_ids = fields.Many2many('todo.task', string='Tasks')
+    new_deadline_date = fields.Date(string='Nuova deadline')
+    new_user_id = fields.Many2one('res.users', string='Nuovo Responsabile')
+</code></pre>
+
+<h2 id="la-vista-del-wizard">La vista del wizard</h2>
+
+<p>Le viste dei wizard sono uguali alle viste classiche, con due differenze:</p>
+
+<ul>
+<li>Può essere inserita una sezione &lt;footer&gt; per contenere i pulsanti del wizard</li>
+<li>Può essere inserito un pulsante con <em>special=&ldquo;cancel&rdquo;</em> che si ooccupa di chiudere il wizard</li>
+</ul>
+
+<p>Quindi apriamo il file <em>todo_plus/wizards/todo_wizard.xml</em> e scriviamo</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;odoo&gt;
+    &lt;record model=&quot;ir.ui.view&quot; id=&quot;todo_task_wizard_view&quot;&gt;
+        &lt;field name=&quot;name&quot;&gt;todo.wizard.form&lt;/field&gt;
+        &lt;field name=&quot;model&quot;&gt;todo.wizard&lt;/field&gt;
+        &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;
+            &lt;form&gt;
+                &lt;div class=&quot;oe_right&quot;&gt;
+                    &lt;button type=&quot;object&quot; name=&quot;do_count_todos&quot; string=&quot;Conta&quot;/&gt;
+                    &lt;button type=&quot;object&quot; name=&quot;do_select_all&quot; string=&quot;Seleziona tutti&quot;/&gt;
+                &lt;/div&gt;
+
+                &lt;field name=&quot;todo_ids&quot;&gt;
+                    &lt;tree&gt;
+                        &lt;field name=&quot;name&quot;/&gt;
+                        &lt;field name=&quot;user_id&quot;/&gt;
+                        &lt;field name=&quot;deadline_date&quot;/&gt;
+                    &lt;/tree&gt;
+                &lt;/field&gt;
+
+                &lt;group&gt;
+                    &lt;group&gt; &lt;field name=&quot;new_user_id&quot;/&gt;&lt;/group&gt;   
+                    &lt;group&gt; &lt;field name=&quot;new_deadline_date&quot;/&gt;&lt;/group&gt;   
+                &lt;/group&gt;
+
+                &lt;footer&gt;
+                    &lt;button type=&quot;object&quot; name=&quot;do_mass_update&quot; string=&quot;Riassegna&quot; class=&quot;oe_highlight&quot;
+                            attrs=&quot;{'invisible':[('new_user_id', '=', False)]}&quot;/&gt;
+                    &lt;button special=&quot;cancel&quot; string=&quot;Annulla&quot;/&gt;
+                &lt;/footer&gt;
+            &lt;/form&gt;
+        &lt;/field&gt;
+    &lt;/record&gt;
+
+    &lt;act_window 
+        id=&quot;todo_app.action_todo_wizard&quot; 
+        name=&quot;Todo Wizard&quot; 
+        src_model=&quot;todo.task&quot; 
+        res_model=&quot;todo.wizard&quot; 
+        view_mode=&quot;form&quot; 
+        target=&quot;new&quot; 
+        multi=&quot;True&quot;/&gt;
+&lt;/odoo&gt;
+
+</code></pre>
+
+<pre><code>    $ docker-compose run odoo upgrade todo_user
+</code></pre>
+
+<p>ricaricare la pagine nel nostro browser e dalla lista dei todo selezioniamo qualche check box. Apparirà il menu <em>Action</em> al cui interno ci sarà il sottomenu <em>Todo Wizard</em>. Premendo si dovrebbe aprire il nostro wizard</p>
+
+<p><img src="/odoo.workshop/screen/wizards/form.png?width=60pc" alt="form" /></p>
+
+<h2 id="la-logica-applicativa-del-wizard">La logica applicativa del wizard</h2>
+
+<p>A questo punto non ci rimane che implementare la logica dietro il nostro wizard. Escluso il tasto cancel, abbiamo tre pulsanti che devono essere programmati. Cominciamo con il tasto principale <em>Riassegna</em></p>
+
+<p>Il metodo chiamato dal pulsante è <em>do_mass_update</em> e, come gli altri, dovrà essere definito nel modello</p>
+
+<p>Quindi apriamo il file <em>todo_plus/wizards/todo_wizard.py</em> e aggiungiamo in cima al file</p>
+
+<pre><code class="language-python">from odoo import exceptions
+
+import logging
+log = logging.getLogger(__name__)
+</code></pre>
+
+<p>nel corpo della classe invece aggiungiamo</p>
+
+<pre><code class="language-python">@api.multi
+def do_mass_update(self):
+    self.ensure_one()
+
+    if not self.new_user_id:
+        raise exceptions.ValidationError(&quot;E' necessario specificare un utente&quot;)
+    
+    log.debug(&quot;Mass update on todos %s&quot; % self.todo_ids.ids)
+
+    vals = {}
+
+    if self.new_deadline_date:
+        vals['deadline_date'] = self.new_deadline_date
+    
+    vals['user_id'] = self.new_user_id.id
+
+    self.todo_ids.write(vals)
+    
+</code></pre>
+
+<p>Questo metodo solleva un errore se l&rsquo;utente cerca di inviare il form senza specificare un responsabile da assegnare ai todo selezionati.</p>
+
+<p>Ora vediamo come implementare il conteggio dei task aperti, aggiungiamo sempre nel corpo della modello del wizard:</p>
+
+<pre><code class="language-python">@api.multi
+def do_count_todos(self):
+    count = self.env['todo.task'].search_count([('is_done', '=', False)])
+    raise exceptions.Warning(&quot;Ci sono %d todo ancora aperti&quot; % count)
+</code></pre>
+
+<p>per l&rsquo;ultimo metodo (Seleziona tutti) invece c&rsquo;è un piccolo problema: ogni volta che premiamo un bottone in un wizard e la chiamata non ritorna un eccezione, Oddo chiude automaticamente la finestra popup. La soluzione a questo è qquella di restituire un&rsquo;azione che dice ad odoo di riaprire il wizard, vediamo come:</p>
+
+<pre><code class="language-python">
+@api.multi
+def _reopen_wizard(self):
+    self.ensure_one()
+
+    # restituiamo un dizionario rappresentate l'action che riaprira' questo wizard
+    return {
+        'type': 'ir.actions.act_window',
+        'res_model': self._name, # questo modello
+        'res_id': self.id, # l'id del wizard corrente
+        'view_type': 'form',
+        'view_mode': 'form',
+        'target': 'new'
+    }
+
+@api.multi
+def do_select_all(self):
+    self.ensure_one()
+
+    open_todos = self.env['todo.task'].search([
+        ('is_done', '=', False)
+    ])
+
+    self.todo_ids = open_todos
+
+    return self._reopen_wizard()
+
+</code></pre>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/odoo.workshop/application_logic/" title="Logica applicativa"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/odoo.workshop/application_logic/usare_orm/" title="Usare l&#39;ORM" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/odoo.workshop/js/clipboard.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1530633673"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1530633673"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530633673"></script>
+    <script src="/odoo.workshop/js/learn.js?1530633673"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1530633673"></script>
+
+    <link href="/odoo.workshop/mermaid/mermaid.css?1530633673" type="text/css" rel="stylesheet" />
+    <script src="/odoo.workshop/mermaid/mermaid.js?1530633673"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

@@ -10,4 +10,4 @@ pre = "<b>6. </b>"
 
 # Logica applicativa
 
-Lorem Ipsum.
+Con le API di Odoo è possibile descrivere logiche applicative complesse e wizard per dare all'utente un'elaborata esperienza utente.

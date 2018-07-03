@@ -12,19 +12,19 @@
     <title>List e Search View :: Odoo Workshop</title>
     
     
-    <link href="/odoo.workshop/css/nucleus.css?1530545032" rel="stylesheet">
-    <link href="/odoo.workshop/css/font-awesome.min.css?1530545032" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1530545032" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1530545032" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530545032" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1530545032" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1530545032" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1530545032" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/font-awesome.min.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1530633673" rel="stylesheet">
     
-      <link href="/odoo.workshop/css/theme-metadonors.css?1530545032" rel="stylesheet">
+      <link href="/odoo.workshop/css/theme-metadonors.css?1530633673" rel="stylesheet">
     
 
-    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530545032"></script>
+    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530633673"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530545032"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530545032"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530633673"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530633673"></script>
 <script type="text/javascript">
     
         var baseurl = '\/odoo.workshop\/';
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1530545032"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1530633673"></script>
 
     
   </div>
@@ -716,9 +716,9 @@
  
   
     
-      <li data-nav-id="/odoo.workshop/application_logic/query_records/" title="Interrogare i Record" class="dd-item ">
-        <a href="/odoo.workshop/application_logic/query_records/">
-        Interrogare i Record
+      <li data-nav-id="/odoo.workshop/application_logic/wizard/" title="Wizard" class="dd-item ">
+        <a href="/odoo.workshop/application_logic/wizard/">
+        Wizard
         
         </a>
     </li>
@@ -735,47 +735,9 @@
  
   
     
-      <li data-nav-id="/odoo.workshop/application_logic/scrivere_record/" title="Scrivere i Record" class="dd-item ">
-        <a href="/odoo.workshop/application_logic/scrivere_record/">
-        Scrivere i Record
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/odoo.workshop/application_logic/operazioni_recordset/" title="Operazioni sui Recordset" class="dd-item ">
-        <a href="/odoo.workshop/application_logic/operazioni_recordset/">
-        Operazioni sui Recordset
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/odoo.workshop/application_logic/campi_relazionali/" title="Usare i Campi Relazionali" class="dd-item ">
-        <a href="/odoo.workshop/application_logic/campi_relazionali/">
-        Usare i Campi Relazionali
+      <li data-nav-id="/odoo.workshop/application_logic/usare_orm/" title="Usare l&#39;ORM" class="dd-item ">
+        <a href="/odoo.workshop/application_logic/usare_orm/">
+        Usare l&#39;ORM
         
         </a>
     </li>
@@ -869,35 +831,13 @@
  
   
     
-    <li data-nav-id="/odoo.workshop/website/" title="Sito Web Esterno" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/odoo.workshop/website/">
-          <b>8. </b>Sito Web Esterno
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-          
-          
-
-
- 
-  
-    
     <li data-nav-id="/odoo.workshop/resources/" title="Altre Risorse" class="dd-item 
         
         
         
         ">
       <a href="/odoo.workshop/resources/">
-          <b>9. </b>Altre Risorse
+          <b>8. </b>Altre Risorse
           
       </a>
       
@@ -977,7 +917,19 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#le-liste">Le Liste</a></li>
+<li><a href="#le-ricerche">Le ricerche</a>
+<ul>
+<li><a href="#search-field">Search Field</a></li>
+<li><a href="#search-filter">Search Filter</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -995,6 +947,90 @@
         
 
 
+
+
+<h2 id="le-liste">Le Liste</h2>
+
+<p>Come abbiamo vito le liste vengono rappresentate dal tipo <em>tree</em></p>
+
+<pre><code class="language-xml">&lt;record model=&quot;ir.ui.view&quot; id=&quot;todo_task_tree_view&quot;&gt;
+    &lt;field name=&quot;name&quot;&gt;todo.task.tree&lt;/field&gt;
+    &lt;field name=&quot;model&quot;&gt;todo.task&lt;/field&gt;
+    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;
+        &lt;tree decoration-muted=&quot;is_done==True&quot;&gt;
+            &lt;field name=&quot;name&quot;/&gt;
+            &lt;field name=&quot;is_done&quot;/&gt;
+        &lt;/tree&gt;
+    &lt;/field&gt;
+&lt;/record&gt;
+</code></pre>
+
+<p>L&rsquo;attributo <em>decoration-NAME</em> permette di passare un&rsquo;espressione Python che, se vera, modifica l&rsquo;aspetto della riga considerata. <em>NAME</em> puo&rsquo; essere valorizzato come <em>bf</em> o <em>it</em> per renderizzare la riga in grassetto o corsivo, oppure può avere una classe Bootstrap per il colore del test <em>muted</em>, <em>info</em>, <em>danger</em> o <em>primary</em>.</p>
+
+<p>Altri attributi utli sull&rsquo;elemento tree:</p>
+
+<ul>
+<li><strong>default_order</strong> permette di sovrascrivere il metodo di ordinamento di default dei dati visualizzati</li>
+<li><strong>create, delete e edit</strong> se passati con il valore <em>&ldquo;false&rdquo;</em> disabilitano l&rsquo;azione corrispondente nella vista</li>
+<li><strong>editable</strong> rende le righe modificabili direttamente nella lista, i valori possibili sono <em>top</em> o <em>bottom</em> e indica dove verranno aggiunti i nuovi elementi</li>
+</ul>
+
+<h2 id="le-ricerche">Le ricerche</h2>
+
+<p>Nelle ricerche possiamo scegliere su quali campi effettuare la ricerca di default quando digitiamo nell&rsquo;input in alto a sinistra, possiamo definire dei filtri predefiniti attivabili con un click e possiamo anche fornire delle regole di raggruppamento predefinite</p>
+
+<p>Ecco un esempio</p>
+
+<pre><code class="language-xml">&lt;record model=&quot;ir.ui.view&quot; id=&quot;todo_task_search_view&quot;&gt;
+    &lt;field name=&quot;name&quot;&gt;todo.task.search&lt;/field&gt;
+    &lt;field name=&quot;model&quot;&gt;todo.task&lt;/field&gt;
+    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;
+        &lt;search&gt;
+            &lt;!-- campi su cui effettuare una ricerca libera --&gt;
+            &lt;field name=&quot;name&quot;/&gt;
+            &lt;field name=&quot;user_id&quot;/&gt;
+            
+            &lt;!-- filtri predefiniti --&gt;
+            &lt;filter string=&quot;Not Done&quot; domain=&quot;[('is_done','=',False)]&quot;/&gt;
+            &lt;filter string=&quot;Done&quot; domain=&quot;[('is_done','!=',False)]&quot;/&gt;
+
+            &lt;separator/&gt;
+            &lt;!-- raggruppamento predefinito --&gt;
+            &lt;filter string=&quot;By User&quot; name='group_user' context=&quot;{'group_by': 'user_id'}&quot;/&gt;
+        &lt;/search&gt;
+    &lt;/field&gt;
+&lt;/record&gt;
+</code></pre>
+
+<p>Abbiamo qui definito due campi su cui effettuare la ricerca libera <em>name</em> e <em>user_id</em>. Quando l&rsquo;utente comincerà a digitare nel campo di ricerca verrà fuori un menu a tendina che chiederà all&rsquo;utente su quale campo effettuare la ricerca.</p>
+
+<p>Poi abbiamo definito due filtri predefiniti che filtrano sul valore dell&rsquo;attributo <em>is_done</em>, questi filtri sono attivabili indipendentemente uno dell&rsquo;altro e se attivi entrambi vengono applicati in <em>OR</em>. Se invece fossero divisi da un &lt;separator&gt; sarebbero applicati in <em>AND</em></p>
+
+<p>Il terzo tag <em>fitler</em> invece setta un raggruppamente modificanto il <em>context</em> della vista.</p>
+
+<h3 id="search-field">Search Field</h3>
+
+<p>I tag <em>field</em> delle Search View accettano questi parametri:</p>
+
+<ul>
+<li><strong>name</strong> il nome del campo su cui cercare</li>
+<li><strong>string</strong> la label da visualizzare all&rsquo;utente</li>
+<li><strong>operator</strong> l&rsquo;operatore di confronto utilizzato per la ricerca, di default è <em>=</em> per i numeri e <em>ilike</em> per gli altri tipi</li>
+<li><strong>filter_domain</strong> in alternativa all&rsquo;opzione <em>operator</em> permette di esprimere più operatori di confronto</li>
+<li><strong>groups</strong> permette la ricerca su un determinato campo solo a un certo insieme di gruppi di utenti</li>
+</ul>
+
+<h3 id="search-filter">Search Filter</h3>
+
+<p>Per i tag <em>filter</em> invece sono dispoonibili queste opzioni:</p>
+
+<ul>
+<li><strong>name</strong> il nome del filtro, non è obbligatorio ma utile perchè può essere utilizzato per modificare il filtro nelle viste figlie oppure per preselezionarlo tramite il <em>context</em> della vista</li>
+<li><strong>string</strong> la labbel da presentare all&rsquo;utente</li>
+<li><strong>domain</strong> l&rsquo;espressionde di dominio utilizzata quando il filtro viene selezionato</li>
+<li><strong>context</strong>  un dizionario che modifica il <em>context</em> della vista, solitamenet utilizzato per passare il valore di <em>group_by</em></li>
+<li><strong>groups</strong> permette l&rsquo;utilizzo solo a  un determinato campo solo a un certo insieme di gruppi di utenti</li>
+</ul>
 
 
 <footer class=" footline" >
@@ -1548,38 +1584,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1627,22 +1631,6 @@
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -1682,20 +1670,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1530545032"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530545032"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530545032"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1530545032"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1530545032"></script>
-    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530545032"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1530545032"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1530633673"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1530633673"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530545032"></script>
-    <script src="/odoo.workshop/js/learn.js?1530545032"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1530545032"></script>
+    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530633673"></script>
+    <script src="/odoo.workshop/js/learn.js?1530633673"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1530633673"></script>
 
-    <link href="/odoo.workshop/mermaid/mermaid.css?1530545032" type="text/css" rel="stylesheet" />
-    <script src="/odoo.workshop/mermaid/mermaid.js?1530545032"></script>
+    <link href="/odoo.workshop/mermaid/mermaid.css?1530633673" type="text/css" rel="stylesheet" />
+    <script src="/odoo.workshop/mermaid/mermaid.js?1530633673"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

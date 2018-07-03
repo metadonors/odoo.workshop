@@ -3,8 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://metadonors.github.io/odoo.workshop/application_logic/query_records/</loc>
-    <lastmod>2018-07-02T16:24:21+02:00</lastmod>
+    <loc>https://metadonors.github.io/odoo.workshop/application_logic/wizard/</loc>
+    <lastmod>2018-07-02T16:24:39+02:00</lastmod>
   </url>
   
   <url>
@@ -43,8 +43,8 @@
   </url>
   
   <url>
-    <loc>https://metadonors.github.io/odoo.workshop/application_logic/scrivere_record/</loc>
-    <lastmod>2018-07-02T16:24:39+02:00</lastmod>
+    <loc>https://metadonors.github.io/odoo.workshop/application_logic/usare_orm/</loc>
+    <lastmod>2018-07-02T16:24:21+02:00</lastmod>
   </url>
   
   <url>
@@ -83,11 +83,6 @@
   </url>
   
   <url>
-    <loc>https://metadonors.github.io/odoo.workshop/application_logic/operazioni_recordset/</loc>
-    <lastmod>2018-07-02T16:24:52+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://metadonors.github.io/odoo.workshop/views/form_view/</loc>
     <lastmod>2018-07-02T16:17:37+02:00</lastmod>
   </url>
@@ -115,11 +110,6 @@
   <url>
     <loc>https://metadonors.github.io/odoo.workshop/inheritance/</loc>
     <lastmod>2018-06-27T16:14:07+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://metadonors.github.io/odoo.workshop/application_logic/campi_relazionali/</loc>
-    <lastmod>2018-07-02T16:25:10+02:00</lastmod>
   </url>
   
   <url>
@@ -190,11 +180,6 @@
   <url>
     <loc>https://metadonors.github.io/odoo.workshop/api/</loc>
     <lastmod>2018-06-28T10:46:46+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://metadonors.github.io/odoo.workshop/website/</loc>
-    <lastmod>2018-06-28T10:46:58+02:00</lastmod>
   </url>
   
   <url>

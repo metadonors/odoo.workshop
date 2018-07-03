@@ -39,7 +39,9 @@ Context Il context è un dizionario Python contenente dati che vengono mantenuti
       <pubDate>Mon, 02 Jul 2018 16:17:37 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/views/form_view/</guid>
-      <description></description>
+      <description>Struttura Le applicazioni Business-oriented spesso sono costituite da insiemi di record - i rpodotti in magazzino, le fatture della contabilità, etc. La maggior parte di questi tipi di dati può essere rappresentato come un documento di carta. Odoo quindi riutilizza questa astrazione per rappresentare i suoi record.
+Questa è la struttura generale di un record Odoo
+&amp;lt;record model=&amp;quot;ir.ui.view&amp;quot; id=&amp;quot;todo_task_form_view&amp;quot;&amp;gt; &amp;lt;field name=&amp;quot;name&amp;quot;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;quot;model&amp;quot;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;quot;arch&amp;quot; type=&amp;quot;xml&amp;quot;&amp;gt; &amp;lt;form string=&amp;quot;ToDo task Form&amp;quot;&amp;gt; &amp;lt;header&amp;gt; &amp;lt;!</description>
     </item>
     
     <item>
@@ -48,7 +50,8 @@ Context Il context è un dizionario Python contenente dati che vengono mantenuti
       <pubDate>Mon, 02 Jul 2018 16:17:53 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/views/list_view/</guid>
-      <description></description>
+      <description>Le Liste Come abbiamo vito le liste vengono rappresentate dal tipo tree
+&amp;lt;record model=&amp;quot;ir.ui.view&amp;quot; id=&amp;quot;todo_task_tree_view&amp;quot;&amp;gt; &amp;lt;field name=&amp;quot;name&amp;quot;&amp;gt;todo.task.tree&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;quot;model&amp;quot;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;quot;arch&amp;quot; type=&amp;quot;xml&amp;quot;&amp;gt; &amp;lt;tree decoration-muted=&amp;quot;is_done==True&amp;quot;&amp;gt; &amp;lt;field name=&amp;quot;name&amp;quot;/&amp;gt; &amp;lt;field name=&amp;quot;is_done&amp;quot;/&amp;gt; &amp;lt;/tree&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/record&amp;gt;  L&amp;rsquo;attributo decoration-NAME permette di passare un&amp;rsquo;espressione Python che, se vera, modifica l&amp;rsquo;aspetto della riga considerata. NAME puo&amp;rsquo; essere valorizzato come bf o it per renderizzare la riga in grassetto o corsivo, oppure può avere una classe Bootstrap per il colore del test muted, info, danger o primary.</description>
     </item>
     
     <item>
@@ -57,7 +60,11 @@ Context Il context è un dizionario Python contenente dati che vengono mantenuti
       <pubDate>Mon, 02 Jul 2018 16:18:06 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/views/graph_pivot_views/</guid>
-      <description></description>
+      <description>Pivot I pivot sono un potente strumento di analisi dei dati fornito da Odoo. Una vista pivot rappresenta i dati in una matrice dinamica.
+Un esempio di vista Pivot
+&amp;lt;record id=&#39;view_pivot_todo_task&#39; model=&#39;ir.ui.view&#39;&amp;gt; &amp;lt;field name=&amp;quot;name&amp;quot;&amp;gt;todo.task.pivot&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;quot;model&amp;quot;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&#39;arch&#39; type=&#39;xml&#39;&amp;gt; &amp;lt;pivot&amp;gt; &amp;lt;field name=&amp;quot;user_id&amp;quot; type=&#39;col&#39;&amp;gt; &amp;lt;field name=&amp;quot;work_hours&amp;quot; type=&#39;measure&#39;&amp;gt; &amp;lt;/pivot&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/record&amp;gt;  Graph Le Graph View rappresentano i dati in forma di grafici
+Un esempio
+&amp;lt;record id=&#39;view_graph_todo_task&#39; model=&#39;ir.ui.view&#39;&amp;gt; &amp;lt;field name=&amp;quot;name&amp;quot;&amp;gt;todo.task.graph&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;quot;model&amp;quot;&amp;gt;todo.</description>
     </item>
     
     <item>
@@ -66,7 +73,8 @@ Context Il context è un dizionario Python contenente dati che vengono mantenuti
       <pubDate>Mon, 02 Jul 2018 16:19:00 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/views/altre_views/</guid>
-      <description></description>
+      <description> Sono disponibili anche altre viste che pero&amp;rsquo; esulano dallo scopo di questo corso, una breve panoramica
+Viste Report Viste Calendario Viste Kanban Viste Gantt Viste Diagram </description>
     </item>
     
   </channel>

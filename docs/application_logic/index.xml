@@ -12,39 +12,24 @@
     
     
     <item>
-      <title>Interrogare i Record</title>
-      <link>https://metadonors.github.io/odoo.workshop/application_logic/query_records/</link>
-      <pubDate>Mon, 02 Jul 2018 16:24:21 +0200</pubDate>
-      
-      <guid>https://metadonors.github.io/odoo.workshop/application_logic/query_records/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scrivere i Record</title>
-      <link>https://metadonors.github.io/odoo.workshop/application_logic/scrivere_record/</link>
+      <title>Wizard</title>
+      <link>https://metadonors.github.io/odoo.workshop/application_logic/wizard/</link>
       <pubDate>Mon, 02 Jul 2018 16:24:39 +0200</pubDate>
       
-      <guid>https://metadonors.github.io/odoo.workshop/application_logic/scrivere_record/</guid>
-      <description></description>
+      <guid>https://metadonors.github.io/odoo.workshop/application_logic/wizard/</guid>
+      <description>I wizard sono uno strumento molto utile per fornire agli utenti un interfaccia per effettuare operazioni complesse sui dati. Per esempio chiedendogli dati aggiuntivi rispetto alle operazioni che stanno facendo oppure semplicemente per avere uno strumento di validazione delle operazioni da effettuare.
+Creare un wizard I wizard di solito risiedono nella cartella wizards/ all&amp;rsquo;interno dei moduli. Cominciamo a creare il nosto wizard nella cartella del modulo todo_plus creando la seguente struttura</description>
     </item>
     
     <item>
-      <title>Operazioni sui Recordset</title>
-      <link>https://metadonors.github.io/odoo.workshop/application_logic/operazioni_recordset/</link>
-      <pubDate>Mon, 02 Jul 2018 16:24:52 +0200</pubDate>
+      <title>Usare l&#39;ORM</title>
+      <link>https://metadonors.github.io/odoo.workshop/application_logic/usare_orm/</link>
+      <pubDate>Mon, 02 Jul 2018 16:24:21 +0200</pubDate>
       
-      <guid>https://metadonors.github.io/odoo.workshop/application_logic/operazioni_recordset/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Usare i Campi Relazionali</title>
-      <link>https://metadonors.github.io/odoo.workshop/application_logic/campi_relazionali/</link>
-      <pubDate>Mon, 02 Jul 2018 16:25:10 +0200</pubDate>
-      
-      <guid>https://metadonors.github.io/odoo.workshop/application_logic/campi_relazionali/</guid>
-      <description></description>
+      <guid>https://metadonors.github.io/odoo.workshop/application_logic/usare_orm/</guid>
+      <description>Fino a questo punto abbiamo utilizzato l&amp;rsquo;ORM di Odoo senza scendere nel dettaglio su come funziona. Ora andiamo a vedere quali sono i suoi principali componenti
+Decoratori Abbiamo notato che a molti metodi dei modelli viene applicato un decoratore come @api.multi. Questi decorati hanno lo scopo di istruire il backend su come gestire i metodi rispetto alle API esposte.
+Il decoratore @api.multi viene utilizzato per gestire metodi applicati su dei RecordSet ed è ill decoratore utilizzato più di frequente.</description>
     </item>
     
   </channel>
