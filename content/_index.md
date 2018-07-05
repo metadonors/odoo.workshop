@@ -6,8 +6,6 @@ chapter = true
 pre = "<b>X. </b>"
 +++
 
-### Mantova, 4 Luglio 2018
-
 # Odoo WorkShop
 
 
