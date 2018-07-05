@@ -66,7 +66,7 @@ Per l'altro bottone invece:
 Vediamo che abbiamo dichiarato che vogliamo invocare il metodo _do\_clear\_done_ che andiamo a implementare nel nostro _models/todo\_models.py_ come segue
 
 ```python
-    @api.model
+    @api.multi
     def do_clear_done(self):
         dones = self.search([
             ('is_done', '=', True)
@@ -77,7 +77,7 @@ Vediamo che abbiamo dichiarato che vogliamo invocare il metodo _do\_clear\_done_
         })
 ```
 
-Questo metodo invece viene chiamato con il decoratore _@api.model_ che invece identifica o un oggetto in particolare oppure nessuno. Con il metodo _search_ andriamo a cercare i _todo_ che ci interessano passandogli un _domain_ per la ricerca e infine aggiorniamo il loro stato come inattivo.
+Con il metodo _search_ andriamo a cercare i _todo_ che ci interessano passandogli un _domain_ per la ricerca e infine aggiorniamo il loro stato come inattivo.
 
 I _domain_ sono il principale metodo per effettuare ricerche nel database usando il framework di Odoo. Li vediamo pi\ nel dettaglio successivamente.
 
