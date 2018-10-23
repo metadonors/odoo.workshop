@@ -28,6 +28,10 @@ La documentazione ufficiale di odoo:
 
 [Documentazione Odoo](https://www.odoo.com/documentation/11.0/index.html)
 
+Per problemi o domande sul workshop apri una issue su github:
+
+[Fai una domanda](https://github.com/metadonors/odoo.workshop/issues)
+
 La nostra azienda:
 
 [Metadonors](https://www.metadonors.it)
