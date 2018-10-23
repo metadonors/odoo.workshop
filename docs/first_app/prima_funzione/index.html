@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.42.2" />
+    <meta name="generator" content="Hugo 0.49.2" />
     <meta name="description" content="Odoo Workshop">
 <meta name="author" content="Metadonors">
 
@@ -12,19 +12,19 @@
     <title>La logica :: Odoo Workshop</title>
     
     
-    <link href="/odoo.workshop/css/nucleus.css?1530633673" rel="stylesheet">
-    <link href="/odoo.workshop/css/font-awesome.min.css?1530633673" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1530633673" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1530633673" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1530633673" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1530633673" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1530633673" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1530633673" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1540288676" rel="stylesheet">
+    <link href="/odoo.workshop/css/font-awesome.min.css?1540288676" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1540288676" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1540288676" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1540288676" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1540288676" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1540288676" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1540288676" rel="stylesheet">
     
-      <link href="/odoo.workshop/css/theme-metadonors.css?1530633673" rel="stylesheet">
+      <link href="/odoo.workshop/css/theme-metadonors.css?1540288676" rel="stylesheet">
     
 
-    <script src="/odoo.workshop/js/jquery-2.x.min.js?1530633673"></script>
+    <script src="/odoo.workshop/js/jquery-2.x.min.js?1540288676"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1530633673"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1530633673"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1540288676"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1540288676"></script>
 <script type="text/javascript">
     
         var baseurl = '\/odoo.workshop\/';
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1530633673"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1540288676"></script>
 
     
   </div>
@@ -1009,7 +1009,7 @@ def do_toggle_button(self):
 
 <p>Vediamo che abbiamo dichiarato che vogliamo invocare il metodo <em>do_clear_done</em> che andiamo a implementare nel nostro <em>models/todo_models.py</em> come segue</p>
 
-<pre><code class="language-python">    @api.model
+<pre><code class="language-python">    @api.multi
     def do_clear_done(self):
         dones = self.search([
             ('is_done', '=', True)
@@ -1020,7 +1020,7 @@ def do_toggle_button(self):
         })
 </code></pre>
 
-<p>Questo metodo invece viene chiamato con il decoratore <em>@api.model</em> che invece identifica o un oggetto in particolare oppure nessuno. Con il metodo <em>search</em> andriamo a cercare i <em>todo</em> che ci interessano passandogli un <em>domain</em> per la ricerca e infine aggiorniamo il loro stato come inattivo.</p>
+<p>Con il metodo <em>search</em> andriamo a cercare i <em>todo</em> che ci interessano passandogli un <em>domain</em> per la ricerca e infine aggiorniamo il loro stato come inattivo.</p>
 
 <p>I <em>domain</em> sono il principale metodo per effettuare ricerche nel database usando il framework di Odoo. Li vediamo pi\ nel dettaglio successivamente.</p>
 
@@ -1673,20 +1673,20 @@ def do_toggle_button(self):
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1530633673"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1530633673"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1530633673"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1530633673"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1530633673"></script>
-    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1530633673"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1530633673"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1540288676"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1540288676"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1540288676"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1540288676"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1540288676"></script>
+    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1540288676"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1540288676"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1530633673"></script>
-    <script src="/odoo.workshop/js/learn.js?1530633673"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1530633673"></script>
+    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1540288676"></script>
+    <script src="/odoo.workshop/js/learn.js?1540288676"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1540288676"></script>
 
-    <link href="/odoo.workshop/mermaid/mermaid.css?1530633673" type="text/css" rel="stylesheet" />
-    <script src="/odoo.workshop/mermaid/mermaid.js?1530633673"></script>
+    <link href="/odoo.workshop/mermaid/mermaid.css?1540288676" type="text/css" rel="stylesheet" />
+    <script src="/odoo.workshop/mermaid/mermaid.js?1540288676"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
