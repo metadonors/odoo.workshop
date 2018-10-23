@@ -4,7 +4,7 @@ Codice della documentazione prodotta per il [workshop introduttivo allo sviluppo
 
 ## Utilizzo 
 
-La documnetazione è stata prodotta utilizzanto il generatore di siti statici [Hugo](https://gohugo.io/).
+La documentazione è stata prodotta utilizzanto il generatore di siti statici [Hugo](https://gohugo.io/).
 
 [Documentazione Hugo](https://gohugo.io/documentation/)
 
