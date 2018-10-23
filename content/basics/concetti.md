@@ -8,7 +8,7 @@ Prima di cominciare è necessario affrontare un po' di teoria che sta alla base 
 
 ### Moduli
 
-I moduli sono i componenti essenziali che possono essere aggiunti a Odoo. Ogni modulo può implementare nuove funzionalità oppure modificare quelle esistenti. Ogni modulo è costituito da una cartella contenente un file _\_\_manfifest.py\_\__ più altri file che implementano le sue funzionalità.
+I moduli sono i componenti essenziali che possono essere aggiunti a Odoo. Ogni modulo può implementare nuove funzionalità oppure modificare quelle esistenti. Ogni modulo è costituito da una cartella contenente un file _\_\_manifest.py\_\__ più altri file che implementano le sue funzionalità.
 
 ### Applicazioni
 

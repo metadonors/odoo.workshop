@@ -43,7 +43,7 @@ $ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, 
       
       <guid>https://metadonors.github.io/odoo.workshop/basics/concetti/</guid>
       <description>Prima di cominciare è necessario affrontare un po&amp;rsquo; di teoria che sta alla base del framework Odoo. Odoo è un framework applicativo modulare, i suoi principali componenti sono i moduli e le applicazioni.
-Moduli I moduli sono i componenti essenziali che possono essere aggiunti a Odoo. Ogni modulo può implementare nuove funzionalità oppure modificare quelle esistenti. Ogni modulo è costituito da una cartella contenente un file __manfifest.py__ più altri file che implementano le sue funzionalità.</description>
+Moduli I moduli sono i componenti essenziali che possono essere aggiunti a Odoo. Ogni modulo può implementare nuove funzionalità oppure modificare quelle esistenti. Ogni modulo è costituito da una cartella contenente un file __manifest.py__ più altri file che implementano le sue funzionalità.</description>
     </item>
     
   </channel>
