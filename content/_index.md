@@ -36,3 +36,6 @@ La nostra azienda:
 
 [Metadonors](https://www.metadonors.it)
 
+Se vuoi lavorare con noi, qui trovi (anche) le vacancy relative ad Odoo:
+
+[Lavora con noi](https://metadonors.recruiterbox.com/)
