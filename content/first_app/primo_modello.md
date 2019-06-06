@@ -81,7 +81,7 @@ Che fra le tante cose che scrive, dovrebbe anche dire:
 
 ### Controllare il modello
 
-Attualmente non abbiamo ancora definito nè viste nè modelli, quindi non ci è possibile vedere semplicemente se le modifiche sono state apportate al sistema. Abbiamo un ottima occasione però per vedere un altro strumento di sviluppo che Odoo ci offre. Attiviamo la [modalità sviluppatore](/odoo.workshop/first_app/primo_modulo/#la-modalità-sviluppatore) e andiamo nel modulo:
+Attualmente non abbiamo ancora definito viste per il nostro modello, quindi non è possibile vedere semplicemente se le modifiche sono state apportate al sistema. Abbiamo un ottima occasione però per vedere un altro strumento di sviluppo che Odoo ci offre. Attiviamo la [modalità sviluppatore](/odoo.workshop/first_app/primo_modulo/#la-modalità-sviluppatore) e andiamo nel modulo:
 
 **Settings -> Technical -> Database Structure -> Models** 
 
@@ -89,7 +89,7 @@ Cerchiamo il modello _todo.task_ e sulla lista clicchiamo sul risultato ottenuto
 
 ![todo](/odoo.workshop/screen/primo_modello/modello.png?width=60pc)
 
-Che ci conferma che il modello e i campi che abbiamo definito sono stati effettivamente creati. Come vede Odoo si occupa automaticamente di aggiungere altri campi, tra cui i più rilevanti sono:
+Che ci conferma che il modello e i campi che abbiamo definito sono stati effettivamente creati. Come si vede, Odoo si occupa automaticamente di aggiungere altri campi, tra cui i più rilevanti sono:
 
 - _id_ è l'identificatore unico numerico assegato a ogni istanza del nostro modello
 - _create\_date_ e _create\_uid_ specificano quando e chi ha creato l'istanza

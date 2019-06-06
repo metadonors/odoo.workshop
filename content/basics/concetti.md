@@ -12,7 +12,7 @@ I moduli sono i componenti essenziali che possono essere aggiunti a Odoo. Ogni m
 
 ### Applicazioni
 
-Le applicazioni sono moduli di ordine maggiore, che implementano funzionalità a più alto livello o sempliccemente più complesse. Sono gli elementi essenziali dell'aspetto funzionale, come per esempio l'applicazione CRM o Contabilità e sono a loro volta basate sulle funzionalità di tanti moduli.
+Le applicazioni sono moduli di ordine maggiore, che implementano funzionalità a più alto livello o più complesse. Sono gli elementi essenziali dell'aspetto funzionale, come per esempio l'applicazione CRM o Contabilità e sono a loro volta basate sulle funzionalità di altri moduli.
 
 Se state implementando un modulo complesso che aggiunge funzionalità specifiche a Odoo è probabile che sia un applicazione. Se state aggiungendo o modificando alcuni semplici aspetti invece è probabile che stiate sscrivendo un modulo.
 
@@ -34,7 +34,7 @@ Andiamo su _http://localhost_ mettiamo username e password e accediamo alla list
 
 ![apps](/odoo.workshop/screen/concetti/apps.png?width=60pc)
 
-Deselezioniamo il filtro "Apps" dalla barra di ricerca e inseriamo la stringa "Material"
+Deselezioniamo il filtro "Apps" dalla barra di ricerca e inseriamo la stringa "Backend"
 
 ![material](/odoo.workshop/screen/concetti/material.png?width=60pc)
 

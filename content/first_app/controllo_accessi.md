@@ -13,17 +13,17 @@ WARNING demo odoo.modules.loading: The model todo.task has no access rules, cons
 
 In Odoo *tutti i modelli* devono avere delle regole di accesso specificate, in caso contrario solo l'utente admin potrà accedere ai dati relativi a quel modello.
 
-Ci sono due tipi di controlli di accesso disponibili: *access control list* e *row level access control*
+Ci sono due tipi di controlli di accesso disponibili: *access rights* e *row level access control*
 
-- *access control list* sono le regole principale e obbligatorie da definire per modello, indicano l'accesso generico in termini booleani SI/NO che i gruppi di utenti hanno rispetto ai dati del modello declinati in _lettura_, _scrittura_, _creazione_ e _cancellazione_
-- *row level access control* sono le regole che a seguito delle _access control list_ vengono applicate in termini di riga. Per esempio: tutti i dipendenti possono creare oggetti Todo ma possono visualizzare e utilizzare sono quelli creati da loro.
+- *access rights* sono le regole principale e obbligatorie da definire per modello, indicano l'accesso generico in termini booleani SI/NO che i gruppi di utenti hanno rispetto ai dati del modello declinati in _lettura_, _scrittura_, _creazione_ e _cancellazione_
+- *row level access control* sono le regole che a seguito delle _access rights_ vengono applicate in termini di riga. Per esempio: tutti i dipendenti possono creare oggetti Todo ma possono visualizzare e utilizzare sono quelli creati da loro.
 
 
-### Access Control List
+### Access Rights
 
 Per farci un'idea di come sono strutturate queste regole, entriamo in [modalità sviluppo](http://localhost:1313/odoo.workshop/first_app/primo_modulo/#la-modalità-sviluppatore) e andiamo in:
 
-**Settings -> Technical -> Security -> Access Control List**
+**Settings -> Technical -> Security -> Access Rights**
 
 Ci troveremo di fronte a una pagina come questa:
 

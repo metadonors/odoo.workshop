@@ -26,7 +26,7 @@ Infine diciamo a compose di tirare su l'ambiente:
 $ docker-compose up
 ```
 
-Compose comincerà a scaricare tutte le nostre dipendenze, odoo, nginx e il database. La procedura può metterci diversi minuti in base alla connessione a internet disponibile. 
+Compose comincerà a scaricare tutte le nostre dipendenze, odoo, nginx e il database. La procedura può durare diversi minuti in base alla connessione a internet disponibile. 
 
 In seguito verranno avviati i vari componenti: odoo, postgres - il database - e nginx - il server web. Al primo avvio odoo dovrà inizializzare la struttura del database (anche questa operazione potrebbe impiegare qualche minuto).
 

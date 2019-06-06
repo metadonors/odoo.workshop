@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.49.2" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <meta name="description" content="Odoo Workshop">
 <meta name="author" content="Metadonors">
 
@@ -12,19 +12,19 @@
     <title>Controllo Accessi :: Odoo Workshop</title>
     
     
-    <link href="/odoo.workshop/css/nucleus.css?1540289680" rel="stylesheet">
-    <link href="/odoo.workshop/css/font-awesome.min.css?1540289680" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1540289680" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1540289680" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1540289680" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1540289680" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1540289680" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1540289680" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1559811345" rel="stylesheet">
+    <link href="/odoo.workshop/css/font-awesome.min.css?1559811345" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1559811345" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1559811345" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1559811345" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1559811345" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1559811345" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1559811345" rel="stylesheet">
     
-      <link href="/odoo.workshop/css/theme-metadonors.css?1540289680" rel="stylesheet">
+      <link href="/odoo.workshop/css/theme-metadonors.css?1559811345" rel="stylesheet">
     
 
-    <script src="/odoo.workshop/js/jquery-2.x.min.js?1540289680"></script>
+    <script src="/odoo.workshop/js/jquery-2.x.min.js?1559811345"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1540289680"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1540289680"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1559811345"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1559811345"></script>
 <script type="text/javascript">
     
         var baseurl = '\/odoo.workshop\/';
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1540289680"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1559811345"></script>
 
     
   </div>
@@ -923,7 +923,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#access-control-list">Access Control List</a></li>
+<li><a href="#access-rights">Access Rights</a></li>
 <li><a href="#row-level-access-rule">Row-level access rule</a></li>
 <li><a href="#continua">Continua</a></li>
 </ul></li>
@@ -956,18 +956,18 @@
 
 <p>In Odoo <em>tutti i modelli</em> devono avere delle regole di accesso specificate, in caso contrario solo l&rsquo;utente admin potrà accedere ai dati relativi a quel modello.</p>
 
-<p>Ci sono due tipi di controlli di accesso disponibili: <em>access control list</em> e <em>row level access control</em></p>
+<p>Ci sono due tipi di controlli di accesso disponibili: <em>access rights</em> e <em>row level access control</em></p>
 
 <ul>
-<li><em>access control list</em> sono le regole principale e obbligatorie da definire per modello, indicano l&rsquo;accesso generico in termini booleani SI/NO che i gruppi di utenti hanno rispetto ai dati del modello declinati in <em>lettura</em>, <em>scrittura</em>, <em>creazione</em> e <em>cancellazione</em></li>
-<li><em>row level access control</em> sono le regole che a seguito delle <em>access control list</em> vengono applicate in termini di riga. Per esempio: tutti i dipendenti possono creare oggetti Todo ma possono visualizzare e utilizzare sono quelli creati da loro.</li>
+<li><em>access rights</em> sono le regole principale e obbligatorie da definire per modello, indicano l&rsquo;accesso generico in termini booleani SI/NO che i gruppi di utenti hanno rispetto ai dati del modello declinati in <em>lettura</em>, <em>scrittura</em>, <em>creazione</em> e <em>cancellazione</em></li>
+<li><em>row level access control</em> sono le regole che a seguito delle <em>access rights</em> vengono applicate in termini di riga. Per esempio: tutti i dipendenti possono creare oggetti Todo ma possono visualizzare e utilizzare sono quelli creati da loro.</li>
 </ul>
 
-<h3 id="access-control-list">Access Control List</h3>
+<h3 id="access-rights">Access Rights</h3>
 
 <p>Per farci un&rsquo;idea di come sono strutturate queste regole, entriamo in <a href="http://localhost:1313/odoo.workshop/first_app/primo_modulo/#la-modalità-sviluppatore">modalità sviluppo</a> e andiamo in:</p>
 
-<p><strong>Settings -&gt; Technical -&gt; Security -&gt; Access Control List</strong></p>
+<p><strong>Settings -&gt; Technical -&gt; Security -&gt; Access Rights</strong></p>
 
 <p>Ci troveremo di fronte a una pagina come questa:</p>
 
@@ -1011,9 +1011,9 @@
 
 <p>Questa codice aggiunge una regola di acl con <em>id</em> todo_task_user_access che viene applicata al modello <em>todo.task</em> sul gruppo <em>base.group.user</em> dando tutti i permessi di lettura, scrittura, creazione e cancellazione. Il gruppo <em>base.group.user</em> è un gruppo generico di Odoo a cui fanno parte tutti gli utenti del sistema.</p>
 
-<div class="notices note" ><p>In questo caso abbiamo aggiunto al tag <em>data</em> il valore <em>noupdate</em>. Questo dice ad Odoo di creare la riga nel database al primo upgrade, ma di non aggiornarla durante un successivo upgrade se già presente. Questo perchè questo tipo di dati può essere modificato dall&rsquo;amministratore direttamente da interfaccia web in produzione e non vogliamo che vengano resettate queste modifiche ad un successivo upgrade del modulo.</p>
+<div class="notices note" >
+In questo caso abbiamo aggiunto al tag _data_ il valore _noupdate_. Questo dice ad Odoo di creare la riga nel database al primo upgrade, ma di non aggiornarla durante un successivo upgrade se già presente. Questo perchè questo tipo di dati può essere modificato dall'amministratore direttamente da interfaccia web in produzione e non vogliamo che vengano resettate queste modifiche ad un successivo upgrade del modulo.
 </div>
-
 
 <p>Come per le viste dobbiamo poi specificare nel file <em>__manifest__.py</em> l&rsquo;esistenza di questa regola, apriamo quindi il file manifesto e modifichiamolo come segue:</p>
 
@@ -1706,20 +1706,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1540289680"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1540289680"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1540289680"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1540289680"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1540289680"></script>
-    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1540289680"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1540289680"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1559811345"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1559811345"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1559811345"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1559811345"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1559811345"></script>
+    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1559811345"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1559811345"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1540289680"></script>
-    <script src="/odoo.workshop/js/learn.js?1540289680"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1540289680"></script>
+    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1559811345"></script>
+    <script src="/odoo.workshop/js/learn.js?1559811345"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1559811345"></script>
 
-    <link href="/odoo.workshop/mermaid/mermaid.css?1540289680" type="text/css" rel="stylesheet" />
-    <script src="/odoo.workshop/mermaid/mermaid.js?1540289680"></script>
+    <link href="/odoo.workshop/mermaid/mermaid.css?1559811345" type="text/css" rel="stylesheet" />
+    <script src="/odoo.workshop/mermaid/mermaid.js?1559811345"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

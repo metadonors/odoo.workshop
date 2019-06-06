@@ -39,7 +39,7 @@ I modelli sono descritti da classi Python che ereditano da una classe generica d
       <pubDate>Thu, 28 Jun 2018 10:38:52 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/first_app/prime_viste/</guid>
-      <description>Le viste descrivono l&amp;rsquo;interfaccia utente. Ogni vista è strutturata in un file XML, che è utilizzato dal client web per generare le pagine HTML in grado di gestire i dati generati dal nostro backend.
+      <description>Le viste descrivono l&amp;rsquo;interfaccia utente. Ogni vista è strutturata in un file XML, che viene utilizzato dal client web per generare le pagine HTML in grado di gestire i dati generati dal nostro backend.
 Nelle viste abbiamo dei menu item che ci permettono di attivare funzionalità o navigazione scatenando delle actions. Per esempio, il menu item Users processa una action chiamata anchessa Users, che renderizza le viste per la gestione degli utenti.</description>
     </item>
     

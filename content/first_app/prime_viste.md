@@ -4,7 +4,7 @@ date: 2018-06-28T10:38:52+02:00
 weight: 3
 ---
 
-Le viste descrivono l'interfaccia utente. Ogni vista è strutturata in un file XML, che è utilizzato dal client web per generare le pagine HTML in grado di gestire i dati generati dal nostro backend.
+Le viste descrivono l'interfaccia utente. Ogni vista è strutturata in un file XML, che viene utilizzato dal client web per generare le pagine HTML in grado di gestire i dati generati dal nostro backend.
 
 Nelle viste abbiamo dei _menu item_ che ci permettono di attivare funzionalità o navigazione scatenando delle _actions_. Per esempio, il menu item **Users** processa una action chiamata anchessa **Users**, che renderizza le viste per la gestione degli utenti.
 
@@ -42,6 +42,8 @@ e aggiungiamo il seguente contenuto che definisce l'oggetto menu e l'azione nece
     <menuitem
         id="menu_todo_task"
         name="Todos"
+        web_icon="project,static/description/icon.png"
+        groups="base.group_user"
         action="action_todo_task"
         />
 </odoo>
@@ -80,7 +82,7 @@ Quindi aprimo il file _\_\_manifest\_\_.py_ e modifichiamolo di conseguenza:
 ```
 
 {{% notice warning %}}
-Ogni definizione che aggiungiamo in file XML viene letta e aggiunta nel database da Odoo in fase di upgrade del modulo. Quando **aggiungiamo** oggetti dobbiamo effettuare un upgrade manuale del modulo per renderli disponibili. In modalita sviluppo del backend (--dev=all) le **modifiche** invece vengono lette automaticamente ed è sufficiente ricaricare la pagina. In produzione invece è **sempre** necessario effettuare l'upgrade del modulo.
+Ogni definizione che aggiungiamo in un file XML viene letta e aggiunta nel database da Odoo in fase di upgrade del modulo. Quando **aggiungiamo** oggetti dobbiamo effettuare un upgrade manuale del modulo per renderli disponibili. In modalita sviluppo del backend (--dev=all) le **modifiche** invece vengono lette automaticamente ed è sufficiente ricaricare la pagina. In produzione invece è **sempre** necessario effettuare l'upgrade del modulo.
 {{% /notice%}}
 
 A questo punto non ci resta che effettuare l'upgrade del modulo e ricaricare la nostra pagina.
@@ -88,6 +90,15 @@ A questo punto non ci resta che effettuare l'upgrade del modulo e ricaricare la 
 ```
 $ docker-compose run odoo upgrade todo_app
 ```
+
+Ricarichiamo la pagina e...niente, non e' cambiato nulla. 
+
+Il motivo per cui odoo non ci mostra il nostro nuovo modello e' legata alla gestione dei permessi: non avendo definito nessuna [politica 
+di ACL](/odoo.workshop/first_app/controllo_accessi/) legata a questo nuovo oggetto, odoo lo esclude a priori
+
+Ci occuperemo dei permessi più tardi, per proseguire attiviamo la *modalità superuser* di odoo 
+
+![superuser](/odoo.workshop/screen/prime_viste/superuser.png?width=60pc)
 
 Se abbiamo fatto tutto correttamente, dovremmo vedere:
 
@@ -266,9 +277,11 @@ Per farlo aggiungiamo un altro record al file _todo\_views.xml_ come di seguito:
 
             <filter 
                 string="Not Done"
+                name="not_done"
                 domain="[('is_done','=',False)]"/>
             <filter 
                 string="Done"
+                name="done"
                 domain="[('is_done','!=',False)]"/>
         </search>
     </field>

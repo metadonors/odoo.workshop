@@ -22,7 +22,7 @@ Il modulo che svilupperemo:
 
 Il nostro repository di riferimento:
 
-[Odoo 11 - Immagine Docker](https://github.com/metadonors/odoo.docker)
+[Odoo 12 - Immagine Docker](https://github.com/metadonors/odoo.docker)
 
 La documentazione ufficiale di odoo:
 
@@ -32,10 +32,3 @@ Per problemi o domande sul workshop apri una issue su github:
 
 [Fai una domanda](https://github.com/metadonors/odoo.workshop/issues)
 
-La nostra azienda:
-
-[Metadonors](https://www.metadonors.it)
-
-Se vuoi lavorare con noi, qui trovi (anche) le vacancy relative ad Odoo:
-
-[Lavora con noi](https://metadonors.recruiterbox.com/)

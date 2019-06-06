@@ -12,7 +12,7 @@ Un _computed field_ viene dichiarato esattamente come i campi normali con l'unic
 
 Immaginiamo per esempio di voler mantenere nei _TodoTask_ l'informazione relativa allora stato del progetto a cui appartengono. Gestire questo dato a mano sarebbe piuttosto oneroso, un _computed field_ invece risolve il problema egregiamente.
 
-Per aggiunger questo campo al nostro modello dei progetti apriamo il file _models/todo\_project.py_ e aggiungiamo nel corpo della classe:
+Per aggiunger questo campo al nostro modello dei progetti apriamo il file _models/todo\_task.py_ e aggiungiamo nel corpo della classe:
 
 ```python 
 project_state = fields.Char(string='Stato progetto', compute='_compute_project_state')
@@ -25,7 +25,7 @@ def _compute_project_state(self):
 
 Il decoratore _@api.depends_ indica a Odoo di calcolore il valore del campo solo dopo aver modificato il valore dei campi espressi nel decoratore. Quindi in questo caso verrà ricalcolato il contatore solo quando modificheremo il valore del campo _project\_id_.
 
-Nel file delle viste dei progetti _views/todo\_tak.xml_ modifichiamo la _Form View_ per visualizzare questo valore. Aggiungiamo nel campo _arch_:
+Nel file delle viste dei progetti _views/todo\_task.xml_ modifichiamo la _Form View_ per visualizzare questo valore. Aggiungiamo nel campo _arch_:
 
 ```xml
 

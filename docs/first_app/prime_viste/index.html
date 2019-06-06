@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.49.2" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <meta name="description" content="Odoo Workshop">
 <meta name="author" content="Metadonors">
 
@@ -12,19 +12,19 @@
     <title>Le viste :: Odoo Workshop</title>
     
     
-    <link href="/odoo.workshop/css/nucleus.css?1540289680" rel="stylesheet">
-    <link href="/odoo.workshop/css/font-awesome.min.css?1540289680" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1540289680" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1540289680" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1540289680" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1540289680" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1540289680" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1540289680" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1559811345" rel="stylesheet">
+    <link href="/odoo.workshop/css/font-awesome.min.css?1559811345" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1559811345" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1559811345" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1559811345" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1559811345" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1559811345" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1559811345" rel="stylesheet">
     
-      <link href="/odoo.workshop/css/theme-metadonors.css?1540289680" rel="stylesheet">
+      <link href="/odoo.workshop/css/theme-metadonors.css?1559811345" rel="stylesheet">
     
 
-    <script src="/odoo.workshop/js/jquery-2.x.min.js?1540289680"></script>
+    <script src="/odoo.workshop/js/jquery-2.x.min.js?1559811345"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1540289680"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1540289680"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1559811345"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1559811345"></script>
 <script type="text/javascript">
     
         var baseurl = '\/odoo.workshop\/';
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1540289680"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1559811345"></script>
 
     
   </div>
@@ -951,7 +951,7 @@
 
 
 
-<p>Le viste descrivono l&rsquo;interfaccia utente. Ogni vista è strutturata in un file XML, che è utilizzato dal client web per generare le pagine HTML in grado di gestire i dati generati dal nostro backend.</p>
+<p>Le viste descrivono l&rsquo;interfaccia utente. Ogni vista è strutturata in un file XML, che viene utilizzato dal client web per generare le pagine HTML in grado di gestire i dati generati dal nostro backend.</p>
 
 <p>Nelle viste abbiamo dei <em>menu item</em> che ci permettono di attivare funzionalità o navigazione scatenando delle <em>actions</em>. Per esempio, il menu item <strong>Users</strong> processa una action chiamata anchessa <strong>Users</strong>, che renderizza le viste per la gestione degli utenti.</p>
 
@@ -987,6 +987,8 @@
     &lt;menuitem
         id=&quot;menu_todo_task&quot;
         name=&quot;Todos&quot;
+        web_icon=&quot;project,static/description/icon.png&quot;
+        groups=&quot;base.group_user&quot;
         action=&quot;action_todo_task&quot;
         /&gt;
 &lt;/odoo&gt;
@@ -1002,9 +1004,9 @@
 
 <p>Entrambi questi elementi hanno un attributo <em>id</em>, spesso chiamato <strong>XML ID</strong>, che è molto importante: è utilizzato nel modulo e all&rsquo;esterno del modulo per fare riferimento a quell&rsquo;oggetto specifico. Quindi, per esempio, per invocarlo, modificarlo o eliminarlo. Nel caso specifico il <em>&lt;menuitem&gt;</em> utilizza l&rsquo;id della <em>&lt;act_window&gt;</em> per invocarla.</p>
 
-<div class="notices note" ><p>Con viste <em>Tree</em> in Odoo si intendo i listati. Vengono chiamati tree per ragioni storiche anche se attualmente non hanno più un comportamento da struttura ad albero se non in rari casi, come i raggruppamenti, dove permettono di visualizzare i dati su due livelli.</p>
+<div class="notices note" >
+Con viste _Tree_ in Odoo si intendo i listati. Vengono chiamati tree per ragioni storiche anche se attualmente non hanno più un comportamento da struttura ad albero se non in rari casi, come i raggruppamenti, dove permettono di visualizzare i dati su due livelli.
 </div>
-
 
 <p>Come per i modelli, Odoo attualmente non sa dell&rsquo;esistenza del file che abbiamo appena creato. Per dichiararlo dobbiamo aggiungere al file <em>__manifest__.py</em> l&rsquo;attributo <em>data</em> che elenca tutte le risorse (codice Python escluso) disponibili in questo modulo.</p>
 
@@ -1024,14 +1026,23 @@
 }
 </code></pre>
 
-<div class="notices warning" ><p>Ogni definizione che aggiungiamo in file XML viene letta e aggiunta nel database da Odoo in fase di upgrade del modulo. Quando <strong>aggiungiamo</strong> oggetti dobbiamo effettuare un upgrade manuale del modulo per renderli disponibili. In modalita sviluppo del backend (&ndash;dev=all) le <strong>modifiche</strong> invece vengono lette automaticamente ed è sufficiente ricaricare la pagina. In produzione invece è <strong>sempre</strong> necessario effettuare l&rsquo;upgrade del modulo.</p>
+<div class="notices warning" >
+Ogni definizione che aggiungiamo in un file XML viene letta e aggiunta nel database da Odoo in fase di upgrade del modulo. Quando **aggiungiamo** oggetti dobbiamo effettuare un upgrade manuale del modulo per renderli disponibili. In modalita sviluppo del backend (--dev=all) le **modifiche** invece vengono lette automaticamente ed è sufficiente ricaricare la pagina. In produzione invece è **sempre** necessario effettuare l'upgrade del modulo.
 </div>
-
 
 <p>A questo punto non ci resta che effettuare l&rsquo;upgrade del modulo e ricaricare la nostra pagina.</p>
 
 <pre><code>$ docker-compose run odoo upgrade todo_app
 </code></pre>
+
+<p>Ricarichiamo la pagina e&hellip;niente, non e&rsquo; cambiato nulla.</p>
+
+<p>Il motivo per cui odoo non ci mostra il nostro nuovo modello e&rsquo; legata alla gestione dei permessi: non avendo definito nessuna <a href="/odoo.workshop/first_app/controllo_accessi/">politica
+di ACL</a> legata a questo nuovo oggetto, odoo lo esclude a priori</p>
+
+<p>Ci occuperemo dei permessi più tardi, per proseguire attiviamo la <em>modalità superuser</em> di odoo</p>
+
+<p><img src="/odoo.workshop/screen/prime_viste/superuser.png?width=60pc" alt="superuser" /></p>
 
 <p>Se abbiamo fatto tutto correttamente, dovremmo vedere:</p>
 
@@ -1041,9 +1052,9 @@
 
 <p>Premendo il tasto <em>Create</em>, Odoo ci presenta un Form di default basato sulla definizione dei campi che gli abbiamo dato. Il form presentato è molto basilare, presenta semplicemente i campi definiti, nelle applicazioni reali andremo a creare un form specializzato per ogni tipo di modello.</p>
 
-<div class="notices note" ><p>Le viste <em>Form</em> in odoo hanno un duplice utlizzo: modifica e visualizzazione dei dati. Quindi definendo una vista Form stiamo nello stesso momento creando due schermate: quella utilizzata per visualizzare i dati di un record e quella per modificarli. Rimane comunque possibile modificare questo comportamento specificando viste distinte per la visualizzazione e la modifica.</p>
+<div class="notices note" >
+Le viste _Form_ in odoo hanno un duplice utlizzo: modifica e visualizzazione dei dati. Quindi definendo una vista Form stiamo nello stesso momento creando due schermate: quella utilizzata per visualizzare i dati di un record e quella per modificarli. Rimane comunque possibile modificare questo comportamento specificando viste distinte per la visualizzazione e la modifica.
 </div>
-
 
 <p>Per farlo dobbiamo aggiungere, dichiarandolo in un file XML Odoo data, un oggetto di tipo <em>ir.ui.view</em>. Quindi creiamo un nuovo file XML all&rsquo;interno della cartella view di nome <em>todo_views.xml</em> e otteniamo:</p>
 
@@ -1153,9 +1164,9 @@
     
 </code></pre>
 
-<div class="notices note" ><p>In questo caso, non avendo aggiunto record nel data file sarà sufficiente ricaricare la pagina per vedere le modifiche</p>
+<div class="notices note" >
+In questo caso, non avendo aggiunto record nel data file sarà sufficiente ricaricare la pagina per vedere le modifiche
 </div>
-
 
 <p>Ricaricando la pagina vediamo che è stata aggiunta una barra in alto contenente i due bottoni e che il form è stato racchiuso in un box.</p>
 
@@ -1200,9 +1211,11 @@
 
             &lt;filter 
                 string=&quot;Not Done&quot;
+                name=&quot;not_done&quot;
                 domain=&quot;[('is_done','=',False)]&quot;/&gt;
             &lt;filter 
                 string=&quot;Done&quot;
+                name=&quot;done&quot;
                 domain=&quot;[('is_done','!=',False)]&quot;/&gt;
         &lt;/search&gt;
     &lt;/field&gt;
@@ -1855,20 +1868,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1540289680"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1540289680"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1540289680"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1540289680"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1540289680"></script>
-    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1540289680"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1540289680"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1559811345"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1559811345"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1559811345"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1559811345"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1559811345"></script>
+    <script src="/odoo.workshop/js/html5shiv-printshiv.min.js?1559811345"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1559811345"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1540289680"></script>
-    <script src="/odoo.workshop/js/learn.js?1540289680"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1540289680"></script>
+    <script src="/odoo.workshop/js/modernizr.custom.71422.js?1559811345"></script>
+    <script src="/odoo.workshop/js/learn.js?1559811345"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1559811345"></script>
 
-    <link href="/odoo.workshop/mermaid/mermaid.css?1540289680" type="text/css" rel="stylesheet" />
-    <script src="/odoo.workshop/mermaid/mermaid.js?1540289680"></script>
+    <link href="/odoo.workshop/mermaid/mermaid.css?1559811345" type="text/css" rel="stylesheet" />
+    <script src="/odoo.workshop/mermaid/mermaid.js?1559811345"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
