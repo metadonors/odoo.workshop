@@ -114,7 +114,7 @@ Come per le _Access Control List_ le regole di riga vengono salvate in una speci
 e sempre come le ACL possiamo creare delle regole aggiungendole al file di security che abbiamo creato in precedenza. Quindi apriamo il file _security/todo\_model\_acl.xml e aggiungiamo dopo il record creato in precedenza
 
 ```xml
-<record model="ir.model.access" id="todo_task_user_rule">
+<record model="ir.rule" id="todo_task_user_rule">
     <field name="name">todo.task.user.rule</field>
     <field name="model_id" ref="model_todo_task"/>
     <field name="domain_force">
