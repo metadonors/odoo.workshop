@@ -20,6 +20,11 @@ Entriamo nella cartella appena scaricata:
 $ cd odoo.docker
 ```
 
+Scarichiamo i sottomoduli OCA
+```
+$ git submodule update --init --recursive
+```
+
 Infine diciamo a compose di tirare su l'ambiente:
 
 ```
