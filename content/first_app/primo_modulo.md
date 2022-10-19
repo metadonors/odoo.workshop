@@ -14,7 +14,7 @@ Odoo offre un suo meccanismo di scaffolding piuttosto primitivo per creare nuovi
 $ docker-compose run odoo odoo scaffold --help
 ```
 
-Nella pratica la comunità si è però concentrata su un altro strumento di scaffolding, [mrbob](http://mrbob.readthedocs.io/en/latest/) con i template specifici per gli [addon Odoo](https://github.com/acsone/bobtemplates.odoo).
+Nella pratica ci sono altri strumenti utili per questo scopo come, [mrbob](http://mrbob.readthedocs.io/en/latest/) con i template specifici per gli [addon Odoo](https://github.com/acsone/bobtemplates.odoo).
 
 Vi può essere utile quando affronterete il vostro primo modulo in autonomia, ma durante questo corso creeremo tutta la struttura manualmente in modo da capirne meglio i vari aspetti.
 
@@ -24,7 +24,7 @@ Un modulo Odoo è una cartella contenente un file _\_\_manifest\_\_.py_. La cart
 
 Il nome della cartella del modulo è un nome tecnico non visibile all'utente, deve essere valido in python quindi niente deve cominciare con una lettera e sono validi solo lettere, numeri e underscore. Nel nostro caso useremo quindi il nome _todo\_app_.
 
-All'interno della cartella addons dell'ambiente docker che abbiamo scaricato, creiamo la cartella _todo\_app_ con la seguente struttura:
+All'interno della cartella _addons/todo/_ dell'ambiente docker che abbiamo scaricato, creiamo la cartella _todo\_app_ con la seguente struttura:
 
 ```
 todo_app/
@@ -38,7 +38,8 @@ A questo punto è ora di aprire il nostro editor di testo per modificare il file
 {
     'name': 'Applicazione TODO',
     'description': 'Gestisci i tuoi TODO',
-    'author': 'Fabrizio Arzeni',
+    'author': 'Imthe Author',
+    'license': 'LGPL-3',
     'depends': ['base'],
     'application': True
 }
@@ -50,7 +51,7 @@ In questo caso abbiamo usato solo alcuni dei valori definibili nel manifesto di 
 
 ### I path degli addon
 
-Nel nostro caso Odoo sarà in grado di trovare questa applicazione perchè l'abbiamo creata nella cartella addons dell'ambiente. Ma quella cartella è stata configurata per essere fra quelle papabili dove Odoo cerca gli addon all'avvio. È possibile specificare diversi percorsi dove odoo cerca gli addons disponibili ad essere installati, fate riferimento alla variabile _addons-path_ disponibile sia nel file di confiurazione di odoo che da linea di comando.
+Nel nostro caso Odoo sarà in grado di trovare questa applicazione perchè l'abbiamo creata nella cartella addons dell'ambiente. Ma quella cartella è stata configurata per essere fra quelle dove Odoo cerca gli addon all'avvio. È possibile specificare diversi percorsi dove odoo cerca gli addons disponibili ad essere installati, fate riferimento alla variabile _addons-path_ disponibile sia nel file di confiurazione di odoo che da linea di comando.
 
 ### Installazione del modulo
 
@@ -64,9 +65,7 @@ Il nostro modulo non c'è perchè Odoo nella sua fase iniziale mette in cache tu
 
 Per farlo dobbiamo entrare nella **modalità sviluppatore** che sarà essenziale per tutto il nostro lavoro. 
 
-Per attivarla bisogna andare nell'applicazione 'Settings' e premere sulla scritta 'Activate the developer mode' presente sulla destra sotto la versione di Odoo.
-
-![devmode](/odoo.workshop/screen/primo_modulo/devmode.png?width=60pc)
+Per attivarla bisogna andare nell'applicazione 'Settings' e premere sulla scritta 'Activate the developer mode' presente in fondo alla pagina.
 
 Una volta fatto possiamo tornare nella lista delle App e a questo punto sarà presente il bottone 'Update App List'. Premetelo e rieffettuate la ricerca del modulo todo che dovrebbe essere ora disponibile per essere installato
 

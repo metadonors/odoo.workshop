@@ -17,7 +17,7 @@ Il modello che andremo a definire è un semplice Todo Task, ogni task avrà un c
 
 ### Creazione del modello
 
-Tutti i modelli di un modulo risiedono all'interno di una cartella _models_ all'interno del modulo, e al suo interno aggiungiamo il file _todo\_model.py_ e il file _\_\_init\_\_.py_, necessario per far capire a Python che il contenuto di _models_ è importabile.
+Tutti i modelli di un modulo risiedono all'interno di una cartella _models_ all'interno del modulo, e al suo interno aggiungiamo il file _task.py_ e il file _\_\_init\_\_.py_, necessario per far capire a Python che il contenuto di _models_ è importabile.
 
 Avremo cosi questa struttura:
 
@@ -25,7 +25,7 @@ Avremo cosi questa struttura:
     todo_app/
         models/
             __init__.py
-            todo_model.py
+            task.py
         __init__.py
         __manifest__.py
 ```
@@ -33,7 +33,6 @@ Avremo cosi questa struttura:
 All'interno del file del modello _todo\_model.py_ aggiungiamo questo contenuto:
 
 ```python
-# -*- coding: utf-8 -*-
 from odoo import models, fields
 
 class TodoTask(models.Model):
@@ -57,7 +56,7 @@ from . import models
 All'interno del file _todo\_app/models/\_\_init\_\_.py aggiungiamo:
 
 ```python
-from . import todo_model
+from . import task
 ```
 
 A questo punto Odoo sarà in grado di riconoscere e manipolare il modello appena creato.
@@ -70,7 +69,7 @@ apposito da passare ad odoo.
 Apri una nuova shell e dalla cartella contentente il fiel docker\_compose.yml, scrivi:
 
 ```
-$ docker-compose run odoo upgrade todo_app
+$ docker compose run odoo upgrade todo_app
 ```
 
 Che fra le tante cose che scrive, dovrebbe anche dire:

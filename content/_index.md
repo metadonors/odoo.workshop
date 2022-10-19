@@ -26,7 +26,7 @@ Il nostro repository di riferimento:
 
 La documentazione ufficiale di odoo:
 
-[Documentazione Odoo](https://www.odoo.com/documentation/11.0/index.html)
+[Documentazione Odoo](https://www.odoo.com/documentation/15.0/)
 
 Per problemi o domande sul workshop apri una issue su github:
 

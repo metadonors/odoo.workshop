@@ -26,21 +26,13 @@ In questo corso creeremo un applicazione con pochissime dipendenze, per question
 
 ### Installiamo il nostro primo modulo
 
-Per fare un esempio, procediamo all'installazione di un modulo fornito dalla comunità. Installeremo un modulo che estende la ui del nostro backend rendendola più simile alla versione di Odoo Enterprise.
+Per fare un esempio, procediamo all'installazione di un modulo base. Installeremo il modulo CRM che aggiunge funzionalità utili alla gestione dei clienti.
 
 Il modulo è già stato pacchettizzato e inserito nel codice, possiamo quindi procedere con l'installazione da interfaccia web.
 
-Andiamo su _http://localhost_ mettiamo username e password e accediamo alla lista delle app.
+Andiamo su _http://localhost_ mettiamo username e password e accediamo alla lista delle app, selezionando dal menu in alto a sinistra.
 
-![apps](/odoo.workshop/screen/concetti/apps.png?width=60pc)
-
-Deselezioniamo il filtro "Apps" dalla barra di ricerca e inseriamo la stringa "Backend"
-
-![material](/odoo.workshop/screen/concetti/material.png?width=60pc)
-
-Clicchiamo su Install e...fatto. Abbiamo installato il nostro primo modulo e subito il nostro Odoo ha un look più  moderno.
-
-![material2](/odoo.workshop/screen/concetti/material2.png?width=60pc)
+Premiamo il tasto "Install" sull'applicazione CRM e dopo qualche minuto l'applicazione sarà pronta per essere utilizzata.
 
 ### Continua
 

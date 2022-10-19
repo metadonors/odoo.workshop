@@ -20,18 +20,18 @@ Entriamo nella cartella appena scaricata:
 $ cd odoo.docker
 ```
 
-Scarichiamo i sottomoduli OCA
+Inizializziamo il database di Odoo
 ```
-$ git submodule update --init --recursive
+$ docker compose run odoo upgrade -i base
 ```
+
+Compose comincerà a scaricare tutte le nostre dipendenze, ,a procedura può durare diversi minuti in base alla connessione a internet disponibile. 
 
 Infine diciamo a compose di tirare su l'ambiente:
 
 ```
 $ docker-compose up
 ```
-
-Compose comincerà a scaricare tutte le nostre dipendenze, odoo, nginx e il database. La procedura può durare diversi minuti in base alla connessione a internet disponibile. 
 
 In seguito verranno avviati i vari componenti: odoo, postgres - il database - e nginx - il server web. Al primo avvio odoo dovrà inizializzare la struttura del database (anche questa operazione potrebbe impiegare qualche minuto).
 
