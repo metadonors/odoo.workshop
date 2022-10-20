@@ -2,7 +2,7 @@ baseURL = "https://metadonors.github.io/odoo.workshop/"
 languageCode = "it-it"
 title = "Odoo Workshop"
 publishDir = "docs"
-theme = "hugo-theme-learn"
+theme = "learn"
 
 [params]
 editURL = "https://github.com/metadonors/odoo.workshop/tree/master/content/"
