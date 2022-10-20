@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>I Modelli on Odoo Workshop</title>
@@ -6,11 +6,7 @@
     <description>Recent content in I Modelli on Odoo Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-it</language>
-    <lastBuildDate>Wed, 27 Jun 2018 16:13:21 +0200</lastBuildDate>
-    
-	<atom:link href="https://metadonors.github.io/odoo.workshop/models/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 27 Jun 2018 16:13:21 +0200</lastBuildDate><atom:link href="https://metadonors.github.io/odoo.workshop/models/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Preambolo</title>
       <link>https://metadonors.github.io/odoo.workshop/models/preambolo/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://metadonors.github.io/odoo.workshop/models/preambolo/</guid>
       <description>Per andare a esplorare cosa possiamo fare con i nostri modelli prepariamoci prima un nuovo modulo che estende gli esistenti. Per analizzare come funzionano le relazioni aggiungeremo anche un paio di modelli.
- TodoProjects progetti per raggruppare i task TodoTag tag per poter classificare i vari task  Abbiamo gia&amp;rsquo; un modulo preparato con queste modifiche, l&amp;rsquo;unica cosa che dobbiamo fare è scaricarlo nella nostra directory addons.
+ TodoProjects progetti per raggruppare i task TodoTag tag per poter classificare i vari task  Abbiamo gia&#39; un modulo preparato con queste modifiche, l&amp;rsquo;unica cosa che dobbiamo fare è scaricarlo nella nostra directory addons.
 Per farlo, da terminale, entriamo nella cartella addons</description>
     </item>
     
@@ -28,7 +24,7 @@ Per farlo, da terminale, entriamo nella cartella addons</description>
       <pubDate>Thu, 28 Jun 2018 16:52:23 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/models/campi_base/</guid>
-      <description>L&amp;rsquo;ORM di Odoo permette di creare modelli complessi composti da attributi basa su tipi di campi semplici. Questi campi mappano direttamente sul database e, in base al tipo, possono avere comportamenti differenti a livello di interfaccia utente. I campi di testo verranno renderizzati come semplici tag &amp;lt;input&amp;gt;, le date presenteranon un calendario, le selezioni multiple un tag &amp;lt;select&amp;gt; e così via.
+      <description>L&#39;ORM di Odoo permette di creare modelli complessi composti da attributi basa su tipi di campi semplici. Questi campi mappano direttamente sul database e, in base al tipo, possono avere comportamenti differenti a livello di interfaccia utente. I campi di testo verranno renderizzati come semplici tag &amp;lt;input&amp;gt;, le date presenteranon un calendario, le selezioni multiple un tag &amp;lt;select&amp;gt; e così via.
 Tipi di Campi Ogni tipo di campo ha può accettare una serie di parametri che variano il suo comportamento.</description>
     </item>
     

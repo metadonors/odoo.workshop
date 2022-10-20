@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Iniziare on Odoo Workshop</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Iniziare on Odoo Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-it</language>
-    <lastBuildDate>Wed, 27 Jun 2018 15:32:30 +0200</lastBuildDate>
-    
-	<atom:link href="https://metadonors.github.io/odoo.workshop/basics/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 27 Jun 2018 15:32:30 +0200</lastBuildDate><atom:link href="https://metadonors.github.io/odoo.workshop/basics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Precorso</title>
       <link>https://metadonors.github.io/odoo.workshop/basics/precorso/</link>
@@ -31,9 +27,9 @@ Un elenco di alcuni possibili editor:
       <guid>https://metadonors.github.io/odoo.workshop/basics/installazione/</guid>
       <description>Una volta installati gli strumenti di sviluppo come descritto nella sezione Precorso possiamo procedere ad installare l&amp;rsquo;ambiente di odoo che utilizzeremo in questo corso.
 Installazione dell&amp;rsquo;ambiente di sviluppo Scaricate l&amp;rsquo;ambiente docker che utilizzeremo dal github in una cartella sul nostro computer. Aprite un terminale e digitate:
-$ git clone https://github.com/metadonors/odoo.docker.git  Entriamo nella cartella appena scaricata:
-$ cd odoo.docker  Infine diciamo a compose di tirare su l&amp;rsquo;ambiente:
-$ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, odoo, nginx e il database.</description>
+$ git clone https://github.com/metadonors/odoo.docker.git Entriamo nella cartella appena scaricata:
+$ cd odoo.docker Inizializziamo il database di Odoo
+$ docker compose run odoo upgrade -i base Compose comincerà a scaricare tutte le nostre dipendenze, ,a procedura può durare diversi minuti in base alla connessione a internet disponibile.</description>
     </item>
     
     <item>
@@ -42,7 +38,7 @@ $ docker-compose up  Compose comincerà a scaricare tutte le nostre dipendenze, 
       <pubDate>Wed, 27 Jun 2018 23:17:43 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/basics/concetti/</guid>
-      <description>Prima di cominciare è necessario affrontare un po&amp;rsquo; di teoria che sta alla base del framework Odoo. Odoo è un framework applicativo modulare, i suoi principali componenti sono i moduli e le applicazioni.
+      <description>Prima di cominciare è necessario affrontare un po&#39; di teoria che sta alla base del framework Odoo. Odoo è un framework applicativo modulare, i suoi principali componenti sono i moduli e le applicazioni.
 Moduli I moduli sono i componenti essenziali che possono essere aggiunti a Odoo. Ogni modulo può implementare nuove funzionalità oppure modificare quelle esistenti. Ogni modulo è costituito da una cartella contenente un file __manifest.py__ più altri file che implementano le sue funzionalità.</description>
     </item>
     

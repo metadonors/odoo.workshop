@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Estendere i moduli on Odoo Workshop</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Estendere i moduli on Odoo Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-it</language>
-    <lastBuildDate>Wed, 27 Jun 2018 16:14:07 +0200</lastBuildDate>
-    
-	<atom:link href="https://metadonors.github.io/odoo.workshop/inheritance/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 27 Jun 2018 16:14:07 +0200</lastBuildDate><atom:link href="https://metadonors.github.io/odoo.workshop/inheritance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Preambolo</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/teoria/</link>
@@ -18,7 +14,7 @@
       
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/teoria/</guid>
       <description>Per apportare modifiche o aggiungere funzionalità ai moduli e alle applicazioni esistenti, Odoo ci mette a disposizione diversi strumenti in base a cosa e dove vogliamo intervenire.
-Odoo ha dai meccanismi interni specifici che si basano sul concetto di Ereditarietà. Tramite questi meccanismi e&amp;rsquo; possibile modificare Modelli esistenti, Viste oppure Dati (come le regole di accesso).
+Odoo ha dai meccanismi interni specifici che si basano sul concetto di Ereditarietà. Tramite questi meccanismi e&#39; possibile modificare Modelli esistenti, Viste oppure Dati (come le regole di accesso).
 In questo capito andremo ad aggiungere una funzionalità all&amp;rsquo;applicazione Todo creata in precedenza. Attualmente ogni utente può lavorare solo sui suoi task, perchè non aggiungere qualche funzionalità di social networking come la possibilità di condividere i task e di commentarli con diversi utenti?</description>
     </item>
     
@@ -39,9 +35,9 @@ Noi cominceremo con il più semplice dove la classe figlia eredita tutte le funz
       <pubDate>Thu, 28 Jun 2018 16:39:23 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_viste/</guid>
-      <description>Un po&amp;rsquo; di teoria Le viste Form, List e Search sono definite utilizzando la struttura XML arch. Per estenderle dobbiamo modificare quelle definizioni XML e farlo significa localizzare i tag XML che vogliamo cambiare e introdurre le nostre modifiche in quei punti.
+      <description>Un po&#39; di teoria Le viste Form, List e Search sono definite utilizzando la struttura XML arch. Per estenderle dobbiamo modificare quelle definizioni XML e farlo significa localizzare i tag XML che vogliamo cambiare e introdurre le nostre modifiche in quei punti.
 Cominciamo subito con un esempio di una vista che ne estende un&amp;rsquo;altra:
-&amp;lt;record model=&amp;quot;ir.ui.view&amp;quot; id=&amp;quot;todo_task_form_view_inherited&amp;quot;&amp;gt; &amp;lt;field name=&amp;quot;name&amp;quot;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;quot;model&amp;quot;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;quot;inherit_id&amp;quot; ref=&amp;quot;todo_task_form_view&amp;quot;/&amp;gt; &amp;lt;field name=&amp;quot;arch&amp;quot; type=&amp;quot;xml&amp;quot;&amp;gt; &amp;lt;!-- ...cerca e modifica i tag XML in questo punto.</description>
+&amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_form_view_inherited&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;inherit_id&amp;#34; ref=&amp;#34;todo_task_form_view&amp;#34;/&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;!-- ...cerca e modifica i tag XML in questo punto.</description>
     </item>
     
     <item>
@@ -61,7 +57,8 @@ Ogni volta che dichiariamo un &amp;lt;record id=&amp;ldquo;x&amp;rdquo; model=&a
       
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/aggiungere_funzionalita/</guid>
       <description>Finora abbiamo visto come estendere applicazioni esistenti aggiungendo funzionalità create da noi. Ma Odoo permette di fare molto di più: possiamo aggiungere funzionalità implementate in moduli scritti da altre persone.
-Nel nostro caso vogliamo aggiugere la possibilità per gli utenti di commentare i task e di poterli seguire, alla maniera di Twitter. Questa funzionalità in Odoo è implementata nel modulo mail, più specificatamente nel modello mail.thread di quel modulo.</description>
+Nel nostro caso vogliamo aggiugere la possibilità per gli utenti di commentare i task e di poterli seguire, alla maniera di Twitter. Questa funzionalità in Odoo è implementata nel modulo mail, più specificatamente nel modello mail.thread di quel modulo.
+Per aggiungerlo al nostro modello todo.</description>
     </item>
     
   </channel>

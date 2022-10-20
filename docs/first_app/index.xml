@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>La prima applicazione on Odoo Workshop</title>
@@ -6,11 +6,7 @@
     <description>Recent content in La prima applicazione on Odoo Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-it</language>
-    <lastBuildDate>Wed, 27 Jun 2018 16:13:21 +0200</lastBuildDate>
-    
-	<atom:link href="https://metadonors.github.io/odoo.workshop/first_app/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 27 Jun 2018 16:13:21 +0200</lastBuildDate><atom:link href="https://metadonors.github.io/odoo.workshop/first_app/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Scaffolding</title>
       <link>https://metadonors.github.io/odoo.workshop/first_app/primo_modulo/</link>
@@ -19,7 +15,7 @@
       <guid>https://metadonors.github.io/odoo.workshop/first_app/primo_modulo/</guid>
       <description>In questa sezione andremo a creare il nostro primo modulo. L&amp;rsquo;applicazione d&amp;rsquo;esempio che creeremo durante il corso è una classica Todo App. Per realizzarla attraverseremo le classiche fasi di sviluppo di un applicazione Odoo.
 Lo scheletro del modulo Odoo offre un suo meccanismo di scaffolding piuttosto primitivo per creare nuovi moduli, è possibile visualizzare il suo funzionamento lanciando questo comando dalla cartella contente l&amp;rsquo;ambiente odoo.dockerenv:
-$ docker-compose run odoo odoo scaffold --help  Nella pratica la comunità si è però concentrata su un altro strumento di scaffolding, mrbob con i template specifici per gli addon Odoo.</description>
+$ docker-compose run odoo odoo scaffold --help Nella pratica ci sono altri strumenti utili per questo scopo come, mrbob con i template specifici per gli addon Odoo.</description>
     </item>
     
     <item>
@@ -51,7 +47,7 @@ Nelle viste abbiamo dei menu item che ci permettono di attivare funzionalità o 
       <guid>https://metadonors.github.io/odoo.workshop/first_app/prima_funzione/</guid>
       <description>A questo punto è arrivato il momento di aggiungere della logica applicativa al nostro modulo. Per farlo possiamo sfruttare i bottoni che abbiamo aggiunto nella sezione precedente relativa alle viste.
 Aggiungere la logica applicativa Nella precedente sezione abbiamo aggiunto due bottoni per invocare delle funzioni Python sul nostro backend. Riporto qui il codice interessato per comodità.
-&amp;lt;button name=&amp;quot;do_toggle_button&amp;quot; type=&amp;quot;object&amp;quot; string=&amp;quot;Toggle Done&amp;quot; class=&amp;quot;oe_highlight&amp;quot;/&amp;gt;  In questo tag stiamo definendo alcuni attributi, vediamoli nel dettaglio:</description>
+&amp;lt;button name=&amp;#34;do_toggle_button&amp;#34; type=&amp;#34;object&amp;#34; string=&amp;#34;Toggle Done&amp;#34; class=&amp;#34;oe_highlight&amp;#34;/&amp;gt; In questo tag stiamo definendo alcuni attributi, vediamoli nel dettaglio:</description>
     </item>
     
     <item>
@@ -61,7 +57,7 @@ Aggiungere la logica applicativa Nella precedente sezione abbiamo aggiunto due b
       
       <guid>https://metadonors.github.io/odoo.workshop/first_app/controllo_accessi/</guid>
       <description>Nella scorsa sezione abbiamo terminato la creazione del nostro modulo base. Al termine abbiamo notato che Odoo si lamentava dicendo che non abbiamo specificato delle regole di accesso per il modello da noi creato
-WARNING demo odoo.modules.loading: The model todo.task has no access rules, consider adding one. E.g. access_todo_task,access_todo_task,model_todo_task,,1,0,0,0  In Odoo tutti i modelli devono avere delle regole di accesso specificate, in caso contrario solo l&amp;rsquo;utente admin potrà accedere ai dati relativi a quel modello.</description>
+WARNING demo odoo.modules.loading: The model todo.task has no access rules, consider adding one. E.g. access_todo_task,access_todo_task,model_todo_task,,1,0,0,0 In Odoo tutti i modelli devono avere delle regole di accesso specificate, in caso contrario solo l&amp;rsquo;utente admin potrà accedere ai dati relativi a quel modello.</description>
     </item>
     
   </channel>
