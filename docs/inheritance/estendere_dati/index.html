@@ -10,22 +10,22 @@
     <title>Estendere i Dati :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1668612166" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1668612166" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1666263210"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612166"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1666263210"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612166"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612166"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612166"></script>
 
     
   </div>
@@ -1034,46 +1034,48 @@
         
 
 
-<p>A differenza delle viste i file xml contenenti dati, come i menuitem oppure le security rules, non hanno l&rsquo;elemento <em>arch</em> e non possono quindi essere modificati utilizzanto XPath. Ma possono comunque essere modificati, rimpiazzando i valori contenuti nei loro campi.</p>
+<p>A differenza delle viste i file xml contenenti dati, come le action, i menu, oppure le security rules, non hanno l&rsquo;elemento <em>arch</em> e non possono quindi essere modificati utilizzanto XPath. Ma possono comunque essere modificati, rimpiazzando i valori contenuti nei loro campi.</p>
 <p>Ogni volta che dichiariamo un <em>&lt;record id=&ldquo;x&rdquo; model=&ldquo;y&rdquo;&gt;</em> Odoo effettua una <em>insert</em> o una <em>update</em> nel database, quindi riutilizzando gli stessi id possiamo andare ad aggiornare i dati inseriti dai moduli genitori.</p>
 <p>Vediamo nel dettaglio cosa significa.</p>
 <h3 id="modificare-i-menuitem-e-le-action">Modificare i Menuitem e le Action</h3>
-<p>Per fare un esempio modifichiamo l&rsquo;elemento del menu creato dalla <em>todo_app</em> andando a modificare la sua stringa in <em>I miei Todo</em>. Per farlo possiamo aggiungere in fondo al file <em>views/todo_task.xml</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- Modifica l&#39;elemento del menu --&gt;</span>
+<p>Per fare un esempio modifichiamo l&rsquo;elemento del menu creato dalla <em>todo_app</em> andando a modificare la sua stringa in <em>I miei Todo</em>. Per farlo possiamo aggiungere in fondo al file <em>views/task_views.xml</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- Edit menu item --&gt;</span>
 <span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_app.menu_todo_task&#34;</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.menu&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>I miei Todo<span style="color:#f92672">&lt;/field&gt;</span>
 <span style="color:#f92672">&lt;/record&gt;</span>
-</code></pre></div><p>Possiamo anche modificare la <em>action</em> che abbiamo creato precedentemente. Le <em>action</em> possono avere un parametro <em>context</em> opzionale che va a modificare il comportamento della stessa, per esempio aggiungendogli dei valori di default che verranno utilizzati per popolare <em>field</em> o <em>filters</em>. Quello che faremo sarà modificare la action per far si che venga visualizzata la pagina della lista Todo con il filtro <em>I miei Task</em> preselezionato. Aggiungiamo quindi in fondo al file <em>views/todo_task.xml</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- Modifica la action --&gt;</span>
+</code></pre></div><p>Possiamo anche modificare la <em>action</em> che abbiamo creato precedentemente. Le <em>action</em> possono avere un parametro <em>context</em> opzionale che va a modificare il comportamento della stessa, per esempio aggiungendogli dei valori di default che verranno utilizzati per popolare <em>field</em> o <em>filters</em>. Quello che faremo sarà modificare la action per far si che venga visualizzata la pagina della lista Todo con il filtro <em>I miei Task</em> preselezionato. Aggiungiamo quindi in fondo al file <em>views/task_task.xml</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- Edit action --&gt;</span>
 <span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_app.action_todo_task&#34;</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.actions.act_window&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;context&#34;</span><span style="color:#f92672">&gt;</span>{&#39;search_default_filter_my_tasks&#39;: True}<span style="color:#f92672">&lt;/field&gt;</span>
 <span style="color:#f92672">&lt;/record&gt;</span>
 </code></pre></div><p>Se abbiamo fatto tutto correttamente dopo un upgrade del modulo</p>
-<pre tabindex="0"><code>    $ docker-compose run odoo upgrade todo_user
+<pre tabindex="0"><code>$ docker compose run odoo upgrade todo_user
 </code></pre><p>dovremmo vedere:</p>
 <p><img src="/odoo.workshop/screen/estendere_dati/menuactions.png?width=60pc" alt="menuactions"></p>
 <h3 id="modficare-le-regole-di-sicurezza">Modficare le regole di sicurezza</h3>
 <p>La nostra applicazione precedente permette agli utenti di vedere solo i Task creati da loro stessi. Ora vogliamo che i task siano accessibili all&rsquo;incaricato e a tutti i <em>follower</em> del task. Come per i <em>menuitem</em> e le <em>actions</em> andremo a sovrascriere la regola precedentemente creata modificando il suo campo <em>domain_force</em>.</p>
-<p>Essendo una regola di sicurezza, per convenzione, la metteremo nella sottocartella <em>security/</em> in un file che chiameremo <em>todo_access_rules.xml</em></p>
+<p>Essendo una regola di sicurezza, per convenzione, la metteremo nella sottocartella <em>security/</em> in un file che chiameremo <em>task_access_rules.xml</em></p>
 <pre tabindex="0"><code>    todo_user/
         models/
             __init__.py
-            todo_task.py
+            task.py
         views/
             todo_task.xml
         security/
-            todo_access_rules.xml
+            task_access_rules.xml
         __init__.py
         __manifest__.py
 </code></pre><p>che andremo successivamente ad aggiungere anche al manifesto dell&rsquo;applicazione:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{
     <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Multiuser TODO&#39;</span>,
-    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Estende la Todo app per farla diventare Multi Utente&#39;</span>,
-    <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Metadonors&#39;</span>,
+    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Extend Todo app to work in a multiuser environment&#39;</span>,
+    <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Imthe Author&#39;</span>,
+    <span style="color:#e6db74">&#39;license&#39;</span>: <span style="color:#e6db74">&#39;LGPL-3&#39;</span>,
     <span style="color:#e6db74">&#39;depends&#39;</span>: [<span style="color:#e6db74">&#39;todo_app&#39;</span>],
+
     <span style="color:#e6db74">&#39;data&#39;</span>: [
-        <span style="color:#e6db74">&#39;security/todo_access_rules.xml&#39;</span>, <span style="color:#75715e"># &lt;-- Aggiungiamo questa riga</span>
-        <span style="color:#e6db74">&#39;views/todo_task.xml&#39;</span>
+        <span style="color:#e6db74">&#39;security/task_access_rules.xml&#39;</span>, <span style="color:#75715e"># &lt;-- Add this line</span>
+        <span style="color:#e6db74">&#39;views/task_views.xml&#39;</span>
     ]
 }
 </code></pre></div><p>Il contenuto del file per la regola di accesso sarà quindi il seguente:</p>
@@ -1734,19 +1736,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1666263210"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1666263210"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1668612166"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1668612166"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1666263210"></script>
-    <script src="/odoo.workshop/js/learn.js?1666263210"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1666263210"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612166"></script>
+    <script src="/odoo.workshop/js/learn.js?1668612166"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1668612166"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1666263210"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1668612166"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

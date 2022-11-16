@@ -10,22 +10,22 @@
     <title>Le viste :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1668612166" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1668612166" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1666263210"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612166"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1666263210"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612166"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612166"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612166"></script>
 
     
   </div>
@@ -1040,34 +1040,34 @@
 <p>Nelle viste abbiamo dei <em>menu item</em> che ci permettono di attivare funzionalità o navigazione scatenando delle <em>actions</em>. Per esempio, il menu item <strong>Users</strong> processa una action chiamata anchessa <strong>Users</strong>, che renderizza le viste per la gestione degli utenti.</p>
 <p>Per ogni modello sono disponibili diversi tipi di viste, le principali che utilizzeremo sono: <strong>list view</strong>, <strong>form view</strong> e <strong>search view</strong>.</p>
 <h3 id="creazione-del-menuitem-e-della-actwindow">Creazione del MenuItem e della ActWindow</h3>
-<p>Generalemente le viste sono raggruppate nella cartella <em>views</em> all&rsquo;interno del modulo. Prima della creazione della vista vera e propria, abbiamo bisogno di un <em>menu item</em> che ci permetta di navigare alla nostra applicazione <em>Todo Task</em>. Per farlo creiamo la cartella <em>views</em> e al suo interno il file <em>todo_menu.xml</em> ottenendo la seguente struttura</p>
+<p>Generalemente le viste sono raggruppate nella cartella <em>views</em> all&rsquo;interno del modulo. Prima della creazione della vista vera e propria, abbiamo bisogno di un <em>menu item</em> che ci permetta di navigare alla nostra applicazione <em>Todo Task</em>. Per farlo creiamo la cartella <em>views</em> e al suo interno il file <em>task_menu.xml</em> ottenendo la seguente struttura</p>
 <pre tabindex="0"><code>todo_app/
     models/
         __init__.py
-        todo_model.py
+        task.py
     views/
-        todo_menu.xml
+        task_menu.xml
     __init__.py
     __manifest__.py
 </code></pre><p>e aggiungiamo il seguente contenuto che definisce l&rsquo;oggetto menu e l&rsquo;azione necessaria per navigare verso l&rsquo;applicazione:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style="color:#f92672">&lt;odoo&gt;</span>
-    <span style="color:#75715e">&lt;!-- Azione che apre la vista list Todo Task --&gt;</span>
-    <span style="color:#f92672">&lt;act_window</span> 
-        <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;action_todo_task&#34;</span>
-        <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;ToDo Task&#34;</span>
-        <span style="color:#a6e22e">res_model=</span><span style="color:#e6db74">&#34;todo.task&#34;</span>
-        <span style="color:#a6e22e">view_mode=</span><span style="color:#e6db74">&#34;tree,form&#34;</span>
-        <span style="color:#f92672">/&gt;</span>
+    <span style="color:#75715e">&lt;!-- Action to open list view Todo Task --&gt;</span>
+    <span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.actions.act_window&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;action_todo_task&#34;</span><span style="color:#f92672">&gt;</span>
+		<span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>Todo Task<span style="color:#f92672">&lt;/field&gt;</span>
+		<span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;res_model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
+		<span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;view_mode&#34;</span><span style="color:#f92672">&gt;</span>tree,form<span style="color:#f92672">&lt;/field&gt;</span>
+		<span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;domain&#34;</span><span style="color:#f92672">&gt;</span>[]<span style="color:#f92672">&lt;/field&gt;</span>
+		<span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;context&#34;</span><span style="color:#f92672">&gt;</span>{}<span style="color:#f92672">&lt;/field&gt;</span>
+	<span style="color:#f92672">&lt;/record&gt;</span>
 
-    <span style="color:#75715e">&lt;!-- Oggetto menu che apre la lista dei Todo --&gt;</span>
-    <span style="color:#f92672">&lt;menuitem</span>
-        <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;menu_todo_task&#34;</span>
-        <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Todos&#34;</span>
-        <span style="color:#a6e22e">web_icon=</span><span style="color:#e6db74">&#34;project,static/description/icon.png&#34;</span>
-        <span style="color:#a6e22e">groups=</span><span style="color:#e6db74">&#34;base.group_user&#34;</span>
-        <span style="color:#a6e22e">action=</span><span style="color:#e6db74">&#34;action_todo_task&#34;</span>
-        <span style="color:#f92672">/&gt;</span>
+    <span style="color:#75715e">&lt;!-- Menu object used to trigger action action_todo_task --&gt;</span>
+     <span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.menu&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;menu_todo_task&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>Todos<span style="color:#f92672">&lt;/field&gt;</span>
+        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;action&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;action_todo_task&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sequence&#34;</span> <span style="color:#a6e22e">eval=</span><span style="color:#e6db74">&#34;20&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/record&gt;</span>
+
 <span style="color:#f92672">&lt;/odoo&gt;</span>
 </code></pre></div><p>Questo piccolo pezzo di codice è un file <em>Odoo data</em>. Odoo lo legge e aggiunge nel suo database queste definizioni. Nello specifico abbiamo definito:</p>
 <ul>
@@ -1086,15 +1086,16 @@
 <p>Come per i modelli, Odoo attualmente non sa dell&rsquo;esistenza del file che abbiamo appena creato. Per dichiararlo dobbiamo aggiungere al file <em>__manifest__.py</em> l&rsquo;attributo <em>data</em> che elenca tutte le risorse (codice Python escluso) disponibili in questo modulo.</p>
 <p>Quindi aprimo il file <em>__manifest__.py</em> e modifichiamolo di conseguenza:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{
-    <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Applicazione TODO&#39;</span>,
-    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Gestisci i tuoi TODO&#39;</span>,
-    <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Fabrizio Arzeni&#39;</span>,
+    <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;TODO Application&#39;</span>,
+    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Manage your Todos&#39;</span>,
+    <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Imthe Author&#39;</span>,
+    <span style="color:#e6db74">&#39;license&#39;</span>: <span style="color:#e6db74">&#39;LGPL-3&#39;</span>,
     <span style="color:#e6db74">&#39;depends&#39;</span>: [<span style="color:#e6db74">&#39;base&#39;</span>],
-    <span style="color:#e6db74">&#39;application&#39;</span>: <span style="color:#66d9ef">True</span>,
+    <span style="color:#e6db74">&#39;application&#39;</span>: <span style="color:#66d9ef">True</span>
 
-    <span style="color:#75715e"># Aggiungiamo questa parte</span>
+    <span style="color:#75715e"># Add this section</span>
     <span style="color:#e6db74">&#39;data&#39;</span>: [
-        <span style="color:#e6db74">&#39;views/todo_menu.xml&#39;</span>
+        <span style="color:#e6db74">&#39;views/task_menu.xml&#39;</span>
     ]
 }
 </code></pre></div>
@@ -1102,7 +1103,7 @@
 </div>
 
 <p>A questo punto non ci resta che effettuare l&rsquo;upgrade del modulo e ricaricare la nostra pagina.</p>
-<pre tabindex="0"><code>$ docker-compose run odoo upgrade todo_app
+<pre tabindex="0"><code>$ docker compose run odoo upgrade todo_app
 </code></pre><p>Ricarichiamo la pagina e&hellip;niente, non e' cambiato nulla.</p>
 <p>Il motivo per cui odoo non ci mostra il nostro nuovo modello e' legata alla gestione dei permessi: non avendo definito nessuna <a href="/odoo.workshop/first_app/controllo_accessi/">politica
 di ACL</a> legata a questo nuovo oggetto, odoo lo esclude a priori</p>
@@ -1116,15 +1117,15 @@ di ACL</a> legata a questo nuovo oggetto, odoo lo esclude a priori</p>
 <div class="notices note" ><p>Le viste <em>Form</em> in odoo hanno un duplice utlizzo: modifica e visualizzazione dei dati. Quindi definendo una vista Form stiamo nello stesso momento creando due schermate: quella utilizzata per visualizzare i dati di un record e quella per modificarli. Rimane comunque possibile modificare questo comportamento specificando viste distinte per la visualizzazione e la modifica.</p>
 </div>
 
-<p>Per farlo dobbiamo aggiungere, dichiarandolo in un file XML Odoo data, un oggetto di tipo <em>ir.ui.view</em>. Quindi creiamo un nuovo file XML all&rsquo;interno della cartella view di nome <em>todo_views.xml</em> e otteniamo:</p>
+<p>Per farlo dobbiamo aggiungere, dichiarandolo in un file XML Odoo data, un oggetto di tipo <em>ir.ui.view</em>. Quindi creiamo un nuovo file XML all&rsquo;interno della cartella view di nome <em>task_views.xml</em> e otteniamo:</p>
 <pre tabindex="0"><code>todo_app/
     models/
         __init__.py
-        todo_model.py
-        todo_views.py
+        task_model.py
+        task_views.py
     views/
-        todo_menu.xml
-        todo_views.xml
+        task_menu.xml
+        task_views.xml
     __init__.py
     __manifest__.py
 </code></pre><p>All&rsquo;interno di questo file aggiungiamo il seguente contenuto:</p>
@@ -1147,18 +1148,19 @@ di ACL</a> legata a questo nuovo oggetto, odoo lo esclude a priori</p>
 </code></pre></div><p>Questo codice aggiungne una vista con l&rsquo;idendificativo <em>todo_task_form_view</em>. L&rsquo;attributo model indica a Odoo che deve usare questa vista sugli oggetti di tipo  <em>todo.task</em>. L&rsquo;attributo <em>arch</em> indica il contenuto effetivo della vista e il tag <em>form</em> specifica che la vista definita è di tipo <em>Form View</em>.</p>
 <p>Come per il menu, dobbiamo aggiungere questo file al manifesto del modulo per far si che Odoo lo riconosca e lo carichi. Apri quindi il <em>__manifest__.py</em> modficalo come segue:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{
-    <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Applicazione TODO&#39;</span>,
-    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Gestisci i tuoi TODO&#39;</span>,
-    <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Fabrizio Arzeni&#39;</span>,
+    <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;TODO Application&#39;</span>,
+    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Manage your Todos&#39;</span>,
+    <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Imthe Author&#39;</span>,
+    <span style="color:#e6db74">&#39;license&#39;</span>: <span style="color:#e6db74">&#39;LGPL-3&#39;</span>,
     <span style="color:#e6db74">&#39;depends&#39;</span>: [<span style="color:#e6db74">&#39;base&#39;</span>],
     <span style="color:#e6db74">&#39;application&#39;</span>: <span style="color:#66d9ef">True</span>,
     <span style="color:#e6db74">&#39;data&#39;</span>: [
-        <span style="color:#e6db74">&#39;views/todo_menu.xml&#39;</span>,
-        <span style="color:#e6db74">&#39;views/todo_views.xml&#39;</span>, <span style="color:#75715e"># Aggiungiamo questa riga</span>
+        <span style="color:#e6db74">&#39;views/task_menu.xml&#39;</span>,
+        <span style="color:#e6db74">&#39;views/task_views.xml&#39;</span>, <span style="color:#75715e"># Add this line</span>
     ]
 }
 </code></pre></div><p>Una volta fatto possimo effettuare l&rsquo;upgrade del modulo e aggiornare la pagina.</p>
-<pre tabindex="0"><code>$ docker-compose run odoo upgrade todo_app
+<pre tabindex="0"><code>$ docker compose run odoo upgrade todo_app
 </code></pre><p>Se tutto è andato bene otterremo una pagina di questo genere:</p>
 <p><img src="/odoo.workshop/screen/prime_viste/form.png?width=60pc" alt="todoform"></p>
 <p>Che ci permetti di effettuare le basiche operazioni CRUD sui nostri modelli. Ma vediamo come possiamo migliorare ancora un po' la visualizzazione dei dati.</p>
@@ -1169,19 +1171,19 @@ di ACL</a> legata a questo nuovo oggetto, odoo lo esclude a priori</p>
 <li>un tag <em>&lt;sheet&gt;</em> che rappresenta la parte centrale della pagina (il foglio di carta), dove vengono rappresentati i dati.</li>
 </ul>
 <p>Un altro elemento utile nei from è il tag <em>&lt;group&gt;</em> che permette di ragguppare i campi, suddividendoli su più colonne.</p>
-<p>Per creare queste due aree e aggiungere un paio di bottoni modifichiamo il nostro file <em>todo_views.xml</em>, aggiungendo queste due aree:</p>
+<p>Per creare queste due aree e aggiungere un paio di bottoni modifichiamo il nostro file <em>task_views.xml</em>, aggiungendo queste due aree:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">
     <span style="color:#f92672">&lt;form</span> <span style="color:#a6e22e">string=</span><span style="color:#e6db74">&#34;ToDo Task Form&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#75715e">&lt;!-- Aggiungiamo l&#39;header, dove posizioneremo i bottoni--&gt;</span>
+        <span style="color:#75715e">&lt;!-- Add header, where action buttons will be placed--&gt;</span>
         <span style="color:#f92672">&lt;header&gt;</span>
-            <span style="color:#75715e">&lt;!-- Aggiungiamo un pulsante per modificare lo stato Fatto del task --&gt;</span>
+            <span style="color:#75715e">&lt;!-- Add a button to edit task done state  --&gt;</span>
             <span style="color:#f92672">&lt;button</span> 
                 <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;do_toggle_button&#34;</span> 
                 <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;object&#34;</span>
                 <span style="color:#a6e22e">string=</span><span style="color:#e6db74">&#34;Toggle Done&#34;</span>
                 <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;oe_highlight&#34;</span><span style="color:#f92672">/&gt;</span>
             
-            <span style="color:#75715e">&lt;!-- Aggiungiamo un pulsante per rimuovere i task in stato fatto --&gt;</span>
+            <span style="color:#75715e">&lt;!-- Add a button to clear done tasks --&gt;</span>
             <span style="color:#f92672">&lt;button</span> 
                 <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;do_clear_done&#34;</span> 
                 <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;object&#34;</span>
@@ -1189,9 +1191,9 @@ di ACL</a> legata a questo nuovo oggetto, odoo lo esclude a priori</p>
                 <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;oe_highlight&#34;</span><span style="color:#f92672">/&gt;</span>
         <span style="color:#f92672">&lt;/header&gt;</span>
 
-        <span style="color:#75715e">&lt;!-- Aggiungiamo lo sheet per incapsulare il contenuto --&gt;</span>
+        <span style="color:#75715e">&lt;!-- Add sheet section to contain the form --&gt;</span>
         <span style="color:#f92672">&lt;sheet&gt;</span>
-            <span style="color:#75715e">&lt;!-- Raggruppiamo i campi su due colonne e assegnamo un identificativo ai vari gruppi --&gt;</span>
+            <span style="color:#75715e">&lt;!-- Group fields in two columns  --&gt;</span>
             <span style="color:#f92672">&lt;group</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;group_top&#34;</span><span style="color:#f92672">&gt;</span>
                 <span style="color:#f92672">&lt;group</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;group_left&#34;</span><span style="color:#f92672">&gt;</span>
                     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">/&gt;</span>
@@ -1208,11 +1210,9 @@ di ACL</a> legata a questo nuovo oggetto, odoo lo esclude a priori</p>
 <div class="notices note" ><p>In questo caso, non avendo aggiunto record nel data file sarà sufficiente ricaricare la pagina per vedere le modifiche</p>
 </div>
 
-<p>Ricaricando la pagina vediamo che è stata aggiunta una barra in alto contenente i due bottoni e che il form è stato racchiuso in un box.</p>
-<p><img src="/odoo.workshop/screen/prime_viste/form2.png?width=60pc" alt="todoform2"></p>
 <h3 id="creazione-delle-vista-list">Creazione delle vista List</h3>
-<p>Anche le viste Tree (i listati) possono - e devono - essere personalizzate in base al modello, per farlo si va a definire un altro record nel file delle viste del modello come nel cado delle Form View, ma questa volta utilizzando il tag <em>&lt;tree&gt;</em>.</p>
-<p>Aprimo quindi il file <em>todo_views.xml</em> e aggiungiamo:</p>
+<p>Anche le viste Tree (le list view) possono - e devono - essere personalizzate in base al modello, per farlo si va a definire un altro record nel file delle viste del modello come nel cado delle Form View, ma questa volta utilizzando il tag <em>&lt;tree&gt;</em>.</p>
+<p>Aprimo quindi il file <em>task_views.xml</em> e aggiungiamo:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_tree_view&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.tree<span style="color:#f92672">&lt;/field&gt;</span>
     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
@@ -1223,12 +1223,10 @@ di ACL</a> legata a questo nuovo oggetto, odoo lo esclude a priori</p>
         <span style="color:#f92672">&lt;/tree&gt;</span>
     <span style="color:#f92672">&lt;/field&gt;</span>
 <span style="color:#f92672">&lt;/record&gt;</span>
-</code></pre></div><p>Con questo codice creeremo un listato con due colonne. Abbiamo anche utilizzato una finezza, nel tag <em>tree</em> utlizziamo l&rsquo;attributo <em>decoration-{$name}</em> della vista. Per maggiori informazioni leggi la <a href="https://www.odoo.com/documentation/11.0/reference/views.html#lists">documentazione ufficiale di Odoo</a> a riguardo.</p>
-<p>Se tutto è andato bene dovremo ottenere questa schermata:</p>
-<p><img src="/odoo.workshop/screen/prime_viste/list2.png?width=60pc" alt="todolist2"></p>
+</code></pre></div><p>Con questo codice creeremo un listato con due colonne. Abbiamo anche utilizzato una finezza, nel tag <em>tree</em> utlizziamo l&rsquo;attributo <em>decoration-{$name}</em> della vista. Per maggiori informazioni leggi la <a href="https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html">documentazione ufficiale di Odoo</a> a riguardo.</p>
 <h3 id="creazione-delle-vista-search">Creazione delle vista Search</h3>
 <p>Le <em>Search View</em> sono leggermente differenti da quelle che abbiamo visto finora. La grossa differenza è che in questo caso non abbiamo una schermata dedicata alla ricerca, ma con la definizione di una <em>Search View</em> andiamo a modificare il blocco di ricerca presente in alto a destra  nelle <em>Tree View</em>.</p>
-<p>Per farlo aggiungiamo un altro record al file <em>todo_views.xml</em> come di seguito:</p>
+<p>Per farlo aggiungiamo un altro record al file <em>task_views.xml</em> come di seguito:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_search_view&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.search<span style="color:#f92672">&lt;/field&gt;</span>
     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
@@ -1248,7 +1246,6 @@ di ACL</a> legata a questo nuovo oggetto, odoo lo esclude a priori</p>
     <span style="color:#f92672">&lt;/field&gt;</span>
 <span style="color:#f92672">&lt;/record&gt;</span>
 </code></pre></div><p>Il tag <em>&lt;field&gt;</em> definisce i campi su cui è possibile effettuare la ricerca digitando nel box testuale. I tag <em>&lt;filter&gt;</em> aggiungono invece dei filtri predefiniti nel menu dei filtri. Vedremo successivamente qual&rsquo;è il dignificato dell&rsquo;attributo <em>domain</em>.</p>
-<p><img src="/odoo.workshop/screen/prime_viste/search.png?width=60pc" alt="todosearch"></p>
 <h3 id="continua">Continua</h3>
 <p>A questo punto siamo in grado di creare, visualizzare, cancellare, listare, cercare e filtrare i dati relativi al nostro nuovo modello, non ci rimane che <a href="/odoo.workshop/first_app/prima_funzione/">aggiungere della logica applicativa</a> che ci permetta di effettuare operazioni più strutturate.</p>
 
@@ -1892,19 +1889,19 @@ di ACL</a> legata a questo nuovo oggetto, odoo lo esclude a priori</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1666263210"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1666263210"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1668612166"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1668612166"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1666263210"></script>
-    <script src="/odoo.workshop/js/learn.js?1666263210"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1666263210"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612166"></script>
+    <script src="/odoo.workshop/js/learn.js?1668612166"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1668612166"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1666263210"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1668612166"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

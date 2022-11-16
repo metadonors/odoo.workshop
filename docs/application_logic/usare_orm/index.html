@@ -10,22 +10,22 @@
     <title>Usare l&#39;ORM :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1668612166" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1668612166" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1666263210"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612166"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1666263210"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612166"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612166"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612166"></script>
 
     
   </div>
@@ -1045,8 +1045,6 @@
 <p>Fino a questo punto abbiamo utilizzato l&rsquo;ORM di Odoo senza scendere nel dettaglio su come funziona. Ora andiamo a vedere quali sono i suoi principali componenti</p>
 <h3 id="decoratori">Decoratori</h3>
 <p>Abbiamo notato che a molti metodi dei modelli viene applicato un decoratore come <em>@api.multi</em>. Questi decorati hanno lo scopo di istruire il backend su come gestire i metodi rispetto alle API esposte.</p>
-<p>Il decoratore <strong>@api.multi</strong> viene utilizzato per gestire metodi applicati su dei <em>RecordSet</em> ed è ill decoratore utilizzato più di frequente. Quando a un metodo viene applicato questo decoratore, il <em>self</em> all&rsquo;interno del metodo farà riferimento a un RecordSet cioè a un oggetto rappresentante una lista di entità e solitamente all&rsquo;interno vi sarà un ciclo <em>for</em> per iterare sui vari oggetti.</p>
-<p>Alcuni ci si aspetta che un metodo venga applicato su un solo oggetto, in quel caso è possibile invocare la funzione <strong>self.ensure_one()</strong> che solleva un eccezione in caso siano presenti più elementi nel recordset corrente. Successivamente a quella chiamata il <em>self</em> può essere considerato un <em>singleton</em> e sarà quindi possibile accedere agli attributi del record corrente direttamente con la notazione puntata (es <em>print(self.name)</em>).</p>
 <p>Il decoratore <strong>@api.model</strong> invece si utilizza per decorare metodi statici in cui il <em>self</em> non fa rifermento a nessuna entità in particolare. Per coerenza <em>self</em> farà sempre riferimento a un oggetto di tipo recordset ma il suo contenuto diventa irrilevante. Questo tipo di metodi non possono essere richiamati dalle API e quindi non possono essere usati sui bottoni nell&rsquo;interfaccia utente.</p>
 <p>Altri decoratori con scopi più specifici:</p>
 <ul>
@@ -1056,7 +1054,7 @@
 </ul>
 <h2 id="la-shell-di-odoo">La shell di odoo</h2>
 <p>Lanciando il seguente comando, odoo ci presenta un linea di comando interattiva dove possiamo accedere a tutto l&rsquo;ambiente di odoo. E' molto comoda per effettuare dei test:</p>
-<pre tabindex="0"><code>$ docker-compose run odoo shell
+<pre tabindex="0"><code>$ docker compose run odoo shell
 
 In [1]: self
 Out[1]: res.users(1,)
@@ -1806,19 +1804,19 @@ In [<span style="color:#ae81ff">17</span>]: self<span style="color:#f92672">.</s
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1666263210"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1666263210"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1668612166"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1668612166"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1666263210"></script>
-    <script src="/odoo.workshop/js/learn.js?1666263210"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1666263210"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612166"></script>
+    <script src="/odoo.workshop/js/learn.js?1668612166"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1668612166"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1666263210"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1668612166"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

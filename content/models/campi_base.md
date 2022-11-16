@@ -8,7 +8,7 @@ L'[ORM](https://it.wikipedia.org/wiki/Object-relational_mapping) di Odoo permett
 
 ### Tipi di Campi 
 
-Ogni tipo di campo ha può accettare una serie di parametri che variano il suo comportamento. Per il dettaglio completo delle loro specifiche rimandiamo alla [documentazione ufficiale di Odoo](https://www.odoo.com/documentation/11.0/reference/orm.html#fields). 
+Ogni tipo di campo ha può accettare una serie di parametri che variano il suo comportamento. Per il dettaglio completo delle loro specifiche rimandiamo alla [documentazione ufficiale di Odoo](https://www.odoo.com/documentation/15.0/developer/reference/backend/orm.html). 
 
 Di seguito facciamo una panoramica dei principale di di campi non relazionali che possono essere utilizzati:
 
@@ -38,7 +38,7 @@ Quando viene dichiarato un campo è possibile, a volte necessario, passargli deg
 Meritano di essere citati anche:
 
 - **deprecated=True**: crea un WARNING log sulle applicazioni che stanno ancora utilizzando questo campo
-- **oldname='old_field**: si usa quando si rinomina un campo, questo permette ad Odoo di migrare i dati del database sulla nuova colonna
+- **oldname='old_field'**: si usa quando si rinomina un campo, questo permette ad Odoo di migrare i dati del database sulla nuova colonna
 
 ### Nomi di Campi riservati
 
@@ -64,30 +64,30 @@ Altri nomi di campi vengono utilizzati dal framework per sveltire alcune operazi
 
 Andiamo a modificare il nostro modello TodoTask arricchendolo con nuovi campi (e nuovi tipi di campo) così da vedere nella pratica come vengono utilizzati.
 
-Apriamo il file _models/todo\_task.py_ del modulo _todo\_plus/_ e modifichiamo la classe di conseguenza:
+Apriamo il file _models/task\_task.py_ del modulo _task\_plus/_ e modifichiamo la classe di conseguenza:
 
 ```python
 class TodoTask(models.Model):
     _inherit = 'todo.task'
 
     state = fields.Selection([
-        ('draft', 'Bozza'),
-        ('progress', 'In Corso'),
-        ('completed', 'Completato'),
-        ('canceled', 'Annullato'),
+        ('draft', 'Draft'),
+        ('progress', 'In Progress'),
+        ('completed', 'Completed'),
+        ('canceled', 'Canceled'),
     ], string='Stato', default='draft')
 
-    completed_date = fields.Datetime(string='Data Completamento', states={
+    completed_date = fields.Datetime(string='Date Done', states={
         'completed': [('readonly', True)],
         'canceled': [('readonly', True)]
     })
 
-    worked_hours = fields.Float(string='Ore lavorate')
-    description = fields.Html(string='Descrizione')
-    internal_notes = fields.Text(string='Note interne')
+    worked_hours = fields.Float(string='Worked Hours')
+    description = fields.Html(string='Description')
+    internal_notes = fields.Text(string='Internal Notes')
 ```
 
-Aggiungiamo questi campi alle nostre viste, nel file _views/todo\_task.xml_
+Aggiungiamo questi campi alle nostre viste, nel file _views/task\_task.xml_
 
 ```xml
 <record model="ir.ui.view" id="todo_task_form_view_inherited">
@@ -95,20 +95,20 @@ Aggiungiamo questi campi alle nostre viste, nel file _views/todo\_task.xml_
     <field name="model">todo.task</field>
     <field name="inherit_id" ref="todo_app.todo_task_form_view"/>
     
-    <!-- ...cerca e modifica i tag XML in questo punto... -->
+    <!-- ...search and modify XML tags... -->
     <field name="arch" type="xml">
-        <!-- in fondo al tag header aggiungi un widget per rappresentare il campo state -->
+        <!-- at the end of the header add a widget for the state -->
         <header position="inside">
             <field name='state' widget='statusbar' clickable="1"/>
         </header>
     
-        <!-- dopo il campo deadline_date aggiungi i campi completed_date e worked_hours -->
+        <!-- after deadline_date field add ... -->
         <field name='deadline_date' position='after'>
             <field name='completed_date'/>
             <field name='worked_hours' />
         </field>
 
-        <!-- dopo il group di nome 'group_top' aggiungi un nuovo group con il campo descrizione -->
+        <!-- after group with name 'group_top' add -->
         <group name="group_top" position="after">
             <group>
                 <field name="description"/>
@@ -117,16 +117,6 @@ Aggiungiamo questi campi alle nostre viste, nel file _views/todo\_task.xml_
     </field> 
 </record>
 ```
-
-A questo punto sarà necessario effettuare l'upgrade del nostro modulo 
-
-```
-    $ docker-compose run odoo upgrade todo_plus
-```
-
-Ricaricare la pagine e ottenere un form con questo aspetto
-
-![form](/odoo.workshop/screen/campi_base/form.png?width=60pc)
 
 ## Continua
 

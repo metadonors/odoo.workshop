@@ -36,4 +36,4 @@ Premiamo il tasto "Install" sull'applicazione CRM e dopo qualche minuto l'applic
 
 ### Continua
 
-Ora possiamo andare a creare [la nostra prima applicazione](/odoo.workshop/basics/primo_modulo/)
+Ora possiamo andare a creare [la nostra prima applicazione](/odoo.workshop/first_app/)

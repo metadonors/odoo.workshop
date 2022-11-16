@@ -11,14 +11,17 @@ Le viste Form, List e Search sono definite utilizzando la struttura XML _arch_. 
 Cominciamo subito con un esempio di una vista che ne estende un'altra:
 
 ```xml
-<record model="ir.ui.view" id="todo_task_form_view_inherited">
-    <field name="name">todo.task.form</field>
-    <field name="model">todo.task</field>
-    <field name="inherit_id" ref="todo_task_form_view"/>
-    <field name="arch" type="xml">
-        <!-- ...cerca e modifica i tag XML in questo punto... -->
-    </field>
-</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="todo_task_form_view_inherited">
+        <field name="name">todo.task.form</field>
+        <field name="model">todo.task</field>
+        <field name="inherit_id" ref="todo_app.todo_task_form_view" />
+        <field name="arch" type="xml">
+            <!-- ...search and modify XML tags here ... -->
+        </field>
+    </record>
+</odoo>
 ```
 
 Si nota che l'unica differenza dalla dichiarazione di una vista normale è la presenza del compo _inherit\_id_ in cui si definisce l'identificativo della vista che si vuole estendere.
@@ -29,9 +32,9 @@ Il metodo standard per indicare gli elementi XML da modificare è utilizzare un 
  Per fare un esempio, se nel nostro form del modello TodoTask volessimo aggiungere il campo _deadline\_date_ **prima** del campo _is\_done_ aggiungeremmo questa righa al nostro campo _arch_
 
  ```xml
- <!-- Localizza il campo is_done con xpath e specifica la posizione--> 
+ <!-- Locate is_done field with xpath and specify where to add new tags --> 
 <xpath expr="//field[@name]='is_done'" position="before">
-    <!-- Aggiunge il campo deadline_date in quel determinato punto -->
+    <!-- Add field deadline_date -->
     <field name="deadline_date"/>
 </xpath>
  ```
@@ -57,7 +60,7 @@ L'attributo _position_ può assumere diversi valori:
 
 ### Estendere le nostre viste
 
-Prima di procedere dobbiamo aggiungere al nostro modulo il file XML che conterrè le definizione delle nostre viste ereditate. Come per il precedente modulo aggiungiamo la cartella _views/_ e al suo interno creiamo il file _todo\_task.xml_
+Prima di procedere dobbiamo aggiungere al nostro modulo il file XML che conterrè le definizione delle nostre viste ereditate. Come per il precedente modulo aggiungiamo la cartella _views/_ e al suo interno creiamo il file _task\_task.xml_
 
 ```
     todo_user/
@@ -77,11 +80,12 @@ Successivamente dobbiamo dichiarare il nuovo file aggiunto nel manifesto dell'ap
     'name': 'Multiuser TODO',
     'description': 'Estende la Todo app per farla diventare Multi Utente',
     'author': 'Metadonors',
+    'license': 'LGPL-3',
     'depends': ['todo_app'],
     
-    # Aggiungiamo questa sezione
+    # Add this section
     'data': [
-        'views/todo_task.xml'
+        'views/task_views.xml'
     ]
 }
 ```
@@ -96,7 +100,7 @@ Inizializziamo il nostro file todo_task.xml con questo contenuto:
 
 ### Estendere la Form View
 
-Per mettere insieme quello che abbiamo detto fin'ora possiamo procedere a modificare la nostra Form View aggiungendo i campi nuovi e andando a nascondere il campo active. Aggiungiamo quindi la nostra vista ereditata dentro il tag \<odoo\> del file _todo\_task.xml_:
+Per mettere insieme quello che abbiamo detto fin'ora possiamo procedere a modificare la nostra Form View aggiungendo i campi nuovi e andando a nascondere il campo active. Aggiungiamo quindi la nostra vista ereditata dentro il tag \<odoo\> del file _task\_task.xml_:
 
 ```xml
 <record model="ir.ui.view" id="todo_task_form_view_inherited">
@@ -104,19 +108,19 @@ Per mettere insieme quello che abbiamo detto fin'ora possiamo procedere a modifi
     <field name="model">todo.task</field>
     <field name="inherit_id" ref="todo_app.todo_task_form_view"/>
     
-    <!-- ...cerca e modifica i tag XML in questo punto... -->
+    <!-- ...search and modify XML tags here... -->
     <field name="arch" type="xml">
-        <!-- Dopo il campo 'name' aggiungi il campo 'user_id' -->
+        <!-- After field 'name' add field 'user_id' -->
         <field name="name" position="after">
             <field name="user_id"/>
         </field>
 
-        <!-- prima del campo 'is_done' aggiungi il campo 'deadline_date' -->
+        <!-- before field 'is_done' add field deadline_date -->
         <field name="is_done" position="before">
             <field name="deadline_date"/>
         </field>
 
-        <!-- modifica gli attributi del campo 'active' per rederlo invisibile -->
+        <!-- edit attributes of field 'active' to make it invisible -->
         <field name="active" positiion="attributes">
             <attribute name="invisible">1</attribute>
         </field>
@@ -127,7 +131,7 @@ Per mettere insieme quello che abbiamo detto fin'ora possiamo procedere a modifi
 Una volta effettuata la modifica possiamo aggiornare il nostro modulo con
 
 ```
-    $ docker-compose run odoo upgrade todo_user
+$ docker compose run odoo upgrade todo_user
 ```
 
 ricaricare la pagine nel nostro browser e ottenere questo form
@@ -137,16 +141,16 @@ ricaricare la pagine nel nostro browser e ottenere questo form
 
 ### Estendere la List View
 
-Nello stesso modo procediamo a modificare la List View andando ad aggiungere il campo dell'incaricato subito dopo il nome del task. Per farlo aggiungiamo un altro record al nostro file _todo\_task.xml_
+Nello stesso modo procediamo a modificare la List View andando ad aggiungere il campo dell'incaricato subito dopo il nome del task. Per farlo aggiungiamo un altro record al nostro file _task\_task.xml_
 
 ```xml
 <record model="ir.ui.view" id="todo_task_tree_view_inherited">
     <field name="name">todo.task.tree</field>
     <field name="model">todo.task</field>
     <field name="inherit_id" ref="todo_app.todo_task_tree_view"/>
-    <!-- ...cerca e modifica i tag XML in questo punto... -->
+    <!-- ...search and modify XML tags here... -->
     <field name="arch" type="xml">
-        <!-- Dopo il campo 'name' aggiungi il campo 'user_id' -->
+        <!-- After field 'name' add field 'user_id' -->
         <field name="name" position="after">
             <field name="user_id"/>
         </field>
@@ -157,7 +161,7 @@ Nello stesso modo procediamo a modificare la List View andando ad aggiungere il 
 aggiorniamo il nostro modulo con
 
 ```
-    $ docker-compose run odoo upgrade todo_user
+$ docker compose run odoo upgrade todo_user
 ```
 
 ricaricare la pagine nel nostro browser e visualizziamo la lista
@@ -173,23 +177,22 @@ Per finire aggiungiamo la possibilita di ricercare per utente nella nostra Searc
     <field name="name">todo.task.search</field>
     <field name="model">todo.task</field>
     <field name="inherit_id" ref="todo_app.todo_task_search_view"/>
-    <!-- ...cerca e modifica i tag XML in questo punto... -->
+    <!-- ...search and modify XML tags here... -->
     <field name="arch" type="xml">
         <field name="name" position="after">
-            <!-- Aggiungi il campo 'user_id' all ricerca libera-->
+            <!-- Add field 'user_id' to search-->
             <field name="user_id"/>
 
-            <!-- Aggiungi il filtro predefinito "I miei task" -->
-
+            <!-- Add custom filter 'My tasks' -->
             <filter 
                 name="filter_my_tasks" 
-                string="I miei Tasks" 
+                string="My tasks" 
                 domain="[('user_id','=',uid)]" />
             
             <!-- Aggiungi il filtro predefinito "Task non assegnati" -->
             <filter 
                 name="filter_not_assigned" 
-                string="Non assegnati" 
+                string="Not assigned" 
                 domain="[('user_id','=', False)]" />
         </field>
     </field>
@@ -200,7 +203,7 @@ Per finire aggiungiamo la possibilita di ricercare per utente nella nostra Searc
 aggiorniamo il nostro modulo con
 
 ```
-    $ docker-compose run odoo upgrade todo_user
+    $ docker compose run odoo upgrade todo_user
 ```
 
 ricaricare la pagine nel nostro browser e controlliamo come e' cambiato il form di ricerca

@@ -37,7 +37,7 @@ Noi cominceremo con il più semplice dove la classe figlia eredita tutte le funz
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_viste/</guid>
       <description>Un po&#39; di teoria Le viste Form, List e Search sono definite utilizzando la struttura XML arch. Per estenderle dobbiamo modificare quelle definizioni XML e farlo significa localizzare i tag XML che vogliamo cambiare e introdurre le nostre modifiche in quei punti.
 Cominciamo subito con un esempio di una vista che ne estende un&amp;rsquo;altra:
-&amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_form_view_inherited&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;inherit_id&amp;#34; ref=&amp;#34;todo_task_form_view&amp;#34;/&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;!-- ...cerca e modifica i tag XML in questo punto.</description>
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;odoo&amp;gt; &amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_form_view_inherited&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;inherit_id&amp;#34; ref=&amp;#34;todo_app.todo_task_form_view&amp;#34; /&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;!</description>
     </item>
     
     <item>
@@ -46,7 +46,7 @@ Cominciamo subito con un esempio di una vista che ne estende un&amp;rsquo;altra:
       <pubDate>Thu, 28 Jun 2018 16:39:25 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_dati/</guid>
-      <description>A differenza delle viste i file xml contenenti dati, come i menuitem oppure le security rules, non hanno l&amp;rsquo;elemento arch e non possono quindi essere modificati utilizzanto XPath. Ma possono comunque essere modificati, rimpiazzando i valori contenuti nei loro campi.
+      <description>A differenza delle viste i file xml contenenti dati, come le action, i menu, oppure le security rules, non hanno l&amp;rsquo;elemento arch e non possono quindi essere modificati utilizzanto XPath. Ma possono comunque essere modificati, rimpiazzando i valori contenuti nei loro campi.
 Ogni volta che dichiariamo un &amp;lt;record id=&amp;ldquo;x&amp;rdquo; model=&amp;ldquo;y&amp;rdquo;&amp;gt; Odoo effettua una insert o una update nel database, quindi riutilizzando gli stessi id possiamo andare ad aggiornare i dati inseriti dai moduli genitori.</description>
     </item>
     

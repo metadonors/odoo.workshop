@@ -20,18 +20,19 @@ Per aggiungerlo al nostro modello _todo.task_ dobbiamo procede in questo modo:
 
 Apriamo il nostro file di manfiesto e modifichiamolo come segue:
 
-```
+```python
 {
     'name': 'Multiuser TODO',
-    'description': 'Estende la Todo app per farla diventare Multi Utente',
-    'author': 'Metadonors',
+    'description': 'Extend Todo app to work in a multiuser environment',
+    'author': 'Imthe Author',
+    'license': 'LGPL-3',
     'depends': [
         'todo_app',
-        'mail' # <-- Aggiungiamo la dipendenza
+        'mail' # <-- Add this line
     ],
+
     'data': [
-        'security/todo_access_rules.xml', # <-- Aggiungiamo questa riga
-        'views/todo_task.xml'
+        'views/task_views.xml'
     ]
 }
 ```
@@ -40,7 +41,7 @@ Apriamo il nostro file di manfiesto e modifichiamolo come segue:
 
 Per aggiungere la classe al modello procediamo nella stessa maniera con cui abbiamo ereditato il modello esteso dal modello base. Andiamo ad aggiungere all'attributo _\_inherit_ il modello _mail.thread_
 
-Apriamo il nostro file _models/todo\_task.py_ 
+Apriamo il nostro file _models/task\_task.py_ 
 
 ```python
 class TodoTask(models.Model):
@@ -57,7 +58,7 @@ Il modello _mail.thread_ è un **Abstract Class**, che significa che non ha una 
 
 ### Aggiungere i campi necessari alla vista
 
-A questo punto non ci rimane che aggiungere il widget delle funzionalità mail al fondo della nostra Form View del modello. Apriamo il file _views/todo\_task.xml_ e aggiungiamo nell'attributo _arch_ questo codice XML
+A questo punto non ci rimane che aggiungere il widget delle funzionalità mail al fondo della nostra Form View del modello. Apriamo il file _views/task\_task.xml_ e aggiungiamo nell'attributo _arch_ questo codice XML
 
 ```xml
 <sheet position="after">
@@ -73,7 +74,7 @@ Se ci fate caso i due campi _message\_followers\_ids_ e _message\_ids_ non sono 
 A questo punto non ci resta che effettuare l'upgrade del nostro modello
 
 ```
-    $ docker-compose run odoo upgrade todo_user
+    $ docker compose run odoo upgrade todo_user
 ```
 
 ricaricare la pagina e cominciare ad aggiungere commenti

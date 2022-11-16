@@ -8,7 +8,8 @@ weight: 5
 Nella scorsa sezione abbiamo terminato la creazione del nostro modulo base. Al termine abbiamo notato che Odoo si lamentava dicendo che non abbiamo specificato delle regole di accesso per il modello da noi creato
 
 ```
-WARNING demo odoo.modules.loading: The model todo.task has no access rules, consider adding one. E.g. access_todo_task,access_todo_task,model_todo_task,,1,0,0,0
+WARNING odoo odoo.modules.loading: The models ['todo.task'] have no access rules in module todo_app, consider adding some, like:
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 ```
 
 In Odoo *tutti i modelli* devono avere delle regole di accesso specificate, in caso contrario solo l'utente admin potrà accedere ai dati relativi a quel modello.
@@ -31,24 +32,24 @@ Ci troveremo di fronte a una pagina come questa:
 
 Quindi quello che dovremo fare è aggiungere un Odoo data file, come per le viste, contenente le informazioni che voglioamo caricare in questa tabella relative ai nostri modelli.
 
-Solitamente le regole di accesso vengono inserite nella cartella _security_ all'interno del modulo in cui stiamo lavorando. Quindi creaiamola e al suo interno aggiungiamo un file _todo\_model\_acl.xml_ ottenendo questa struttura
+Solitamente le regole di accesso vengono inserite nella cartella _security_ all'interno del modulo in cui stiamo lavorando. Quindi creaiamola e al suo interno aggiungiamo un file _task\_model\_acl.xml_ ottenendo questa struttura
 
 ```
 todo_app/
     models/
         __init__.py
-        todo_model.py
-        todo_views.py
+        task_model.py
+        task_views.py
     views/
-        todo_menu.xml
-        todo_views.xml
+        task_menu.xml
+        task_views.xml
     security/
-        todo_model_acl.xml
+        task_model_acl.xml
     __init__.py
     __manifest__.py
 ```
 
-All'interno del file _todo\_model\_acl.xml_ andiamo poi a definire i dati che regoleranno l'acl in questione nel seguente modo
+All'interno del file _task\_model\_acl.xml_ andiamo poi a definire i dati che regoleranno l'acl in questione nel seguente modo
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -78,15 +79,17 @@ Come per le viste dobbiamo poi specificare nel file _\_\_manifest\_\_.py_ l'esis
 
 ```python
 {
-    'name': 'Applicazione TODO',
-    'description': 'Gestisci i tuoi TODO',
-    'author': 'Fabrizio Arzeni',
+    'name': 'TODO Application',
+    'description': 'Manage your Todos',
+    'author': 'Imthe Author',
+    'license': 'LGPL-3',
     'depends': ['base'],
     'application': True,
     'data': [
-        'security/todo_model_acl.xml', # <-- Aggiungiamo questa riga
-        'views/todo_menu.xml',
-        'views/todo_views.xml',
+        'views/task_menu.xml',
+        'views/task_views.xml',
+
+        'security/task_model_acl.xml', # <-- Add this line
     ]
 }
 ```
@@ -94,7 +97,7 @@ Come per le viste dobbiamo poi specificare nel file _\_\_manifest\_\_.py_ l'esis
 Avendo aggiunto una nuova risorsa dobbiamo ricordarci di fare l'upgrade del modulo lanciando da terminale:
 
 ```
-$ docker-compose run odoo upgrade todo_app
+$ docker compose run odoo upgrade todo_app
 ```
 
 A questo punto il messaggio di WARNING dovrebbe essere scomparso e tutti i nostri utenti hanno ora accesso al modello del nostro modulo.
@@ -111,7 +114,7 @@ Come per le _Access Control List_ le regole di riga vengono salvate in una speci
 
 ![rules](/odoo.workshop/screen/controllo_accessi/rules.png?width=60pc)
 
-e sempre come le ACL possiamo creare delle regole aggiungendole al file di security che abbiamo creato in precedenza. Quindi apriamo il file _security/todo\_model\_acl.xml e aggiungiamo dopo il record creato in precedenza
+e sempre come le ACL possiamo creare delle regole aggiungendole al file di security che abbiamo creato in precedenza. Quindi apriamo il file _security/task\_model\_acl.xml e aggiungiamo dopo il record creato in precedenza
 
 ```xml
 <record model="ir.rule" id="todo_task_user_rule">

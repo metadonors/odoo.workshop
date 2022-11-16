@@ -8,7 +8,7 @@ I wizard sono uno strumento molto utile per fornire agli utenti un interfaccia p
 
 ## Creare un wizard
 
-I wizard di solito risiedono nella cartella _wizards/_ all'interno dei moduli. Cominciamo a creare il nosto wizard nella cartella del modulo _todo\_plus_
+I wizard di solito risiedono nella cartella _wizards/_ all'interno dei moduli. Cominciamo a creare il nosto wizard nella cartella del modulo _task\_plus_
 creando la seguente struttura
 
 ```bash
@@ -28,19 +28,19 @@ todo_plus/
     __manifest__.py
 ```
 
-All'interno del file _todo\_plus/\_\_init.py\_\__ aggiungiamo 
+All'interno del file _task\_plus/\_\_init.py\_\__ aggiungiamo 
 
 ```python
 from . import wizards
 ```
 
-All'interno del file _todo\_plus/wizards/\_\_init.py\_\__ aggiungiamo 
+All'interno del file _task\_plus/wizards/\_\_init.py\_\__ aggiungiamo 
 
 ```python
 from . import todo_wizard
 ```
 
-All'interno del file _todo\_plus/\_\_manifest.py\_\__ aggiungiamo 
+All'interno del file _task\_plus/\_\_manifest.py\_\__ aggiungiamo 
 
 ```python
 {
@@ -62,10 +62,10 @@ All'interno del file _todo\_plus/\_\_manifest.py\_\__ aggiungiamo
 
 Un wizard visualizza una Form View all'utente, solitamente all'interno di una finestra modale. Questa vista è implementata con la stessa architattura che abbiamo visto finora con l'unica differenza che il modello del wizard erediterà dalla classe _models.TransientModel_ anzichè dalla classe _models.Models_. Questo tipo di modelli vengono salvati in database come i modelli classici con l'unica differenza che vengono automaticamente cancellati ogni giorno.
 
-Quindi apriamo il file _todo\_plus/wizards/todo\_wizard.py_ e scriviamo
+Quindi apriamo il file _task\_plus/wizards/task\_wizard.py_ e scriviamo
 
 ```python
-# -*- coding: utf-8 -*-
+
 from odoo import models, fields, api
 
 class TodoWizard(models.TransientModel):
@@ -84,7 +84,7 @@ Le viste dei wizard sono uguali alle viste classiche, con due differenze:
 - Può essere inserita una sezione \<footer\> per contenere i pulsanti del wizard
 - Può essere inserito un pulsante con _special="cancel"_ che si ooccupa di chiudere il wizard
 
-Quindi apriamo il file _todo\_plus/wizards/todo\_wizard.xml_ e scriviamo
+Quindi apriamo il file _task\_plus/wizards/task\_wizard.xml_ e scriviamo
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -134,7 +134,7 @@ Quindi apriamo il file _todo\_plus/wizards/todo\_wizard.xml_ e scriviamo
 ```
 
 ```
-    $ docker-compose run odoo upgrade todo_user
+    $ docker compose run odoo upgrade todo_user
 ```
 
 ricaricare la pagine nel nostro browser e dalla lista dei todo selezioniamo qualche check box. Apparirà il menu _Action_ al cui interno ci sarà il sottomenu _Todo Wizard_. Premendo si dovrebbe aprire il nostro wizard
@@ -149,7 +149,7 @@ A questo punto non ci rimane che implementare la logica dietro il nostro wizard.
 
 Il metodo chiamato dal pulsante è _do\_mass\_update_ e, come gli altri, dovrà essere definito nel modello
 
-Quindi apriamo il file _todo\_plus/wizards/todo\_wizard.py_ e aggiungiamo in cima al file
+Quindi apriamo il file _task\_plus/wizards/task\_wizard.py_ e aggiungiamo in cima al file
 
 ```python
 from odoo import exceptions

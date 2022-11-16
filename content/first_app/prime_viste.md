@@ -12,15 +12,15 @@ Per ogni modello sono disponibili diversi tipi di viste, le principali che utili
 
 ### Creazione del MenuItem e della ActWindow
 
-Generalemente le viste sono raggruppate nella cartella _views_ all'interno del modulo. Prima della creazione della vista vera e propria, abbiamo bisogno di un _menu item_ che ci permetta di navigare alla nostra applicazione _Todo Task_. Per farlo creiamo la cartella _views_ e al suo interno il file _todo\_menu.xml_ ottenendo la seguente struttura
+Generalemente le viste sono raggruppate nella cartella _views_ all'interno del modulo. Prima della creazione della vista vera e propria, abbiamo bisogno di un _menu item_ che ci permetta di navigare alla nostra applicazione _Todo Task_. Per farlo creiamo la cartella _views_ e al suo interno il file _task\_menu.xml_ ottenendo la seguente struttura
 
 ```
 todo_app/
     models/
         __init__.py
-        todo_model.py
+        task.py
     views/
-        todo_menu.xml
+        task_menu.xml
     __init__.py
     __manifest__.py
 ```
@@ -30,22 +30,22 @@ e aggiungiamo il seguente contenuto che definisce l'oggetto menu e l'azione nece
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Azione che apre la vista list Todo Task -->
-    <act_window 
-        id="action_todo_task"
-        name="ToDo Task"
-        res_model="todo.task"
-        view_mode="tree,form"
-        />
+    <!-- Action to open list view Todo Task -->
+    <record model="ir.actions.act_window" id="action_todo_task">
+		<field name="name">Todo Task</field>
+		<field name="res_model">todo.task</field>
+		<field name="view_mode">tree,form</field>
+		<field name="domain">[]</field>
+		<field name="context">{}</field>
+	</record>
 
-    <!-- Oggetto menu che apre la lista dei Todo -->
-    <menuitem
-        id="menu_todo_task"
-        name="Todos"
-        web_icon="project,static/description/icon.png"
-        groups="base.group_user"
-        action="action_todo_task"
-        />
+    <!-- Menu object used to trigger action action_todo_task -->
+     <record model="ir.ui.menu" id="menu_todo_task">
+        <field name="name">Todos</field>
+        <field name="action" ref="action_todo_task"/>
+        <field name="sequence" eval="20"/>
+    </record>
+
 </odoo>
 ```
 
@@ -68,15 +68,16 @@ Quindi aprimo il file _\_\_manifest\_\_.py_ e modifichiamolo di conseguenza:
 
 ```python
 {
-    'name': 'Applicazione TODO',
-    'description': 'Gestisci i tuoi TODO',
-    'author': 'Fabrizio Arzeni',
+    'name': 'TODO Application',
+    'description': 'Manage your Todos',
+    'author': 'Imthe Author',
+    'license': 'LGPL-3',
     'depends': ['base'],
-    'application': True,
+    'application': True
 
-    # Aggiungiamo questa parte
+    # Add this section
     'data': [
-        'views/todo_menu.xml'
+        'views/task_menu.xml'
     ]
 }
 ```
@@ -88,7 +89,7 @@ Ogni definizione che aggiungiamo in un file XML viene letta e aggiunta nel datab
 A questo punto non ci resta che effettuare l'upgrade del modulo e ricaricare la nostra pagina.
 
 ```
-$ docker-compose run odoo upgrade todo_app
+$ docker compose run odoo upgrade todo_app
 ```
 
 Ricarichiamo la pagina e...niente, non e' cambiato nulla. 
@@ -113,17 +114,17 @@ Premendo il tasto _Create_, Odoo ci presenta un Form di default basato sulla def
 Le viste _Form_ in odoo hanno un duplice utlizzo: modifica e visualizzazione dei dati. Quindi definendo una vista Form stiamo nello stesso momento creando due schermate: quella utilizzata per visualizzare i dati di un record e quella per modificarli. Rimane comunque possibile modificare questo comportamento specificando viste distinte per la visualizzazione e la modifica.
 {{% /notice%}}
 
-Per farlo dobbiamo aggiungere, dichiarandolo in un file XML Odoo data, un oggetto di tipo _ir.ui.view_. Quindi creiamo un nuovo file XML all'interno della cartella view di nome _todo\_views.xml_ e otteniamo: 
+Per farlo dobbiamo aggiungere, dichiarandolo in un file XML Odoo data, un oggetto di tipo _ir.ui.view_. Quindi creiamo un nuovo file XML all'interno della cartella view di nome _task\_views.xml_ e otteniamo: 
 
 ```
 todo_app/
     models/
         __init__.py
-        todo_model.py
-        todo_views.py
+        task_model.py
+        task_views.py
     views/
-        todo_menu.xml
-        todo_views.xml
+        task_menu.xml
+        task_views.xml
     __init__.py
     __manifest__.py
 ```
@@ -155,14 +156,15 @@ Come per il menu, dobbiamo aggiungere questo file al manifesto del modulo per fa
 
 ```python
 {
-    'name': 'Applicazione TODO',
-    'description': 'Gestisci i tuoi TODO',
-    'author': 'Fabrizio Arzeni',
+    'name': 'TODO Application',
+    'description': 'Manage your Todos',
+    'author': 'Imthe Author',
+    'license': 'LGPL-3',
     'depends': ['base'],
     'application': True,
     'data': [
-        'views/todo_menu.xml',
-        'views/todo_views.xml', # Aggiungiamo questa riga
+        'views/task_menu.xml',
+        'views/task_views.xml', # Add this line
     ]
 }
 ```
@@ -170,7 +172,7 @@ Come per il menu, dobbiamo aggiungere questo file al manifesto del modulo per fa
 Una volta fatto possimo effettuare l'upgrade del modulo e aggiornare la pagina.
 
 ```
-$ docker-compose run odoo upgrade todo_app
+$ docker compose run odoo upgrade todo_app
 ```
 
 Se tutto è andato bene otterremo una pagina di questo genere:
@@ -187,21 +189,21 @@ La struttura delle _Form View_ di Odoo è piuttosto standard e prende ispirazion
 
 Un altro elemento utile nei from è il tag _\<group\>_ che permette di ragguppare i campi, suddividendoli su più colonne.
 
-Per creare queste due aree e aggiungere un paio di bottoni modifichiamo il nostro file _todo\_views.xml_, aggiungendo queste due aree:
+Per creare queste due aree e aggiungere un paio di bottoni modifichiamo il nostro file _task\_views.xml_, aggiungendo queste due aree:
 
 ```xml
 
     <form string="ToDo Task Form">
-        <!-- Aggiungiamo l'header, dove posizioneremo i bottoni-->
+        <!-- Add header, where action buttons will be placed-->
         <header>
-            <!-- Aggiungiamo un pulsante per modificare lo stato Fatto del task -->
+            <!-- Add a button to edit task done state  -->
             <button 
                 name="do_toggle_button" 
                 type="object"
                 string="Toggle Done"
                 class="oe_highlight"/>
             
-            <!-- Aggiungiamo un pulsante per rimuovere i task in stato fatto -->
+            <!-- Add a button to clear done tasks -->
             <button 
                 name="do_clear_done" 
                 type="object"
@@ -209,9 +211,9 @@ Per creare queste due aree e aggiungere un paio di bottoni modifichiamo il nostr
                 class="oe_highlight"/>
         </header>
 
-        <!-- Aggiungiamo lo sheet per incapsulare il contenuto -->
+        <!-- Add sheet section to contain the form -->
         <sheet>
-            <!-- Raggruppiamo i campi su due colonne e assegnamo un identificativo ai vari gruppi -->
+            <!-- Group fields in two columns  -->
             <group name="group_top">
                 <group name="group_left">
                     <field name="name"/>
@@ -230,16 +232,12 @@ Per creare queste due aree e aggiungere un paio di bottoni modifichiamo il nostr
 In questo caso, non avendo aggiunto record nel data file sarà sufficiente ricaricare la pagina per vedere le modifiche
 {{% /notice%}}
 
-Ricaricando la pagina vediamo che è stata aggiunta una barra in alto contenente i due bottoni e che il form è stato racchiuso in un box. 
-
-![todoform2](/odoo.workshop/screen/prime_viste/form2.png?width=60pc)
-
 
 ### Creazione delle vista List
 
-Anche le viste Tree (i listati) possono - e devono - essere personalizzate in base al modello, per farlo si va a definire un altro record nel file delle viste del modello come nel cado delle Form View, ma questa volta utilizzando il tag _\<tree\>_.
+Anche le viste Tree (le list view) possono - e devono - essere personalizzate in base al modello, per farlo si va a definire un altro record nel file delle viste del modello come nel cado delle Form View, ma questa volta utilizzando il tag _\<tree\>_.
 
-Aprimo quindi il file _todo\_views.xml_ e aggiungiamo:
+Aprimo quindi il file _task\_views.xml_ e aggiungiamo:
 
 ```xml
 <record model="ir.ui.view" id="todo_task_tree_view">
@@ -254,18 +252,15 @@ Aprimo quindi il file _todo\_views.xml_ e aggiungiamo:
 </record>
 ```
 
-Con questo codice creeremo un listato con due colonne. Abbiamo anche utilizzato una finezza, nel tag _tree_ utlizziamo l'attributo _decoration-{$name}_ della vista. Per maggiori informazioni leggi la [documentazione ufficiale di Odoo](https://www.odoo.com/documentation/11.0/reference/views.html#lists) a riguardo.
+Con questo codice creeremo un listato con due colonne. Abbiamo anche utilizzato una finezza, nel tag _tree_ utlizziamo l'attributo _decoration-{$name}_ della vista. Per maggiori informazioni leggi la [documentazione ufficiale di Odoo](https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html) a riguardo.
 
-Se tutto è andato bene dovremo ottenere questa schermata:
-
-![todolist2](/odoo.workshop/screen/prime_viste/list2.png?width=60pc)
 
 
 ### Creazione delle vista Search
 
 Le _Search View_ sono leggermente differenti da quelle che abbiamo visto finora. La grossa differenza è che in questo caso non abbiamo una schermata dedicata alla ricerca, ma con la definizione di una _Search View_ andiamo a modificare il blocco di ricerca presente in alto a destra  nelle _Tree View_.
 
-Per farlo aggiungiamo un altro record al file _todo\_views.xml_ come di seguito:
+Per farlo aggiungiamo un altro record al file _task\_views.xml_ come di seguito:
 
 ```xml
 <record model="ir.ui.view" id="todo_task_search_view">
@@ -289,8 +284,6 @@ Per farlo aggiungiamo un altro record al file _todo\_views.xml_ come di seguito:
 ```
 
 Il tag _\<field\>_ definisce i campi su cui è possibile effettuare la ricerca digitando nel box testuale. I tag _\<filter\>_ aggiungono invece dei filtri predefiniti nel menu dei filtri. Vedremo successivamente qual'è il dignificato dell'attributo _domain_.
-
-![todosearch](/odoo.workshop/screen/prime_viste/search.png?width=60pc)
 
 
 ### Continua

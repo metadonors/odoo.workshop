@@ -15,7 +15,7 @@
       <guid>https://metadonors.github.io/odoo.workshop/first_app/primo_modulo/</guid>
       <description>In questa sezione andremo a creare il nostro primo modulo. L&amp;rsquo;applicazione d&amp;rsquo;esempio che creeremo durante il corso è una classica Todo App. Per realizzarla attraverseremo le classiche fasi di sviluppo di un applicazione Odoo.
 Lo scheletro del modulo Odoo offre un suo meccanismo di scaffolding piuttosto primitivo per creare nuovi moduli, è possibile visualizzare il suo funzionamento lanciando questo comando dalla cartella contente l&amp;rsquo;ambiente odoo.dockerenv:
-$ docker-compose run odoo odoo scaffold --help Nella pratica ci sono altri strumenti utili per questo scopo come, mrbob con i template specifici per gli addon Odoo.</description>
+$ docker compose run odoo odoo scaffold --help Nella pratica ci sono altri strumenti utili per questo scopo come, mrbob con i template specifici per gli addon Odoo.</description>
     </item>
     
     <item>
@@ -57,7 +57,7 @@ Aggiungere la logica applicativa Nella precedente sezione abbiamo aggiunto due b
       
       <guid>https://metadonors.github.io/odoo.workshop/first_app/controllo_accessi/</guid>
       <description>Nella scorsa sezione abbiamo terminato la creazione del nostro modulo base. Al termine abbiamo notato che Odoo si lamentava dicendo che non abbiamo specificato delle regole di accesso per il modello da noi creato
-WARNING demo odoo.modules.loading: The model todo.task has no access rules, consider adding one. E.g. access_todo_task,access_todo_task,model_todo_task,,1,0,0,0 In Odoo tutti i modelli devono avere delle regole di accesso specificate, in caso contrario solo l&amp;rsquo;utente admin potrà accedere ai dati relativi a quel modello.</description>
+WARNING odoo odoo.modules.loading: The models [&#39;todo.task&#39;] have no access rules in module todo_app, consider adding some, like: id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink In Odoo tutti i modelli devono avere delle regole di accesso specificate, in caso contrario solo l&amp;rsquo;utente admin potrà accedere ai dati relativi a quel modello.</description>
     </item>
     
   </channel>

@@ -14,7 +14,7 @@
       
       <guid>https://metadonors.github.io/odoo.workshop/application_logic/wizard/</guid>
       <description>I wizard sono uno strumento molto utile per fornire agli utenti un interfaccia per effettuare operazioni complesse sui dati. Per esempio chiedendogli dati aggiuntivi rispetto alle operazioni che stanno facendo oppure semplicemente per avere uno strumento di validazione delle operazioni da effettuare.
-Creare un wizard I wizard di solito risiedono nella cartella wizards/ all&amp;rsquo;interno dei moduli. Cominciamo a creare il nosto wizard nella cartella del modulo todo_plus creando la seguente struttura</description>
+Creare un wizard I wizard di solito risiedono nella cartella wizards/ all&amp;rsquo;interno dei moduli. Cominciamo a creare il nosto wizard nella cartella del modulo task_plus creando la seguente struttura</description>
     </item>
     
     <item>
@@ -69,7 +69,7 @@ Per farlo, da terminale, entriamo nella cartella addons</description>
       <guid>https://metadonors.github.io/odoo.workshop/first_app/primo_modulo/</guid>
       <description>In questa sezione andremo a creare il nostro primo modulo. L&amp;rsquo;applicazione d&amp;rsquo;esempio che creeremo durante il corso è una classica Todo App. Per realizzarla attraverseremo le classiche fasi di sviluppo di un applicazione Odoo.
 Lo scheletro del modulo Odoo offre un suo meccanismo di scaffolding piuttosto primitivo per creare nuovi moduli, è possibile visualizzare il suo funzionamento lanciando questo comando dalla cartella contente l&amp;rsquo;ambiente odoo.dockerenv:
-$ docker-compose run odoo odoo scaffold --help Nella pratica ci sono altri strumenti utili per questo scopo come, mrbob con i template specifici per gli addon Odoo.</description>
+$ docker compose run odoo odoo scaffold --help Nella pratica ci sono altri strumenti utili per questo scopo come, mrbob con i template specifici per gli addon Odoo.</description>
     </item>
     
     <item>
@@ -92,7 +92,7 @@ Un elenco di alcuni possibili editor:
       <guid>https://metadonors.github.io/odoo.workshop/application_logic/usare_orm/</guid>
       <description>Fino a questo punto abbiamo utilizzato l&amp;rsquo;ORM di Odoo senza scendere nel dettaglio su come funziona. Ora andiamo a vedere quali sono i suoi principali componenti
 Decoratori Abbiamo notato che a molti metodi dei modelli viene applicato un decoratore come @api.multi. Questi decorati hanno lo scopo di istruire il backend su come gestire i metodi rispetto alle API esposte.
-Il decoratore @api.multi viene utilizzato per gestire metodi applicati su dei RecordSet ed è ill decoratore utilizzato più di frequente.</description>
+Il decoratore @api.model invece si utilizza per decorare metodi statici in cui il self non fa rifermento a nessuna entità in particolare.</description>
     </item>
     
     <item>
@@ -157,7 +157,7 @@ I modelli sono descritti da classi Python che ereditano da una classe generica d
 Installazione dell&amp;rsquo;ambiente di sviluppo Scaricate l&amp;rsquo;ambiente docker che utilizzeremo dal github in una cartella sul nostro computer. Aprite un terminale e digitate:
 $ git clone https://github.com/metadonors/odoo.docker.git Entriamo nella cartella appena scaricata:
 $ cd odoo.docker Inizializziamo il database di Odoo
-$ docker compose run odoo upgrade -i base Compose comincerà a scaricare tutte le nostre dipendenze, ,a procedura può durare diversi minuti in base alla connessione a internet disponibile.</description>
+$ docker compose run odoo upgrade base Compose comincerà a scaricare tutte le nostre dipendenze, ,a procedura può durare diversi minuti in base alla connessione a internet disponibile.</description>
     </item>
     
     <item>
@@ -189,7 +189,7 @@ Per avere chiaro cosa stiamo per fare, chiariamo cosa vogliamo costruire. Finora
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_viste/</guid>
       <description>Un po&#39; di teoria Le viste Form, List e Search sono definite utilizzando la struttura XML arch. Per estenderle dobbiamo modificare quelle definizioni XML e farlo significa localizzare i tag XML che vogliamo cambiare e introdurre le nostre modifiche in quei punti.
 Cominciamo subito con un esempio di una vista che ne estende un&amp;rsquo;altra:
-&amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_form_view_inherited&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;inherit_id&amp;#34; ref=&amp;#34;todo_task_form_view&amp;#34;/&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;!-- ...cerca e modifica i tag XML in questo punto.</description>
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;odoo&amp;gt; &amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_form_view_inherited&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;inherit_id&amp;#34; ref=&amp;#34;todo_app.todo_task_form_view&amp;#34; /&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;!</description>
     </item>
     
     <item>
@@ -238,7 +238,7 @@ Computed fields Un computed field viene dichiarato esattamente come i campi norm
       <pubDate>Thu, 28 Jun 2018 16:39:25 +0200</pubDate>
       
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_dati/</guid>
-      <description>A differenza delle viste i file xml contenenti dati, come i menuitem oppure le security rules, non hanno l&amp;rsquo;elemento arch e non possono quindi essere modificati utilizzanto XPath. Ma possono comunque essere modificati, rimpiazzando i valori contenuti nei loro campi.
+      <description>A differenza delle viste i file xml contenenti dati, come le action, i menu, oppure le security rules, non hanno l&amp;rsquo;elemento arch e non possono quindi essere modificati utilizzanto XPath. Ma possono comunque essere modificati, rimpiazzando i valori contenuti nei loro campi.
 Ogni volta che dichiariamo un &amp;lt;record id=&amp;ldquo;x&amp;rdquo; model=&amp;ldquo;y&amp;rdquo;&amp;gt; Odoo effettua una insert o una update nel database, quindi riutilizzando gli stessi id possiamo andare ad aggiornare i dati inseriti dai moduli genitori.</description>
     </item>
     
@@ -295,7 +295,7 @@ Per aggiungerlo al nostro modello todo.</description>
       
       <guid>https://metadonors.github.io/odoo.workshop/first_app/controllo_accessi/</guid>
       <description>Nella scorsa sezione abbiamo terminato la creazione del nostro modulo base. Al termine abbiamo notato che Odoo si lamentava dicendo che non abbiamo specificato delle regole di accesso per il modello da noi creato
-WARNING demo odoo.modules.loading: The model todo.task has no access rules, consider adding one. E.g. access_todo_task,access_todo_task,model_todo_task,,1,0,0,0 In Odoo tutti i modelli devono avere delle regole di accesso specificate, in caso contrario solo l&amp;rsquo;utente admin potrà accedere ai dati relativi a quel modello.</description>
+WARNING odoo odoo.modules.loading: The models [&#39;todo.task&#39;] have no access rules in module todo_app, consider adding some, like: id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink In Odoo tutti i modelli devono avere delle regole di accesso specificate, in caso contrario solo l&amp;rsquo;utente admin potrà accedere ai dati relativi a quel modello.</description>
     </item>
     
     <item>
@@ -305,7 +305,7 @@ WARNING demo odoo.modules.loading: The model todo.task has no access rules, cons
       
       <guid>https://metadonors.github.io/odoo.workshop/views/altre_views/</guid>
       <description>Sono disponibili anche altre viste che pero&#39; esulano dallo scopo di questo corso, una breve panoramica
-Viste Report Viste Calendario Viste Kanban Viste Gantt Viste Diagram </description>
+Viste Report Viste Calendario Viste Kanban Viste Gantt </description>
     </item>
     
   </channel>

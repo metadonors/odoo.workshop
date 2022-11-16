@@ -105,20 +105,20 @@ Per installare Compose:
 Scaricate l'eseguibile con il comando:
 
 ```
-sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker compose
 ```
 
 Aggiungete il permesso d'esecuizione al file binario:
 
 ```
-sudo chmod +x /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker compose
 ```
 
 Testate l'installazione con:
 
 ```
-$ docker-compose --version
-docker-compose version 1.21.2, build 1719ceb
+$ docker compose --version
+docker compose version 1.21.2, build 1719ceb
 ```
 
 ### Mac

@@ -10,22 +10,22 @@
     <title>Wizard :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1668612166" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1668612166" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1666263210"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612166"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1666263210"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612166"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612166"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612166"></script>
 
     
   </div>
@@ -1033,7 +1033,7 @@
 
 <p>I wizard sono uno strumento molto utile per fornire agli utenti un interfaccia per effettuare operazioni complesse sui dati. Per esempio chiedendogli dati aggiuntivi rispetto alle operazioni che stanno facendo oppure semplicemente per avere uno strumento di validazione delle operazioni da effettuare.</p>
 <h2 id="creare-un-wizard">Creare un wizard</h2>
-<p>I wizard di solito risiedono nella cartella <em>wizards/</em> all&rsquo;interno dei moduli. Cominciamo a creare il nosto wizard nella cartella del modulo <em>todo_plus</em>
+<p>I wizard di solito risiedono nella cartella <em>wizards/</em> all&rsquo;interno dei moduli. Cominciamo a creare il nosto wizard nella cartella del modulo <em>task_plus</em>
 creando la seguente struttura</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">todo_plus/
     models/
@@ -1049,11 +1049,11 @@ creando la seguente struttura</p>
         todo_wizard.xml
     __init__.py
     __manifest__.py
-</code></pre></div><p>All&rsquo;interno del file <em>todo_plus/__init.py__</em> aggiungiamo</p>
+</code></pre></div><p>All&rsquo;interno del file <em>task_plus/__init.py__</em> aggiungiamo</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> wizards
-</code></pre></div><p>All&rsquo;interno del file <em>todo_plus/wizards/__init.py__</em> aggiungiamo</p>
+</code></pre></div><p>All&rsquo;interno del file <em>task_plus/wizards/__init.py__</em> aggiungiamo</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> todo_wizard
-</code></pre></div><p>All&rsquo;interno del file <em>todo_plus/__manifest.py__</em> aggiungiamo</p>
+</code></pre></div><p>All&rsquo;interno del file <em>task_plus/__manifest.py__</em> aggiungiamo</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{
     <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;TODO Plus&#39;</span>,
     <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#34;Maggiori funzionalita per l&#39;app TODO&#34;</span>,
@@ -1069,8 +1069,8 @@ creando la seguente struttura</p>
 }
 </code></pre></div><h2 id="il-modello-del-wizard">Il modello del wizard</h2>
 <p>Un wizard visualizza una Form View all&rsquo;utente, solitamente all&rsquo;interno di una finestra modale. Questa vista è implementata con la stessa architattura che abbiamo visto finora con l&rsquo;unica differenza che il modello del wizard erediterà dalla classe <em>models.TransientModel</em> anzichè dalla classe <em>models.Models</em>. Questo tipo di modelli vengono salvati in database come i modelli classici con l&rsquo;unica differenza che vengono automaticamente cancellati ogni giorno.</p>
-<p>Quindi apriamo il file <em>todo_plus/wizards/todo_wizard.py</em> e scriviamo</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<p>Quindi apriamo il file <em>task_plus/wizards/task_wizard.py</em> e scriviamo</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
 <span style="color:#f92672">from</span> odoo <span style="color:#f92672">import</span> models, fields, api
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoWizard</span>(models<span style="color:#f92672">.</span>TransientModel):
@@ -1086,7 +1086,7 @@ creando la seguente struttura</p>
 <li>Può essere inserita una sezione &lt;footer&gt; per contenere i pulsanti del wizard</li>
 <li>Può essere inserito un pulsante con <em>special=&ldquo;cancel&rdquo;</em> che si ooccupa di chiudere il wizard</li>
 </ul>
-<p>Quindi apriamo il file <em>todo_plus/wizards/todo_wizard.xml</em> e scriviamo</p>
+<p>Quindi apriamo il file <em>task_plus/wizards/task_wizard.xml</em> e scriviamo</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style="color:#f92672">&lt;odoo&gt;</span>
     <span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_wizard_view&#34;</span><span style="color:#f92672">&gt;</span>
@@ -1131,13 +1131,13 @@ creando la seguente struttura</p>
         <span style="color:#a6e22e">multi=</span><span style="color:#e6db74">&#34;True&#34;</span><span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;/odoo&gt;</span>
 
-</code></pre></div><pre tabindex="0"><code>    $ docker-compose run odoo upgrade todo_user
+</code></pre></div><pre tabindex="0"><code>    $ docker compose run odoo upgrade todo_user
 </code></pre><p>ricaricare la pagine nel nostro browser e dalla lista dei todo selezioniamo qualche check box. Apparirà il menu <em>Action</em> al cui interno ci sarà il sottomenu <em>Todo Wizard</em>. Premendo si dovrebbe aprire il nostro wizard</p>
 <p><img src="/odoo.workshop/screen/wizards/form.png?width=60pc" alt="form"></p>
 <h2 id="la-logica-applicativa-del-wizard">La logica applicativa del wizard</h2>
 <p>A questo punto non ci rimane che implementare la logica dietro il nostro wizard. Escluso il tasto cancel, abbiamo tre pulsanti che devono essere programmati. Cominciamo con il tasto principale <em>Riassegna</em></p>
 <p>Il metodo chiamato dal pulsante è <em>do_mass_update</em> e, come gli altri, dovrà essere definito nel modello</p>
-<p>Quindi apriamo il file <em>todo_plus/wizards/todo_wizard.py</em> e aggiungiamo in cima al file</p>
+<p>Quindi apriamo il file <em>task_plus/wizards/task_wizard.py</em> e aggiungiamo in cima al file</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> odoo <span style="color:#f92672">import</span> exceptions
 
 <span style="color:#f92672">import</span> logging
@@ -1833,19 +1833,19 @@ log <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</s
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1666263210"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1666263210"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1668612166"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1668612166"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1666263210"></script>
-    <script src="/odoo.workshop/js/learn.js?1666263210"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1666263210"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612166"></script>
+    <script src="/odoo.workshop/js/learn.js?1668612166"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1668612166"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1666263210"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1668612166"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

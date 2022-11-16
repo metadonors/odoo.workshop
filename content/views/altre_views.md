@@ -22,9 +22,6 @@ Sono disponibili anche altre viste che pero' esulano dallo scopo di questo corso
 
 ![gantt](/odoo.workshop/screen/altre_viste/gantt.gif?width=60pc)
 
-## Viste Diagram
-
-![diagram](/odoo.workshop/screen/altre_viste/diagram.png?width=60pc)
 
 
 

@@ -32,8 +32,9 @@ Nel file di manifesto inseriemo questo contenuto
 ```python
 {
     'name': 'Multiuser TODO',
-    'description': 'Estende la Todo app per farla diventare Multi Utente',
-    'author': 'Fabrizio Arzeni',
+    'description': 'Extend Todo app to work in a multiuser environment',
+    'author': 'Imthe Author',
+    'license': 'LGPL-3',
     'depends': ['todo_app'],
 }
 ```

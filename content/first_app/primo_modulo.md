@@ -11,7 +11,7 @@ In questa sezione andremo a creare il nostro primo modulo. L'applicazione d'esem
 Odoo offre un suo meccanismo di scaffolding piuttosto primitivo per creare nuovi moduli, è possibile visualizzare il suo funzionamento lanciando questo comando dalla cartella contente l'ambiente odoo.dockerenv:
 
 ```
-$ docker-compose run odoo odoo scaffold --help
+$ docker compose run odoo odoo scaffold --help
 ```
 
 Nella pratica ci sono altri strumenti utili per questo scopo come, [mrbob](http://mrbob.readthedocs.io/en/latest/) con i template specifici per gli [addon Odoo](https://github.com/acsone/bobtemplates.odoo).
@@ -36,8 +36,8 @@ A questo punto è ora di aprire il nostro editor di testo per modificare il file
 
 ```python
 {
-    'name': 'Applicazione TODO',
-    'description': 'Gestisci i tuoi TODO',
+    'name': 'TODO Application',
+    'description': 'Manage your Todos',
     'author': 'Imthe Author',
     'license': 'LGPL-3',
     'depends': ['base'],
@@ -47,7 +47,7 @@ A questo punto è ora di aprire il nostro editor di testo per modificare il file
 
 Il campo _depends_ indica i moduli da cui dipende la nostra applicazione, se non sono presenti quando verra installata, Odoo li installerà automaticamente. È necessario inserirla soprattutto quando si fa riferimento a funzionalità di terze parti. 
 
-In questo caso abbiamo usato solo alcuni dei valori definibili nel manifesto di un modulo, nei casi reali questo file è sarà più complesso. Per una spiegazione più dettagliata del suo contenuto potete consultare la pagina della [documentazione di Odoo sul file manifest](https://www.odoo.com/documentation/11.0/reference/module.html).
+In questo caso abbiamo usato solo alcuni dei valori definibili nel manifesto di un modulo, nei casi reali questo file è sarà più complesso. Per una spiegazione più dettagliata del suo contenuto potete consultare la pagina della [documentazione di Odoo sul file manifest](https://www.odoo.com/documentation/15.0/developer/reference/backend/module.html).
 
 ### I path degli addon
 
@@ -75,7 +75,7 @@ Cliccate su installa ed il primo passo è compiuto
 
 ### Nota bene
 
-Sviluppare moduli è un processo iterativo e spesso dopo dei cambiamenti, in particolare sul database, sarà necessario riavviare odoo dicendogli esplicitamente di aggiornare i moduli interessati. Se la modifica invece è solo al codice python o a delle viste sarà sufficiente riaggiornare la pagina **perchè il sistema è stato lanciato in modalita di sviluppo** (con l'opzione --dev=all vedi _docker-compose.yml_). In fase di produzione qualsiasi aggiornamento comporta il riavvio del sistema
+Sviluppare moduli è un processo iterativo e spesso dopo dei cambiamenti, in particolare sul database, sarà necessario riavviare odoo dicendogli esplicitamente di aggiornare i moduli interessati. Se la modifica invece è solo al codice python o a delle viste sarà sufficiente riaggiornare la pagina **perchè il sistema è stato lanciato in modalita di sviluppo** (con l'opzione --dev=all vedi _docker compose.yml_). In fase di produzione qualsiasi aggiornamento comporta il riavvio del sistema
 
 ### Continua
 

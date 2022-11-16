@@ -23,14 +23,14 @@ Per semplificare però gli esempi di questo corso, abbiamo aggiungo un comando s
 
 ```bash
 $ cd odoo.dockerenv/
-$ docker-compose run odoo ipython
+$ docker compose run odoo ipython
 ```
 
 Ci comparirà quindi il seguente output:
 
 ```python
 
-odoo.dockerenv (completed) $ docker-compose run odoo ipython
+odoo.dockerenv (completed) $ docker compose run odoo ipython
 
 Starting odoodockerenv_postgres_1 ... done
 Python 3.5.3 (default, Jan 19 2017, 14:11:04) 

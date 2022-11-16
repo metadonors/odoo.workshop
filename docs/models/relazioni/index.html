@@ -10,22 +10,22 @@
     <title>Relazioni :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1668612166" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1668612166" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1666263210"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612166"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1666263210"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612166"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612166"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612166"></script>
 
     
   </div>
@@ -1043,28 +1043,22 @@
 <p>Per avere chiaro cosa stiamo per fare, chiariamo cosa vogliamo costruire. Finora abbiamo lavorato con l&rsquo;oggetto <em>TodoTask</em>. Adesso aggiungeremo il modello <em>TodoProject</em> che raggruppa i Task, e il modello <em>TodoTag</em> che li classifica. Ogni <em>TodoTask</em> può appartenere a un solo progetto, c&rsquo;è quindi una relazione N a 1 fra di loro. Stessi tag possono invece essere assegnati a diversi <em>TodoTask</em>, avranno quindi una relazione N a N tra di loro.</p>
 <h3 id="realazioni-many2one">Realazioni Many2one</h3>
 <p>Nel caso della relazione fra progetti e task abbiamo detto che esiste una relazione Molti a uno (o Uno a molti guardandola dall&rsquo;altra parte). Per aggiungere questo tipo di relazione in odoo possiamo ricorrere al tipo di campo <strong>Many2one</strong>.</p>
-<p>Apriamo quindi il file <em>models/todo_task.py</em> contenente il nostro modello <em>TodoTask</em> e aggiungiamo questo campo alla classe:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">project_id <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Many2one(<span style="color:#e6db74">&#39;todo.project&#39;</span>, string<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Progetto&#39;</span>)
-</code></pre></div><p>Successivamente apriamo il nostro <em>views/todo_task.xml</em> e aggiungiamolo anche alla vista form:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- All&#39;interno del campo arch aggiungiamo  --&gt;</span>
-<span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#39;after&#39;</span><span style="color:#f92672">&gt;</span>
+<p>Apriamo quindi il file <em>models/task_task.py</em> contenente il nostro modello <em>TodoTask</em> e aggiungiamo questo campo alla classe:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">project_id <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Many2one(<span style="color:#e6db74">&#39;todo.project&#39;</span>, string<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Project&#39;</span>)
+</code></pre></div><p>Successivamente apriamo il nostro <em>views/task_task.xml</em> e aggiungiamolo anche alla vista form:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#39;after&#39;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;project_id&#39;</span><span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;/field&gt;</span>
 
-</code></pre></div><p>Aggiorniamo il modulo</p>
-<pre tabindex="0"><code>    $ docker-compose run odoo upgrade todo_plus
-</code></pre><p>e ricarichiamo la pagina</p>
-<p><img src="/odoo.workshop/screen/relazioni/project_id.png?width=60pc" alt="project_id"></p>
-<p>Odoo ha aggiunto il nostro campo <em>Many2one</em> che ci permette di selezionare progetti esistenti oppure aprire un la From View dei progetti per crearne uno nuovo da agganciare.</p>
-<h2 id="realazioni-one2many">Realazioni One2many</h2>
+</code></pre></div><h2 id="realazioni-one2many">Realazioni One2many</h2>
 <p>Considerando invece la relazione dal punto di vista opposto, quello dei progetti, la relazione è inversa: ogni <em>TodoProject</em> sarà legato a tanti oggetti <em>TodoTask</em>. Questo tipo di relazione in Odoo è chiamata <strong>One2many</strong>. Per definirla è necessario definire nella dichiarazione del campo su quale attributo dell&rsquo;oggetto figlio avviene la relazione. Uno stesso oggetto potrebbe avere più relazioni One2many verso la stessa classe di oggetti.</p>
-<p>Per aggiunger questa relazione al nostro modello dei progetti aprima il file <em>models/todo_project.py</em> e aggiungiamo nel corpo della classe:</p>
+<p>Per aggiunger questa relazione al nostro modello dei progetti aprima il file <em>models/task_project.py</em> e aggiungiamo nel corpo della classe:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    todo_ids <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>One2many(<span style="color:#e6db74">&#39;todo.task&#39;</span>, <span style="color:#e6db74">&#39;project_id&#39;</span>, string<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Todos&#39;</span>)
 </code></pre></div>
 <div class="notices note" ><p>Per convenzione su Odoo i nomi dei campi relazionali vengono sempre terminati con <em>_id</em> o <em>_ids</em>. Questo per indicare velocemente agli sviluppatori se si tratta di una relazione a uno oppure a molti. Consiglio <strong>vivamente</strong> di continuare con questa convenzione.</p>
 </div>
 
-<p>E nel file delle viste dei progetti <em>views/todo_project.xml</em> aggiungiamo questo record:</p>
+<p>E nel file delle viste dei progetti <em>views/task_project.xml</em> aggiungiamo questo record:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_project_form_view&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.project.form<span style="color:#f92672">&lt;/field&gt;</span>
     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.project<span style="color:#f92672">&lt;/field&gt;</span>
@@ -1074,7 +1068,6 @@
                 <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;state&#39;</span> <span style="color:#a6e22e">widget=</span><span style="color:#e6db74">&#39;statusbar&#39;</span><span style="color:#f92672">/&gt;</span>
             <span style="color:#f92672">&lt;/header&gt;</span>
             <span style="color:#f92672">&lt;sheet&gt;</span>
-                <span style="color:#75715e">&lt;!-- Raggruppiamo i campi su due colonne e assegnamo un identificativo ai vari gruppi --&gt;</span>
                 <span style="color:#f92672">&lt;group</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;group_top&#34;</span><span style="color:#f92672">&gt;</span>
                     <span style="color:#f92672">&lt;group</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;group_left&#34;</span><span style="color:#f92672">&gt;</span>
                         <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">/&gt;</span>
@@ -1087,7 +1080,7 @@
     <span style="color:#f92672">&lt;/field&gt;</span>
 <span style="color:#f92672">&lt;/record&gt;</span>
 </code></pre></div><p>Aggiorniamo il modulo</p>
-<pre tabindex="0"><code>    $ docker-compose run odoo upgrade todo_plus
+<pre tabindex="0"><code>    $ docker compose run odoo upgrade todo_plus
 </code></pre><p>e ricarichiamo la pagina</p>
 <p><img src="/odoo.workshop/screen/relazioni/todo_ids.png?width=60pc" alt="todo_ids"></p>
 <p>Questa volta Odoo ci renderizza il campo come una lista di oggetti Todo, entrando in modalità modifica vediamo che è possibile aggiungere righe cercandole da quelle esistenti oppure crearne di nuove tramite la Form View specifica degli oggeti <em>TodoTask</em>.</p>
@@ -1095,16 +1088,16 @@
 <p>Le relazioni Many2Many sono molto simili alle One2Many, nel senso che ad un oggetto ne vengono legati molti e sono quindi spesso rappresentato con lo stesso widget delle One2Many. La grossa differenza però è a livello di database.</p>
 <p><strong>One2many</strong>: gli oggetti sono correlati da un id presente in una colonna della tabella figlia, nel nostro caso la colonna <em>project_id</em> della tabella dei todo
 <strong>Many2many</strong>: viene creata una terza tabella composta da due colonne che fanno riferimento agli id delle due entità in relazione.</p>
-<p>Nel nostro esempio vogliammo aggiungere una relazione fra il modello <em>TodoTag</em> e il modello <em>TodoTask</em>. Per farlo apriamo prima il file del modello <em>models/todo_task.py</em> e aggiungiamo il campo:</p>
+<p>Nel nostro esempio vogliammo aggiungere una relazione fra il modello <em>TodoTag</em> e il modello <em>TodoTask</em>. Per farlo apriamo prima il file del modello <em>models/task_task.py</em> e aggiungiamo il campo:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tag_ids <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Many2many(<span style="color:#e6db74">&#39;todo.tag&#39;</span>, string<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Tag&#39;</span>)
-</code></pre></div><p>Successivamente apriamo il nostro <em>views/todo_task.xml</em> e aggiungiamolo anche alla vista form:</p>
+</code></pre></div><p>Successivamente apriamo il nostro <em>views/task_task.xml</em> e aggiungiamolo anche alla vista form:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- All&#39;interno del campo arch aggiungiamo  --&gt;</span>
 <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;user_id&#39;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#39;after&#39;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;tag_ids&#39;</span><span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;/field&gt;</span>
 
 </code></pre></div><p>Aggiorniamo il modulo</p>
-<pre tabindex="0"><code>$ docker-compose run odoo upgrade todo_plus
+<pre tabindex="0"><code>$ docker compose run odoo upgrade todo_plus
 </code></pre><p>e ricarichiamo la pagina</p>
 <p><img src="/odoo.workshop/screen/relazioni/tags1.png?width=60pc" alt="tags1"></p>
 <p>Il campo Tag è stato aggiunto e visualizzato come una lista di oggetti.</p>
@@ -1758,19 +1751,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1666263210"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1666263210"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1668612166"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1668612166"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1666263210"></script>
-    <script src="/odoo.workshop/js/learn.js?1666263210"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1666263210"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612166"></script>
+    <script src="/odoo.workshop/js/learn.js?1668612166"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1668612166"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1666263210"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1668612166"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

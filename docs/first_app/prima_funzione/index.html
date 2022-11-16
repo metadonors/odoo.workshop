@@ -10,22 +10,22 @@
     <title>La logica :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1668612166" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1668612166" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1666263210"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612166"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1666263210"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612166"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612166"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612166"></script>
 
     
   </div>
@@ -1054,40 +1054,35 @@
 <li><strong>name</strong> nel caso in cui <em>type=object</em> name rappresenta il nome del metodo che verrà invocato, in questo caso <em>do_toggle_button</em></li>
 </ul>
 <p>Per altre informazioni fai riferimento alla <a href="https://www.odoo.com/documentation/11.0/reference/views.html#reference-views-list-button">documentazione ufficiale di Odoo</a></p>
-<p>Quindi avendo definito un bottone con <em>type=object</em> e <em>name=do_toggle_button</em> non ci rimane che aggiungere questo metodo alla classe Python che rappresenta il modello. Apriamo quindi il file <em>models/todo_model.py</em> e aggiungiamo un metodo alla classe:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Nell&#39;intestazione modifichiamo l&#39;import aggiungendo api</span>
-<span style="color:#f92672">from</span> odoo <span style="color:#f92672">import</span> models, fields, api
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Nel corpo della classe aggiungiamo il metodo</span>
-<span style="color:#a6e22e">@api</span><span style="color:#f92672">.</span>multi
+<p>Quindi avendo definito un bottone con <em>type=object</em> e <em>name=do_toggle_button</em> non ci rimane che aggiungere questo metodo alla classe Python che rappresenta il modello. Apriamo quindi il file <em>models/task_model.py</em> e aggiungiamo un metodo alla classe:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># In TodoTask class add this method</span>
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_toggle_button</span>(self):
     <span style="color:#66d9ef">for</span> todo <span style="color:#f92672">in</span> self:
         todo<span style="color:#f92672">.</span>is_done <span style="color:#f92672">=</span> <span style="color:#f92672">not</span> todo<span style="color:#f92672">.</span>is_done
 </code></pre></div><p>Poche righe, ma tanti concetti.</p>
-<p>Prima di tutto il decoratore <em>@api.multi</em>. Odoo è un software scritto con una logica <strong>API first</strong>, che significa che il codice che scrivete nel backend (in Python) è completamente slegato da quello che avviene nel frontend (che invece è scritto in Javascript). Ogni funzione che volete esporre al frontend deve essere esposta come un API JSONRPC (un protocollo RPC di qui potete trovare maggiori infomazioni <a href="https://en.wikipedia.org/wiki/JSON-RPC">su internet</a>).</p>
-<p>Il decoratore <em>@api.multi</em> dice ad Odoo che volete esporre il metodo al frontene (@api) e che quel metodo puo essere eseguito su uno o più record alla volta (multi). Quindi potete invocare questo metodo su un solo record todo in una chiamata come su 100 o 1000.</p>
-<p>Essendo un metodo <em>multi</em> il <em>self</em> dell&rsquo;oggetto rappresenta non un istanza sola, ma un <a href="https://www.odoo.com/documentation/11.0/reference/orm.html">RecordSet</a> che è una struttura di odoo che raggruppa oggetti dello stesso tipo e ha il principale scopo di eseguire operazioni in batch ottimizzate su molti oggetti. Quindi ciclando sul <em>self</em> stiamo andando a lavorare su ogni record presente in questa chiamata.</p>
+<p>Odoo è un software scritto con una logica <strong>API first</strong>, che significa che il codice che scrivete nel backend (in Python) è completamente slegato da quello che avviene nel frontend (che invece è scritto in Javascript). Ogni funzione che volete esporre al frontend deve essere esposta come un API JSONRPC (un protocollo RPC di qui potete trovare maggiori infomazioni <a href="https://en.wikipedia.org/wiki/JSON-RPC">su internet</a>).</p>
+<p>Ogni volta che viene dichiarato un metodo su un modello quel metodo puo essere eseguito su uno o più record alla volta tramite api. Quindi potete invocare questo metodo su un solo record todo in una chiamata come su 100 o 1000.</p>
+<p>Se non si vuole esporre il metodo tramite api è sufficiente utilizzare il prefisso _ sul nome del medoto.</p>
+<p>Il <em>self</em> dell&rsquo;oggetto rappresenta non un istanza sola, ma un <a href="https://www.odoo.com/documentation/15.0/developer/reference/backend/orm.html#recordsets">RecordSet</a> che è una struttura di odoo che raggruppa oggetti dello stesso tipo e ha il principale scopo di eseguire operazioni in batch ottimizzate su molti oggetti. Quindi ciclando sul <em>self</em> stiamo andando a lavorare su ogni record presente su cui è stata invocata la chiamata.</p>
 <p>Per l&rsquo;altro bottone invece:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#f92672">&lt;button</span> 
         <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;do_clear_done&#34;</span> 
         <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;object&#34;</span>
         <span style="color:#a6e22e">string=</span><span style="color:#e6db74">&#34;Clear All Done&#34;</span>
         <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;oe_highlight&#34;</span><span style="color:#f92672">/&gt;</span>
-</code></pre></div><p>Vediamo che abbiamo dichiarato che vogliamo invocare il metodo <em>do_clear_done</em> che andiamo a implementare nel nostro <em>models/todo_models.py</em> come segue</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#a6e22e">@api</span><span style="color:#f92672">.</span>multi
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_clear_done</span>(self):
-        dones <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>search([
-            (<span style="color:#e6db74">&#39;is_done&#39;</span>, <span style="color:#e6db74">&#39;=&#39;</span>, <span style="color:#66d9ef">True</span>)
-        ])
-        
-        dones<span style="color:#f92672">.</span>write({
-            <span style="color:#e6db74">&#39;active&#39;</span>: <span style="color:#66d9ef">False</span>
-        })
+</code></pre></div><p>Vediamo che abbiamo dichiarato che vogliamo invocare il metodo <em>do_clear_done</em> che andiamo a implementare nel nostro <em>models/task_models.py</em> come segue</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">      <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_clear_done</span>(self):
+        dones <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>search([(<span style="color:#e6db74">&#34;is_done&#34;</span>, <span style="color:#e6db74">&#34;=&#34;</span>, <span style="color:#66d9ef">True</span>)])
+        dones<span style="color:#f92672">.</span>write({<span style="color:#e6db74">&#34;active&#34;</span>: <span style="color:#66d9ef">False</span>})
 </code></pre></div><p>Con il metodo <em>search</em> andriamo a cercare i <em>todo</em> che ci interessano passandogli un <em>domain</em> per la ricerca e infine aggiorniamo il loro stato come inattivo.</p>
-<p>I <em>domain</em> sono il principale metodo per effettuare ricerche nel database usando il framework di Odoo. Li vediamo pi\ nel dettaglio successivamente.</p>
-<h3 id="continua">Continua</h3>
+<p>I <em>domain</em> sono il principale metodo per effettuare ricerche nel database usando il framework di Odoo. Li vediamo più nel dettaglio successivamente.</p>
+<p>A questo punto possiamo aggiornare le viste Odoo e provare le nostre nuove funzioni</p>
+<pre tabindex="0"><code>$ docker compose run odoo upgrade todo_app
+</code></pre><h3 id="continua">Continua</h3>
 <p>Con quest&rsquo;ultimo passaggio abbiamo terminato la nostra panoramica delle funzionalità base di un modulo Odoo. Rimane una piccola macchia che ci permette però di andare a guardare un ultimo aspetto riguardante i nostri modelli.</p>
 <p>Se ci fate caso, avviando il server di odoo, viene visualizzato un WARNING di questo tipo:</p>
-<pre tabindex="0"><code>WARNING demo odoo.modules.loading: The model todo.task has no access rules, consider adding one. E.g. access_todo_task,access_todo_task,model_todo_task,,1,0,0,0
+<pre tabindex="0"><code>WARNING odoo odoo.modules.loading: The models ['todo.task'] have no access rules in module todo_app, consider adding some, like:
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 </code></pre><p>La ragione di questo avviso è legata al meccanismo delle regole di accesso ai dati di Odoo, vediamo come funzionano e come risolvere nella <a href="/odoo.workshop/first_app/controllo_accessi/">prossima sezione</a>.</p>
 
 
@@ -1730,19 +1725,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1666263210"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1666263210"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1668612166"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1668612166"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1666263210"></script>
-    <script src="/odoo.workshop/js/learn.js?1666263210"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1666263210"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612166"></script>
+    <script src="/odoo.workshop/js/learn.js?1668612166"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1668612166"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1666263210"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1668612166"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

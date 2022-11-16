@@ -22,7 +22,7 @@ Il modulo che svilupperemo:
 
 Il nostro repository di riferimento:
 
-[Odoo 12 - Immagine Docker](https://github.com/metadonors/odoo.docker)
+[Odoo 15 - Immagine Docker](https://github.com/metadonors/odoo.docker)
 
 La documentazione ufficiale di odoo:
 

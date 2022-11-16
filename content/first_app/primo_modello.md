@@ -30,7 +30,7 @@ Avremo cosi questa struttura:
         __manifest__.py
 ```
 
-All'interno del file del modello _todo\_model.py_ aggiungiamo questo contenuto:
+All'interno del file del modello _task\_model.py_ aggiungiamo questo contenuto:
 
 ```python
 from odoo import models, fields
@@ -45,7 +45,7 @@ class TodoTask(models.Model):
 
 ```
 
-A questo punto Odoo non sa ancora dell'esistenza della nostra cartella dei modelli, ne che e' stato definito un file _todo\_models.py_. Per rendere la nostra modifica effettiva dobbiamo aggiustare le importazioni dei file negli _\_\_init\_\_.py_
+A questo punto Odoo non sa ancora dell'esistenza della nostra cartella dei modelli, ne che e' stato definito un file _task\_models.py_. Per rendere la nostra modifica effettiva dobbiamo aggiustare le importazioni dei file negli _\_\_init\_\_.py_
 
 All'interno del file _todo\_app/\_\_init\_\_.py aggiungiamo:
 

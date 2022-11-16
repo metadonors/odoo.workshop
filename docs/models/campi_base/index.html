@@ -10,22 +10,22 @@
     <title>Campi Base :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1668612166" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1668612166" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1666263210"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612166"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1666263210"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612166"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612166"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612166"></script>
 
     
   </div>
@@ -1038,7 +1038,7 @@
 
 <p>L'<a href="https://it.wikipedia.org/wiki/Object-relational_mapping">ORM</a> di Odoo permette di creare modelli complessi composti da attributi basa su tipi di campi semplici. Questi campi mappano direttamente sul database e, in base al tipo, possono avere comportamenti differenti a livello di interfaccia utente. I campi di testo verranno renderizzati come semplici tag &lt;input&gt;, le date presenteranon un calendario, le selezioni multiple un tag &lt;select&gt; e così via.</p>
 <h3 id="tipi-di-campi">Tipi di Campi</h3>
-<p>Ogni tipo di campo ha può accettare una serie di parametri che variano il suo comportamento. Per il dettaglio completo delle loro specifiche rimandiamo alla <a href="https://www.odoo.com/documentation/11.0/reference/orm.html#fields">documentazione ufficiale di Odoo</a>.</p>
+<p>Ogni tipo di campo ha può accettare una serie di parametri che variano il suo comportamento. Per il dettaglio completo delle loro specifiche rimandiamo alla <a href="https://www.odoo.com/documentation/15.0/developer/reference/backend/orm.html">documentazione ufficiale di Odoo</a>.</p>
 <p>Di seguito facciamo una panoramica dei principale di di campi non relazionali che possono essere utilizzati:</p>
 <ul>
 <li><strong>Char</strong>: è il campo base per rapresentare valori testuali. Può accettare come argomento la lunghezza massima.</li>
@@ -1066,7 +1066,7 @@
 <p>Meritano di essere citati anche:</p>
 <ul>
 <li><strong>deprecated=True</strong>: crea un WARNING log sulle applicazioni che stanno ancora utilizzando questo campo</li>
-<li><strong>oldname=&lsquo;old_field</strong>: si usa quando si rinomina un campo, questo permette ad Odoo di migrare i dati del database sulla nuova colonna</li>
+<li><strong>oldname=&lsquo;old_field&rsquo;</strong>: si usa quando si rinomina un campo, questo permette ad Odoo di migrare i dati del database sulla nuova colonna</li>
 </ul>
 <h3 id="nomi-di-campi-riservati">Nomi di Campi riservati</h3>
 <p>Alcuni nomi di campi non vanno utilizzati perchè vengono automaticamente istanziati da Odoo:</p>
@@ -1087,45 +1087,45 @@
 </ul>
 <h2 id="nella-pratica">Nella pratica</h2>
 <p>Andiamo a modificare il nostro modello TodoTask arricchendolo con nuovi campi (e nuovi tipi di campo) così da vedere nella pratica come vengono utilizzati.</p>
-<p>Apriamo il file <em>models/todo_task.py</em> del modulo <em>todo_plus/</em> e modifichiamo la classe di conseguenza:</p>
+<p>Apriamo il file <em>models/task_task.py</em> del modulo <em>task_plus/</em> e modifichiamo la classe di conseguenza:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTask</span>(models<span style="color:#f92672">.</span>Model):
     _inherit <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;todo.task&#39;</span>
 
     state <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Selection([
-        (<span style="color:#e6db74">&#39;draft&#39;</span>, <span style="color:#e6db74">&#39;Bozza&#39;</span>),
-        (<span style="color:#e6db74">&#39;progress&#39;</span>, <span style="color:#e6db74">&#39;In Corso&#39;</span>),
-        (<span style="color:#e6db74">&#39;completed&#39;</span>, <span style="color:#e6db74">&#39;Completato&#39;</span>),
-        (<span style="color:#e6db74">&#39;canceled&#39;</span>, <span style="color:#e6db74">&#39;Annullato&#39;</span>),
+        (<span style="color:#e6db74">&#39;draft&#39;</span>, <span style="color:#e6db74">&#39;Draft&#39;</span>),
+        (<span style="color:#e6db74">&#39;progress&#39;</span>, <span style="color:#e6db74">&#39;In Progress&#39;</span>),
+        (<span style="color:#e6db74">&#39;completed&#39;</span>, <span style="color:#e6db74">&#39;Completed&#39;</span>),
+        (<span style="color:#e6db74">&#39;canceled&#39;</span>, <span style="color:#e6db74">&#39;Canceled&#39;</span>),
     ], string<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Stato&#39;</span>, default<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;draft&#39;</span>)
 
-    completed_date <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Datetime(string<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Data Completamento&#39;</span>, states<span style="color:#f92672">=</span>{
+    completed_date <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Datetime(string<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date Done&#39;</span>, states<span style="color:#f92672">=</span>{
         <span style="color:#e6db74">&#39;completed&#39;</span>: [(<span style="color:#e6db74">&#39;readonly&#39;</span>, <span style="color:#66d9ef">True</span>)],
         <span style="color:#e6db74">&#39;canceled&#39;</span>: [(<span style="color:#e6db74">&#39;readonly&#39;</span>, <span style="color:#66d9ef">True</span>)]
     })
 
-    worked_hours <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Float(string<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Ore lavorate&#39;</span>)
-    description <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Html(string<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Descrizione&#39;</span>)
-    internal_notes <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Text(string<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Note interne&#39;</span>)
-</code></pre></div><p>Aggiungiamo questi campi alle nostre viste, nel file <em>views/todo_task.xml</em></p>
+    worked_hours <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Float(string<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Worked Hours&#39;</span>)
+    description <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Html(string<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Description&#39;</span>)
+    internal_notes <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Text(string<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Internal Notes&#39;</span>)
+</code></pre></div><p>Aggiungiamo questi campi alle nostre viste, nel file <em>views/task_task.xml</em></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_form_view_inherited&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.form<span style="color:#f92672">&lt;/field&gt;</span>
     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;inherit_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;todo_app.todo_task_form_view&#34;</span><span style="color:#f92672">/&gt;</span>
     
-    <span style="color:#75715e">&lt;!-- ...cerca e modifica i tag XML in questo punto... --&gt;</span>
+    <span style="color:#75715e">&lt;!-- ...search and modify XML tags... --&gt;</span>
     <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;arch&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;xml&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#75715e">&lt;!-- in fondo al tag header aggiungi un widget per rappresentare il campo state --&gt;</span>
+        <span style="color:#75715e">&lt;!-- at the end of the header add a widget for the state --&gt;</span>
         <span style="color:#f92672">&lt;header</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;inside&#34;</span><span style="color:#f92672">&gt;</span>
             <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;state&#39;</span> <span style="color:#a6e22e">widget=</span><span style="color:#e6db74">&#39;statusbar&#39;</span> <span style="color:#a6e22e">clickable=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">/&gt;</span>
         <span style="color:#f92672">&lt;/header&gt;</span>
     
-        <span style="color:#75715e">&lt;!-- dopo il campo deadline_date aggiungi i campi completed_date e worked_hours --&gt;</span>
+        <span style="color:#75715e">&lt;!-- after deadline_date field add ... --&gt;</span>
         <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;deadline_date&#39;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#39;after&#39;</span><span style="color:#f92672">&gt;</span>
             <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;completed_date&#39;</span><span style="color:#f92672">/&gt;</span>
             <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;worked_hours&#39;</span> <span style="color:#f92672">/&gt;</span>
         <span style="color:#f92672">&lt;/field&gt;</span>
 
-        <span style="color:#75715e">&lt;!-- dopo il group di nome &#39;group_top&#39; aggiungi un nuovo group con il campo descrizione --&gt;</span>
+        <span style="color:#75715e">&lt;!-- after group with name &#39;group_top&#39; add --&gt;</span>
         <span style="color:#f92672">&lt;group</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;group_top&#34;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;after&#34;</span><span style="color:#f92672">&gt;</span>
             <span style="color:#f92672">&lt;group&gt;</span>
                 <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">/&gt;</span>
@@ -1133,11 +1133,7 @@
         <span style="color:#f92672">&lt;/group&gt;</span>
     <span style="color:#f92672">&lt;/field&gt;</span> 
 <span style="color:#f92672">&lt;/record&gt;</span>
-</code></pre></div><p>A questo punto sarà necessario effettuare l&rsquo;upgrade del nostro modulo</p>
-<pre tabindex="0"><code>    $ docker-compose run odoo upgrade todo_plus
-</code></pre><p>Ricaricare la pagine e ottenere un form con questo aspetto</p>
-<p><img src="/odoo.workshop/screen/campi_base/form.png?width=60pc" alt="form"></p>
-<h2 id="continua">Continua</h2>
+</code></pre></div><h2 id="continua">Continua</h2>
 <p>Dei modelli isolati però non sono molto utili vedimamo quindi come lavorare con i <a href="/odoo.workshop/models/relazioni/">campi relazionali</a></p>
 
 
@@ -1780,19 +1776,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1666263210"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1666263210"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1668612166"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1668612166"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1666263210"></script>
-    <script src="/odoo.workshop/js/learn.js?1666263210"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1666263210"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612166"></script>
+    <script src="/odoo.workshop/js/learn.js?1668612166"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1668612166"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1666263210"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1668612166"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

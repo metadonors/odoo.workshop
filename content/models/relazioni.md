@@ -12,39 +12,26 @@ Per avere chiaro cosa stiamo per fare, chiariamo cosa vogliamo costruire. Finora
 
 Nel caso della relazione fra progetti e task abbiamo detto che esiste una relazione Molti a uno (o Uno a molti guardandola dall'altra parte). Per aggiungere questo tipo di relazione in odoo possiamo ricorrere al tipo di campo **Many2one**.
 
-Apriamo quindi il file _models/todo\_task.py_ contenente il nostro modello _TodoTask_ e aggiungiamo questo campo alla classe:
+Apriamo quindi il file _models/task\_task.py_ contenente il nostro modello _TodoTask_ e aggiungiamo questo campo alla classe:
 
 ```python
-project_id = fields.Many2one('todo.project', string='Progetto')
+project_id = fields.Many2one('todo.project', string='Project')
 ```
 
-Successivamente apriamo il nostro _views/todo\_task.xml_ e aggiungiamolo anche alla vista form:
+Successivamente apriamo il nostro _views/task\_task.xml_ e aggiungiamolo anche alla vista form:
 
 ```xml
-<!-- All'interno del campo arch aggiungiamo  -->
 <field name='name' position='after'>
     <field name='project_id'/>
 </field>
 
 ```
 
-Aggiorniamo il modulo
-
-```
-    $ docker-compose run odoo upgrade todo_plus
-```
-
-e ricarichiamo la pagina
-
-![project_id](/odoo.workshop/screen/relazioni/project_id.png?width=60pc)
-
-Odoo ha aggiunto il nostro campo _Many2one_ che ci permette di selezionare progetti esistenti oppure aprire un la From View dei progetti per crearne uno nuovo da agganciare.
-
 ## Realazioni One2many
 
 Considerando invece la relazione dal punto di vista opposto, quello dei progetti, la relazione è inversa: ogni _TodoProject_ sarà legato a tanti oggetti _TodoTask_. Questo tipo di relazione in Odoo è chiamata **One2many**. Per definirla è necessario definire nella dichiarazione del campo su quale attributo dell'oggetto figlio avviene la relazione. Uno stesso oggetto potrebbe avere più relazioni One2many verso la stessa classe di oggetti.
 
-Per aggiunger questa relazione al nostro modello dei progetti aprima il file _models/todo\_project.py_ e aggiungiamo nel corpo della classe:
+Per aggiunger questa relazione al nostro modello dei progetti aprima il file _models/task\_project.py_ e aggiungiamo nel corpo della classe:
 
 ```python 
     todo_ids = fields.One2many('todo.task', 'project_id', string='Todos')
@@ -55,7 +42,7 @@ Per aggiunger questa relazione al nostro modello dei progetti aprima il file _mo
 Per convenzione su Odoo i nomi dei campi relazionali vengono sempre terminati con _\_id_ o _\_ids_. Questo per indicare velocemente agli sviluppatori se si tratta di una relazione a uno oppure a molti. Consiglio **vivamente** di continuare con questa convenzione.
 {{% /notice%}}
 
-E nel file delle viste dei progetti _views/todo\_project.xml_ aggiungiamo questo record:
+E nel file delle viste dei progetti _views/task\_project.xml_ aggiungiamo questo record:
 
 ```xml
 <record model="ir.ui.view" id="todo_project_form_view">
@@ -67,7 +54,6 @@ E nel file delle viste dei progetti _views/todo\_project.xml_ aggiungiamo questo
                 <field name='state' widget='statusbar'/>
             </header>
             <sheet>
-                <!-- Raggruppiamo i campi su due colonne e assegnamo un identificativo ai vari gruppi -->
                 <group name="group_top">
                     <group name="group_left">
                         <field name="name"/>
@@ -84,7 +70,7 @@ E nel file delle viste dei progetti _views/todo\_project.xml_ aggiungiamo questo
 Aggiorniamo il modulo
 
 ```
-    $ docker-compose run odoo upgrade todo_plus
+    $ docker compose run odoo upgrade todo_plus
 ```
 
 e ricarichiamo la pagina
@@ -101,13 +87,13 @@ Le relazioni Many2Many sono molto simili alle One2Many, nel senso che ad un ogge
 **One2many**: gli oggetti sono correlati da un id presente in una colonna della tabella figlia, nel nostro caso la colonna _project\_id_ della tabella dei todo
 **Many2many**: viene creata una terza tabella composta da due colonne che fanno riferimento agli id delle due entità in relazione.
 
-Nel nostro esempio vogliammo aggiungere una relazione fra il modello _TodoTag_ e il modello _TodoTask_. Per farlo apriamo prima il file del modello _models/todo\_task.py_ e aggiungiamo il campo:
+Nel nostro esempio vogliammo aggiungere una relazione fra il modello _TodoTag_ e il modello _TodoTask_. Per farlo apriamo prima il file del modello _models/task\_task.py_ e aggiungiamo il campo:
 
 ```python
 tag_ids = fields.Many2many('todo.tag', string='Tag')
 ```
 
-Successivamente apriamo il nostro _views/todo\_task.xml_ e aggiungiamolo anche alla vista form:
+Successivamente apriamo il nostro _views/task\_task.xml_ e aggiungiamolo anche alla vista form:
 
 ```xml
 <!-- All'interno del campo arch aggiungiamo  -->
@@ -120,7 +106,7 @@ Successivamente apriamo il nostro _views/todo\_task.xml_ e aggiungiamolo anche a
 Aggiorniamo il modulo
 
 ```
-$ docker-compose run odoo upgrade todo_plus
+$ docker compose run odoo upgrade todo_plus
 ```
 
 e ricarichiamo la pagina

@@ -17,14 +17,14 @@ Questa è la struttura generale di un record Odoo
     <field name="arch" type="xml">
         <form string="ToDo task Form">
             <header>
-                <!-- Sezione dedicata ai pulsanti e al widget dello stato del record -->
+                <!-- Section for action buttons and status widget -->
             </header>
             <sheet>
-                <!-- Sezione dedicata al contenuto del form -->
+                <!-- Section for main form content -->
                 
             </sheet>
             <div class='oe_chatter'>
-                <!-- Storico e comunicazioni -->
+                <!-- History and communication  -->
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
                     <field name="message_ids" widget="mail_thread"/>
@@ -45,14 +45,12 @@ La _statusbar_ invece solitamente fa riferimento all'attributo _state_ dell'ogge
 
 ```xml
  <header>
-    <!-- Aggiungiamo un pulsante per modificare lo stato Fatto del task -->
     <button 
         name="do_toggle_button" 
         type="object"
         string="Toggle Done"
         class="oe_highlight"/>
     
-    <!-- Aggiungiamo un pulsante per rimuovere i task in stato fatto -->
     <button 
         name="do_clear_done" 
         type="object"
@@ -89,7 +87,7 @@ All'interno delle viste XML oltre ai tag specifici di Odoo è possibile utilizza
             <field name="user_id" class="oe_inline"/>
         </h3>
     </div>    
-    <!-- Il resto del contenuto del docuemnto -->
+    <!-- ... Rest of the document ...  -->
 </sheet>
 ```
 
@@ -101,7 +99,7 @@ Per creare un contenitore per questi bottoni si può aggiungere a fianco all'eve
 
 ```xml
 <div name="buttons" class="oe_right oe_button_box">
-    <!-- L'elenco di smart buttons -->
+    <!-- Smart buttons -->
 </div>
 ```
 
@@ -114,12 +112,12 @@ Se presente un solo tag _\<group\>_ i _\<field\>_ contenuti occuperanno due colo
 ```xml
 <group name="group_top">
     <group name="group_left">
-        <!-- label + field nella colonna di sinistra -->
+        <!-- label + field in left column -->
         <field name="name"/>
         [...]
     </group>
     <group name="group_right">
-        <!-- label + field nella colonna di destra -->
+        <!-- label + field in right column -->
         <field name="deadline_date"/>
         [...]
     </group>
@@ -135,11 +133,11 @@ Un esempio di notebook:
 ```xml
 <notebook>
     <page string="Info" name="info">
-        <!-- contenuto prima pagina -->
+        <!-- content of first tab -->
         <field name="other_info"/>
     </page>
     <page string="Info 2" name="info2">
-        <!-- contenuto seconda pagina -->
+        <!-- content of second tab -->
     </page>
     [...]
 </notebook>

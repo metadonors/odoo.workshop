@@ -29,7 +29,7 @@ Un elenco di alcuni possibili editor:
 Installazione dell&amp;rsquo;ambiente di sviluppo Scaricate l&amp;rsquo;ambiente docker che utilizzeremo dal github in una cartella sul nostro computer. Aprite un terminale e digitate:
 $ git clone https://github.com/metadonors/odoo.docker.git Entriamo nella cartella appena scaricata:
 $ cd odoo.docker Inizializziamo il database di Odoo
-$ docker compose run odoo upgrade -i base Compose comincerà a scaricare tutte le nostre dipendenze, ,a procedura può durare diversi minuti in base alla connessione a internet disponibile.</description>
+$ docker compose run odoo upgrade base Compose comincerà a scaricare tutte le nostre dipendenze, ,a procedura può durare diversi minuti in base alla connessione a internet disponibile.</description>
     </item>
     
     <item>

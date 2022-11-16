@@ -10,22 +10,22 @@
     <title>Scaffolding :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1668612166" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1668612166" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1666263210"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612166"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1666263210"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612166"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612166"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612166"></script>
 
     
   </div>
@@ -1039,7 +1039,7 @@
 <p>In questa sezione andremo a creare il nostro primo modulo. L&rsquo;applicazione d&rsquo;esempio che creeremo durante il corso è una classica Todo App. Per realizzarla attraverseremo le classiche fasi di sviluppo di un applicazione Odoo.</p>
 <h2 id="lo-scheletro-del-modulo">Lo scheletro del modulo</h2>
 <p>Odoo offre un suo meccanismo di scaffolding piuttosto primitivo per creare nuovi moduli, è possibile visualizzare il suo funzionamento lanciando questo comando dalla cartella contente l&rsquo;ambiente odoo.dockerenv:</p>
-<pre tabindex="0"><code>$ docker-compose run odoo odoo scaffold --help
+<pre tabindex="0"><code>$ docker compose run odoo odoo scaffold --help
 </code></pre><p>Nella pratica ci sono altri strumenti utili per questo scopo come, <a href="http://mrbob.readthedocs.io/en/latest/">mrbob</a> con i template specifici per gli <a href="https://github.com/acsone/bobtemplates.odoo">addon Odoo</a>.</p>
 <p>Vi può essere utile quando affronterete il vostro primo modulo in autonomia, ma durante questo corso creeremo tutta la struttura manualmente in modo da capirne meglio i vari aspetti.</p>
 <h3 id="quindi-cominciamo">Quindi cominciamo</h3>
@@ -1051,15 +1051,15 @@
     __manifest__.py
 </code></pre><p>A questo punto è ora di aprire il nostro editor di testo per modificare il file <em>__manifest__.py</em>, dove inseriremo il seguente contenuto:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{
-    <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Applicazione TODO&#39;</span>,
-    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Gestisci i tuoi TODO&#39;</span>,
+    <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;TODO Application&#39;</span>,
+    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Manage your Todos&#39;</span>,
     <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Imthe Author&#39;</span>,
     <span style="color:#e6db74">&#39;license&#39;</span>: <span style="color:#e6db74">&#39;LGPL-3&#39;</span>,
     <span style="color:#e6db74">&#39;depends&#39;</span>: [<span style="color:#e6db74">&#39;base&#39;</span>],
     <span style="color:#e6db74">&#39;application&#39;</span>: <span style="color:#66d9ef">True</span>
 }
 </code></pre></div><p>Il campo <em>depends</em> indica i moduli da cui dipende la nostra applicazione, se non sono presenti quando verra installata, Odoo li installerà automaticamente. È necessario inserirla soprattutto quando si fa riferimento a funzionalità di terze parti.</p>
-<p>In questo caso abbiamo usato solo alcuni dei valori definibili nel manifesto di un modulo, nei casi reali questo file è sarà più complesso. Per una spiegazione più dettagliata del suo contenuto potete consultare la pagina della <a href="https://www.odoo.com/documentation/11.0/reference/module.html">documentazione di Odoo sul file manifest</a>.</p>
+<p>In questo caso abbiamo usato solo alcuni dei valori definibili nel manifesto di un modulo, nei casi reali questo file è sarà più complesso. Per una spiegazione più dettagliata del suo contenuto potete consultare la pagina della <a href="https://www.odoo.com/documentation/15.0/developer/reference/backend/module.html">documentazione di Odoo sul file manifest</a>.</p>
 <h3 id="i-path-degli-addon">I path degli addon</h3>
 <p>Nel nostro caso Odoo sarà in grado di trovare questa applicazione perchè l&rsquo;abbiamo creata nella cartella addons dell&rsquo;ambiente. Ma quella cartella è stata configurata per essere fra quelle dove Odoo cerca gli addon all&rsquo;avvio. È possibile specificare diversi percorsi dove odoo cerca gli addons disponibili ad essere installati, fate riferimento alla variabile <em>addons-path</em> disponibile sia nel file di confiurazione di odoo che da linea di comando.</p>
 <h3 id="installazione-del-modulo">Installazione del modulo</h3>
@@ -1073,7 +1073,7 @@
 <p><img src="/odoo.workshop/screen/primo_modulo/todo.png?width=60pc" alt="todo"></p>
 <p>Cliccate su installa ed il primo passo è compiuto</p>
 <h3 id="nota-bene">Nota bene</h3>
-<p>Sviluppare moduli è un processo iterativo e spesso dopo dei cambiamenti, in particolare sul database, sarà necessario riavviare odoo dicendogli esplicitamente di aggiornare i moduli interessati. Se la modifica invece è solo al codice python o a delle viste sarà sufficiente riaggiornare la pagina <strong>perchè il sistema è stato lanciato in modalita di sviluppo</strong> (con l&rsquo;opzione &ndash;dev=all vedi <em>docker-compose.yml</em>). In fase di produzione qualsiasi aggiornamento comporta il riavvio del sistema</p>
+<p>Sviluppare moduli è un processo iterativo e spesso dopo dei cambiamenti, in particolare sul database, sarà necessario riavviare odoo dicendogli esplicitamente di aggiornare i moduli interessati. Se la modifica invece è solo al codice python o a delle viste sarà sufficiente riaggiornare la pagina <strong>perchè il sistema è stato lanciato in modalita di sviluppo</strong> (con l&rsquo;opzione &ndash;dev=all vedi <em>docker compose.yml</em>). In fase di produzione qualsiasi aggiornamento comporta il riavvio del sistema</p>
 <h3 id="continua">Continua</h3>
 <p>Ora che abbiamo creato e installato la nostra prima applicazione possiamo continuare andando a modellare i nostri dati definendo <a href="/odoo.workshop/first_app/primo_modello/">Modelli e Campi</a>.</p>
 
@@ -1714,19 +1714,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1666263210"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1666263210"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1668612166"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1668612166"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1666263210"></script>
-    <script src="/odoo.workshop/js/learn.js?1666263210"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1666263210"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612166"></script>
+    <script src="/odoo.workshop/js/learn.js?1668612166"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1668612166"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1666263210"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1668612166"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

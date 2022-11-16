@@ -42,16 +42,16 @@ Ecco un esempio
     <field name="model">todo.task</field>
     <field name="arch" type="xml">
         <search>
-            <!-- campi su cui effettuare una ricerca libera -->
+            <!-- field that can be quickly searched in -->
             <field name="name"/>
             <field name="user_id"/>
             
-            <!-- filtri predefiniti -->
+            <!-- predefined filters -->
             <filter string="Not Done" domain="[('is_done','=',False)]"/>
             <filter string="Done" domain="[('is_done','!=',False)]"/>
 
             <separator/>
-            <!-- raggruppamento predefinito -->
+            <!-- predefined grouping -->
             <filter string="By User" name='group_user' context="{'group_by': 'user_id'}"/>
         </search>
     </field>

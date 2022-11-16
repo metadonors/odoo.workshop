@@ -10,22 +10,22 @@
     <title>Estendere i Modelli :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1666263210" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1668612166" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1668612166" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1666263210" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1668612166" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1666263210"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612166"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1666263210"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612166"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612166"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1666263210"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612166"></script>
 
     
   </div>
@@ -1038,20 +1038,20 @@
 <p>In Odoo i nuovi modelli, o le estensioni di quelli esistenti, si creano definendo delle classi Python specifiche. Il meccanismo di ereditarietà di Odoo non si base su quello delle classi Python, ma su un suo approccio interno che si basa sull&rsquo;attributo <em>_inherit</em> specificato nella class.</p>
 <p>In base a come viene utilizzato si possono ottenere differeneti meccanismi di ereditarietà.</p>
 <p>Noi cominceremo con il più semplice dove la classe figlia eredita tutte le funzionalità del padre e dove noi possiamo semplicemente apportare le modifiche che ci interessano.</p>
-<p>Per prima cosa andiamo a creare la cartella <em>models/</em> con il file <em>__init__.py</em> e il file <em>todo_task.py</em> che ospiterà le nostre modifiche, ottenendo questa struttura:</p>
+<p>Per prima cosa andiamo a creare la cartella <em>models/</em> con il file <em>__init__.py</em> e il file <em>task.py</em> che ospiterà le nostre modifiche, ottenendo questa struttura:</p>
 <pre tabindex="0"><code>    todo_user/
         models/
             __init__.py
-            todo_task.py
+            task.py
         __init__.py
         __manifest__.py
 </code></pre><p>Inseriamo gli import necessari per far funzionare il codice Python mettendo all&rsquo;interno del file <em>todo_user/__init__.py</em></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> models
 </code></pre></div><p>e all&rsquo;interno del file <em>todo_user/models/__init__.py</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> todo_task
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> task
 </code></pre></div><h3 id="aggiungere-campi-a-un-modello">Aggiungere campi a un modello</h3>
-<p>A questo punto siamo pronti a modificare il file <em>todo_task.py</em> per estendere il nostro precedente modello. Aprimo il file e scriviamo quanto segue</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<p>A questo punto siamo pronti a modificare il file <em>task_task.py</em> per estendere il nostro precedente modello. Aprimo il file e scriviamo quanto segue</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
 <span style="color:#f92672">from</span> odoo <span style="color:#f92672">import</span> models, fields, api
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTask</span>(models<span style="color:#f92672">.</span>Model):
@@ -1064,7 +1064,7 @@
 <h3 id="modificare-campi-esistenti">Modificare campi esistenti</h3>
 <p>Aggiungere campi è piuttosto semplice, ma è anche possibile apportare modifiche a campi esitenti. Per farlo è sufficiente ridichiara il campo e passare solo gli attributi che si vogliono andare a modificare.</p>
 <p>Per esempio per modificare il tooltip del campo name possiamo aggiungere il campo</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    name <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Char(help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Cosa bisogna fare?&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    name <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Char(help<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;What we need to do?&#34;</span>)
 </code></pre></div><p>Per vedere se le modifiche che abbiamo apportato sono corrette dobbiamo effettuare l&rsquo;upgrade del modulo <em>todo_user</em>, ricaricare la pagina e controllare che il tooltip presente nella Form View dei Todo Task sia aggiornata con quando abbiamo scritto, come nell&rsquo;immagine che segue</p>
 <p><img src="/odoo.workshop/screen/estendere_modelli/label.png?width=60pc" alt="label"></p>
 <h3 id="modificare-i-metodi-del-modello">Modificare i metodi del modello</h3>
@@ -1074,24 +1074,25 @@
 </div>
 
 <p>Nel nostro caso vogliamo che quando un utente invoca il metodo <em>do_clear_done</em> non vengano chiusi tutti i task completati ma solo quelli assegnati all&rsquo;utente stesso oppure quelli non assegnati.</p>
-<p>Per farlo aggiungiamo il seguente metodo all&rsquo;oggetto <em>TodoTask</em> nel file <em>models/todo_task.py</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@api</span><span style="color:#f92672">.</span>multi
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_clear_done</span>(self):
-    dones <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>search([
-        (<span style="color:#e6db74">&#39;is_done&#39;</span>, <span style="color:#e6db74">&#39;=&#39;</span>, <span style="color:#66d9ef">True</span>),
-        <span style="color:#e6db74">&#39;|&#39;</span>, (<span style="color:#e6db74">&#39;user_id&#39;</span>, <span style="color:#e6db74">&#39;=&#39;</span>, self<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>uid),
-             (<span style="color:#e6db74">&#39;user_id&#39;</span>, <span style="color:#e6db74">&#39;=&#39;</span>, <span style="color:#66d9ef">False</span>)
-    ])
+<p>Per farlo aggiungiamo il seguente metodo all&rsquo;oggetto <em>TodoTask</em> nel file <em>models/task.py</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_clear_done</span>(self):
+    dones <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>search(
+        [
+            (<span style="color:#e6db74">&#34;is_done&#34;</span>, <span style="color:#e6db74">&#34;=&#34;</span>, <span style="color:#66d9ef">True</span>),
+            <span style="color:#e6db74">&#34;|&#34;</span>,
+            (<span style="color:#e6db74">&#34;user_id&#34;</span>, <span style="color:#e6db74">&#34;=&#34;</span>, self<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>uid),
+            (<span style="color:#e6db74">&#34;user_id&#34;</span>, <span style="color:#e6db74">&#34;=&#34;</span>, <span style="color:#66d9ef">False</span>),
+        ]
+    )
 
-    dones<span style="color:#f92672">.</span>write({<span style="color:#e6db74">&#39;active&#39;</span>: <span style="color:#66d9ef">False</span>})
+    dones<span style="color:#f92672">.</span>write({<span style="color:#e6db74">&#34;active&#34;</span>: <span style="color:#66d9ef">False</span>})
 </code></pre></div><p>Vediamo invece come estendere un metodo, senza sovrascrivere completamente la logica presente nel modello originale. Per la funzione <em>do_toggle_done</em> vogliamo aggiungere un controllo in caso l&rsquo;utente stia cercando di chiudere un task che non gli è assegnato. In quel caso lanciamo un errore, altrimenti procediamo come consueto.</p>
-<p>Per ottenere questo comportamente modifichiamo il file <em>models/todo_task.py</em>, aggiungendo neglle importazioni iniziali</p>
+<p>Per ottenere questo comportamente modifichiamo il file <em>models/task_task.py</em>, aggiungendo neglle importazioni iniziali</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> odoo.exceptions <span style="color:#f92672">import</span> ValidationError
 </code></pre></div><p>e nel corpo della classe il metodo</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@api</span><span style="color:#f92672">.</span>multi
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_toggle_done</span>(self):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_toggle_done</span>(self):
     <span style="color:#66d9ef">for</span> task <span style="color:#f92672">in</span> self:
-        <span style="color:#66d9ef">if</span> tast<span style="color:#f92672">.</span>user_id <span style="color:#f92672">!=</span> self<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>user:
+        <span style="color:#66d9ef">if</span> task<span style="color:#f92672">.</span>user_id <span style="color:#f92672">!=</span> self<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>user:
             <span style="color:#66d9ef">raise</span> ValidationError(<span style="color:#e6db74">&#34;Solo l&#39;incaricato può chiudere questo task&#34;</span>)
 
     <span style="color:#66d9ef">return</span> super(TodoTask, self)<span style="color:#f92672">.</span>do_toggle_done()
@@ -1738,19 +1739,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1666263210"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1666263210"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1666263210"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1668612166"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1668612166"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1668612166"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1666263210"></script>
-    <script src="/odoo.workshop/js/learn.js?1666263210"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1666263210"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612166"></script>
+    <script src="/odoo.workshop/js/learn.js?1668612166"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1668612166"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1666263210"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1668612166"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

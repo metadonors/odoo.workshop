@@ -21,7 +21,7 @@ I _domain_ in Odoo sono utilizzati per filtrare i dati. Utilizzano una sintassi 
 Un _domain_ è una lista di condizioni, ogni condizione è composta da una tupla
 
 ```python
-(<nome_campo>, <operatore>, <valore>)
+(<field>, <operator>, <value>)
 ```
 
 come per esempio:

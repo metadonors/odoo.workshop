@@ -35,7 +35,7 @@ Per esempio
 ```python
 from odoo.exception import ValidationError
 
-# all'intterno della classe TodoTask 
+# in TodoTask class
 @api.constraints('name')
 def _check_name_length(self):
     for todo in self:

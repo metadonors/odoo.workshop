@@ -10,13 +10,13 @@ In base a come viene utilizzato si possono ottenere differeneti meccanismi di er
 
 Noi cominceremo con il più semplice dove la classe figlia eredita tutte le funzionalità del padre e dove noi possiamo semplicemente apportare le modifiche che ci interessano.
 
-Per prima cosa andiamo a creare la cartella _models/_ con il file _\_\_init\_\_.py_ e il file _todo\_task.py_ che ospiterà le nostre modifiche, ottenendo questa struttura:
+Per prima cosa andiamo a creare la cartella _models/_ con il file _\_\_init\_\_.py_ e il file _task.py_ che ospiterà le nostre modifiche, ottenendo questa struttura:
 
 ```
     todo_user/
         models/
             __init__.py
-            todo_task.py
+            task.py
         __init__.py
         __manifest__.py
 ```
@@ -30,15 +30,15 @@ from . import models
 e all'interno del file _todo\_user/models/\_\_init\_\_.py_ 
 
 ```python
-from . import todo_task
+from . import task
 ```
 
 ### Aggiungere campi a un modello
 
-A questo punto siamo pronti a modificare il file _todo\_task.py_ per estendere il nostro precedente modello. Aprimo il file e scriviamo quanto segue
+A questo punto siamo pronti a modificare il file _task\_task.py_ per estendere il nostro precedente modello. Aprimo il file e scriviamo quanto segue
 
 ```python
-# -*- coding: utf-8 -*-
+
 from odoo import models, fields, api
 
 class TodoTask(models.Model):
@@ -59,7 +59,7 @@ Aggiungere campi è piuttosto semplice, ma è anche possibile apportare modifich
 Per esempio per modificare il tooltip del campo name possiamo aggiungere il campo
 
 ```python
-    name = fields.Char(help="Cosa bisogna fare?")
+    name = fields.Char(help="What we need to do?")
 ```
 
 Per vedere se le modifiche che abbiamo apportato sono corrette dobbiamo effettuare l'upgrade del modulo _todo\_user_, ricaricare la pagina e controllare che il tooltip presente nella Form View dei Todo Task sia aggiornata con quando abbiamo scritto, come nell'immagine che segue
@@ -76,23 +76,25 @@ Cambiare gli argomenti dei metodi esistenti può essere pericoloso perchè non p
 
 Nel nostro caso vogliamo che quando un utente invoca il metodo _do\_clear\_done_ non vengano chiusi tutti i task completati ma solo quelli assegnati all'utente stesso oppure quelli non assegnati.
 
-Per farlo aggiungiamo il seguente metodo all'oggetto _TodoTask_ nel file _models/todo\_task.py_ 
+Per farlo aggiungiamo il seguente metodo all'oggetto _TodoTask_ nel file _models/task.py_ 
 
 ```python
-@api.multi
 def do_clear_done(self):
-    dones = self.search([
-        ('is_done', '=', True),
-        '|', ('user_id', '=', self.env.uid),
-             ('user_id', '=', False)
-    ])
+    dones = self.search(
+        [
+            ("is_done", "=", True),
+            "|",
+            ("user_id", "=", self.env.uid),
+            ("user_id", "=", False),
+        ]
+    )
 
-    dones.write({'active': False})
+    dones.write({"active": False})
 ```
 
 Vediamo invece come estendere un metodo, senza sovrascrivere completamente la logica presente nel modello originale. Per la funzione _do\_toggle\_done_ vogliamo aggiungere un controllo in caso l'utente stia cercando di chiudere un task che non gli è assegnato. In quel caso lanciamo un errore, altrimenti procediamo come consueto.
 
-Per ottenere questo comportamente modifichiamo il file _models/todo\_task.py_, aggiungendo neglle importazioni iniziali
+Per ottenere questo comportamente modifichiamo il file _models/task\_task.py_, aggiungendo neglle importazioni iniziali
 ```python
 from odoo.exceptions import ValidationError
 ```
@@ -100,10 +102,9 @@ from odoo.exceptions import ValidationError
 e nel corpo della classe il metodo
 
 ```python
-@api.multi
 def do_toggle_done(self):
     for task in self:
-        if tast.user_id != self.env.user:
+        if task.user_id != self.env.user:
             raise ValidationError("Solo l'incaricato può chiudere questo task")
 
     return super(TodoTask, self).do_toggle_done()

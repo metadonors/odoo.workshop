@@ -10,10 +10,6 @@ Fino a questo punto abbiamo utilizzato l'ORM di Odoo senza scendere nel dettagli
 
 Abbiamo notato che a molti metodi dei modelli viene applicato un decoratore come _@api.multi_. Questi decorati hanno lo scopo di istruire il backend su come gestire i metodi rispetto alle API esposte. 
 
-Il decoratore **@api.multi** viene utilizzato per gestire metodi applicati su dei _RecordSet_ ed è ill decoratore utilizzato più di frequente. Quando a un metodo viene applicato questo decoratore, il _self_ all'interno del metodo farà riferimento a un RecordSet cioè a un oggetto rappresentante una lista di entità e solitamente all'interno vi sarà un ciclo _for_ per iterare sui vari oggetti.
-
-Alcuni ci si aspetta che un metodo venga applicato su un solo oggetto, in quel caso è possibile invocare la funzione **self.ensure_one()** che solleva un eccezione in caso siano presenti più elementi nel recordset corrente. Successivamente a quella chiamata il _self_ può essere considerato un _singleton_ e sarà quindi possibile accedere agli attributi del record corrente direttamente con la notazione puntata (es _print(self.name)_).
-
 Il decoratore **@api.model** invece si utilizza per decorare metodi statici in cui il _self_ non fa rifermento a nessuna entità in particolare. Per coerenza _self_ farà sempre riferimento a un oggetto di tipo recordset ma il suo contenuto diventa irrilevante. Questo tipo di metodi non possono essere richiamati dalle API e quindi non possono essere usati sui bottoni nell'interfaccia utente.
 
 Altri decoratori con scopi più specifici:
@@ -28,7 +24,7 @@ Altri decoratori con scopi più specifici:
 Lanciando il seguente comando, odoo ci presenta un linea di comando interattiva dove possiamo accedere a tutto l'ambiente di odoo. E' molto comoda per effettuare dei test:
 
 ```
-$ docker-compose run odoo shell
+$ docker compose run odoo shell
 
 In [1]: self
 Out[1]: res.users(1,)

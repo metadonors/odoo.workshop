@@ -27,10 +27,7 @@ A questo punto il modulo è disponibile per essere installato, andiamo nella sez
 
 ![todoplus](/odoo.workshop/screen/models_preambolo/todoplus.png?width=60pc)
 
-Clicchiamo su _Install_ e navigiamo di nuovo nella nostra app Todo. Notiamo che il nuovo modulo ci ha aggiunto il sottomenu 'Progetti' dove e', appunto, possibile gestire i nostri progetti todo.
-
-![progetti](/odoo.workshop/screen/models_preambolo/progetti.png?width=60pc)
-
+L'addon non è ancora pronto per essere installato, dobbiamo prima implementare alcuni attributi.
 
 ### Continua
 

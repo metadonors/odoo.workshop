@@ -16,7 +16,7 @@ Abbiamo ovviamente bisogno di conoscere anche indirizzo e porta dove gira il nos
 Per autenticarsi apriamo una shell interattiva con
 
 ```
-$ docker-compose run odoo ipython
+$ docker compose run odoo ipython
 ```
 
 e al suo interno scriviamo

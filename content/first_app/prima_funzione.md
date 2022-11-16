@@ -30,16 +30,10 @@ In questo tag stiamo definendo alcuni attributi, vediamoli nel dettaglio:
 
 Per altre informazioni fai riferimento alla [documentazione ufficiale di Odoo](https://www.odoo.com/documentation/11.0/reference/views.html#reference-views-list-button)
 
-Quindi avendo definito un bottone con _type=object_ e _name=do\_toggle\_button_ non ci rimane che aggiungere questo metodo alla classe Python che rappresenta il modello. Apriamo quindi il file _models/todo\_model.py_ e aggiungiamo un metodo alla classe:
+Quindi avendo definito un bottone con _type=object_ e _name=do\_toggle\_button_ non ci rimane che aggiungere questo metodo alla classe Python che rappresenta il modello. Apriamo quindi il file _models/task\_model.py_ e aggiungiamo un metodo alla classe:
 
 ```python
-# Nell'intestazione modifichiamo l'import aggiungendo api
-from odoo import models, fields, api
-```
-
-```python
-# Nel corpo della classe aggiungiamo il metodo
-@api.multi
+# In TodoTask class add this method
 def do_toggle_button(self):
     for todo in self:
         todo.is_done = not todo.is_done
@@ -47,11 +41,13 @@ def do_toggle_button(self):
 
 Poche righe, ma tanti concetti. 
 
-Prima di tutto il decoratore _@api.multi_. Odoo è un software scritto con una logica **API first**, che significa che il codice che scrivete nel backend (in Python) è completamente slegato da quello che avviene nel frontend (che invece è scritto in Javascript). Ogni funzione che volete esporre al frontend deve essere esposta come un API JSONRPC (un protocollo RPC di qui potete trovare maggiori infomazioni [su internet](https://en.wikipedia.org/wiki/JSON-RPC)).
+Odoo è un software scritto con una logica **API first**, che significa che il codice che scrivete nel backend (in Python) è completamente slegato da quello che avviene nel frontend (che invece è scritto in Javascript). Ogni funzione che volete esporre al frontend deve essere esposta come un API JSONRPC (un protocollo RPC di qui potete trovare maggiori infomazioni [su internet](https://en.wikipedia.org/wiki/JSON-RPC)).
 
-Il decoratore _@api.multi_ dice ad Odoo che volete esporre il metodo al frontene (@api) e che quel metodo puo essere eseguito su uno o più record alla volta (multi). Quindi potete invocare questo metodo su un solo record todo in una chiamata come su 100 o 1000.
+Ogni volta che viene dichiarato un metodo su un modello quel metodo puo essere eseguito su uno o più record alla volta tramite api. Quindi potete invocare questo metodo su un solo record todo in una chiamata come su 100 o 1000.
 
-Essendo un metodo _multi_ il _self_ dell'oggetto rappresenta non un istanza sola, ma un [RecordSet](https://www.odoo.com/documentation/11.0/reference/orm.html) che è una struttura di odoo che raggruppa oggetti dello stesso tipo e ha il principale scopo di eseguire operazioni in batch ottimizzate su molti oggetti. Quindi ciclando sul _self_ stiamo andando a lavorare su ogni record presente in questa chiamata.
+Se non si vuole esporre il metodo tramite api è sufficiente utilizzare il prefisso _ sul nome del medoto.
+
+Il _self_ dell'oggetto rappresenta non un istanza sola, ma un [RecordSet](https://www.odoo.com/documentation/15.0/developer/reference/backend/orm.html#recordsets) che è una struttura di odoo che raggruppa oggetti dello stesso tipo e ha il principale scopo di eseguire operazioni in batch ottimizzate su molti oggetti. Quindi ciclando sul _self_ stiamo andando a lavorare su ogni record presente su cui è stata invocata la chiamata.
 
 Per l'altro bottone invece:
 
@@ -63,23 +59,23 @@ Per l'altro bottone invece:
         class="oe_highlight"/>
 ```
 
-Vediamo che abbiamo dichiarato che vogliamo invocare il metodo _do\_clear\_done_ che andiamo a implementare nel nostro _models/todo\_models.py_ come segue
+Vediamo che abbiamo dichiarato che vogliamo invocare il metodo _do\_clear\_done_ che andiamo a implementare nel nostro _models/task\_models.py_ come segue
 
 ```python
-    @api.multi
-    def do_clear_done(self):
-        dones = self.search([
-            ('is_done', '=', True)
-        ])
-        
-        dones.write({
-            'active': False
-        })
+      def do_clear_done(self):
+        dones = self.search([("is_done", "=", True)])
+        dones.write({"active": False})
 ```
 
 Con il metodo _search_ andriamo a cercare i _todo_ che ci interessano passandogli un _domain_ per la ricerca e infine aggiorniamo il loro stato come inattivo.
 
-I _domain_ sono il principale metodo per effettuare ricerche nel database usando il framework di Odoo. Li vediamo pi\ nel dettaglio successivamente.
+I _domain_ sono il principale metodo per effettuare ricerche nel database usando il framework di Odoo. Li vediamo più nel dettaglio successivamente.
+
+A questo punto possiamo aggiornare le viste Odoo e provare le nostre nuove funzioni
+
+```
+$ docker compose run odoo upgrade todo_app
+```
 
 
 ### Continua
@@ -89,7 +85,8 @@ Con quest'ultimo passaggio abbiamo terminato la nostra panoramica delle funziona
 Se ci fate caso, avviando il server di odoo, viene visualizzato un WARNING di questo tipo:
 
 ```
-WARNING demo odoo.modules.loading: The model todo.task has no access rules, consider adding one. E.g. access_todo_task,access_todo_task,model_todo_task,,1,0,0,0
+WARNING odoo odoo.modules.loading: The models ['todo.task'] have no access rules in module todo_app, consider adding some, like:
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 ```
 
 La ragione di questo avviso è legata al meccanismo delle regole di accesso ai dati di Odoo, vediamo come funzionano e come risolvere nella [prossima sezione](/odoo.workshop/first_app/controllo_accessi/).
