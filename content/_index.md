@@ -12,6 +12,13 @@ pre = "<b>X. </b>"
 
 ### Riferimenti
 
+Lingue
+
+[English](http://translate.google.com/translate?js=n&sl=auto&tl=en&u=https://metadonors.github.io/odoo.workshop/)
+[Spanish](http://translate.google.com/translate?js=n&sl=auto&tl=es&u=https://metadonors.github.io/odoo.workshop/)
+[Português](http://translate.google.com/translate?js=n&sl=auto&tl=pt&u=https://metadonors.github.io/odoo.workshop/)
+[Italian](https://metadonors.github.io/odoo.workshop/)
+
 L'inizio del corso:
 
 [Odoo Workshoop](/odoo.workshop/basics/)
