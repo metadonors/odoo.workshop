@@ -121,7 +121,7 @@ Per mettere insieme quello che abbiamo detto fin'ora possiamo procedere a modifi
         </field>
 
         <!-- edit attributes of field 'active' to make it invisible -->
-        <field name="active" positiion="attributes">
+        <field name="active" position="attributes">
             <attribute name="invisible">1</attribute>
         </field>
     </field>
