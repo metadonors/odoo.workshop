@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.121.1">
     
     <link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/png">
 
     <title>Aggiungere funzionalità :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1668612525" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1704211767" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1668612525" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1704211767" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612525"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1704211767"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612525"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612525"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1704211767"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1704211767"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612525"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1704211767"></script>
 
     
   </div>
@@ -1046,40 +1046,40 @@
 </ul>
 <h3 id="modificare-le-dipendenze">Modificare le dipendenze</h3>
 <p>Apriamo il nostro file di manfiesto e modifichiamolo come segue:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{
-    <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Multiuser TODO&#39;</span>,
-    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Extend Todo app to work in a multiuser environment&#39;</span>,
-    <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Imthe Author&#39;</span>,
-    <span style="color:#e6db74">&#39;license&#39;</span>: <span style="color:#e6db74">&#39;LGPL-3&#39;</span>,
-    <span style="color:#e6db74">&#39;depends&#39;</span>: [
-        <span style="color:#e6db74">&#39;todo_app&#39;</span>,
-        <span style="color:#e6db74">&#39;mail&#39;</span> <span style="color:#75715e"># &lt;-- Add this line</span>
-    ],
-
-    <span style="color:#e6db74">&#39;data&#39;</span>: [
-        <span style="color:#e6db74">&#39;views/task_views.xml&#39;</span>
-    ]
-}
-</code></pre></div><h3 id="aggiungere-la-classe-al-modello">Aggiungere la classe al modello</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Multiuser TODO&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Extend Todo app to work in a multiuser environment&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Imthe Author&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;license&#39;</span>: <span style="color:#e6db74">&#39;LGPL-3&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;depends&#39;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;todo_app&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;mail&#39;</span> <span style="color:#75715e"># &lt;-- Add this line</span>
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;data&#39;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;views/task_views.xml&#39;</span>
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="aggiungere-la-classe-al-modello">Aggiungere la classe al modello</h3>
 <p>Per aggiungere la classe al modello procediamo nella stessa maniera con cui abbiamo ereditato il modello esteso dal modello base. Andiamo ad aggiungere all&rsquo;attributo <em>_inherit</em> il modello <em>mail.thread</em></p>
 <p>Apriamo il nostro file <em>models/task_task.py</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTask</span>(models<span style="color:#f92672">.</span>Model):
-    _name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;todo.task&#39;</span>
-    _inherit <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;todo.task&#39;</span>, <span style="color:#e6db74">&#39;mail.thread&#39;</span>]
-</code></pre></div><p>Con questa semplice modifica il nostro modello thread acquisterà tutta la logica che gli serve per far funzionare la messaggistica. C&rsquo;è anche da notare che mettendo due dipendenze siamo obbligati anche a specificare quale deve essere il nome del modello principale da cui ereditiamo, per questo aggiungiamo ancche l&rsquo;attributo <em>_name</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTask</span>(models<span style="color:#f92672">.</span>Model):
+</span></span><span style="display:flex;"><span>    _name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;todo.task&#39;</span>
+</span></span><span style="display:flex;"><span>    _inherit <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;todo.task&#39;</span>, <span style="color:#e6db74">&#39;mail.thread&#39;</span>]
+</span></span></code></pre></div><p>Con questa semplice modifica il nostro modello thread acquisterà tutta la logica che gli serve per far funzionare la messaggistica. C&rsquo;è anche da notare che mettendo due dipendenze siamo obbligati anche a specificare quale deve essere il nome del modello principale da cui ereditiamo, per questo aggiungiamo ancche l&rsquo;attributo <em>_name</em>.</p>
 
-<div class="notices note" ><p>Il modello <em>mail.thread</em> è un <strong>Abstract Class</strong>, che significa che non ha una tabella sua di riferimento. Può essere ssolo utiilizzato in altri modelli e va a estendere le loro funzionalità. Quindi, nella pratica, aggiungendolo andrà a modificare direttamente la tabella originale e aggiungerà al modello i metodi necessari alle sue funzionalità. Per maggiori infomazioni consultate la <a href="https://www.odoo.com/documentation/11.0/reference/orm.html#model-reference">documentazione ufficiale di Odoo</a>.</p>
+<div class="notices note" ><p>Il modello <em>mail.thread</em> è un <strong>Abstract Class</strong>, che significa che non ha una tabella sua di riferimento. Può essere solo utilizzato in altri modelli e va a estendere le loro funzionalità. Quindi, nella pratica, aggiungendolo andrà a modificare direttamente la tabella originale e aggiungerà al modello i metodi necessari alle sue funzionalità. Per maggiori infomazioni consultate la <a href="https://www.odoo.com/documentation/11.0/reference/orm.html#model-reference">documentazione ufficiale di Odoo</a>.</p>
 </div>
 
 <h3 id="aggiungere-i-campi-necessari-alla-vista">Aggiungere i campi necessari alla vista</h3>
 <p>A questo punto non ci rimane che aggiungere il widget delle funzionalità mail al fondo della nostra Form View del modello. Apriamo il file <em>views/task_task.xml</em> e aggiungiamo nell&rsquo;attributo <em>arch</em> questo codice XML</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;sheet</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;after&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;oe_chatter&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;message_follower_ids&#34;</span> <span style="color:#a6e22e">widget=</span><span style="color:#e6db74">&#34;mail_followers&#34;</span><span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;message_ids&#34;</span> <span style="color:#a6e22e">widget=</span><span style="color:#e6db74">&#34;mail_thread&#34;</span><span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;/div&gt;</span>
-<span style="color:#f92672">&lt;/sheet&gt;</span>
-</code></pre></div><p>Se ci fate caso i due campi <em>message_followers_ids</em> e <em>message_ids</em> non sono stati implementati esplicitamente da noi ma vengono ereditati dalla classe <em>mail.thread</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;sheet</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;after&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;div</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;oe_chatter&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;message_follower_ids&#34;</span> <span style="color:#a6e22e">widget=</span><span style="color:#e6db74">&#34;mail_followers&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;message_ids&#34;</span> <span style="color:#a6e22e">widget=</span><span style="color:#e6db74">&#34;mail_thread&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/div&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/sheet&gt;</span>
+</span></span></code></pre></div><p>Se ci fate caso i due campi <em>message_followers_ids</em> e <em>message_ids</em> non sono stati implementati esplicitamente da noi ma vengono ereditati dalla classe <em>mail.thread</em>.</p>
 <p>A questo punto non ci resta che effettuare l&rsquo;upgrade del nostro modello</p>
 <pre tabindex="0"><code>    $ docker compose run odoo upgrade todo_user
 </code></pre><p>ricaricare la pagina e cominciare ad aggiungere commenti</p>
@@ -1727,19 +1727,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1668612525"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1668612525"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1704211767"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1704211767"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612525"></script>
-    <script src="/odoo.workshop/js/learn.js?1668612525"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1668612525"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1704211767"></script>
+    <script src="/odoo.workshop/js/learn.js?1704211767"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1704211767"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1668612525"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1704211767"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

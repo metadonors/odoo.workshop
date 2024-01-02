@@ -41,7 +41,7 @@ Apriamo il nostro file di manfiesto e modifichiamolo come segue:
 
 Per aggiungere la classe al modello procediamo nella stessa maniera con cui abbiamo ereditato il modello esteso dal modello base. Andiamo ad aggiungere all'attributo _\_inherit_ il modello _mail.thread_
 
-Apriamo il nostro file _models/task\_task.py_ 
+Apriamo il nostro file _models/task\_task.py_
 
 ```python
 class TodoTask(models.Model):
@@ -52,7 +52,7 @@ class TodoTask(models.Model):
 Con questa semplice modifica il nostro modello thread acquisterà tutta la logica che gli serve per far funzionare la messaggistica. C'è anche da notare che mettendo due dipendenze siamo obbligati anche a specificare quale deve essere il nome del modello principale da cui ereditiamo, per questo aggiungiamo ancche l'attributo _\_name_.
 
 {{% notice note %}}
-Il modello _mail.thread_ è un **Abstract Class**, che significa che non ha una tabella sua di riferimento. Può essere ssolo utiilizzato in altri modelli e va a estendere le loro funzionalità. Quindi, nella pratica, aggiungendolo andrà a modificare direttamente la tabella originale e aggiungerà al modello i metodi necessari alle sue funzionalità. Per maggiori infomazioni consultate la [documentazione ufficiale di Odoo](https://www.odoo.com/documentation/11.0/reference/orm.html#model-reference).
+Il modello _mail.thread_ è un **Abstract Class**, che significa che non ha una tabella sua di riferimento. Può essere solo utilizzato in altri modelli e va a estendere le loro funzionalità. Quindi, nella pratica, aggiungendolo andrà a modificare direttamente la tabella originale e aggiungerà al modello i metodi necessari alle sue funzionalità. Per maggiori infomazioni consultate la [documentazione ufficiale di Odoo](https://www.odoo.com/documentation/11.0/reference/orm.html#model-reference).
 {{% /notice%}}
 
 

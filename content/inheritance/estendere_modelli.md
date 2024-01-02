@@ -21,13 +21,13 @@ Per prima cosa andiamo a creare la cartella _models/_ con il file _\_\_init\_\_.
         __manifest__.py
 ```
 
-Inseriamo gli import necessari per far funzionare il codice Python mettendo all'interno del file _todo\_user/\_\_init\_\_.py_ 
+Inseriamo gli import necessari per far funzionare il codice Python mettendo all'interno del file _todo\_user/\_\_init\_\_.py_
 
 ```python
 from . import models
 ```
 
-e all'interno del file _todo\_user/models/\_\_init\_\_.py_ 
+e all'interno del file _todo\_user/models/\_\_init\_\_.py_
 
 ```python
 from . import task
@@ -54,7 +54,7 @@ Come vedete non c'è nessun meccanismo python di eredità e anche il nome della 
 
 ### Modificare campi esistenti
 
-Aggiungere campi è piuttosto semplice, ma è anche possibile apportare modifiche a campi esitenti. Per farlo è sufficiente ridichiara il campo e passare solo gli attributi che si vogliono andare a modificare.  
+Aggiungere campi è piuttosto semplice, ma è anche possibile apportare modifiche a campi esitenti. Per farlo è sufficiente ridichiara il campo e passare solo gli attributi che si vogliono andare a modificare.
 
 Per esempio per modificare il tooltip del campo name possiamo aggiungere il campo
 
@@ -68,7 +68,7 @@ Per vedere se le modifiche che abbiamo apportato sono corrette dobbiamo effettua
 
 ### Modificare i metodi del modello
 
-Con l'eredità dei modelli, oltre ai campi, è posssibile anche i metodi associati. Aggiungere un nuovo metodo è semplice: è sufficiente dichiarare una nuova funzione. Se invece si vuole modificare il comportamento di un metodo esistente, si può procedere sovrascrivendo il metodo stesso ed è possibile, se necessario, invocare comunque il metodo padre con la funzione _super()_ di Python. 
+Con l'eredità dei modelli, oltre ai campi, è possibile anche i metodi associati. Aggiungere un nuovo metodo è semplice: è sufficiente dichiarare una nuova funzione. Se invece si vuole modificare il comportamento di un metodo esistente, si può procedere sovrascrivendo il metodo stesso ed è possibile, se necessario, invocare comunque il metodo padre con la funzione _super()_ di Python.
 
 {{% notice warning %}}
 Cambiare gli argomenti dei metodi esistenti può essere pericoloso perchè non potete sapere chi li sta già invocando. In caso sia necessario è opportuno inizializare gli argomenti con un valore predefinito.
@@ -76,7 +76,7 @@ Cambiare gli argomenti dei metodi esistenti può essere pericoloso perchè non p
 
 Nel nostro caso vogliamo che quando un utente invoca il metodo _do\_clear\_done_ non vengano chiusi tutti i task completati ma solo quelli assegnati all'utente stesso oppure quelli non assegnati.
 
-Per farlo aggiungiamo il seguente metodo all'oggetto _TodoTask_ nel file _models/task.py_ 
+Per farlo aggiungiamo il seguente metodo all'oggetto _TodoTask_ nel file _models/task.py_
 
 ```python
 def do_clear_done(self):

@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.121.1">
     
     <link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/png">
 
     <title>MenuItem e Actions :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1668612525" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1704211767" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1668612525" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1704211767" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612525"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1704211767"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612525"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612525"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1704211767"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1704211767"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612525"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1704211767"></script>
 
     
   </div>
@@ -1035,23 +1035,23 @@
 <p>Sono organizzati in una struttura ad albero. I menu radice (top-level) vengono listati nell&rsquo;elenco completo delle applicazioni, ogni applicazione deve quindi avere almeno un elemento del menu per poter essere visualizzata.</p>
 <p>Il primo sottolivello di menu crea il menu principale dell&rsquo;applicazione, i successivi vengono rappresentati come menu dropdown nei rispettivi padri.</p>
 <p>Un esempio di menu di secondo livello che abbiamo aggiunto con il nostro modulo <em>task_plus</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.menu&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;menu_todo_project&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>Projects<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;action&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;action_todo_project&#34;</span> <span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;parent_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;todo_app.menu_todo_task&#34;</span> <span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sequence&#34;</span> <span style="color:#a6e22e">eval=</span><span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#f92672">/&gt;</span>
-<span style="color:#f92672">&lt;/record&gt;</span>
-</code></pre></div><h2 id="window-actions">Window Actions</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.menu&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;menu_todo_project&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>Projects<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;action&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;action_todo_project&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;parent_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;todo_app.menu_todo_task&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sequence&#34;</span> <span style="color:#a6e22e">eval=</span><span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/record&gt;</span>
+</span></span></code></pre></div><h2 id="window-actions">Window Actions</h2>
 <p>Una <em>Window Action</em> comanda le azioni che possono essere compiute attraverso l&rsquo;interfaccia utente e solitamente vengono associate a dei <em>MenuItem</em> oppure a dei bottoni. Principalmente comunicano alla UI su quale tipo di modello andare a lavorare e quali viste del modello rendere disponibili all&rsquo;utente. Ad ogni azione può opzionalmente essere legato un <em>domain</em> e un <em>context</em> che andranno a modificare il comportamente specifico del sistema (vedi la <a href="/odoo.workshop/views/context_domain/">prossima sezione</a>)</p>
 <p>Sempre nel nostro modulo <em>task_plus</em> abbiamo legato al menu dei progetti questa action:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.actions.act_window&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;action_todo_project&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>Projects<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;res_model&#34;</span><span style="color:#f92672">&gt;</span>todo.project<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;view_mode&#34;</span><span style="color:#f92672">&gt;</span>tree,form<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;domain&#34;</span><span style="color:#f92672">&gt;</span>[]<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;context&#34;</span><span style="color:#f92672">&gt;</span>{}<span style="color:#f92672">&lt;/field&gt;</span>
-<span style="color:#f92672">&lt;/record&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.actions.act_window&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;action_todo_project&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>Projects<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;res_model&#34;</span><span style="color:#f92672">&gt;</span>todo.project<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;view_mode&#34;</span><span style="color:#f92672">&gt;</span>tree,form<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;domain&#34;</span><span style="color:#f92672">&gt;</span>[]<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;context&#34;</span><span style="color:#f92672">&gt;</span>{}<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/record&gt;</span>
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -1689,19 +1689,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1668612525"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1668612525"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1704211767"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1704211767"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612525"></script>
-    <script src="/odoo.workshop/js/learn.js?1668612525"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1668612525"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1704211767"></script>
+    <script src="/odoo.workshop/js/learn.js?1704211767"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1704211767"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1668612525"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1704211767"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

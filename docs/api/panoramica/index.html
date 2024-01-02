@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.121.1">
     
     <link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/png">
 
     <title>Panoramica :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1668612524" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1704211767" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1668612524" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1704211767" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612524"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1704211767"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612524"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612524"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1704211767"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1704211767"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612524"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1704211767"></script>
 
     
   </div>
@@ -1032,29 +1032,29 @@
         
 
 
-<p>Il server di Odoo fornisce un API esterna che può essere utilizzata da applicazioni terze per integrarsi. L&rsquo;API sono le stesse che utilizza il client web ufficiale di Odoo per funzionare. Quindi qualsiasi funzionalità utlizzata nel client web può essere utilizzita direttamente tramite API.</p>
+<p>Il server di Odoo fornisce un API esterna che può essere utilizzata da applicazioni terze per integrarsi. L&rsquo;API sono le stesse che utilizza il client web ufficiale di Odoo per funzionare. Quindi qualsiasi funzionalità utlizzata nel client web può essere utilizzata direttamente tramite API.</p>
 <p>Le API di Odoo supportano i protocolli XML-RPC e JSON-RPC, è quindi possibili scrivere integrazioni in qualsiasi linguaggio che supporti questi due protocolli. Per esempio nella <a href="https://www.odoo.com/documentation/11.0/webservices/odoo.html">documentazione ufficiale</a> ci sono esempi per: Python, PHP, Ruby e Java.</p>
 <p>Per questioni di chiarezza continueremo con i nostri esempi in Python. Inoltre faremo ricorso a una libreria python specifica che crea un&rsquo;astrazione sopra le API base per ricreare un&rsquo;interfaccia quanto più possibile a quella utilizzata direttamente all&rsquo;interno del framework.</p>
 <p>La libreria a cui faremo ricorso è <a href="https://pypi.org/project/OdooRPC/">OdooRPC</a></p>
 <p>Solitamente potete installarla nel vostro ambiente python con il comando</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pip install OdooRPC
-</code></pre></div><p>Per semplificare però gli esempi di questo corso, abbiamo aggiungo un comando specifico alla nostra immagine docker che ci permette di avviare una shell interattiva <em>ipython</em> con la libreria già installata. Per farlo apriamo un altro terminale e digitiamo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd odoo.dockerenv/
-$ docker compose run odoo ipython
-</code></pre></div><p>Ci comparirà quindi il seguente output:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-odoo<span style="color:#f92672">.</span>dockerenv (completed) <span style="color:#960050;background-color:#1e0010">$</span> docker compose run odoo ipython
-
-Starting odoodockerenv_postgres_1 <span style="color:#f92672">...</span> done
-Python <span style="color:#ae81ff">3.5.3</span> (default, Jan <span style="color:#ae81ff">19</span> <span style="color:#ae81ff">2017</span>, <span style="color:#ae81ff">14</span>:<span style="color:#ae81ff">11</span>:<span style="color:#ae81ff">04</span>) 
-Type <span style="color:#e6db74">&#39;copyright&#39;</span>, <span style="color:#e6db74">&#39;credits&#39;</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;license&#39;</span> <span style="color:#66d9ef">for</span> more information
-IPython <span style="color:#ae81ff">6.4.0</span> <span style="color:#f92672">--</span> An enhanced Interactive Python<span style="color:#f92672">.</span> Type <span style="color:#e6db74">&#39;?&#39;</span> <span style="color:#66d9ef">for</span> help<span style="color:#f92672">.</span>
-
-In [<span style="color:#ae81ff">1</span>]: <span style="color:#f92672">import</span> odoorpc
-
-In [<span style="color:#ae81ff">2</span>]: odoorpc
-Out[<span style="color:#ae81ff">2</span>]: <span style="color:#f92672">&lt;</span>module <span style="color:#e6db74">&#39;odoorpc&#39;</span> <span style="color:#f92672">from</span> <span style="color:#e6db74">&#39;/usr/local/lib/python3.5/dist-packages/odoorpc/__init__.py&#39;</span><span style="color:#f92672">&gt;</span>
-</code></pre></div><h3 id="continua">Continua</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pip install OdooRPC
+</span></span></code></pre></div><p>Per semplificare però gli esempi di questo corso, abbiamo aggiungo un comando specifico alla nostra immagine docker che ci permette di avviare una shell interattiva <em>ipython</em> con la libreria già installata. Per farlo apriamo un altro terminale e digitiamo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd odoo.dockerenv/
+</span></span><span style="display:flex;"><span>$ docker compose run odoo ipython
+</span></span></code></pre></div><p>Ci comparirà quindi il seguente output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>odoo<span style="color:#f92672">.</span>dockerenv (completed) <span style="color:#960050;background-color:#1e0010">$</span> docker compose run odoo ipython
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Starting odoodockerenv_postgres_1 <span style="color:#f92672">...</span> done
+</span></span><span style="display:flex;"><span>Python <span style="color:#ae81ff">3.5.3</span> (default, Jan <span style="color:#ae81ff">19</span> <span style="color:#ae81ff">2017</span>, <span style="color:#ae81ff">14</span>:<span style="color:#ae81ff">11</span>:<span style="color:#ae81ff">04</span>)
+</span></span><span style="display:flex;"><span>Type <span style="color:#e6db74">&#39;copyright&#39;</span>, <span style="color:#e6db74">&#39;credits&#39;</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;license&#39;</span> <span style="color:#66d9ef">for</span> more information
+</span></span><span style="display:flex;"><span>IPython <span style="color:#ae81ff">6.4.0</span> <span style="color:#f92672">--</span> An enhanced Interactive Python<span style="color:#f92672">.</span> Type <span style="color:#e6db74">&#39;?&#39;</span> <span style="color:#66d9ef">for</span> help<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In [<span style="color:#ae81ff">1</span>]: <span style="color:#f92672">import</span> odoorpc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In [<span style="color:#ae81ff">2</span>]: odoorpc
+</span></span><span style="display:flex;"><span>Out[<span style="color:#ae81ff">2</span>]: <span style="color:#f92672">&lt;</span>module <span style="color:#e6db74">&#39;odoorpc&#39;</span> <span style="color:#f92672">from</span> <span style="color:#e6db74">&#39;/usr/local/lib/python3.5/dist-packages/odoorpc/__init__.py&#39;</span><span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><h3 id="continua">Continua</h3>
 <p>A questo punto siamo in grado di effettuare le nostre chiamate, vediamo nel dettaglio <a href="/odoo.workshop/api/operazioni/">come procedere</a></p>
 
 
@@ -1694,19 +1694,19 @@ Out[<span style="color:#ae81ff">2</span>]: <span style="color:#f92672">&lt;</spa
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1668612525"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1668612525"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1704211767"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1704211767"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612525"></script>
-    <script src="/odoo.workshop/js/learn.js?1668612525"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1668612525"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1704211767"></script>
+    <script src="/odoo.workshop/js/learn.js?1704211767"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1704211767"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1668612525"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1704211767"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

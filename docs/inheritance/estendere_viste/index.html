@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.121.1">
     
     <link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/png">
 
     <title>Estendere le Viste :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1668612525" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1704211767" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1668612525" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1704211767" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612525"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1704211767"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612525"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612525"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1704211767"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1704211767"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612525"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1704211767"></script>
 
     
   </div>
@@ -1005,7 +1005,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#un-po-di-teoria">Un po' di teoria</a></li>
+        <li><a href="#un-po-di-teoria">Un po&rsquo; di teoria</a></li>
         <li><a href="#estendere-le-nostre-viste">Estendere le nostre viste</a></li>
         <li><a href="#estendere-la-form-view">Estendere la Form View</a></li>
         <li><a href="#estendere-la-list-view">Estendere la List View</a></li>
@@ -1037,34 +1037,34 @@
         
 
 
-<h3 id="un-po-di-teoria">Un po' di teoria</h3>
+<h3 id="un-po-di-teoria">Un po&rsquo; di teoria</h3>
 <p>Le viste Form, List e Search sono definite utilizzando la struttura XML <em>arch</em>. Per estenderle dobbiamo modificare quelle definizioni XML e farlo significa localizzare i tag XML che vogliamo cambiare e introdurre le nostre modifiche in quei punti.</p>
 <p>Cominciamo subito con un esempio di una vista che ne estende un&rsquo;altra:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-<span style="color:#f92672">&lt;odoo&gt;</span>
-    <span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_form_view_inherited&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.form<span style="color:#f92672">&lt;/field&gt;</span>
-        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
-        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;inherit_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;todo_app.todo_task_form_view&#34;</span> <span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;arch&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;xml&#34;</span><span style="color:#f92672">&gt;</span>
-            <span style="color:#75715e">&lt;!-- ...search and modify XML tags here ... --&gt;</span>
-        <span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;/record&gt;</span>
-<span style="color:#f92672">&lt;/odoo&gt;</span>
-</code></pre></div><p>Si nota che l&rsquo;unica differenza dalla dichiarazione di una vista normale è la presenza del compo <em>inherit_id</em> in cui si definisce l&rsquo;identificativo della vista che si vuole estendere.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;odoo&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_form_view_inherited&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.form<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;inherit_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;todo_app.todo_task_form_view&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;arch&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;xml&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&lt;!-- ...search and modify XML tags here ... --&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/record&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/odoo&gt;</span>
+</span></span></code></pre></div><p>Si nota che l&rsquo;unica differenza dalla dichiarazione di una vista normale è la presenza del compo <em>inherit_id</em> in cui si definisce l&rsquo;identificativo della vista che si vuole estendere.</p>
 <p>Il metodo standard per indicare gli elementi XML da modificare è utilizzare un espressione <a href="https://it.wikipedia.org/wiki/XPath">XPath</a> per identificare un
 elemento presente nella vista. Una volta identificato si può decidere che tipo di modifica apportare.</p>
 <p>Per fare un esempio, se nel nostro form del modello TodoTask volessimo aggiungere il campo <em>deadline_date</em> <strong>prima</strong> del campo <em>is_done</em> aggiungeremmo questa righa al nostro campo <em>arch</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- Locate is_done field with xpath and specify where to add new tags --&gt;</span> 
-<span style="color:#f92672">&lt;xpath</span> <span style="color:#a6e22e">expr=</span><span style="color:#e6db74">&#34;//field[@name]=&#39;is_done&#39;&#34;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;before&#34;</span><span style="color:#f92672">&gt;</span>
-   <span style="color:#75715e">&lt;!-- Add field deadline_date --&gt;</span>
-   <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;deadline_date&#34;</span><span style="color:#f92672">/&gt;</span>
-<span style="color:#f92672">&lt;/xpath&gt;</span>
-</code></pre></div><p>XPath è uno strumento molto potente ed espressivo, ma spesso troppo prolisso. In questo esempio, come nella maggior parte dei casi, il nostro intento è quello di localizzare uno specifico tag <em>field</em> all&rsquo;interno della vista, quindi le nostre espressioni xpath saranno spesso molto simili. Per semplificare il lavoro, Odoo fornisce una scorciatoia per questo tipo di espressione:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;is_done&#34;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;before&#34;</span><span style="color:#f92672">&gt;</span>
-   <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;deadline_date&#34;</span><span style="color:#f92672">/&gt;</span>
-<span style="color:#f92672">&lt;/field&gt;</span>
-</code></pre></div><p>Utilizzando xpath possiamo in compenso localizzare quasiasi altro tag all&rsquo;interno della vista come <em>&lt;sheet&gt;</em>, <em>&lt;form&gt;</em>, <em>&lt;group&gt;</em> ma anche i classsici <em>&lt;div&gt;</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Locate is_done field with xpath and specify where to add new tags --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;xpath</span> <span style="color:#a6e22e">expr=</span><span style="color:#e6db74">&#34;//field[@name]=&#39;is_done&#39;&#34;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;before&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">&lt;!-- Add field deadline_date --&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;deadline_date&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/xpath&gt;</span>
+</span></span></code></pre></div><p>XPath è uno strumento molto potente ed espressivo, ma spesso troppo prolisso. In questo esempio, come nella maggior parte dei casi, il nostro intento è quello di localizzare uno specifico tag <em>field</em> all&rsquo;interno della vista, quindi le nostre espressioni xpath saranno spesso molto simili. Per semplificare il lavoro, Odoo fornisce una scorciatoia per questo tipo di espressione:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;is_done&#34;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;before&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;deadline_date&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/field&gt;</span>
+</span></span></code></pre></div><p>Utilizzando xpath possiamo in compenso localizzare quasiasi altro tag all&rsquo;interno della vista come <em>&lt;sheet&gt;</em>, <em>&lt;form&gt;</em>, <em>&lt;group&gt;</em> ma anche i classici <em>&lt;div&gt;</em>.</p>
 <p>L&rsquo;attributo <em>position</em> può assumere diversi valori:</p>
 <ul>
 <li><strong>after</strong> aggiunge all&rsquo;elemnto padre, dopo il nodo indicato</li>
@@ -1084,99 +1084,98 @@ elemento presente nella vista. Una volta identificato si può decidere che tipo 
         __init__.py
         __manifest__.py
 </code></pre><p>Successivamente dobbiamo dichiarare il nuovo file aggiunto nel manifesto dell&rsquo;applicazione</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{
-    <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Multiuser TODO&#39;</span>,
-    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Estende la Todo app per farla diventare Multi Utente&#39;</span>,
-    <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Metadonors&#39;</span>,
-    <span style="color:#e6db74">&#39;license&#39;</span>: <span style="color:#e6db74">&#39;LGPL-3&#39;</span>,
-    <span style="color:#e6db74">&#39;depends&#39;</span>: [<span style="color:#e6db74">&#39;todo_app&#39;</span>],
-    
-    <span style="color:#75715e"># Add this section</span>
-    <span style="color:#e6db74">&#39;data&#39;</span>: [
-        <span style="color:#e6db74">&#39;views/task_views.xml&#39;</span>
-    ]
-}
-</code></pre></div><p>Inizializziamo il nostro file todo_task.xml con questo contenuto:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-<span style="color:#f92672">&lt;odoo&gt;</span>
-<span style="color:#f92672">&lt;/odoo&gt;</span>
-</code></pre></div><h3 id="estendere-la-form-view">Estendere la Form View</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Multiuser TODO&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Estende la Todo app per farla diventare Multi Utente&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Metadonors&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;license&#39;</span>: <span style="color:#e6db74">&#39;LGPL-3&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;depends&#39;</span>: [<span style="color:#e6db74">&#39;todo_app&#39;</span>],
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Add this section</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;data&#39;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;views/task_views.xml&#39;</span>
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Inizializziamo il nostro file todo_task.xml con questo contenuto:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;odoo&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/odoo&gt;</span>
+</span></span></code></pre></div><h3 id="estendere-la-form-view">Estendere la Form View</h3>
 <p>Per mettere insieme quello che abbiamo detto fin&rsquo;ora possiamo procedere a modificare la nostra Form View aggiungendo i campi nuovi e andando a nascondere il campo active. Aggiungiamo quindi la nostra vista ereditata dentro il tag &lt;odoo&gt; del file <em>task_task.xml</em>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_form_view_inherited&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.form<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;inherit_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;todo_app.todo_task_form_view&#34;</span><span style="color:#f92672">/&gt;</span>
-    
-    <span style="color:#75715e">&lt;!-- ...search and modify XML tags here... --&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;arch&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;xml&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#75715e">&lt;!-- After field &#39;name&#39; add field &#39;user_id&#39; --&gt;</span>
-        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;after&#34;</span><span style="color:#f92672">&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;user_id&#34;</span><span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;/field&gt;</span>
-
-        <span style="color:#75715e">&lt;!-- before field &#39;is_done&#39; add field deadline_date --&gt;</span>
-        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;is_done&#34;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;before&#34;</span><span style="color:#f92672">&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;deadline_date&#34;</span><span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;/field&gt;</span>
-
-        <span style="color:#75715e">&lt;!-- edit attributes of field &#39;active&#39; to make it invisible --&gt;</span>
-        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;active&#34;</span> <span style="color:#a6e22e">positiion=</span><span style="color:#e6db74">&#34;attributes&#34;</span><span style="color:#f92672">&gt;</span>
-            <span style="color:#f92672">&lt;attribute</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;invisible&#34;</span><span style="color:#f92672">&gt;</span>1<span style="color:#f92672">&lt;/attribute&gt;</span>
-        <span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;/field&gt;</span>
-<span style="color:#f92672">&lt;/record&gt;</span>
-</code></pre></div><p>Una volta effettuata la modifica possiamo aggiornare il nostro modulo con</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_form_view_inherited&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.form<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;inherit_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;todo_app.todo_task_form_view&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- ...search and modify XML tags here... --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;arch&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;xml&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- After field &#39;name&#39; add field &#39;user_id&#39; --&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;after&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;user_id&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- before field &#39;is_done&#39; add field deadline_date --&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;is_done&#34;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;before&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;deadline_date&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- edit attributes of field &#39;active&#39; to make it invisible --&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;active&#34;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;attributes&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;attribute</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;invisible&#34;</span><span style="color:#f92672">&gt;</span>1<span style="color:#f92672">&lt;/attribute&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/record&gt;</span>
+</span></span></code></pre></div><p>Una volta effettuata la modifica possiamo aggiornare il nostro modulo con</p>
 <pre tabindex="0"><code>$ docker compose run odoo upgrade todo_user
 </code></pre><p>ricaricare la pagine nel nostro browser e ottenere questo form</p>
 <p><img src="/odoo.workshop/screen/estendere_viste/form.png?width=60pc" alt="form"></p>
 <h3 id="estendere-la-list-view">Estendere la List View</h3>
 <p>Nello stesso modo procediamo a modificare la List View andando ad aggiungere il campo dell&rsquo;incaricato subito dopo il nome del task. Per farlo aggiungiamo un altro record al nostro file <em>task_task.xml</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_tree_view_inherited&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.tree<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;inherit_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;todo_app.todo_task_tree_view&#34;</span><span style="color:#f92672">/&gt;</span>
-    <span style="color:#75715e">&lt;!-- ...search and modify XML tags here... --&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;arch&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;xml&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#75715e">&lt;!-- After field &#39;name&#39; add field &#39;user_id&#39; --&gt;</span>
-        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;after&#34;</span><span style="color:#f92672">&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;user_id&#34;</span><span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;/field&gt;</span>
-<span style="color:#f92672">&lt;/record&gt;</span>
-</code></pre></div><p>aggiorniamo il nostro modulo con</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_tree_view_inherited&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.tree<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;inherit_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;todo_app.todo_task_tree_view&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- ...search and modify XML tags here... --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;arch&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;xml&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- After field &#39;name&#39; add field &#39;user_id&#39; --&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;after&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;user_id&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/record&gt;</span>
+</span></span></code></pre></div><p>aggiorniamo il nostro modulo con</p>
 <pre tabindex="0"><code>$ docker compose run odoo upgrade todo_user
 </code></pre><p>ricaricare la pagine nel nostro browser e visualizziamo la lista</p>
 <p><img src="/odoo.workshop/screen/estendere_viste/list.png?width=60pc" alt="list"></p>
 <h3 id="estendere-la-search-view">Estendere la Search View</h3>
 <p>Per finire aggiungiamo la possibilita di ricercare per utente nella nostra Search View</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_search_view_inherited&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.search<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;inherit_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;todo_app.todo_task_search_view&#34;</span><span style="color:#f92672">/&gt;</span>
-    <span style="color:#75715e">&lt;!-- ...search and modify XML tags here... --&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;arch&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;xml&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;after&#34;</span><span style="color:#f92672">&gt;</span>
-            <span style="color:#75715e">&lt;!-- Add field &#39;user_id&#39; to search--&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;user_id&#34;</span><span style="color:#f92672">/&gt;</span>
-
-            <span style="color:#75715e">&lt;!-- Add custom filter &#39;My tasks&#39; --&gt;</span>
-            <span style="color:#f92672">&lt;filter</span> 
-                <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;filter_my_tasks&#34;</span> 
-                <span style="color:#a6e22e">string=</span><span style="color:#e6db74">&#34;My tasks&#34;</span> 
-                <span style="color:#a6e22e">domain=</span><span style="color:#e6db74">&#34;[(&#39;user_id&#39;,&#39;=&#39;,uid)]&#34;</span> <span style="color:#f92672">/&gt;</span>
-            
-            <span style="color:#75715e">&lt;!-- Aggiungi il filtro predefinito &#34;Task non assegnati&#34; --&gt;</span>
-            <span style="color:#f92672">&lt;filter</span> 
-                <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;filter_not_assigned&#34;</span> 
-                <span style="color:#a6e22e">string=</span><span style="color:#e6db74">&#34;Not assigned&#34;</span> 
-                <span style="color:#a6e22e">domain=</span><span style="color:#e6db74">&#34;[(&#39;user_id&#39;,&#39;=&#39;, False)]&#34;</span> <span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;/field&gt;</span>
-<span style="color:#f92672">&lt;/record&gt;</span>
-
-</code></pre></div><p>aggiorniamo il nostro modulo con</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_search_view_inherited&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.search<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;inherit_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;todo_app.todo_task_search_view&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- ...search and modify XML tags here... --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;arch&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;xml&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">position=</span><span style="color:#e6db74">&#34;after&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&lt;!-- Add field &#39;user_id&#39; to search--&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;user_id&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&lt;!-- Add custom filter &#39;My tasks&#39; --&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;filter</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;filter_my_tasks&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">string=</span><span style="color:#e6db74">&#34;My tasks&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">domain=</span><span style="color:#e6db74">&#34;[(&#39;user_id&#39;,&#39;=&#39;,uid)]&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&lt;!-- Aggiungi il filtro predefinito &#34;Task non assegnati&#34; --&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;filter</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;filter_not_assigned&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">string=</span><span style="color:#e6db74">&#34;Not assigned&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">domain=</span><span style="color:#e6db74">&#34;[(&#39;user_id&#39;,&#39;=&#39;, False)]&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/record&gt;</span>
+</span></span></code></pre></div><p>aggiorniamo il nostro modulo con</p>
 <pre tabindex="0"><code>    $ docker compose run odoo upgrade todo_user
-</code></pre><p>ricaricare la pagine nel nostro browser e controlliamo come e' cambiato il form di ricerca</p>
+</code></pre><p>ricaricare la pagine nel nostro browser e controlliamo come e&rsquo; cambiato il form di ricerca</p>
 <p><img src="/odoo.workshop/screen/estendere_viste/search.png?width=60pc" alt="search"></p>
 <h3 id="continua">Continua</h3>
 <p>Ora possiamo continuare andando a vedere come modificare i <a href="/odoo.workshop/inheritance/estendere_dati/">dati dei moduli</a></p>
@@ -1821,19 +1820,19 @@ elemento presente nella vista. Una volta identificato si può decidere che tipo 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1668612525"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1668612525"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1704211767"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1704211767"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612525"></script>
-    <script src="/odoo.workshop/js/learn.js?1668612525"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1668612525"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1704211767"></script>
+    <script src="/odoo.workshop/js/learn.js?1704211767"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1704211767"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1668612525"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1704211767"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

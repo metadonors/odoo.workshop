@@ -6,60 +6,42 @@
     <description>Recent content in Estendere i moduli on Odoo Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-it</language>
-    <lastBuildDate>Wed, 27 Jun 2018 16:14:07 +0200</lastBuildDate><atom:link href="https://metadonors.github.io/odoo.workshop/inheritance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Jun 2018 16:14:07 +0200</lastBuildDate>
+    <atom:link href="https://metadonors.github.io/odoo.workshop/inheritance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Preambolo</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/teoria/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:19 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/teoria/</guid>
-      <description>Per apportare modifiche o aggiungere funzionalità ai moduli e alle applicazioni esistenti, Odoo ci mette a disposizione diversi strumenti in base a cosa e dove vogliamo intervenire.
-Odoo ha dai meccanismi interni specifici che si basano sul concetto di Ereditarietà. Tramite questi meccanismi e&#39; possibile modificare Modelli esistenti, Viste oppure Dati (come le regole di accesso).
-In questo capito andremo ad aggiungere una funzionalità all&amp;rsquo;applicazione Todo creata in precedenza. Attualmente ogni utente può lavorare solo sui suoi task, perchè non aggiungere qualche funzionalità di social networking come la possibilità di condividere i task e di commentarli con diversi utenti?</description>
+      <description>Per apportare modifiche o aggiungere funzionalità ai moduli e alle applicazioni esistenti, Odoo ci mette a disposizione diversi strumenti in base a cosa e dove vogliamo intervenire.&#xA;Odoo ha dai meccanismi interni specifici che si basano sul concetto di Ereditarietà. Tramite questi meccanismi e&amp;rsquo; possibile modificare Modelli esistenti, Viste oppure Dati (come le regole di accesso).&#xA;In questo capito andremo ad aggiungere una funzionalità all&amp;rsquo;applicazione Todo creata in precedenza. Attualmente ogni utente può lavorare solo sui suoi task, perchè non aggiungere qualche funzionalità di social networking come la possibilità di condividere i task e di commentarli con diversi utenti?</description>
     </item>
-    
     <item>
       <title>Estendere i Modelli</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/estendere_modelli/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:19 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_modelli/</guid>
-      <description>In Odoo i nuovi modelli, o le estensioni di quelli esistenti, si creano definendo delle classi Python specifiche. Il meccanismo di ereditarietà di Odoo non si base su quello delle classi Python, ma su un suo approccio interno che si basa sull&amp;rsquo;attributo _inherit specificato nella class.
-In base a come viene utilizzato si possono ottenere differeneti meccanismi di ereditarietà.
-Noi cominceremo con il più semplice dove la classe figlia eredita tutte le funzionalità del padre e dove noi possiamo semplicemente apportare le modifiche che ci interessano.</description>
+      <description>In Odoo i nuovi modelli, o le estensioni di quelli esistenti, si creano definendo delle classi Python specifiche. Il meccanismo di ereditarietà di Odoo non si base su quello delle classi Python, ma su un suo approccio interno che si basa sull&amp;rsquo;attributo _inherit specificato nella class.&#xA;In base a come viene utilizzato si possono ottenere differeneti meccanismi di ereditarietà.&#xA;Noi cominceremo con il più semplice dove la classe figlia eredita tutte le funzionalità del padre e dove noi possiamo semplicemente apportare le modifiche che ci interessano.</description>
     </item>
-    
     <item>
       <title>Estendere le Viste</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/estendere_viste/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:23 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_viste/</guid>
-      <description>Un po&#39; di teoria Le viste Form, List e Search sono definite utilizzando la struttura XML arch. Per estenderle dobbiamo modificare quelle definizioni XML e farlo significa localizzare i tag XML che vogliamo cambiare e introdurre le nostre modifiche in quei punti.
-Cominciamo subito con un esempio di una vista che ne estende un&amp;rsquo;altra:
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;odoo&amp;gt; &amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_form_view_inherited&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;inherit_id&amp;#34; ref=&amp;#34;todo_app.todo_task_form_view&amp;#34; /&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;!</description>
+      <description>Un po&amp;rsquo; di teoria Le viste Form, List e Search sono definite utilizzando la struttura XML arch. Per estenderle dobbiamo modificare quelle definizioni XML e farlo significa localizzare i tag XML che vogliamo cambiare e introdurre le nostre modifiche in quei punti.&#xA;Cominciamo subito con un esempio di una vista che ne estende un&amp;rsquo;altra:&#xA;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;odoo&amp;gt; &amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_form_view_inherited&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;inherit_id&amp;#34; ref=&amp;#34;todo_app.todo_task_form_view&amp;#34; /&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;!</description>
     </item>
-    
     <item>
       <title>Estendere i Dati</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/estendere_dati/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:25 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_dati/</guid>
-      <description>A differenza delle viste i file xml contenenti dati, come le action, i menu, oppure le security rules, non hanno l&amp;rsquo;elemento arch e non possono quindi essere modificati utilizzanto XPath. Ma possono comunque essere modificati, rimpiazzando i valori contenuti nei loro campi.
-Ogni volta che dichiariamo un &amp;lt;record id=&amp;ldquo;x&amp;rdquo; model=&amp;ldquo;y&amp;rdquo;&amp;gt; Odoo effettua una insert o una update nel database, quindi riutilizzando gli stessi id possiamo andare ad aggiornare i dati inseriti dai moduli genitori.</description>
+      <description>A differenza delle viste i file xml contenenti dati, come le action, i menu, oppure le security rules, non hanno l&amp;rsquo;elemento arch e non possono quindi essere modificati utilizzanto XPath. Ma possono comunque essere modificati, rimpiazzando i valori contenuti nei loro campi.&#xA;Ogni volta che dichiariamo un &amp;lt;record id=&amp;ldquo;x&amp;rdquo; model=&amp;ldquo;y&amp;rdquo;&amp;gt; Odoo effettua una insert o una update nel database, quindi riutilizzando gli stessi id possiamo andare ad aggiornare i dati inseriti dai moduli genitori.</description>
     </item>
-    
     <item>
       <title>Aggiungere funzionalità</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/aggiungere_funzionalita/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:25 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/aggiungere_funzionalita/</guid>
-      <description>Finora abbiamo visto come estendere applicazioni esistenti aggiungendo funzionalità create da noi. Ma Odoo permette di fare molto di più: possiamo aggiungere funzionalità implementate in moduli scritti da altre persone.
-Nel nostro caso vogliamo aggiugere la possibilità per gli utenti di commentare i task e di poterli seguire, alla maniera di Twitter. Questa funzionalità in Odoo è implementata nel modulo mail, più specificatamente nel modello mail.thread di quel modulo.
-Per aggiungerlo al nostro modello todo.</description>
+      <description>Finora abbiamo visto come estendere applicazioni esistenti aggiungendo funzionalità create da noi. Ma Odoo permette di fare molto di più: possiamo aggiungere funzionalità implementate in moduli scritti da altre persone.&#xA;Nel nostro caso vogliamo aggiugere la possibilità per gli utenti di commentare i task e di poterli seguire, alla maniera di Twitter. Questa funzionalità in Odoo è implementata nel modulo mail, più specificatamente nel modello mail.thread di quel modulo.&#xA;Per aggiungerlo al nostro modello todo.</description>
     </item>
-    
   </channel>
 </rss>

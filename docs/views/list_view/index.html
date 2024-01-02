@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.121.1">
     
     <link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/png">
 
     <title>List e Search View :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1668612525" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1704211767" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1668612525" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1704211767" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612525"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1704211767"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612525"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612525"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1704211767"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1704211767"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612525"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1704211767"></script>
 
     
   </div>
@@ -1036,17 +1036,17 @@
 
 <h2 id="le-liste">Le Liste</h2>
 <p>Come abbiamo vito le liste vengono rappresentate dal tipo <em>tree</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_tree_view&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.tree<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;arch&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;xml&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;tree</span> <span style="color:#a6e22e">decoration-muted=</span><span style="color:#e6db74">&#34;is_done==True&#34;</span><span style="color:#f92672">&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">/&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;is_done&#34;</span><span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;/tree&gt;</span>
-    <span style="color:#f92672">&lt;/field&gt;</span>
-<span style="color:#f92672">&lt;/record&gt;</span>
-</code></pre></div><p>L&rsquo;attributo <em>decoration-NAME</em> permette di passare un&rsquo;espressione Python che, se vera, modifica l&rsquo;aspetto della riga considerata. <em>NAME</em> puo' essere valorizzato come <em>bf</em> o <em>it</em> per renderizzare la riga in grassetto o corsivo, oppure può avere una classe Bootstrap per il colore del test <em>muted</em>, <em>info</em>, <em>danger</em> o <em>primary</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_tree_view&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.tree<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;arch&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;xml&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;tree</span> <span style="color:#a6e22e">decoration-muted=</span><span style="color:#e6db74">&#34;is_done==True&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;is_done&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/tree&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/record&gt;</span>
+</span></span></code></pre></div><p>L&rsquo;attributo <em>decoration-NAME</em> permette di passare un&rsquo;espressione Python che, se vera, modifica l&rsquo;aspetto della riga considerata. <em>NAME</em> puo&rsquo; essere valorizzato come <em>bf</em> o <em>it</em> per renderizzare la riga in grassetto o corsivo, oppure può avere una classe Bootstrap per il colore del test <em>muted</em>, <em>info</em>, <em>danger</em> o <em>primary</em>.</p>
 <p>Altri attributi utli sull&rsquo;elemento tree:</p>
 <ul>
 <li><strong>default_order</strong> permette di sovrascrivere il metodo di ordinamento di default dei dati visualizzati</li>
@@ -1056,26 +1056,26 @@
 <h2 id="le-ricerche">Le ricerche</h2>
 <p>Nelle ricerche possiamo scegliere su quali campi effettuare la ricerca di default quando digitiamo nell&rsquo;input in alto a sinistra, possiamo definire dei filtri predefiniti attivabili con un click e possiamo anche fornire delle regole di raggruppamento predefinite</p>
 <p>Ecco un esempio</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_search_view&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.search<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;arch&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;xml&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;search&gt;</span>
-            <span style="color:#75715e">&lt;!-- field that can be quickly searched in --&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">/&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;user_id&#34;</span><span style="color:#f92672">/&gt;</span>
-            
-            <span style="color:#75715e">&lt;!-- predefined filters --&gt;</span>
-            <span style="color:#f92672">&lt;filter</span> <span style="color:#a6e22e">string=</span><span style="color:#e6db74">&#34;Not Done&#34;</span> <span style="color:#a6e22e">domain=</span><span style="color:#e6db74">&#34;[(&#39;is_done&#39;,&#39;=&#39;,False)]&#34;</span><span style="color:#f92672">/&gt;</span>
-            <span style="color:#f92672">&lt;filter</span> <span style="color:#a6e22e">string=</span><span style="color:#e6db74">&#34;Done&#34;</span> <span style="color:#a6e22e">domain=</span><span style="color:#e6db74">&#34;[(&#39;is_done&#39;,&#39;!=&#39;,False)]&#34;</span><span style="color:#f92672">/&gt;</span>
-
-            <span style="color:#f92672">&lt;separator/&gt;</span>
-            <span style="color:#75715e">&lt;!-- predefined grouping --&gt;</span>
-            <span style="color:#f92672">&lt;filter</span> <span style="color:#a6e22e">string=</span><span style="color:#e6db74">&#34;By User&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;group_user&#39;</span> <span style="color:#a6e22e">context=</span><span style="color:#e6db74">&#34;{&#39;group_by&#39;: &#39;user_id&#39;}&#34;</span><span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;/search&gt;</span>
-    <span style="color:#f92672">&lt;/field&gt;</span>
-<span style="color:#f92672">&lt;/record&gt;</span>
-</code></pre></div><p>Abbiamo qui definito due campi su cui effettuare la ricerca libera <em>name</em> e <em>user_id</em>. Quando l&rsquo;utente comincerà a digitare nel campo di ricerca verrà fuori un menu a tendina che chiederà all&rsquo;utente su quale campo effettuare la ricerca.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.ui.view&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_search_view&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.search<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model&#34;</span><span style="color:#f92672">&gt;</span>todo.task<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;arch&#34;</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;xml&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;search&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&lt;!-- field that can be quickly searched in --&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;user_id&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&lt;!-- predefined filters --&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;filter</span> <span style="color:#a6e22e">string=</span><span style="color:#e6db74">&#34;Not Done&#34;</span> <span style="color:#a6e22e">domain=</span><span style="color:#e6db74">&#34;[(&#39;is_done&#39;,&#39;=&#39;,False)]&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;filter</span> <span style="color:#a6e22e">string=</span><span style="color:#e6db74">&#34;Done&#34;</span> <span style="color:#a6e22e">domain=</span><span style="color:#e6db74">&#34;[(&#39;is_done&#39;,&#39;!=&#39;,False)]&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;separator/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&lt;!-- predefined grouping --&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;filter</span> <span style="color:#a6e22e">string=</span><span style="color:#e6db74">&#34;By User&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#39;group_user&#39;</span> <span style="color:#a6e22e">context=</span><span style="color:#e6db74">&#34;{&#39;group_by&#39;: &#39;user_id&#39;}&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/search&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/record&gt;</span>
+</span></span></code></pre></div><p>Abbiamo qui definito due campi su cui effettuare la ricerca libera <em>name</em> e <em>user_id</em>. Quando l&rsquo;utente comincerà a digitare nel campo di ricerca verrà fuori un menu a tendina che chiederà all&rsquo;utente su quale campo effettuare la ricerca.</p>
 <p>Poi abbiamo definito due filtri predefiniti che filtrano sul valore dell&rsquo;attributo <em>is_done</em>, questi filtri sono attivabili indipendentemente uno dell&rsquo;altro e se attivi entrambi vengono applicati in <em>OR</em>. Se invece fossero divisi da un &lt;separator&gt; sarebbero applicati in <em>AND</em></p>
 <p>Il terzo tag <em>fitler</em> invece setta un raggruppamente modificanto il <em>context</em> della vista.</p>
 <h3 id="search-field">Search Field</h3>
@@ -1737,19 +1737,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1668612525"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1668612525"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1704211767"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1704211767"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612525"></script>
-    <script src="/odoo.workshop/js/learn.js?1668612525"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1668612525"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1704211767"></script>
+    <script src="/odoo.workshop/js/learn.js?1704211767"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1704211767"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1668612525"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1704211767"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

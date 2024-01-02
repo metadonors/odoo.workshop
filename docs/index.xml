@@ -6,307 +6,203 @@
     <description>Recent content in Index on Odoo Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-it</language>
-    <lastBuildDate>Wed, 27 Jun 2018 15:32:30 +0200</lastBuildDate><atom:link href="https://metadonors.github.io/odoo.workshop/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Jun 2018 15:32:30 +0200</lastBuildDate>
+    <atom:link href="https://metadonors.github.io/odoo.workshop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wizard</title>
       <link>https://metadonors.github.io/odoo.workshop/application_logic/wizard/</link>
       <pubDate>Mon, 02 Jul 2018 16:24:39 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/application_logic/wizard/</guid>
-      <description>I wizard sono uno strumento molto utile per fornire agli utenti un interfaccia per effettuare operazioni complesse sui dati. Per esempio chiedendogli dati aggiuntivi rispetto alle operazioni che stanno facendo oppure semplicemente per avere uno strumento di validazione delle operazioni da effettuare.
-Creare un wizard I wizard di solito risiedono nella cartella wizards/ all&amp;rsquo;interno dei moduli. Cominciamo a creare il nosto wizard nella cartella del modulo task_plus creando la seguente struttura</description>
+      <description>I wizard sono uno strumento molto utile per fornire agli utenti un interfaccia per effettuare operazioni complesse sui dati. Per esempio chiedendogli dati aggiuntivi rispetto alle operazioni che stanno facendo oppure semplicemente per avere uno strumento di validazione delle operazioni da effettuare.&#xA;Creare un wizard I wizard di solito risiedono nella cartella wizards/ all&amp;rsquo;interno dei moduli. Cominciamo a creare il nosto wizard nella cartella del modulo task_plus creando la seguente struttura</description>
     </item>
-    
     <item>
       <title>MenuItem e Actions</title>
       <link>https://metadonors.github.io/odoo.workshop/views/menu_actions/</link>
       <pubDate>Mon, 02 Jul 2018 16:17:22 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/views/menu_actions/</guid>
-      <description>Gli oggetti del Menu I MenuItem sono oggetti salvati nella modello ir.ui.menu and possono essere visualizzati nel menu tecnico:
-Settings -&amp;gt; Technical -&amp;gt; User Interface -&amp;gt; Menu Items
-Sono organizzati in una struttura ad albero. I menu radice (top-level) vengono listati nell&amp;rsquo;elenco completo delle applicazioni, ogni applicazione deve quindi avere almeno un elemento del menu per poter essere visualizzata.
-Il primo sottolivello di menu crea il menu principale dell&amp;rsquo;applicazione, i successivi vengono rappresentati come menu dropdown nei rispettivi padri.</description>
+      <description>Gli oggetti del Menu I MenuItem sono oggetti salvati nella modello ir.ui.menu and possono essere visualizzati nel menu tecnico:&#xA;Settings -&amp;gt; Technical -&amp;gt; User Interface -&amp;gt; Menu Items&#xA;Sono organizzati in una struttura ad albero. I menu radice (top-level) vengono listati nell&amp;rsquo;elenco completo delle applicazioni, ogni applicazione deve quindi avere almeno un elemento del menu per poter essere visualizzata.&#xA;Il primo sottolivello di menu crea il menu principale dell&amp;rsquo;applicazione, i successivi vengono rappresentati come menu dropdown nei rispettivi padri.</description>
     </item>
-    
     <item>
       <title>Panoramica</title>
       <link>https://metadonors.github.io/odoo.workshop/api/panoramica/</link>
       <pubDate>Mon, 02 Jul 2018 12:16:01 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/api/panoramica/</guid>
-      <description>Il server di Odoo fornisce un API esterna che può essere utilizzata da applicazioni terze per integrarsi. L&amp;rsquo;API sono le stesse che utilizza il client web ufficiale di Odoo per funzionare. Quindi qualsiasi funzionalità utlizzata nel client web può essere utilizzita direttamente tramite API.
-Le API di Odoo supportano i protocolli XML-RPC e JSON-RPC, è quindi possibili scrivere integrazioni in qualsiasi linguaggio che supporti questi due protocolli. Per esempio nella documentazione ufficiale ci sono esempi per: Python, PHP, Ruby e Java.</description>
+      <description>Il server di Odoo fornisce un API esterna che può essere utilizzata da applicazioni terze per integrarsi. L&amp;rsquo;API sono le stesse che utilizza il client web ufficiale di Odoo per funzionare. Quindi qualsiasi funzionalità utlizzata nel client web può essere utilizzata direttamente tramite API.&#xA;Le API di Odoo supportano i protocolli XML-RPC e JSON-RPC, è quindi possibili scrivere integrazioni in qualsiasi linguaggio che supporti questi due protocolli. Per esempio nella documentazione ufficiale ci sono esempi per: Python, PHP, Ruby e Java.</description>
     </item>
-    
     <item>
       <title>Preambolo</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/teoria/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:19 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/teoria/</guid>
-      <description>Per apportare modifiche o aggiungere funzionalità ai moduli e alle applicazioni esistenti, Odoo ci mette a disposizione diversi strumenti in base a cosa e dove vogliamo intervenire.
-Odoo ha dai meccanismi interni specifici che si basano sul concetto di Ereditarietà. Tramite questi meccanismi e&#39; possibile modificare Modelli esistenti, Viste oppure Dati (come le regole di accesso).
-In questo capito andremo ad aggiungere una funzionalità all&amp;rsquo;applicazione Todo creata in precedenza. Attualmente ogni utente può lavorare solo sui suoi task, perchè non aggiungere qualche funzionalità di social networking come la possibilità di condividere i task e di commentarli con diversi utenti?</description>
+      <description>Per apportare modifiche o aggiungere funzionalità ai moduli e alle applicazioni esistenti, Odoo ci mette a disposizione diversi strumenti in base a cosa e dove vogliamo intervenire.&#xA;Odoo ha dai meccanismi interni specifici che si basano sul concetto di Ereditarietà. Tramite questi meccanismi e&amp;rsquo; possibile modificare Modelli esistenti, Viste oppure Dati (come le regole di accesso).&#xA;In questo capito andremo ad aggiungere una funzionalità all&amp;rsquo;applicazione Todo creata in precedenza. Attualmente ogni utente può lavorare solo sui suoi task, perchè non aggiungere qualche funzionalità di social networking come la possibilità di condividere i task e di commentarli con diversi utenti?</description>
     </item>
-    
     <item>
       <title>Preambolo</title>
       <link>https://metadonors.github.io/odoo.workshop/models/preambolo/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:19 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/models/preambolo/</guid>
-      <description>Per andare a esplorare cosa possiamo fare con i nostri modelli prepariamoci prima un nuovo modulo che estende gli esistenti. Per analizzare come funzionano le relazioni aggiungeremo anche un paio di modelli.
- TodoProjects progetti per raggruppare i task TodoTag tag per poter classificare i vari task  Abbiamo gia&#39; un modulo preparato con queste modifiche, l&amp;rsquo;unica cosa che dobbiamo fare è scaricarlo nella nostra directory addons.
-Per farlo, da terminale, entriamo nella cartella addons</description>
+      <description>Per andare a esplorare cosa possiamo fare con i nostri modelli prepariamoci prima un nuovo modulo che estende gli esistenti. Per analizzare come funzionano le relazioni aggiungeremo anche un paio di modelli.&#xA;TodoProjects progetti per raggruppare i task TodoTag tag per poter classificare i vari task Abbiamo gia&amp;rsquo; un modulo preparato con queste modifiche, l&amp;rsquo;unica cosa che dobbiamo fare è scaricarlo nella nostra directory addons.&#xA;Per farlo, da terminale, entriamo nella cartella addons</description>
     </item>
-    
     <item>
       <title>Scaffolding</title>
       <link>https://metadonors.github.io/odoo.workshop/first_app/primo_modulo/</link>
       <pubDate>Wed, 27 Jun 2018 17:59:32 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/first_app/primo_modulo/</guid>
-      <description>In questa sezione andremo a creare il nostro primo modulo. L&amp;rsquo;applicazione d&amp;rsquo;esempio che creeremo durante il corso è una classica Todo App. Per realizzarla attraverseremo le classiche fasi di sviluppo di un applicazione Odoo.
-Lo scheletro del modulo Odoo offre un suo meccanismo di scaffolding piuttosto primitivo per creare nuovi moduli, è possibile visualizzare il suo funzionamento lanciando questo comando dalla cartella contente l&amp;rsquo;ambiente odoo.dockerenv:
-$ docker compose run odoo odoo scaffold --help Nella pratica ci sono altri strumenti utili per questo scopo come, mrbob con i template specifici per gli addon Odoo.</description>
+      <description>In questa sezione andremo a creare il nostro primo modulo. L&amp;rsquo;applicazione d&amp;rsquo;esempio che creeremo durante il corso è una classica Todo App. Per realizzarla attraverseremo le classiche fasi di sviluppo di un applicazione Odoo.&#xA;Lo scheletro del modulo Odoo offre un suo meccanismo di scaffolding piuttosto primitivo per creare nuovi moduli, è possibile visualizzare il suo funzionamento lanciando questo comando dalla cartella contente l&amp;rsquo;ambiente odoo.dockerenv:&#xA;$ docker compose run odoo odoo scaffold --help Nella pratica ci sono altri strumenti utili per questo scopo come, mrbob con i template specifici per gli addon Odoo.</description>
     </item>
-    
     <item>
       <title>Precorso</title>
       <link>https://metadonors.github.io/odoo.workshop/basics/precorso/</link>
       <pubDate>Wed, 27 Jun 2018 16:37:24 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/basics/precorso/</guid>
-      <description>Prima di arrivare al corso sarebbe opportuno avere già installati e funzionanti un edito di testo, Git, Docker e Docker Compose
-Editor di testo Non ci sono preferenze per l&amp;rsquo;editor di testo, ovviamente è opportuno usarne uno che aiuti a lavorare con codice python e javascript
-Un elenco di alcuni possibili editor:
- VSCode https://code.visualstudio.com/ Atom https://atom.io/ Sublime Text https://www.sublimetext.com/  Git L&amp;rsquo;installazione di Git varia in base al sistema operativo utilizzato, ecco come procedere:</description>
+      <description>Prima di arrivare al corso sarebbe opportuno avere già installati e funzionanti un edito di testo, Git, Docker e Docker Compose&#xA;Editor di testo Non ci sono preferenze per l&amp;rsquo;editor di testo, ovviamente è opportuno usarne uno che aiuti a lavorare con codice python e javascript&#xA;Un elenco di alcuni possibili editor:&#xA;VSCode https://code.visualstudio.com/ Atom https://atom.io/ Sublime Text https://www.sublimetext.com/ Git L&amp;rsquo;installazione di Git varia in base al sistema operativo utilizzato, ecco come procedere:</description>
     </item>
-    
     <item>
       <title>Usare l&#39;ORM</title>
       <link>https://metadonors.github.io/odoo.workshop/application_logic/usare_orm/</link>
       <pubDate>Mon, 02 Jul 2018 16:24:21 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/application_logic/usare_orm/</guid>
-      <description>Fino a questo punto abbiamo utilizzato l&amp;rsquo;ORM di Odoo senza scendere nel dettaglio su come funziona. Ora andiamo a vedere quali sono i suoi principali componenti
-Decoratori Abbiamo notato che a molti metodi dei modelli viene applicato un decoratore come @api.multi. Questi decorati hanno lo scopo di istruire il backend su come gestire i metodi rispetto alle API esposte.
-Il decoratore @api.model invece si utilizza per decorare metodi statici in cui il self non fa rifermento a nessuna entità in particolare.</description>
+      <description>Fino a questo punto abbiamo utilizzato l&amp;rsquo;ORM di Odoo senza scendere nel dettaglio su come funziona. Ora andiamo a vedere quali sono i suoi principali componenti&#xA;Decoratori Abbiamo notato che a molti metodi dei modelli viene applicato un decoratore come @api.multi. Questi decorati hanno lo scopo di istruire il backend su come gestire i metodi rispetto alle API esposte.&#xA;Il decoratore @api.model invece si utilizza per decorare metodi statici in cui il self non fa rifermento a nessuna entità in particolare.</description>
     </item>
-    
     <item>
       <title>Context e Domain</title>
       <link>https://metadonors.github.io/odoo.workshop/views/context_domain/</link>
       <pubDate>Mon, 02 Jul 2018 16:17:28 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/views/context_domain/</guid>
-      <description>Più volte durante il corso siamo inciampati su context e domain. Abbiamo visto che possono essere legati alle azioni, ma anche usati durante le interrogazioni del database. Vediamo più nel dettaglio che cosa sono.
-Context Il context è un dizionario Python contenente dati che vengono mantenuti durante la sessione e che possono essere utilizzati sia dal client per renderizzare diversi componente della UI, sia dal server per modificare la logica applicativa</description>
+      <description>Più volte durante il corso siamo inciampati su context e domain. Abbiamo visto che possono essere legati alle azioni, ma anche usati durante le interrogazioni del database. Vediamo più nel dettaglio che cosa sono.&#xA;Context Il context è un dizionario Python contenente dati che vengono mantenuti durante la sessione e che possono essere utilizzati sia dal client per renderizzare diversi componente della UI, sia dal server per modificare la logica applicativa</description>
     </item>
-    
     <item>
       <title>Operazioni</title>
       <link>https://metadonors.github.io/odoo.workshop/api/operazioni/</link>
       <pubDate>Mon, 02 Jul 2018 12:16:04 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/api/operazioni/</guid>
-      <description>La documentazione ufficiale ci illustra come procedere ad interrogare le API utilizzando direttamente le librerie XMLRPC disponibili nei vari linguaggi. In questa sezione invece analizziamo come interfacciarci alla nostra applicazione tramite una libreria di più altro livello, che semplifica e ottimizza le nostre chiamate.
-Login Per effettuare qualsiasi tipo di operazione tramite API è necessario per prima cosa autenticarsi. L&amp;rsquo;autenticazione tramite API avviene utilizzando tre informazioni: username, password e nome del database dei riferimento.</description>
+      <description>La documentazione ufficiale ci illustra come procedere ad interrogare le API utilizzando direttamente le librerie XMLRPC disponibili nei vari linguaggi. In questa sezione invece analizziamo come interfacciarci alla nostra applicazione tramite una libreria di più altro livello, che semplifica e ottimizza le nostre chiamate.&#xA;Login Per effettuare qualsiasi tipo di operazione tramite API è necessario per prima cosa autenticarsi. L&amp;rsquo;autenticazione tramite API avviene utilizzando tre informazioni: username, password e nome del database dei riferimento.</description>
     </item>
-    
     <item>
       <title>Campi Base</title>
       <link>https://metadonors.github.io/odoo.workshop/models/campi_base/</link>
       <pubDate>Thu, 28 Jun 2018 16:52:23 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/models/campi_base/</guid>
-      <description>L&#39;ORM di Odoo permette di creare modelli complessi composti da attributi basa su tipi di campi semplici. Questi campi mappano direttamente sul database e, in base al tipo, possono avere comportamenti differenti a livello di interfaccia utente. I campi di testo verranno renderizzati come semplici tag &amp;lt;input&amp;gt;, le date presenteranon un calendario, le selezioni multiple un tag &amp;lt;select&amp;gt; e così via.
-Tipi di Campi Ogni tipo di campo ha può accettare una serie di parametri che variano il suo comportamento.</description>
+      <description>L&amp;rsquo;ORM di Odoo permette di creare modelli complessi composti da attributi basa su tipi di campi semplici. Questi campi mappano direttamente sul database e, in base al tipo, possono avere comportamenti differenti a livello di interfaccia utente. I campi di testo verranno renderizzati come semplici tag &amp;lt;input&amp;gt;, le date presenteranon un calendario, le selezioni multiple un tag &amp;lt;select&amp;gt; e così via.&#xA;Tipi di Campi Ogni tipo di campo ha può accettare una serie di parametri che variano il suo comportamento.</description>
     </item>
-    
     <item>
       <title>Estendere i Modelli</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/estendere_modelli/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:19 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_modelli/</guid>
-      <description>In Odoo i nuovi modelli, o le estensioni di quelli esistenti, si creano definendo delle classi Python specifiche. Il meccanismo di ereditarietà di Odoo non si base su quello delle classi Python, ma su un suo approccio interno che si basa sull&amp;rsquo;attributo _inherit specificato nella class.
-In base a come viene utilizzato si possono ottenere differeneti meccanismi di ereditarietà.
-Noi cominceremo con il più semplice dove la classe figlia eredita tutte le funzionalità del padre e dove noi possiamo semplicemente apportare le modifiche che ci interessano.</description>
+      <description>In Odoo i nuovi modelli, o le estensioni di quelli esistenti, si creano definendo delle classi Python specifiche. Il meccanismo di ereditarietà di Odoo non si base su quello delle classi Python, ma su un suo approccio interno che si basa sull&amp;rsquo;attributo _inherit specificato nella class.&#xA;In base a come viene utilizzato si possono ottenere differeneti meccanismi di ereditarietà.&#xA;Noi cominceremo con il più semplice dove la classe figlia eredita tutte le funzionalità del padre e dove noi possiamo semplicemente apportare le modifiche che ci interessano.</description>
     </item>
-    
     <item>
       <title>I modelli</title>
       <link>https://metadonors.github.io/odoo.workshop/first_app/primo_modello/</link>
       <pubDate>Thu, 28 Jun 2018 10:36:46 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/first_app/primo_modello/</guid>
-      <description>Ora che abbiamo la nostra prima applicazione iniziamo ad aggiungere un semplice modello.
-I modelli sono la M del paradigma MVC, rappresento i dati su cui la nostra applicazione lavora. Sono dei modelli i Prodotti, le Fatture, i Clienti, etc.
-I modelli sono descritti da classi Python che ereditano da una classe generica del framework Odoo le loro funzionalità base. Il loro compito principale è quello di tradurre il loro schema sulle tabelle del database.</description>
+      <description>Ora che abbiamo la nostra prima applicazione iniziamo ad aggiungere un semplice modello.&#xA;I modelli sono la M del paradigma MVC, rappresento i dati su cui la nostra applicazione lavora. Sono dei modelli i Prodotti, le Fatture, i Clienti, etc.&#xA;I modelli sono descritti da classi Python che ereditano da una classe generica del framework Odoo le loro funzionalità base. Il loro compito principale è quello di tradurre il loro schema sulle tabelle del database.</description>
     </item>
-    
     <item>
       <title>Installazione</title>
       <link>https://metadonors.github.io/odoo.workshop/basics/installazione/</link>
       <pubDate>Wed, 27 Jun 2018 15:33:28 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/basics/installazione/</guid>
-      <description>Una volta installati gli strumenti di sviluppo come descritto nella sezione Precorso possiamo procedere ad installare l&amp;rsquo;ambiente di odoo che utilizzeremo in questo corso.
-Installazione dell&amp;rsquo;ambiente di sviluppo Scaricate l&amp;rsquo;ambiente docker che utilizzeremo dal github in una cartella sul nostro computer. Aprite un terminale e digitate:
-$ git clone https://github.com/metadonors/odoo.docker.git Entriamo nella cartella appena scaricata:
-$ cd odoo.docker Inizializziamo il database di Odoo
-$ docker compose run odoo upgrade base Compose comincerà a scaricare tutte le nostre dipendenze, ,a procedura può durare diversi minuti in base alla connessione a internet disponibile.</description>
+      <description>Una volta installati gli strumenti di sviluppo come descritto nella sezione Precorso possiamo procedere ad installare l&amp;rsquo;ambiente di odoo che utilizzeremo in questo corso.&#xA;Installazione dell&amp;rsquo;ambiente di sviluppo Scaricate l&amp;rsquo;ambiente docker che utilizzeremo dal github in una cartella sul nostro computer. Aprite un terminale e digitate:&#xA;$ git clone https://github.com/metadonors/odoo.docker.git Entriamo nella cartella appena scaricata:&#xA;$ cd odoo.docker Inizializziamo il database di Odoo&#xA;$ docker compose run odoo upgrade base Compose comincerà a scaricare tutte le nostre dipendenze, la procedura può durare diversi minuti in base alla connessione a internet disponibile.</description>
     </item>
-    
     <item>
       <title>Form View</title>
       <link>https://metadonors.github.io/odoo.workshop/views/form_view/</link>
       <pubDate>Mon, 02 Jul 2018 16:17:37 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/views/form_view/</guid>
-      <description>Struttura Le applicazioni Business-oriented spesso sono costituite da insiemi di record - i rpodotti in magazzino, le fatture della contabilità, etc. La maggior parte di questi tipi di dati può essere rappresentato come un documento di carta. Odoo quindi riutilizza questa astrazione per rappresentare i suoi record.
-Questa è la struttura generale di un record Odoo
-&amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_form_view&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;form string=&amp;#34;ToDo task Form&amp;#34;&amp;gt; &amp;lt;header&amp;gt; &amp;lt;!</description>
+      <description>Struttura Le applicazioni Business-oriented spesso sono costituite da insiemi di record - i rpodotti in magazzino, le fatture della contabilità, etc. La maggior parte di questi tipi di dati può essere rappresentato come un documento di carta. Odoo quindi riutilizza questa astrazione per rappresentare i suoi record.&#xA;Questa è la struttura generale di un record Odoo&#xA;&amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_form_view&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;form string=&amp;#34;ToDo task Form&amp;#34;&amp;gt; &amp;lt;header&amp;gt; &amp;lt;!</description>
     </item>
-    
     <item>
       <title>Relazioni</title>
       <link>https://metadonors.github.io/odoo.workshop/models/relazioni/</link>
       <pubDate>Thu, 28 Jun 2018 16:52:26 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/models/relazioni/</guid>
-      <description>Abbiamo visto come lavoare con tipi di campi non relazionali, ma nelle applicazioni reali una buona parte delle strutture dati descrivono relazioni fra le entità. L&amp;rsquo;ORM di Odoo è in grado di gestire i vari tipi di relazioni fra oggetti, mettendo a disposizione un set di funzionalità pronte all&amp;rsquo;uso.
-Per avere chiaro cosa stiamo per fare, chiariamo cosa vogliamo costruire. Finora abbiamo lavorato con l&amp;rsquo;oggetto TodoTask. Adesso aggiungeremo il modello TodoProject che raggruppa i Task, e il modello TodoTag che li classifica.</description>
+      <description>Abbiamo visto come lavoare con tipi di campi non relazionali, ma nelle applicazioni reali una buona parte delle strutture dati descrivono relazioni fra le entità. L&amp;rsquo;ORM di Odoo è in grado di gestire i vari tipi di relazioni fra oggetti, mettendo a disposizione un set di funzionalità pronte all&amp;rsquo;uso.&#xA;Per avere chiaro cosa stiamo per fare, chiariamo cosa vogliamo costruire. Finora abbiamo lavorato con l&amp;rsquo;oggetto TodoTask. Adesso aggiungeremo il modello TodoProject che raggruppa i Task, e il modello TodoTag che li classifica.</description>
     </item>
-    
     <item>
       <title>Estendere le Viste</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/estendere_viste/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:23 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_viste/</guid>
-      <description>Un po&#39; di teoria Le viste Form, List e Search sono definite utilizzando la struttura XML arch. Per estenderle dobbiamo modificare quelle definizioni XML e farlo significa localizzare i tag XML che vogliamo cambiare e introdurre le nostre modifiche in quei punti.
-Cominciamo subito con un esempio di una vista che ne estende un&amp;rsquo;altra:
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;odoo&amp;gt; &amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_form_view_inherited&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;inherit_id&amp;#34; ref=&amp;#34;todo_app.todo_task_form_view&amp;#34; /&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;!</description>
+      <description>Un po&amp;rsquo; di teoria Le viste Form, List e Search sono definite utilizzando la struttura XML arch. Per estenderle dobbiamo modificare quelle definizioni XML e farlo significa localizzare i tag XML che vogliamo cambiare e introdurre le nostre modifiche in quei punti.&#xA;Cominciamo subito con un esempio di una vista che ne estende un&amp;rsquo;altra:&#xA;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;odoo&amp;gt; &amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_form_view_inherited&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;inherit_id&amp;#34; ref=&amp;#34;todo_app.todo_task_form_view&amp;#34; /&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;!</description>
     </item>
-    
     <item>
       <title>Le viste</title>
       <link>https://metadonors.github.io/odoo.workshop/first_app/prime_viste/</link>
       <pubDate>Thu, 28 Jun 2018 10:38:52 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/first_app/prime_viste/</guid>
-      <description>Le viste descrivono l&amp;rsquo;interfaccia utente. Ogni vista è strutturata in un file XML, che viene utilizzato dal client web per generare le pagine HTML in grado di gestire i dati generati dal nostro backend.
-Nelle viste abbiamo dei menu item che ci permettono di attivare funzionalità o navigazione scatenando delle actions. Per esempio, il menu item Users processa una action chiamata anchessa Users, che renderizza le viste per la gestione degli utenti.</description>
+      <description>Le viste descrivono l&amp;rsquo;interfaccia utente. Ogni vista è strutturata in un file XML, che viene utilizzato dal client web per generare le pagine HTML in grado di gestire i dati generati dal nostro backend.&#xA;Nelle viste abbiamo dei menu item che ci permettono di attivare funzionalità o navigazione scatenando delle actions. Per esempio, il menu item Users processa una action chiamata anchessa Users, che renderizza le viste per la gestione degli utenti.</description>
     </item>
-    
     <item>
       <title>Concetti Base</title>
       <link>https://metadonors.github.io/odoo.workshop/basics/concetti/</link>
       <pubDate>Wed, 27 Jun 2018 23:17:43 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/basics/concetti/</guid>
-      <description>Prima di cominciare è necessario affrontare un po&#39; di teoria che sta alla base del framework Odoo. Odoo è un framework applicativo modulare, i suoi principali componenti sono i moduli e le applicazioni.
-Moduli I moduli sono i componenti essenziali che possono essere aggiunti a Odoo. Ogni modulo può implementare nuove funzionalità oppure modificare quelle esistenti. Ogni modulo è costituito da una cartella contenente un file __manifest.py__ più altri file che implementano le sue funzionalità.</description>
+      <description>Prima di cominciare è necessario affrontare un po&amp;rsquo; di teoria che sta alla base del framework Odoo. Odoo è un framework applicativo modulare, i suoi principali componenti sono i moduli e le applicazioni.&#xA;Moduli I moduli sono i componenti essenziali che possono essere aggiunti a Odoo. Ogni modulo può implementare nuove funzionalità oppure modificare quelle esistenti. Ogni modulo è costituito da una cartella contenente un file __manifest.py__ più altri file che implementano le sue funzionalità.</description>
     </item>
-    
     <item>
       <title>List e Search View</title>
       <link>https://metadonors.github.io/odoo.workshop/views/list_view/</link>
       <pubDate>Mon, 02 Jul 2018 16:17:53 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/views/list_view/</guid>
-      <description>Le Liste Come abbiamo vito le liste vengono rappresentate dal tipo tree
-&amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_tree_view&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.tree&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;tree decoration-muted=&amp;#34;is_done==True&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;/&amp;gt; &amp;lt;field name=&amp;#34;is_done&amp;#34;/&amp;gt; &amp;lt;/tree&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/record&amp;gt; L&amp;rsquo;attributo decoration-NAME permette di passare un&amp;rsquo;espressione Python che, se vera, modifica l&amp;rsquo;aspetto della riga considerata. NAME puo&#39; essere valorizzato come bf o it per renderizzare la riga in grassetto o corsivo, oppure può avere una classe Bootstrap per il colore del test muted, info, danger o primary.</description>
+      <description>Le Liste Come abbiamo vito le liste vengono rappresentate dal tipo tree&#xA;&amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_tree_view&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.tree&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;tree decoration-muted=&amp;#34;is_done==True&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;/&amp;gt; &amp;lt;field name=&amp;#34;is_done&amp;#34;/&amp;gt; &amp;lt;/tree&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/record&amp;gt; L&amp;rsquo;attributo decoration-NAME permette di passare un&amp;rsquo;espressione Python che, se vera, modifica l&amp;rsquo;aspetto della riga considerata. NAME puo&amp;rsquo; essere valorizzato come bf o it per renderizzare la riga in grassetto o corsivo, oppure può avere una classe Bootstrap per il colore del test muted, info, danger o primary.</description>
     </item>
-    
     <item>
       <title>Computed Fields</title>
       <link>https://metadonors.github.io/odoo.workshop/models/computed_fields/</link>
       <pubDate>Thu, 28 Jun 2018 16:52:30 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/models/computed_fields/</guid>
-      <description>Tutti i campi che abbiamo definito fin qui sono gestiti manualmente. L&amp;rsquo;utente entra in modalità modifica di un oggetto, aggiorna i valori e preme salva. Oddo permette però di avere altri campi il cui valore non viene definito direttamente dall&amp;rsquo;utente ma viene invece calcola attraverso una funzione.
-Computed fields Un computed field viene dichiarato esattamente come i campi normali con l&amp;rsquo;unica differenza di avere un parametro compute che indica la funzione che Odoo utilizzerà per calcolarne il valore.</description>
+      <description>Tutti i campi che abbiamo definito fin qui sono gestiti manualmente. L&amp;rsquo;utente entra in modalità modifica di un oggetto, aggiorna i valori e preme salva. Oddo permette però di avere altri campi il cui valore non viene definito direttamente dall&amp;rsquo;utente ma viene invece calcola attraverso una funzione.&#xA;Computed fields Un computed field viene dichiarato esattamente come i campi normali con l&amp;rsquo;unica differenza di avere un parametro compute che indica la funzione che Odoo utilizzerà per calcolarne il valore.</description>
     </item>
-    
     <item>
       <title>Estendere i Dati</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/estendere_dati/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:25 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/estendere_dati/</guid>
-      <description>A differenza delle viste i file xml contenenti dati, come le action, i menu, oppure le security rules, non hanno l&amp;rsquo;elemento arch e non possono quindi essere modificati utilizzanto XPath. Ma possono comunque essere modificati, rimpiazzando i valori contenuti nei loro campi.
-Ogni volta che dichiariamo un &amp;lt;record id=&amp;ldquo;x&amp;rdquo; model=&amp;ldquo;y&amp;rdquo;&amp;gt; Odoo effettua una insert o una update nel database, quindi riutilizzando gli stessi id possiamo andare ad aggiornare i dati inseriti dai moduli genitori.</description>
+      <description>A differenza delle viste i file xml contenenti dati, come le action, i menu, oppure le security rules, non hanno l&amp;rsquo;elemento arch e non possono quindi essere modificati utilizzanto XPath. Ma possono comunque essere modificati, rimpiazzando i valori contenuti nei loro campi.&#xA;Ogni volta che dichiariamo un &amp;lt;record id=&amp;ldquo;x&amp;rdquo; model=&amp;ldquo;y&amp;rdquo;&amp;gt; Odoo effettua una insert o una update nel database, quindi riutilizzando gli stessi id possiamo andare ad aggiornare i dati inseriti dai moduli genitori.</description>
     </item>
-    
     <item>
       <title>La logica</title>
       <link>https://metadonors.github.io/odoo.workshop/first_app/prima_funzione/</link>
       <pubDate>Thu, 28 Jun 2018 10:38:58 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/first_app/prima_funzione/</guid>
-      <description>A questo punto è arrivato il momento di aggiungere della logica applicativa al nostro modulo. Per farlo possiamo sfruttare i bottoni che abbiamo aggiunto nella sezione precedente relativa alle viste.
-Aggiungere la logica applicativa Nella precedente sezione abbiamo aggiunto due bottoni per invocare delle funzioni Python sul nostro backend. Riporto qui il codice interessato per comodità.
-&amp;lt;button name=&amp;#34;do_toggle_button&amp;#34; type=&amp;#34;object&amp;#34; string=&amp;#34;Toggle Done&amp;#34; class=&amp;#34;oe_highlight&amp;#34;/&amp;gt; In questo tag stiamo definendo alcuni attributi, vediamoli nel dettaglio:</description>
+      <description>A questo punto è arrivato il momento di aggiungere della logica applicativa al nostro modulo. Per farlo possiamo sfruttare i bottoni che abbiamo aggiunto nella sezione precedente relativa alle viste.&#xA;Aggiungere la logica applicativa Nella precedente sezione abbiamo aggiunto due bottoni per invocare delle funzioni Python sul nostro backend. Riporto qui il codice interessato per comodità.&#xA;&amp;lt;button name=&amp;#34;do_toggle_button&amp;#34; type=&amp;#34;object&amp;#34; string=&amp;#34;Toggle Done&amp;#34; class=&amp;#34;oe_highlight&amp;#34;/&amp;gt; In questo tag stiamo definendo alcuni attributi, vediamoli nel dettaglio:</description>
     </item>
-    
     <item>
       <title>Pivot e Graph View</title>
       <link>https://metadonors.github.io/odoo.workshop/views/graph_pivot_views/</link>
       <pubDate>Mon, 02 Jul 2018 16:18:06 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/views/graph_pivot_views/</guid>
-      <description>Pivot I pivot sono un potente strumento di analisi dei dati fornito da Odoo. Una vista pivot rappresenta i dati in una matrice dinamica.
-Un esempio di vista Pivot
-&amp;lt;record id=&amp;#39;view_pivot_todo_task&amp;#39; model=&amp;#39;ir.ui.view&amp;#39;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.pivot&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#39;arch&amp;#39; type=&amp;#39;xml&amp;#39;&amp;gt; &amp;lt;pivot&amp;gt; &amp;lt;field name=&amp;#34;user_id&amp;#34; type=&amp;#39;col&amp;#39;&amp;gt; &amp;lt;field name=&amp;#34;work_hours&amp;#34; type=&amp;#39;measure&amp;#39;&amp;gt; &amp;lt;/pivot&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/record&amp;gt; Graph Le Graph View rappresentano i dati in forma di grafici
-Un esempio
-&amp;lt;record id=&amp;#39;view_graph_todo_task&amp;#39; model=&amp;#39;ir.ui.view&amp;#39;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.graph&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#39;arch&amp;#39; type=&amp;#39;xml&amp;#39;&amp;gt; &amp;lt;graph&amp;gt; &amp;lt;field name=&amp;#34;work_hours&amp;#34; type=&amp;#39;measure&amp;#39;&amp;gt; &amp;lt;/graph&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/record&amp;gt; </description>
+      <description>Pivot I pivot sono un potente strumento di analisi dei dati fornito da Odoo. Una vista pivot rappresenta i dati in una matrice dinamica.&#xA;Un esempio di vista Pivot&#xA;&amp;lt;record id=&amp;#39;view_pivot_todo_task&amp;#39; model=&amp;#39;ir.ui.view&amp;#39;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.pivot&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#39;arch&amp;#39; type=&amp;#39;xml&amp;#39;&amp;gt; &amp;lt;pivot&amp;gt; &amp;lt;field name=&amp;#34;user_id&amp;#34; type=&amp;#39;col&amp;#39;&amp;gt; &amp;lt;field name=&amp;#34;work_hours&amp;#34; type=&amp;#39;measure&amp;#39;&amp;gt; &amp;lt;/pivot&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/record&amp;gt; Graph Le Graph View rappresentano i dati in forma di grafici&#xA;Un esempio&#xA;&amp;lt;record id=&amp;#39;view_graph_todo_task&amp;#39; model=&amp;#39;ir.ui.view&amp;#39;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.graph&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#39;arch&amp;#39; type=&amp;#39;xml&amp;#39;&amp;gt; &amp;lt;graph&amp;gt; &amp;lt;field name=&amp;#34;work_hours&amp;#34; type=&amp;#39;measure&amp;#39;&amp;gt; &amp;lt;/graph&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/record&amp;gt; </description>
     </item>
-    
     <item>
       <title>Vincoli</title>
       <link>https://metadonors.github.io/odoo.workshop/models/vincoli/</link>
       <pubDate>Thu, 28 Jun 2018 16:52:30 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/models/vincoli/</guid>
-      <description>Per assicurare l&amp;rsquo;integrità dei nostri dati Odoo ci fornisce due strumenti principali che possiamo applicare ai nostri modelli: Vincoli SQL e Vincoli Python.
-Vincoli SQL I vincoli SQL sono aggunti direttamente alla definizione della tabella a livello di database e sono controllati quindi direttamente da PostgreSQL. Una volta configurati non sarà quindi possibile creare eccezioni per aggirarli.
-Per configurare un vincolo sql si aggiunge un attributo sql_constraints che è un alista di tuple, in ogni tupla viene espresso l&amp;rsquo;identificatore del vincolo, il codice SQL per il vincolo e il messaggio di errore da usare.</description>
+      <description>Per assicurare l&amp;rsquo;integrità dei nostri dati Odoo ci fornisce due strumenti principali che possiamo applicare ai nostri modelli: Vincoli SQL e Vincoli Python.&#xA;Vincoli SQL I vincoli SQL sono aggunti direttamente alla definizione della tabella a livello di database e sono controllati quindi direttamente da PostgreSQL. Una volta configurati non sarà quindi possibile creare eccezioni per aggirarli.&#xA;Per configurare un vincolo sql si aggiunge un attributo sql_constraints che è un alista di tuple, in ogni tupla viene espresso l&amp;rsquo;identificatore del vincolo, il codice SQL per il vincolo e il messaggio di errore da usare.</description>
     </item>
-    
     <item>
       <title>Aggiungere funzionalità</title>
       <link>https://metadonors.github.io/odoo.workshop/inheritance/aggiungere_funzionalita/</link>
       <pubDate>Thu, 28 Jun 2018 16:39:25 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/inheritance/aggiungere_funzionalita/</guid>
-      <description>Finora abbiamo visto come estendere applicazioni esistenti aggiungendo funzionalità create da noi. Ma Odoo permette di fare molto di più: possiamo aggiungere funzionalità implementate in moduli scritti da altre persone.
-Nel nostro caso vogliamo aggiugere la possibilità per gli utenti di commentare i task e di poterli seguire, alla maniera di Twitter. Questa funzionalità in Odoo è implementata nel modulo mail, più specificatamente nel modello mail.thread di quel modulo.
-Per aggiungerlo al nostro modello todo.</description>
+      <description>Finora abbiamo visto come estendere applicazioni esistenti aggiungendo funzionalità create da noi. Ma Odoo permette di fare molto di più: possiamo aggiungere funzionalità implementate in moduli scritti da altre persone.&#xA;Nel nostro caso vogliamo aggiugere la possibilità per gli utenti di commentare i task e di poterli seguire, alla maniera di Twitter. Questa funzionalità in Odoo è implementata nel modulo mail, più specificatamente nel modello mail.thread di quel modulo.&#xA;Per aggiungerlo al nostro modello todo.</description>
     </item>
-    
     <item>
       <title>Controllo Accessi</title>
       <link>https://metadonors.github.io/odoo.workshop/first_app/controllo_accessi/</link>
       <pubDate>Thu, 28 Jun 2018 10:40:25 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/first_app/controllo_accessi/</guid>
-      <description>Nella scorsa sezione abbiamo terminato la creazione del nostro modulo base. Al termine abbiamo notato che Odoo si lamentava dicendo che non abbiamo specificato delle regole di accesso per il modello da noi creato
-WARNING odoo odoo.modules.loading: The models [&#39;todo.task&#39;] have no access rules in module todo_app, consider adding some, like: id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink In Odoo tutti i modelli devono avere delle regole di accesso specificate, in caso contrario solo l&amp;rsquo;utente admin potrà accedere ai dati relativi a quel modello.</description>
+      <description>Nella scorsa sezione abbiamo terminato la creazione del nostro modulo base. Al termine abbiamo notato che Odoo si lamentava dicendo che non abbiamo specificato delle regole di accesso per il modello da noi creato&#xA;WARNING odoo odoo.modules.loading: The models [&amp;#39;todo.task&amp;#39;] have no access rules in module todo_app, consider adding some, like: id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink In Odoo tutti i modelli devono avere delle regole di accesso specificate, in caso contrario solo l&amp;rsquo;utente admin potrà accedere ai dati relativi a quel modello.</description>
     </item>
-    
     <item>
       <title>Altre Viste</title>
       <link>https://metadonors.github.io/odoo.workshop/views/altre_views/</link>
       <pubDate>Mon, 02 Jul 2018 16:19:00 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/views/altre_views/</guid>
-      <description>Sono disponibili anche altre viste che pero&#39; esulano dallo scopo di questo corso, una breve panoramica
-Viste Report Viste Calendario Viste Kanban Viste Gantt </description>
+      <description>Sono disponibili anche altre viste che pero&amp;rsquo; esulano dallo scopo di questo corso, una breve panoramica&#xA;Viste Report Viste Calendario Viste Kanban Viste Gantt </description>
     </item>
-    
   </channel>
 </rss>

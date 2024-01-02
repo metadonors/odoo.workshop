@@ -32,7 +32,7 @@ Il metodo standard per indicare gli elementi XML da modificare è utilizzare un 
  Per fare un esempio, se nel nostro form del modello TodoTask volessimo aggiungere il campo _deadline\_date_ **prima** del campo _is\_done_ aggiungeremmo questa righa al nostro campo _arch_
 
  ```xml
- <!-- Locate is_done field with xpath and specify where to add new tags --> 
+ <!-- Locate is_done field with xpath and specify where to add new tags -->
 <xpath expr="//field[@name]='is_done'" position="before">
     <!-- Add field deadline_date -->
     <field name="deadline_date"/>
@@ -47,7 +47,7 @@ Il metodo standard per indicare gli elementi XML da modificare è utilizzare un 
 </field>
  ```
 
-Utilizzando xpath possiamo in compenso localizzare quasiasi altro tag all'interno della vista come _\<sheet\>_, _\<form\>_, _\<group\>_ ma anche i classsici _\<div\>_. 
+Utilizzando xpath possiamo in compenso localizzare quasiasi altro tag all'interno della vista come _\<sheet\>_, _\<form\>_, _\<group\>_ ma anche i classici _\<div\>_.
 
 
 L'attributo _position_ può assumere diversi valori:
@@ -73,7 +73,7 @@ Prima di procedere dobbiamo aggiungere al nostro modulo il file XML che conterr�
         __manifest__.py
 ```
 
-Successivamente dobbiamo dichiarare il nuovo file aggiunto nel manifesto dell'applicazione 
+Successivamente dobbiamo dichiarare il nuovo file aggiunto nel manifesto dell'applicazione
 
 ```python
 {
@@ -82,7 +82,7 @@ Successivamente dobbiamo dichiarare il nuovo file aggiunto nel manifesto dell'ap
     'author': 'Metadonors',
     'license': 'LGPL-3',
     'depends': ['todo_app'],
-    
+
     # Add this section
     'data': [
         'views/task_views.xml'
@@ -107,7 +107,7 @@ Per mettere insieme quello che abbiamo detto fin'ora possiamo procedere a modifi
     <field name="name">todo.task.form</field>
     <field name="model">todo.task</field>
     <field name="inherit_id" ref="todo_app.todo_task_form_view"/>
-    
+
     <!-- ...search and modify XML tags here... -->
     <field name="arch" type="xml">
         <!-- After field 'name' add field 'user_id' -->
@@ -184,15 +184,15 @@ Per finire aggiungiamo la possibilita di ricercare per utente nella nostra Searc
             <field name="user_id"/>
 
             <!-- Add custom filter 'My tasks' -->
-            <filter 
-                name="filter_my_tasks" 
-                string="My tasks" 
+            <filter
+                name="filter_my_tasks"
+                string="My tasks"
                 domain="[('user_id','=',uid)]" />
-            
+
             <!-- Aggiungi il filtro predefinito "Task non assegnati" -->
-            <filter 
-                name="filter_not_assigned" 
-                string="Not assigned" 
+            <filter
+                name="filter_not_assigned"
+                string="Not assigned"
                 domain="[('user_id','=', False)]" />
         </field>
     </field>

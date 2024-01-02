@@ -25,7 +25,7 @@ Inizializziamo il database di Odoo
 $ docker compose run odoo upgrade base
 ```
 
-Compose comincerà a scaricare tutte le nostre dipendenze, ,a procedura può durare diversi minuti in base alla connessione a internet disponibile. 
+Compose comincerà a scaricare tutte le nostre dipendenze, la procedura può durare diversi minuti in base alla connessione a internet disponibile.
 
 Infine diciamo a compose di tirare su l'ambiente:
 

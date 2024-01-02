@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.121.1">
     
     <link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/png">
 
     <title>I modelli :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1668612525" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1704211767" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1668612525" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1704211767" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612525"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1704211767"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612525"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612525"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1704211767"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1704211767"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612525"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1704211767"></script>
 
     
   </div>
@@ -1050,22 +1050,21 @@
         __init__.py
         __manifest__.py
 </code></pre><p>All&rsquo;interno del file del modello <em>task_model.py</em> aggiungiamo questo contenuto:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> odoo <span style="color:#f92672">import</span> models, fields
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTask</span>(models<span style="color:#f92672">.</span>Model):
-    _name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;todo.task&#39;</span>
-    _description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Todo Task&#39;</span>
-
-    name <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Char(<span style="color:#e6db74">&#39;Description&#39;</span>, required<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-    is_done <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Boolean(<span style="color:#e6db74">&#39;Done?&#39;</span>)
-    active <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Boolean(<span style="color:#e6db74">&#39;Active?&#39;</span>, default<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-
-</code></pre></div><p>A questo punto Odoo non sa ancora dell&rsquo;esistenza della nostra cartella dei modelli, ne che e' stato definito un file <em>task_models.py</em>. Per rendere la nostra modifica effettiva dobbiamo aggiustare le importazioni dei file negli <em>__init__.py</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> odoo <span style="color:#f92672">import</span> models, fields
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoTask</span>(models<span style="color:#f92672">.</span>Model):
+</span></span><span style="display:flex;"><span>    _name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;todo.task&#39;</span>
+</span></span><span style="display:flex;"><span>    _description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Todo Task&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    name <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Char(<span style="color:#e6db74">&#39;Description&#39;</span>, required<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    is_done <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Boolean(<span style="color:#e6db74">&#39;Done?&#39;</span>)
+</span></span><span style="display:flex;"><span>    active <span style="color:#f92672">=</span> fields<span style="color:#f92672">.</span>Boolean(<span style="color:#e6db74">&#39;Active?&#39;</span>, default<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><p>A questo punto Odoo non sa ancora dell&rsquo;esistenza della nostra cartella dei modelli, ne che e&rsquo; stato definito un file <em>task_models.py</em>. Per rendere la nostra modifica effettiva dobbiamo aggiustare le importazioni dei file negli <em>__init__.py</em></p>
 <p>All&rsquo;interno del file _todo_app/__init__.py aggiungiamo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> models
-</code></pre></div><p>All&rsquo;interno del file _todo_app/models/__init__.py aggiungiamo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> task
-</code></pre></div><p>A questo punto Odoo sarà in grado di riconoscere e manipolare il modello appena creato.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> models
+</span></span></code></pre></div><p>All&rsquo;interno del file _todo_app/models/__init__.py aggiungiamo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> . <span style="color:#f92672">import</span> task
+</span></span></code></pre></div><p>A questo punto Odoo sarà in grado di riconoscere e manipolare il modello appena creato.</p>
 <h3 id="upgrade-del-modulo">Upgrade del modulo</h3>
 <p>Ogni volta che effettuiamo una modifica ad un modello, dobbiamo dire manualmente ad odoo di aggiornare (migrare) il database, per farlo abbiamo un comando
 apposito da passare ad odoo.</p>
@@ -1728,19 +1727,19 @@ apposito da passare ad odoo.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1668612525"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1668612525"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1704211767"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1704211767"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612525"></script>
-    <script src="/odoo.workshop/js/learn.js?1668612525"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1668612525"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1704211767"></script>
+    <script src="/odoo.workshop/js/learn.js?1704211767"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1704211767"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1668612525"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1704211767"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
