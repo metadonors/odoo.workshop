@@ -19,7 +19,7 @@ Solitamente potete installarla nel vostro ambiente python con il comando
 $ pip install OdooRPC
 ```
 
-Per semplificare però gli esempi di questo corso, abbiamo aggiungo un comando specifico alla nostra immagine docker che ci permette di avviare una shell interattiva _ipython_ con la libreria già installata. Per farlo apriamo un altro terminale e digitiamo:
+Per semplificare però gli esempi di questo corso, abbiamo aggiunto un comando specifico alla nostra immagine docker che ci permette di avviare una shell interattiva _ipython_ con la libreria già installata. Per farlo apriamo un altro terminale e digitiamo:
 
 ```bash
 $ cd odoo.dockerenv/

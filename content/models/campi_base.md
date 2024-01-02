@@ -4,7 +4,7 @@ date: 2018-06-28T16:52:23+02:00
 weight: 2
 ---
 
-L'[ORM](https://it.wikipedia.org/wiki/Object-relational_mapping) di Odoo permette di creare modelli complessi composti da attributi basa su tipi di campi semplici. Questi campi mappano direttamente sul database e, in base al tipo, possono avere comportamenti differenti a livello di interfaccia utente. I campi di testo verranno renderizzati come semplici tag \<input\>, le date presenteranon un calendario, le selezioni multiple un tag \<select\> e così via.
+L'[ORM](https://it.wikipedia.org/wiki/Object-relational_mapping) di Odoo permette di creare modelli complessi composti da attributi basa su tipi di campi semplici. Questi campi mappano direttamente sul database e, in base al tipo, possono avere comportamenti differenti a livello di interfaccia utente. I campi di testo verranno renderizzati come semplici tag \<input\>, le date presenteranno un calendario, le selezioni multiple un tag \<select\> e così via.
 
 ### Tipi di Campi
 

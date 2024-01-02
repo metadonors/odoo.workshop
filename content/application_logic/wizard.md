@@ -28,19 +28,19 @@ todo_plus/
     __manifest__.py
 ```
 
-All'interno del file _task\_plus/\_\_init.py\_\__ aggiungiamo 
+All'interno del file _task\_plus/\_\_init.py\_\__ aggiungiamo
 
 ```python
 from . import wizards
 ```
 
-All'interno del file _task\_plus/wizards/\_\_init.py\_\__ aggiungiamo 
+All'interno del file _task\_plus/wizards/\_\_init.py\_\__ aggiungiamo
 
 ```python
 from . import todo_wizard
 ```
 
-All'interno del file _task\_plus/\_\_manifest.py\_\__ aggiungiamo 
+All'interno del file _task\_plus/\_\_manifest.py\_\__ aggiungiamo
 
 ```python
 {
@@ -82,7 +82,7 @@ class TodoWizard(models.TransientModel):
 Le viste dei wizard sono uguali alle viste classiche, con due differenze:
 
 - Può essere inserita una sezione \<footer\> per contenere i pulsanti del wizard
-- Può essere inserito un pulsante con _special="cancel"_ che si ooccupa di chiudere il wizard
+- Può essere inserito un pulsante con _special="cancel"_ che si occupa di chiudere il wizard
 
 Quindi apriamo il file _task\_plus/wizards/task\_wizard.xml_ e scriviamo
 
@@ -108,8 +108,8 @@ Quindi apriamo il file _task\_plus/wizards/task\_wizard.xml_ e scriviamo
                 </field>
 
                 <group>
-                    <group> <field name="new_user_id"/></group>   
-                    <group> <field name="new_deadline_date"/></group>   
+                    <group> <field name="new_user_id"/></group>
+                    <group> <field name="new_deadline_date"/></group>
                 </group>
 
                 <footer>
@@ -121,13 +121,13 @@ Quindi apriamo il file _task\_plus/wizards/task\_wizard.xml_ e scriviamo
         </field>
     </record>
 
-    <act_window 
-        id="todo_app.action_todo_wizard" 
-        name="Todo Wizard" 
-        src_model="todo.task" 
-        res_model="todo.wizard" 
-        view_mode="form" 
-        target="new" 
+    <act_window
+        id="todo_app.action_todo_wizard"
+        name="Todo Wizard"
+        src_model="todo.task"
+        res_model="todo.wizard"
+        view_mode="form"
+        target="new"
         multi="True"/>
 </odoo>
 
@@ -158,7 +158,7 @@ import logging
 log = logging.getLogger(__name__)
 ```
 
-nel corpo della classe invece aggiungiamo 
+nel corpo della classe invece aggiungiamo
 
 ```python
 @api.multi
@@ -167,18 +167,18 @@ def do_mass_update(self):
 
     if not self.new_user_id:
         raise exceptions.ValidationError("E' necessario specificare un utente")
-    
+
     log.debug("Mass update on todos %s" % self.todo_ids.ids)
 
     vals = {}
 
     if self.new_deadline_date:
         vals['deadline_date'] = self.new_deadline_date
-    
+
     vals['user_id'] = self.new_user_id.id
 
     self.todo_ids.write(vals)
-    
+
 ```
 
 Questo metodo solleva un errore se l'utente cerca di inviare il form senza specificare un responsabile da assegnare ai todo selezionati.
@@ -192,7 +192,7 @@ def do_count_todos(self):
     raise exceptions.Warning("Ci sono %d todo ancora aperti" % count)
 ```
 
-per l'ultimo metodo (Seleziona tutti) invece c'è un piccolo problema: ogni volta che premiamo un bottone in un wizard e la chiamata non ritorna un eccezione, Oddo chiude automaticamente la finestra popup. La soluzione a questo è qquella di restituire un'azione che dice ad odoo di riaprire il wizard, vediamo come:
+per l'ultimo metodo (Seleziona tutti) invece c'è un piccolo problema: ogni volta che premiamo un bottone in un wizard e la chiamata non ritorna un eccezione, Odoo chiude automaticamente la finestra popup. La soluzione a questo è qquella di restituire un'azione che dice ad odoo di riaprire il wizard, vediamo come:
 
 ```python
 

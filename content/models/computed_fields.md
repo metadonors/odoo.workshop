@@ -4,7 +4,7 @@ date: 2018-06-28T16:52:30+02:00
 weight: 4
 ---
 
-Tutti i campi che abbiamo definito fin qui sono gestiti manualmente. L'utente entra in modalità modifica di un oggetto, aggiorna i valori e preme salva. Oddo permette però di avere altri campi il cui valore non viene definito direttamente dall'utente ma viene invece calcola attraverso una funzione.
+Tutti i campi che abbiamo definito fin qui sono gestiti manualmente. L'utente entra in modalità modifica di un oggetto, aggiorna i valori e preme salva. Odoo permette però di avere altri campi il cui valore non viene definito direttamente dall'utente ma viene invece calcola attraverso una funzione.
 
 ### Computed fields
 
@@ -12,9 +12,9 @@ Un _computed field_ viene dichiarato esattamente come i campi normali con l'unic
 
 Immaginiamo per esempio di voler mantenere nei _TodoTask_ l'informazione relativa allora stato del progetto a cui appartengono. Gestire questo dato a mano sarebbe piuttosto oneroso, un _computed field_ invece risolve il problema egregiamente.
 
-Per aggiunger questo campo al nostro modello dei progetti apriamo il file _models/task\_task.py_ e aggiungiamo nel corpo della classe:
+Per aggiungere questo campo al nostro modello dei progetti apriamo il file _models/task\_task.py_ e aggiungiamo nel corpo della classe:
 
-```python 
+```python
 project_state = fields.Char(string='Project state', compute='_compute_project_state')
 
 @api.depends('project_id')
@@ -49,7 +49,7 @@ I computed field non possono essere usati come filtro sull'oggetto in cui vengon
 Nella nostra class _TodoTask_ modifichiamo l'attributo _project\_state_
 
 ```python
-project_state = fields.Char(string='Stato progetto', 
+project_state = fields.Char(string='Stato progetto',
                             compute='_compute_project_state',
                             search='_search_project_state',)
 ```
@@ -68,7 +68,7 @@ def _search_project_state(self, operator, value):
 Modifichiamo il campo aggiungendo il parametro _inverse_:
 
 ```python
-project_state = fields.Char(string='Stato progetto', 
+project_state = fields.Char(string='Stato progetto',
                             compute='_compute_project_state',
                             search='_search_project_state',
                             inverse='_write_project_state')

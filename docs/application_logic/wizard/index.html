@@ -10,22 +10,22 @@
     <title>Wizard :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1704211767" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1704211767" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1704211767" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1704211767" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1704211767" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1704211767" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1704211767" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1704211767" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1704211767" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1704214221" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1704211767" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1704214221" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1704211767"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1704214221"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1704211767"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1704211767"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1704214221"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1704214221"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1704211767"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1704214221"></script>
 
     
   </div>
@@ -1084,7 +1084,7 @@ creando la seguente struttura</p>
 <p>Le viste dei wizard sono uguali alle viste classiche, con due differenze:</p>
 <ul>
 <li>Può essere inserita una sezione &lt;footer&gt; per contenere i pulsanti del wizard</li>
-<li>Può essere inserito un pulsante con <em>special=&ldquo;cancel&rdquo;</em> che si ooccupa di chiudere il wizard</li>
+<li>Può essere inserito un pulsante con <em>special=&ldquo;cancel&rdquo;</em> che si occupa di chiudere il wizard</li>
 </ul>
 <p>Quindi apriamo il file <em>task_plus/wizards/task_wizard.xml</em> e scriviamo</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
@@ -1108,8 +1108,8 @@ creando la seguente struttura</p>
 </span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;/field&gt;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;group&gt;</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&lt;group&gt;</span> <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;new_user_id&#34;</span><span style="color:#f92672">/&gt;&lt;/group&gt;</span>   
-</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&lt;group&gt;</span> <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;new_deadline_date&#34;</span><span style="color:#f92672">/&gt;&lt;/group&gt;</span>   
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&lt;group&gt;</span> <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;new_user_id&#34;</span><span style="color:#f92672">/&gt;&lt;/group&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&lt;group&gt;</span> <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;new_deadline_date&#34;</span><span style="color:#f92672">/&gt;&lt;/group&gt;</span>
 </span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;/group&gt;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;footer&gt;</span>
@@ -1121,13 +1121,13 @@ creando la seguente struttura</p>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/field&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/record&gt;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;act_window</span> 
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_app.action_todo_wizard&#34;</span> 
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Todo Wizard&#34;</span> 
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">src_model=</span><span style="color:#e6db74">&#34;todo.task&#34;</span> 
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">res_model=</span><span style="color:#e6db74">&#34;todo.wizard&#34;</span> 
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">view_mode=</span><span style="color:#e6db74">&#34;form&#34;</span> 
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;new&#34;</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;act_window</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_app.action_todo_wizard&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Todo Wizard&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">src_model=</span><span style="color:#e6db74">&#34;todo.task&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">res_model=</span><span style="color:#e6db74">&#34;todo.wizard&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">view_mode=</span><span style="color:#e6db74">&#34;form&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;new&#34;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">multi=</span><span style="color:#e6db74">&#34;True&#34;</span><span style="color:#f92672">/&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/odoo&gt;</span>
 </span></span></code></pre></div><pre tabindex="0"><code>    $ docker compose run odoo upgrade todo_user
@@ -1148,25 +1148,24 @@ creando la seguente struttura</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>new_user_id:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> exceptions<span style="color:#f92672">.</span>ValidationError(<span style="color:#e6db74">&#34;E&#39; necessario specificare un utente&#34;</span>)
-</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    log<span style="color:#f92672">.</span>debug(<span style="color:#e6db74">&#34;Mass update on todos </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> self<span style="color:#f92672">.</span>todo_ids<span style="color:#f92672">.</span>ids)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    vals <span style="color:#f92672">=</span> {}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>new_deadline_date:
 </span></span><span style="display:flex;"><span>        vals[<span style="color:#e6db74">&#39;deadline_date&#39;</span>] <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>new_deadline_date
-</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    vals[<span style="color:#e6db74">&#39;user_id&#39;</span>] <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>new_user_id<span style="color:#f92672">.</span>id
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>todo_ids<span style="color:#f92672">.</span>write(vals)
-</span></span><span style="display:flex;"><span>    
 </span></span></code></pre></div><p>Questo metodo solleva un errore se l&rsquo;utente cerca di inviare il form senza specificare un responsabile da assegnare ai todo selezionati.</p>
 <p>Ora vediamo come implementare il conteggio dei task aperti, aggiungiamo sempre nel corpo della modello del wizard:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@api.multi</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_count_todos</span>(self):
 </span></span><span style="display:flex;"><span>    count <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>search_count([(<span style="color:#e6db74">&#39;is_done&#39;</span>, <span style="color:#e6db74">&#39;=&#39;</span>, <span style="color:#66d9ef">False</span>)])
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">raise</span> exceptions<span style="color:#f92672">.</span>Warning(<span style="color:#e6db74">&#34;Ci sono </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> todo ancora aperti&#34;</span> <span style="color:#f92672">%</span> count)
-</span></span></code></pre></div><p>per l&rsquo;ultimo metodo (Seleziona tutti) invece c&rsquo;è un piccolo problema: ogni volta che premiamo un bottone in un wizard e la chiamata non ritorna un eccezione, Oddo chiude automaticamente la finestra popup. La soluzione a questo è qquella di restituire un&rsquo;azione che dice ad odoo di riaprire il wizard, vediamo come:</p>
+</span></span></code></pre></div><p>per l&rsquo;ultimo metodo (Seleziona tutti) invece c&rsquo;è un piccolo problema: ogni volta che premiamo un bottone in un wizard e la chiamata non ritorna un eccezione, Odoo chiude automaticamente la finestra popup. La soluzione a questo è qquella di restituire un&rsquo;azione che dice ad odoo di riaprire il wizard, vediamo come:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">@api.multi</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_reopen_wizard</span>(self):
@@ -1831,19 +1830,19 @@ creando la seguente struttura</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1704211767"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1704211767"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1704211767"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1704211767"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1704211767"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1704211767"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1704214221"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1704214221"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1704211767"></script>
-    <script src="/odoo.workshop/js/learn.js?1704211767"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1704211767"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1704214221"></script>
+    <script src="/odoo.workshop/js/learn.js?1704214221"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1704214221"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1704211767"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1704214221"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

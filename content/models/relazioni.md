@@ -31,7 +31,7 @@ Successivamente apriamo il nostro _views/task\_task.xml_ e aggiungiamolo anche a
 
 Considerando invece la relazione dal punto di vista opposto, quello dei progetti, la relazione è inversa: ogni _TodoProject_ sarà legato a tanti oggetti _TodoTask_. Questo tipo di relazione in Odoo è chiamata **One2many**. Per definirla è necessario definire nella dichiarazione del campo su quale attributo dell'oggetto figlio avviene la relazione. Uno stesso oggetto potrebbe avere più relazioni One2many verso la stessa classe di oggetti.
 
-Per aggiunger questa relazione al nostro modello dei progetti aprima il file _models/task\_project.py_ e aggiungiamo nel corpo della classe:
+Per aggiungere questa relazione al nostro modello dei progetti aprima il file _models/task\_project.py_ e aggiungiamo nel corpo della classe:
 
 ```python
     todo_ids = fields.One2many('todo.task', 'project_id', string='Todos')

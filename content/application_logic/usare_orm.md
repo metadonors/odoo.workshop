@@ -87,7 +87,7 @@ Sono inoltre dissponibili le seguenti proprietà:
 
 ### Manipolazione dei recordset
 
-Per aggiungere, togliere o sostituire elementi dai recorset ci sono una serie di operatori che ci possono aiutare. I recordset di per sè sono immutabili ma attraverso questi operatori è possibile generare nuovi recordset modificati partendo da quelli esistenti
+Per aggiungere, togliere o sostituire elementi dai recordset ci sono una serie di operatori che ci possono aiutare. I recordset di per sè sono immutabili ma attraverso questi operatori è possibile generare nuovi recordset modificati partendo da quelli esistenti
 
 Gli operatori di manipolazione sono:
 
@@ -111,7 +111,7 @@ Altri operatori:
 
 E' sempre possibile accedere al databse direttametne eseguendo query SQL personalizzate. Nella varibile _self.env.cr_ è disponibile un cursore legato all'attuale connessione al db che possiamo utilizzare proprio a questo scopo.
 
-Per effetturare una query utilizziamo il metodo _execute_ successitamente dobbiamo invocare un'altra funzione per ottenerne gli eventuali risultati:
+Per effetturare una query utilizziamo il metodo _execute_ successivamente dobbiamo invocare un'altra funzione per ottenerne gli eventuali risultati:
 - **fetchall()** restituisce una lista di tuple rappresentanti le righe
 - **dictfetchall()** restituisce una lista di dizionari rappresentanti le righe con il nome della colonna utilizzato come chiave
 

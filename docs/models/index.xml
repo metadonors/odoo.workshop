@@ -20,7 +20,7 @@
       <link>https://metadonors.github.io/odoo.workshop/models/campi_base/</link>
       <pubDate>Thu, 28 Jun 2018 16:52:23 +0200</pubDate>
       <guid>https://metadonors.github.io/odoo.workshop/models/campi_base/</guid>
-      <description>L&amp;rsquo;ORM di Odoo permette di creare modelli complessi composti da attributi basa su tipi di campi semplici. Questi campi mappano direttamente sul database e, in base al tipo, possono avere comportamenti differenti a livello di interfaccia utente. I campi di testo verranno renderizzati come semplici tag &amp;lt;input&amp;gt;, le date presenteranon un calendario, le selezioni multiple un tag &amp;lt;select&amp;gt; e così via.&#xA;Tipi di Campi Ogni tipo di campo ha può accettare una serie di parametri che variano il suo comportamento.</description>
+      <description>L&amp;rsquo;ORM di Odoo permette di creare modelli complessi composti da attributi basa su tipi di campi semplici. Questi campi mappano direttamente sul database e, in base al tipo, possono avere comportamenti differenti a livello di interfaccia utente. I campi di testo verranno renderizzati come semplici tag &amp;lt;input&amp;gt;, le date presenteranno un calendario, le selezioni multiple un tag &amp;lt;select&amp;gt; e così via.&#xA;Tipi di Campi Ogni tipo di campo ha può accettare una serie di parametri che variano il suo comportamento.</description>
     </item>
     <item>
       <title>Relazioni</title>
@@ -34,7 +34,7 @@
       <link>https://metadonors.github.io/odoo.workshop/models/computed_fields/</link>
       <pubDate>Thu, 28 Jun 2018 16:52:30 +0200</pubDate>
       <guid>https://metadonors.github.io/odoo.workshop/models/computed_fields/</guid>
-      <description>Tutti i campi che abbiamo definito fin qui sono gestiti manualmente. L&amp;rsquo;utente entra in modalità modifica di un oggetto, aggiorna i valori e preme salva. Oddo permette però di avere altri campi il cui valore non viene definito direttamente dall&amp;rsquo;utente ma viene invece calcola attraverso una funzione.&#xA;Computed fields Un computed field viene dichiarato esattamente come i campi normali con l&amp;rsquo;unica differenza di avere un parametro compute che indica la funzione che Odoo utilizzerà per calcolarne il valore.</description>
+      <description>Tutti i campi che abbiamo definito fin qui sono gestiti manualmente. L&amp;rsquo;utente entra in modalità modifica di un oggetto, aggiorna i valori e preme salva. Odoo permette però di avere altri campi il cui valore non viene definito direttamente dall&amp;rsquo;utente ma viene invece calcola attraverso una funzione.&#xA;Computed fields Un computed field viene dichiarato esattamente come i campi normali con l&amp;rsquo;unica differenza di avere un parametro compute che indica la funzione che Odoo utilizzerà per calcolarne il valore.</description>
     </item>
     <item>
       <title>Vincoli</title>
