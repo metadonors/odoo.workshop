@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.121.1">
     
     <link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/png">
 
     <title>Context e Domain :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1668612525" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1704214221" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1668612525" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1704214221" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612525"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1704214221"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612525"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612525"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1704214221"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1704214221"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612525"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1704214221"></script>
 
     
   </div>
@@ -1037,10 +1037,10 @@
 <h2 id="domain">Domain</h2>
 <p>I <em>domain</em> in Odoo sono utilizzati per filtrare i dati. Utilizzano una sintassi specifica dell&rsquo;ORM di Odoo e sostanzialmente vengono utilizzati per genereare la parte WHERE delle query SQL.</p>
 <p>Un <em>domain</em> è una lista di condizioni, ogni condizione è composta da una tupla</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">(<span style="color:#f92672">&lt;</span>field<span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;</span>operator<span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;</span>value<span style="color:#f92672">&gt;</span>)
-</code></pre></div><p>come per esempio:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">(<span style="color:#e6db74">&#39;is_done&#39;</span>, <span style="color:#e6db74">&#39;=&#39;</span>, <span style="color:#66d9ef">False</span>)
-</code></pre></div><p>Il <em>nome_campo</em> coniene una string che rappresenta il nome del campo, nei casi di campi relazionali si può fare ricorso alla dot-notation per accedere ai campi dell&rsquo;elemento correlato.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>(<span style="color:#f92672">&lt;</span>field<span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;</span>operator<span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;</span>value<span style="color:#f92672">&gt;</span>)
+</span></span></code></pre></div><p>come per esempio:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>(<span style="color:#e6db74">&#39;is_done&#39;</span>, <span style="color:#e6db74">&#39;=&#39;</span>, <span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><p>Il <em>nome_campo</em> coniene una string che rappresenta il nome del campo, nei casi di campi relazionali si può fare ricorso alla dot-notation per accedere ai campi dell&rsquo;elemento correlato.</p>
 <p>Gli <em>opertori</em> disponibili sono:</p>
 <ul>
 <li><strong>=</strong>: uguale a</li>
@@ -1049,27 +1049,27 @@
 <li><strong>&gt;=</strong>: maggiore o uguale a</li>
 <li><strong>&lt;</strong>: minore di</li>
 <li><strong>&lt;=</strong>: minore o uguale a</li>
-<li><strong>=?</strong>: ritorna True se il valore e' None o False, oppure si comporta come =</li>
+<li><strong>=?</strong>: ritorna True se il valore e&rsquo; None o False, oppure si comporta come =</li>
 <li><strong>=like</strong>: controlla il valore con un pattern. Un _ nel pattern sta per &lsquo;ogni carattere&rsquo;, una % sta per &lsquo;ogni stringa&rsquo;</li>
 <li><strong>like</strong>: simile a =like ma racchiude il valore in <em>%value%</em></li>
 <li><strong>not like</strong>: la negazione di like</li>
 <li><strong>ilike</strong>: come like ma senza tenere conto di maiuscolo/minuscolo</li>
 <li><strong>not ilike</strong>: la negazione di ilike</li>
 <li><strong>=ilike</strong>: come ilike ma senza tenere conto di maiuscolo/minuscolo</li>
-<li><strong>in</strong>: ritorna vero se il valore e' uguale a almneno uno dei valori contenuti nella lista di comparazione</li>
-<li><strong>not in</strong>: ritorna vero se il valore e' diverso da tutti i valori contenuti nella lista di comparazione</li>
-<li><strong>child_of</strong>: ritorna vero se e' un figlio dell&rsquo;oggetto passato (controllonado il campo speciale <em>parent_id</em>)</li>
+<li><strong>in</strong>: ritorna vero se il valore e&rsquo; uguale a almneno uno dei valori contenuti nella lista di comparazione</li>
+<li><strong>not in</strong>: ritorna vero se il valore e&rsquo; diverso da tutti i valori contenuti nella lista di comparazione</li>
+<li><strong>child_of</strong>: ritorna vero se e&rsquo; un figlio dell&rsquo;oggetto passato (controllonado il campo speciale <em>parent_id</em>)</li>
 </ul>
 <p>Nell&rsquo;espressione dei domini possono essere utilizzati gli operatori logigici or, and e not rispettivamente con i simboli <em>|, &amp;, !</em>. I domini fanno ricorso alla notazione prefissa per esprimere le connessioni logiche.</p>
 <p>Per esempio per dire:</p>
 <p><em>Tutti i todo in stato done oppure tutti i todo assegnati all&rsquo;utente 3 con titolo contenento &lsquo;Odoo&rsquo;</em></p>
 <p>si esprime come</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[
-    <span style="color:#e6db74">&#39;|&#39;</span>,(<span style="color:#e6db74">&#39;is_done&#39;</span>,<span style="color:#e6db74">&#39;=&#39;</span>,<span style="color:#66d9ef">True</span>),
-        <span style="color:#e6db74">&#39;&amp;&#39;</span>, (<span style="color:#e6db74">&#39;user_id&#39;</span>, <span style="color:#e6db74">&#39;=&#39;</span>, <span style="color:#ae81ff">3</span>),
-             (<span style="color:#e6db74">&#39;name&#39;</span>,<span style="color:#e6db74">&#39;like&#39;</span>,<span style="color:#e6db74">&#39;Odoo&#39;</span>)
-]
-</code></pre></div><p>che puo' essere rappresentato come</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;|&#39;</span>,(<span style="color:#e6db74">&#39;is_done&#39;</span>,<span style="color:#e6db74">&#39;=&#39;</span>,<span style="color:#66d9ef">True</span>),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;&amp;&#39;</span>, (<span style="color:#e6db74">&#39;user_id&#39;</span>, <span style="color:#e6db74">&#39;=&#39;</span>, <span style="color:#ae81ff">3</span>),
+</span></span><span style="display:flex;"><span>             (<span style="color:#e6db74">&#39;name&#39;</span>,<span style="color:#e6db74">&#39;like&#39;</span>,<span style="color:#e6db74">&#39;Odoo&#39;</span>)
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>che puo&rsquo; essere rappresentato come</p>
 
 <div class="mermaid" align="left">
 graph TD;
@@ -1721,19 +1721,19 @@ graph TD;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1668612525"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1668612525"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1704214221"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1704214221"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612525"></script>
-    <script src="/odoo.workshop/js/learn.js?1668612525"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1668612525"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1704214221"></script>
+    <script src="/odoo.workshop/js/learn.js?1704214221"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1704214221"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1668612525"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1704214221"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

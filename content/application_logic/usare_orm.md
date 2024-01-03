@@ -8,7 +8,7 @@ Fino a questo punto abbiamo utilizzato l'ORM di Odoo senza scendere nel dettagli
 
 ### Decoratori
 
-Abbiamo notato che a molti metodi dei modelli viene applicato un decoratore come _@api.multi_. Questi decorati hanno lo scopo di istruire il backend su come gestire i metodi rispetto alle API esposte. 
+Abbiamo notato che a molti metodi dei modelli viene applicato un decoratore come _@api.multi_. Questi decorati hanno lo scopo di istruire il backend su come gestire i metodi rispetto alle API esposte.
 
 Il decoratore **@api.model** invece si utilizza per decorare metodi statici in cui il _self_ non fa rifermento a nessuna entità in particolare. Per coerenza _self_ farà sempre riferimento a un oggetto di tipo recordset ma il suo contenuto diventa irrilevante. Questo tipo di metodi non possono essere richiamati dalle API e quindi non possono essere usati sui bottoni nell'interfaccia utente.
 
@@ -44,7 +44,7 @@ I metodi principali utilizzabili nei modelli sono quelli disponibili sulla [docu
 
 ### Interrogare i modelli
 
-Attraverso la variabile _self_ possiamo accedere solamente ai metodi del modello che stiamo attualmente utilizzando. Ma ogni modello ha un variabile _env_, accesssibile tramite _self.env_ che ci permette di avere un riferimento a qualsiasi modello installato sul sistema. Per esempio _self.env['res.parner']_ restituisce un riferimento al modello dei Partner permettendoci quindi di utilizzare metodi come _search_ o _browse_ su quel determinato set di dati.
+Attraverso la variabile _self_ possiamo accedere solamente ai metodi del modello che stiamo attualmente utilizzando. Ma ogni modello ha un variabile _env_, accessibile tramite _self.env_ che ci permette di avere un riferimento a qualsiasi modello installato sul sistema. Per esempio _self.env['res.parner']_ restituisce un riferimento al modello dei Partner permettendoci quindi di utilizzare metodi come _search_ o _browse_ su quel determinato set di dati.
 
 Il metodo _search()_ accetta come paramentro un _domain_ e restituisce un recordset contenente le righe che rispettano le condizioni del dominio. Passando un _domain_ vuoto ([]) si ottengono tutte le righe presenti. Gli altri paramentri accettati da _search()_ sono:
 
@@ -70,7 +70,7 @@ Out[5]: 'Administrator'
 
 ### Operazioni sui recordset
 
-I Recordset supportano diverse operazioni. Possiamo per esempio controllare se un elemento è contenuto in un recordset oppure no. 
+I Recordset supportano diverse operazioni. Possiamo per esempio controllare se un elemento è contenuto in un recordset oppure no.
 
 Considerando _x_ un singleton e _test\_recordset_ un insieme di elementi possiamo scrivere
 
@@ -87,7 +87,7 @@ Sono inoltre dissponibili le seguenti proprietà:
 
 ### Manipolazione dei recordset
 
-Per aggiungere, togliere o sostituire elementi dai recorset ci sono una serie di operatori che ci possono aiutare. I recordset di per sè sono immutabili ma attraverso questi operatori è possibile generare nuovi recordset modificati partendo da quelli esistenti
+Per aggiungere, togliere o sostituire elementi dai recordset ci sono una serie di operatori che ci possono aiutare. I recordset di per sè sono immutabili ma attraverso questi operatori è possibile generare nuovi recordset modificati partendo da quelli esistenti
 
 Gli operatori di manipolazione sono:
 
@@ -98,8 +98,8 @@ Gli operatori di manipolazione sono:
 
 È inoltre possibile accedere agli elementi dei recordset attverso gli operatori di list Python, queste sono quindi espressioni valide:
 
-- _rs[0]_ il primo elemento del recordset 
-- _rs[-1]_ l'ultimo elemento del recordset 
+- _rs[0]_ il primo elemento del recordset
+- _rs[-1]_ l'ultimo elemento del recordset
 - _rs[1:]_ restituisce una copia del recordset senza il primo elemento
 
 Altri operatori:
@@ -107,11 +107,11 @@ Altri operatori:
 - _rs\_ids |= element\_id_ aggiunge _element\_id_ al recordset _rs\_ids_ se non presente
 - _rs\_ids -= element\_id_ rimuove _element\_id_ al recordset _rs\_ids_ se presente
 
-### Query SQL 
+### Query SQL
 
 E' sempre possibile accedere al databse direttametne eseguendo query SQL personalizzate. Nella varibile _self.env.cr_ è disponibile un cursore legato all'attuale connessione al db che possiamo utilizzare proprio a questo scopo.
 
-Per effetturare una query utilizziamo il metodo _execute_ successitamente dobbiamo invocare un'altra funzione per ottenerne gli eventuali risultati:
+Per effetturare una query utilizziamo il metodo _execute_ successivamente dobbiamo invocare un'altra funzione per ottenerne gli eventuali risultati:
 - **fetchall()** restituisce una lista di tuple rappresentanti le righe
 - **dictfetchall()** restituisce una lista di dizionari rappresentanti le righe con il nome della colonna utilizzato come chiave
 
@@ -150,7 +150,7 @@ Quando dobbiamo scrivere un campo *Many2one* dobbiamo ricordarci di passare solo
 In [17]: self.write({'user_id': self.env.user.id})
 ```
 
-ma darebbe invece errore 
+ma darebbe invece errore
 
 ```python
 # SBAGLIATO

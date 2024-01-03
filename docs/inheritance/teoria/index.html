@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.121.1">
     
     <link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/png">
 
     <title>Preambolo :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1668612525" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1668612525" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1704214221" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1668612525" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1704214221" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612525"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1704214221"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612525"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612525"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1704214221"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1704214221"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612525"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1704214221"></script>
 
     
   </div>
@@ -1025,7 +1025,7 @@
 
 
 <p>Per apportare modifiche o aggiungere funzionalità ai moduli e alle applicazioni esistenti, Odoo ci mette a disposizione diversi strumenti in base a cosa e dove vogliamo intervenire.</p>
-<p>Odoo ha dai meccanismi interni specifici che si basano sul concetto di <a href="https://it.wikipedia.org/wiki/Ereditariet%C3%A0_(informatica)">Ereditarietà</a>. Tramite questi meccanismi e' possibile modificare Modelli esistenti, Viste oppure Dati (come le regole di accesso).</p>
+<p>Odoo ha dai meccanismi interni specifici che si basano sul concetto di <a href="https://it.wikipedia.org/wiki/Ereditariet%C3%A0_(informatica)">Ereditarietà</a>. Tramite questi meccanismi e&rsquo; possibile modificare Modelli esistenti, Viste oppure Dati (come le regole di accesso).</p>
 <p>In questo capito andremo ad aggiungere una funzionalità all&rsquo;applicazione Todo creata in precedenza. Attualmente ogni utente può lavorare solo sui suoi task, perchè non aggiungere qualche funzionalità di social networking come la possibilità di condividere i task e di commentarli con diversi utenti?</p>
 <p>Per affrontare i meccanismi di eredità implementeremo queste funzionalità in un nuovo modulo che estende quello precedentemente creato.</p>
 <p>Questo è il nostro piano:</p>
@@ -1040,14 +1040,14 @@
         __init__.py
         __manifest__.py
 </code></pre><p>Nel file di manifesto inseriemo questo contenuto</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{
-    <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Multiuser TODO&#39;</span>,
-    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Extend Todo app to work in a multiuser environment&#39;</span>,
-    <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Imthe Author&#39;</span>,
-    <span style="color:#e6db74">&#39;license&#39;</span>: <span style="color:#e6db74">&#39;LGPL-3&#39;</span>,
-    <span style="color:#e6db74">&#39;depends&#39;</span>: [<span style="color:#e6db74">&#39;todo_app&#39;</span>],
-}
-</code></pre></div><p>Notate che abbiamo messo una dipendenza esplicita sul modulo <em>todo_app</em>, questo permettera a Odoo di inizializzare questo modulo dopo aver inizializzato <em>todo_app</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Multiuser TODO&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Extend Todo app to work in a multiuser environment&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Imthe Author&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;license&#39;</span>: <span style="color:#e6db74">&#39;LGPL-3&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;depends&#39;</span>: [<span style="color:#e6db74">&#39;todo_app&#39;</span>],
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Notate che abbiamo messo una dipendenza esplicita sul modulo <em>todo_app</em>, questo permettera a Odoo di inizializzare questo modulo dopo aver inizializzato <em>todo_app</em>.</p>
 <p>Un&rsquo;altra differenza è che non abbiamo esplicitato <em>application=True</em> in quanto con questo modulo non andremo a creare una nuova applicazione ma apporteremo solo modifiche a un&rsquo;altra già esistente.</p>
 <p>Una volta fatto questo possiamo aggiornare la lista dei moduli e installare il modulo <em>todo_user</em> nel nostro Odoo.</p>
 <p>A questo punto possiamo andare a vedere come si <a href="/odoo.workshop/inheritance/estendere_modelli/">estende il modello TodoTask</a></p>
@@ -1689,19 +1689,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1668612525"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1668612525"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1704214221"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1704214221"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612525"></script>
-    <script src="/odoo.workshop/js/learn.js?1668612525"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1668612525"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1704214221"></script>
+    <script src="/odoo.workshop/js/learn.js?1704214221"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1704214221"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1668612525"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1704214221"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

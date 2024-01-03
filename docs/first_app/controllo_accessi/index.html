@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.121.1">
     
     <link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/png">
 
     <title>Controllo Accessi :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1668612524" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1704214221" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1668612524" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1704214221" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612524"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1704214221"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612524"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612524"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1704214221"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1704214221"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612524"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1704214221"></script>
 
     
   </div>
@@ -1035,7 +1035,7 @@
 
 
 <p>Nella scorsa sezione abbiamo terminato la creazione del nostro modulo base. Al termine abbiamo notato che Odoo si lamentava dicendo che non abbiamo specificato delle regole di accesso per il modello da noi creato</p>
-<pre tabindex="0"><code>WARNING odoo odoo.modules.loading: The models ['todo.task'] have no access rules in module todo_app, consider adding some, like:
+<pre tabindex="0"><code>WARNING odoo odoo.modules.loading: The models [&#39;todo.task&#39;] have no access rules in module todo_app, consider adding some, like:
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 </code></pre><p>In Odoo <em>tutti i modelli</em> devono avere delle regole di accesso specificate, in caso contrario solo l&rsquo;utente admin potrà accedere ai dati relativi a quel modello.</p>
 <p>Ci sono due tipi di controlli di accesso disponibili: <em>access rights</em> e <em>row level access control</em></p>
@@ -1063,41 +1063,41 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
     __init__.py
     __manifest__.py
 </code></pre><p>All&rsquo;interno del file <em>task_model_acl.xml</em> andiamo poi a definire i dati che regoleranno l&rsquo;acl in questione nel seguente modo</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-<span style="color:#f92672">&lt;odoo&gt;</span>
-    <span style="color:#f92672">&lt;data</span> <span style="color:#a6e22e">noupdate=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.model.access&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_user_access&#34;</span><span style="color:#f92672">&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.user<span style="color:#f92672">&lt;/field&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;model_todo_task&#34;</span><span style="color:#f92672">/&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;group_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;base.group_user&#34;</span><span style="color:#f92672">/&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;perm_read&#34;</span> <span style="color:#a6e22e">eval=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">/&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;perm_create&#34;</span> <span style="color:#a6e22e">eval=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">/&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;perm_write&#34;</span> <span style="color:#a6e22e">eval=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">/&gt;</span>
-            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;perm_unlink&#34;</span> <span style="color:#a6e22e">eval=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;/record&gt;</span>
-    <span style="color:#f92672">&lt;/data&gt;</span>
-<span style="color:#f92672">&lt;/odoo&gt;</span>
-</code></pre></div><p>Questa codice aggiunge una regola di acl con <em>id</em> todo_task_user_access che viene applicata al modello <em>todo.task</em> sul gruppo <em>base.group.user</em> dando tutti i permessi di lettura, scrittura, creazione e cancellazione. Il gruppo <em>base.group.user</em> è un gruppo generico di Odoo a cui fanno parte tutti gli utenti del sistema.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;odoo&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;data</span> <span style="color:#a6e22e">noupdate=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.model.access&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_user_access&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.user<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;model_todo_task&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;group_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;base.group_user&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;perm_read&#34;</span> <span style="color:#a6e22e">eval=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;perm_create&#34;</span> <span style="color:#a6e22e">eval=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;perm_write&#34;</span> <span style="color:#a6e22e">eval=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;perm_unlink&#34;</span> <span style="color:#a6e22e">eval=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/record&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/data&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/odoo&gt;</span>
+</span></span></code></pre></div><p>Questa codice aggiunge una regola di acl con <em>id</em> todo_task_user_access che viene applicata al modello <em>todo.task</em> sul gruppo <em>base.group.user</em> dando tutti i permessi di lettura, scrittura, creazione e cancellazione. Il gruppo <em>base.group.user</em> è un gruppo generico di Odoo a cui fanno parte tutti gli utenti del sistema.</p>
 
 <div class="notices note" ><p>In questo caso abbiamo aggiunto al tag <em>data</em> il valore <em>noupdate</em>. Questo dice ad Odoo di creare la riga nel database al primo upgrade, ma di non aggiornarla durante un successivo upgrade se già presente. Questo perchè questo tipo di dati può essere modificato dall&rsquo;amministratore direttamente da interfaccia web in produzione e non vogliamo che vengano resettate queste modifiche ad un successivo upgrade del modulo.</p>
 </div>
 
 <p>Come per le viste dobbiamo poi specificare nel file <em>__manifest__.py</em> l&rsquo;esistenza di questa regola, apriamo quindi il file manifesto e modifichiamolo come segue:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{
-    <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;TODO Application&#39;</span>,
-    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Manage your Todos&#39;</span>,
-    <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Imthe Author&#39;</span>,
-    <span style="color:#e6db74">&#39;license&#39;</span>: <span style="color:#e6db74">&#39;LGPL-3&#39;</span>,
-    <span style="color:#e6db74">&#39;depends&#39;</span>: [<span style="color:#e6db74">&#39;base&#39;</span>],
-    <span style="color:#e6db74">&#39;application&#39;</span>: <span style="color:#66d9ef">True</span>,
-    <span style="color:#e6db74">&#39;data&#39;</span>: [
-        <span style="color:#e6db74">&#39;views/task_menu.xml&#39;</span>,
-        <span style="color:#e6db74">&#39;views/task_views.xml&#39;</span>,
-
-        <span style="color:#e6db74">&#39;security/task_model_acl.xml&#39;</span>, <span style="color:#75715e"># &lt;-- Add this line</span>
-    ]
-}
-</code></pre></div><p>Avendo aggiunto una nuova risorsa dobbiamo ricordarci di fare l&rsquo;upgrade del modulo lanciando da terminale:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;TODO Application&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Manage your Todos&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;author&#39;</span>: <span style="color:#e6db74">&#39;Imthe Author&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;license&#39;</span>: <span style="color:#e6db74">&#39;LGPL-3&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;depends&#39;</span>: [<span style="color:#e6db74">&#39;base&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;application&#39;</span>: <span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;data&#39;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;views/task_menu.xml&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;views/task_views.xml&#39;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;security/task_model_acl.xml&#39;</span>, <span style="color:#75715e"># &lt;-- Add this line</span>
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Avendo aggiunto una nuova risorsa dobbiamo ricordarci di fare l&rsquo;upgrade del modulo lanciando da terminale:</p>
 <pre tabindex="0"><code>$ docker compose run odoo upgrade todo_app
 </code></pre><p>A questo punto il messaggio di WARNING dovrebbe essere scomparso e tutti i nostri utenti hanno ora accesso al modello del nostro modulo.</p>
 <h3 id="row-level-access-rule">Row-level access rule</h3>
@@ -1107,15 +1107,15 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 <p><strong>Settings -&gt; Technical -&gt; Security -&gt; Record Rules</strong></p>
 <p><img src="/odoo.workshop/screen/controllo_accessi/rules.png?width=60pc" alt="rules"></p>
 <p>e sempre come le ACL possiamo creare delle regole aggiungendole al file di security che abbiamo creato in precedenza. Quindi apriamo il file _security/task_model_acl.xml e aggiungiamo dopo il record creato in precedenza</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.rule&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_user_rule&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.user.rule<span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;model_todo_task&#34;</span><span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;domain_force&#34;</span><span style="color:#f92672">&gt;</span>
-        [(&#39;create_uid&#39;, &#39;=&#39;, user.id)]
-    <span style="color:#f92672">&lt;/field&gt;</span>
-    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;groups&#34;</span> <span style="color:#a6e22e">eval=</span><span style="color:#e6db74">&#34;[4, ref(&#39;base.group_user&#39;)]&#34;</span><span style="color:#f92672">/&gt;</span>
-<span style="color:#f92672">&lt;/record&gt;</span>
-</code></pre></div><p>Se tutto è andato bene la regola sarà aggiunta.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;record</span> <span style="color:#a6e22e">model=</span><span style="color:#e6db74">&#34;ir.rule&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;todo_task_user_rule&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">&gt;</span>todo.task.user.rule<span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;model_id&#34;</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;model_todo_task&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;domain_force&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        [(&#39;create_uid&#39;, &#39;=&#39;, user.id)]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/field&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;field</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;groups&#34;</span> <span style="color:#a6e22e">eval=</span><span style="color:#e6db74">&#34;[4, ref(&#39;base.group_user&#39;)]&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/record&gt;</span>
+</span></span></code></pre></div><p>Se tutto è andato bene la regola sarà aggiunta.</p>
 <h3 id="continua">Continua</h3>
 <p>Il nostro modulo sembra essere ad un buon punto ormai da meritare possiamo quindi andare a scoprire <a href="/odoo.workshop/inheritance/">come si modificano le applicazioni esistenti</a></p>
 
@@ -1759,19 +1759,19 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1668612525"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1668612525"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1704214221"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1704214221"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612525"></script>
-    <script src="/odoo.workshop/js/learn.js?1668612525"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1668612525"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1704214221"></script>
+    <script src="/odoo.workshop/js/learn.js?1704214221"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1704214221"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1668612525"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1704214221"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -70,7 +70,7 @@ Anche per questi strumenti l'installazione varia in base al sistema operativo us
 
 ### Linux
 
-#### Docker 
+#### Docker
 
 
 Per Ubuntu:
@@ -134,12 +134,10 @@ Per maggiori informazioni qui trovate la [pagina di documentazione specifica](ht
 
 #### Docker e Docker Compose
 
-Come per Mac è sufficiente scaricare [l'applicazione ufficiale dall'Docker Store]
-(https://store.docker.com/editions/community/docker-ce-desktop-windows)
+Come per Mac è sufficiente scaricare [l'applicazione ufficiale dall'Docker Store](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
-Per maggiori informazioni qui trovate la [pagina di documentazione specifica]
-(https://docs.docker.com/docker-for-windows/install/#where-to-go-next)
+Per maggiori informazioni qui trovate la [pagina di documentazione specifica](https://docs.docker.com/docker-for-windows/install/#where-to-go-next)
 
 ## Continua...
 
-Una volta terminata questa procedura siete pronti ad iniziare il corso [installando l'ambiete di sviluppo Odoo](/odoo.workshop/basics/installazione/)
+Una volta terminata questa procedura siete pronti ad iniziare il corso [installando l'ambiente di sviluppo Odoo](/odoo.workshop/basics/installazione/)

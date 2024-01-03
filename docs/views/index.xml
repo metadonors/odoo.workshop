@@ -6,72 +6,49 @@
     <description>Recent content in Le Viste on Odoo Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-it</language>
-    <lastBuildDate>Wed, 27 Jun 2018 16:13:55 +0200</lastBuildDate><atom:link href="https://metadonors.github.io/odoo.workshop/views/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Jun 2018 16:13:55 +0200</lastBuildDate>
+    <atom:link href="https://metadonors.github.io/odoo.workshop/views/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MenuItem e Actions</title>
       <link>https://metadonors.github.io/odoo.workshop/views/menu_actions/</link>
       <pubDate>Mon, 02 Jul 2018 16:17:22 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/views/menu_actions/</guid>
-      <description>Gli oggetti del Menu I MenuItem sono oggetti salvati nella modello ir.ui.menu and possono essere visualizzati nel menu tecnico:
-Settings -&amp;gt; Technical -&amp;gt; User Interface -&amp;gt; Menu Items
-Sono organizzati in una struttura ad albero. I menu radice (top-level) vengono listati nell&amp;rsquo;elenco completo delle applicazioni, ogni applicazione deve quindi avere almeno un elemento del menu per poter essere visualizzata.
-Il primo sottolivello di menu crea il menu principale dell&amp;rsquo;applicazione, i successivi vengono rappresentati come menu dropdown nei rispettivi padri.</description>
+      <description>Gli oggetti del Menu I MenuItem sono oggetti salvati nella modello ir.ui.menu and possono essere visualizzati nel menu tecnico:&#xA;Settings -&amp;gt; Technical -&amp;gt; User Interface -&amp;gt; Menu Items&#xA;Sono organizzati in una struttura ad albero. I menu radice (top-level) vengono listati nell&amp;rsquo;elenco completo delle applicazioni, ogni applicazione deve quindi avere almeno un elemento del menu per poter essere visualizzata.&#xA;Il primo sottolivello di menu crea il menu principale dell&amp;rsquo;applicazione, i successivi vengono rappresentati come menu dropdown nei rispettivi padri.</description>
     </item>
-    
     <item>
       <title>Context e Domain</title>
       <link>https://metadonors.github.io/odoo.workshop/views/context_domain/</link>
       <pubDate>Mon, 02 Jul 2018 16:17:28 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/views/context_domain/</guid>
-      <description>Più volte durante il corso siamo inciampati su context e domain. Abbiamo visto che possono essere legati alle azioni, ma anche usati durante le interrogazioni del database. Vediamo più nel dettaglio che cosa sono.
-Context Il context è un dizionario Python contenente dati che vengono mantenuti durante la sessione e che possono essere utilizzati sia dal client per renderizzare diversi componente della UI, sia dal server per modificare la logica applicativa</description>
+      <description>Più volte durante il corso siamo inciampati su context e domain. Abbiamo visto che possono essere legati alle azioni, ma anche usati durante le interrogazioni del database. Vediamo più nel dettaglio che cosa sono.&#xA;Context Il context è un dizionario Python contenente dati che vengono mantenuti durante la sessione e che possono essere utilizzati sia dal client per renderizzare diversi componente della UI, sia dal server per modificare la logica applicativa</description>
     </item>
-    
     <item>
       <title>Form View</title>
       <link>https://metadonors.github.io/odoo.workshop/views/form_view/</link>
       <pubDate>Mon, 02 Jul 2018 16:17:37 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/views/form_view/</guid>
-      <description>Struttura Le applicazioni Business-oriented spesso sono costituite da insiemi di record - i rpodotti in magazzino, le fatture della contabilità, etc. La maggior parte di questi tipi di dati può essere rappresentato come un documento di carta. Odoo quindi riutilizza questa astrazione per rappresentare i suoi record.
-Questa è la struttura generale di un record Odoo
-&amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_form_view&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;form string=&amp;#34;ToDo task Form&amp;#34;&amp;gt; &amp;lt;header&amp;gt; &amp;lt;!</description>
+      <description>Struttura Le applicazioni Business-oriented spesso sono costituite da insiemi di record - i prodotti in magazzino, le fatture della contabilità, etc. La maggior parte di questi tipi di dati può essere rappresentato come un documento di carta. Odoo quindi riutilizza questa astrazione per rappresentare i suoi record.&#xA;Questa è la struttura generale di un record Odoo&#xA;&amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_form_view&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.form&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;form string=&amp;#34;ToDo task Form&amp;#34;&amp;gt; &amp;lt;header&amp;gt; &amp;lt;!</description>
     </item>
-    
     <item>
       <title>List e Search View</title>
       <link>https://metadonors.github.io/odoo.workshop/views/list_view/</link>
       <pubDate>Mon, 02 Jul 2018 16:17:53 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/views/list_view/</guid>
-      <description>Le Liste Come abbiamo vito le liste vengono rappresentate dal tipo tree
-&amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_tree_view&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.tree&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;tree decoration-muted=&amp;#34;is_done==True&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;/&amp;gt; &amp;lt;field name=&amp;#34;is_done&amp;#34;/&amp;gt; &amp;lt;/tree&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/record&amp;gt; L&amp;rsquo;attributo decoration-NAME permette di passare un&amp;rsquo;espressione Python che, se vera, modifica l&amp;rsquo;aspetto della riga considerata. NAME puo&#39; essere valorizzato come bf o it per renderizzare la riga in grassetto o corsivo, oppure può avere una classe Bootstrap per il colore del test muted, info, danger o primary.</description>
+      <description>Le Liste Come abbiamo vito le liste vengono rappresentate dal tipo tree&#xA;&amp;lt;record model=&amp;#34;ir.ui.view&amp;#34; id=&amp;#34;todo_task_tree_view&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.tree&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;arch&amp;#34; type=&amp;#34;xml&amp;#34;&amp;gt; &amp;lt;tree decoration-muted=&amp;#34;is_done==True&amp;#34;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;/&amp;gt; &amp;lt;field name=&amp;#34;is_done&amp;#34;/&amp;gt; &amp;lt;/tree&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/record&amp;gt; L&amp;rsquo;attributo decoration-NAME permette di passare un&amp;rsquo;espressione Python che, se vera, modifica l&amp;rsquo;aspetto della riga considerata. NAME puo&amp;rsquo; essere valorizzato come bf o it per renderizzare la riga in grassetto o corsivo, oppure può avere una classe Bootstrap per il colore del test muted, info, danger o primary.</description>
     </item>
-    
     <item>
       <title>Pivot e Graph View</title>
       <link>https://metadonors.github.io/odoo.workshop/views/graph_pivot_views/</link>
       <pubDate>Mon, 02 Jul 2018 16:18:06 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/views/graph_pivot_views/</guid>
-      <description>Pivot I pivot sono un potente strumento di analisi dei dati fornito da Odoo. Una vista pivot rappresenta i dati in una matrice dinamica.
-Un esempio di vista Pivot
-&amp;lt;record id=&amp;#39;view_pivot_todo_task&amp;#39; model=&amp;#39;ir.ui.view&amp;#39;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.pivot&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#39;arch&amp;#39; type=&amp;#39;xml&amp;#39;&amp;gt; &amp;lt;pivot&amp;gt; &amp;lt;field name=&amp;#34;user_id&amp;#34; type=&amp;#39;col&amp;#39;&amp;gt; &amp;lt;field name=&amp;#34;work_hours&amp;#34; type=&amp;#39;measure&amp;#39;&amp;gt; &amp;lt;/pivot&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/record&amp;gt; Graph Le Graph View rappresentano i dati in forma di grafici
-Un esempio
-&amp;lt;record id=&amp;#39;view_graph_todo_task&amp;#39; model=&amp;#39;ir.ui.view&amp;#39;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.graph&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#39;arch&amp;#39; type=&amp;#39;xml&amp;#39;&amp;gt; &amp;lt;graph&amp;gt; &amp;lt;field name=&amp;#34;work_hours&amp;#34; type=&amp;#39;measure&amp;#39;&amp;gt; &amp;lt;/graph&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/record&amp;gt; </description>
+      <description>Pivot I pivot sono un potente strumento di analisi dei dati fornito da Odoo. Una vista pivot rappresenta i dati in una matrice dinamica.&#xA;Un esempio di vista Pivot&#xA;&amp;lt;record id=&amp;#39;view_pivot_todo_task&amp;#39; model=&amp;#39;ir.ui.view&amp;#39;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.pivot&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#39;arch&amp;#39; type=&amp;#39;xml&amp;#39;&amp;gt; &amp;lt;pivot&amp;gt; &amp;lt;field name=&amp;#34;user_id&amp;#34; type=&amp;#39;col&amp;#39;&amp;gt; &amp;lt;field name=&amp;#34;work_hours&amp;#34; type=&amp;#39;measure&amp;#39;&amp;gt; &amp;lt;/pivot&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/record&amp;gt; Graph Le Graph View rappresentano i dati in forma di grafici&#xA;Un esempio&#xA;&amp;lt;record id=&amp;#39;view_graph_todo_task&amp;#39; model=&amp;#39;ir.ui.view&amp;#39;&amp;gt; &amp;lt;field name=&amp;#34;name&amp;#34;&amp;gt;todo.task.graph&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#34;model&amp;#34;&amp;gt;todo.task&amp;lt;/field&amp;gt; &amp;lt;field name=&amp;#39;arch&amp;#39; type=&amp;#39;xml&amp;#39;&amp;gt; &amp;lt;graph&amp;gt; &amp;lt;field name=&amp;#34;work_hours&amp;#34; type=&amp;#39;measure&amp;#39;&amp;gt; &amp;lt;/graph&amp;gt; &amp;lt;/field&amp;gt; &amp;lt;/record&amp;gt; </description>
     </item>
-    
     <item>
       <title>Altre Viste</title>
       <link>https://metadonors.github.io/odoo.workshop/views/altre_views/</link>
       <pubDate>Mon, 02 Jul 2018 16:19:00 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/views/altre_views/</guid>
-      <description>Sono disponibili anche altre viste che pero&#39; esulano dallo scopo di questo corso, una breve panoramica
-Viste Report Viste Calendario Viste Kanban Viste Gantt </description>
+      <description>Sono disponibili anche altre viste che pero&amp;rsquo; esulano dallo scopo di questo corso, una breve panoramica&#xA;Viste Report Viste Calendario Viste Kanban Viste Gantt </description>
     </item>
-    
   </channel>
 </rss>

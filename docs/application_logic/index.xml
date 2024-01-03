@@ -6,27 +6,21 @@
     <description>Recent content in Logica applicativa on Odoo Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-it</language>
-    <lastBuildDate>Wed, 27 Jun 2018 16:13:55 +0200</lastBuildDate><atom:link href="https://metadonors.github.io/odoo.workshop/application_logic/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Jun 2018 16:13:55 +0200</lastBuildDate>
+    <atom:link href="https://metadonors.github.io/odoo.workshop/application_logic/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wizard</title>
       <link>https://metadonors.github.io/odoo.workshop/application_logic/wizard/</link>
       <pubDate>Mon, 02 Jul 2018 16:24:39 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/application_logic/wizard/</guid>
-      <description>I wizard sono uno strumento molto utile per fornire agli utenti un interfaccia per effettuare operazioni complesse sui dati. Per esempio chiedendogli dati aggiuntivi rispetto alle operazioni che stanno facendo oppure semplicemente per avere uno strumento di validazione delle operazioni da effettuare.
-Creare un wizard I wizard di solito risiedono nella cartella wizards/ all&amp;rsquo;interno dei moduli. Cominciamo a creare il nosto wizard nella cartella del modulo task_plus creando la seguente struttura</description>
+      <description>I wizard sono uno strumento molto utile per fornire agli utenti un interfaccia per effettuare operazioni complesse sui dati. Per esempio chiedendogli dati aggiuntivi rispetto alle operazioni che stanno facendo oppure semplicemente per avere uno strumento di validazione delle operazioni da effettuare.&#xA;Creare un wizard I wizard di solito risiedono nella cartella wizards/ all&amp;rsquo;interno dei moduli. Cominciamo a creare il nosto wizard nella cartella del modulo task_plus creando la seguente struttura</description>
     </item>
-    
     <item>
       <title>Usare l&#39;ORM</title>
       <link>https://metadonors.github.io/odoo.workshop/application_logic/usare_orm/</link>
       <pubDate>Mon, 02 Jul 2018 16:24:21 +0200</pubDate>
-      
       <guid>https://metadonors.github.io/odoo.workshop/application_logic/usare_orm/</guid>
-      <description>Fino a questo punto abbiamo utilizzato l&amp;rsquo;ORM di Odoo senza scendere nel dettaglio su come funziona. Ora andiamo a vedere quali sono i suoi principali componenti
-Decoratori Abbiamo notato che a molti metodi dei modelli viene applicato un decoratore come @api.multi. Questi decorati hanno lo scopo di istruire il backend su come gestire i metodi rispetto alle API esposte.
-Il decoratore @api.model invece si utilizza per decorare metodi statici in cui il self non fa rifermento a nessuna entità in particolare.</description>
+      <description>Fino a questo punto abbiamo utilizzato l&amp;rsquo;ORM di Odoo senza scendere nel dettaglio su come funziona. Ora andiamo a vedere quali sono i suoi principali componenti&#xA;Decoratori Abbiamo notato che a molti metodi dei modelli viene applicato un decoratore come @api.multi. Questi decorati hanno lo scopo di istruire il backend su come gestire i metodi rispetto alle API esposte.&#xA;Il decoratore @api.model invece si utilizza per decorare metodi statici in cui il self non fa rifermento a nessuna entità in particolare.</description>
     </item>
-    
   </channel>
 </rss>

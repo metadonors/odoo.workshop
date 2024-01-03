@@ -6,7 +6,7 @@ weight: 3
 
 ## Struttura
 
-Le applicazioni Business-oriented spesso sono costituite da insiemi di record - i rpodotti in magazzino, le fatture della contabilità, etc. La maggior parte di questi tipi di dati può essere rappresentato come un documento di carta. Odoo quindi riutilizza questa astrazione per rappresentare i suoi record.
+Le applicazioni Business-oriented spesso sono costituite da insiemi di record - i prodotti in magazzino, le fatture della contabilità, etc. La maggior parte di questi tipi di dati può essere rappresentato come un documento di carta. Odoo quindi riutilizza questa astrazione per rappresentare i suoi record.
 
 Questa è la struttura generale di un record Odoo
 
@@ -21,7 +21,7 @@ Questa è la struttura generale di un record Odoo
             </header>
             <sheet>
                 <!-- Section for main form content -->
-                
+
             </sheet>
             <div class='oe_chatter'>
                 <!-- History and communication  -->
@@ -45,18 +45,18 @@ La _statusbar_ invece solitamente fa riferimento all'attributo _state_ dell'ogge
 
 ```xml
  <header>
-    <button 
-        name="do_toggle_button" 
+    <button
+        name="do_toggle_button"
         type="object"
         string="Toggle Done"
         class="oe_highlight"/>
-    
-    <button 
-        name="do_clear_done" 
+
+    <button
+        name="do_clear_done"
         type="object"
         string="Clear All Done"
         class="oe_highlight"/>
-    
+
     <field name='state' widget='statusbar' clickable="1"/>
 </header>
 ```
@@ -65,9 +65,9 @@ La _statusbar_ invece solitamente fa riferimento all'attributo _state_ dell'ogge
 
 Il tag \<sheet\> è l'area principale dedicata alla presentazione dei date. È disegnata in modo da rappresentare un foglio di carta e solitamente è suddivisa in questi componenti:
 
-- Titolo e sottotitolo in alto 
+- Titolo e sottotitolo in alto
 - Un box di bottoni nella parte superiore (smart buttons)
-- Un'area con i campi principali del docuemnto 
+- Un'area con i campi principali del docuemnto
 - Una sezione organizzata in tab (notebook)
 
 ![odoo_sheet](/odoo.workshop/screen/form_view/odoo_sheet.png?width=60pc)
@@ -86,7 +86,7 @@ All'interno delle viste XML oltre ai tag specifici di Odoo è possibile utilizza
             <label for="user_id" class="oe_edit_only"/>
             <field name="user_id" class="oe_inline"/>
         </h3>
-    </div>    
+    </div>
     <!-- ... Rest of the document ...  -->
 </sheet>
 ```
@@ -105,7 +105,7 @@ Per creare un contenitore per questi bottoni si può aggiungere a fianco all'eve
 
 #### Raggruppare i campi
 
-Il contentuno principale dei form può essere organizzato utilizzando il tag  _\<group\>_. Questo tag crea due colonne nella sua area e, di default, i field conenuti vengono rappresentati con la loro label.
+Il contentuno principale dei form può essere organizzato utilizzando il tag  _\<group\>_. Questo tag crea due colonne nella sua area e, di default, i field contenuti vengono rappresentati con la loro label.
 
 Se presente un solo tag _\<group\>_ i _\<field\>_ contenuti occuperanno due colonne, una per la label e l'altra per l'input. Se invece vengono aggiunti altri tag _\<group\>_, i field e le loro label saranno distribuiti su altre due colonne.
 
@@ -155,7 +155,7 @@ I principali attributi dei campi:
 
 - **name**: identifica il nome dell'attributo di riferimento
 - **string**: il testo della label implicita utilizzata per il campo
-- **help**: testo mostrato in un tooltip sull'etichetta del campo quando il curore ci si ferma sopra
+- **help**: testo mostrato in un tooltip sull'etichetta del campo quando il cursore ci si ferma sopra
 - **placeholder**: un suggerimento da visualizzare all'utente all'interno del campo
 - **widget**: sovrascrive il tipo di wiget da utilizzare per visualizzare il campo
 - **options**: un dizionario di opzioni da passare eventualmente al widget
@@ -190,7 +190,7 @@ Ogni tipo di campo viene visualizzato nel form con un widget di default, ma è p
 Per i campi testuali, abbiamo già disponibili questi widget:
 
 - **email** renderizza il valore del campo come un link di tipo _mailto_
-- **url**  renderizza il valore del campo com un link 
+- **url**  renderizza il valore del campo com un link
 - **html**  renderizza il campo come html, in fase di modifica presente un editor WYSWYG
 
 Per i campi numerici, abbiamo già disponibili questi widget:
@@ -200,7 +200,7 @@ Per i campi numerici, abbiamo già disponibili questi widget:
 - **monetary** renderizza un campo fload con il relativo valore di valuta. Si aspetta anche un opzione _currency\_id_ che indica quale attributo del modello utilizzare per indicare la valuta corrente
 - **proggressbar** renderizza un float come una barra di progresso e il valore espresso in %
 
-Per i campi relazionalie e i Selection, abbiamo già disponibili questi widget:
+Per i campi relazionali e e i Selection, abbiamo già disponibili questi widget:
 
 - **many2many_tags** renderizza il campo come una lista di label simili a bottoni
 - **selection** renderizza il campo con un menu a tendina

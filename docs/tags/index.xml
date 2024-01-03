@@ -5,6 +5,7 @@
     <link>https://metadonors.github.io/odoo.workshop/tags/</link>
     <description>Recent content in Tags on Odoo Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>it-it</language><atom:link href="https://metadonors.github.io/odoo.workshop/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>it-it</language>
+    <atom:link href="https://metadonors.github.io/odoo.workshop/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.121.1">
     
     <link rel="icon" href="/odoo.workshop/images/favicon.png" type="image/png">
 
     <title>Operazioni :: Odoo Workshop</title>
 
     
-    <link href="/odoo.workshop/css/nucleus.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/fontawesome-all.min.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/hybrid.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/featherlight.min.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/auto-complete.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/theme.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/tabs.css?1668612524" rel="stylesheet">
-    <link href="/odoo.workshop/css/hugo-theme.css?1668612524" rel="stylesheet">
+    <link href="/odoo.workshop/css/nucleus.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/fontawesome-all.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/hybrid.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/featherlight.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/perfect-scrollbar.min.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/auto-complete.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/atom-one-dark-reasonable.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/tabs.css?1704214221" rel="stylesheet">
+    <link href="/odoo.workshop/css/hugo-theme.css?1704214221" rel="stylesheet">
     
-    <link href="/odoo.workshop/css/theme-metadonors.css?1668612524" rel="stylesheet">
+    <link href="/odoo.workshop/css/theme-metadonors.css?1704214221" rel="stylesheet">
     
     
 
-    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1668612524"></script>
+    <script src="/odoo.workshop/js/jquery-3.3.1.min.js?1704214221"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1668612524"></script>
-<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1668612524"></script>
+<script type="text/javascript" src="/odoo.workshop/js/lunr.min.js?1704214221"></script>
+<script type="text/javascript" src="/odoo.workshop/js/auto-complete.js?1704214221"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/metadonors.github.io\/odoo.workshop\/";
     
 </script>
-<script type="text/javascript" src="/odoo.workshop/js/search.js?1668612524"></script>
+<script type="text/javascript" src="/odoo.workshop/js/search.js?1704214221"></script>
 
     
   </div>
@@ -1046,20 +1046,20 @@
 <p>Per autenticarsi apriamo una shell interattiva con</p>
 <pre tabindex="0"><code>$ docker compose run odoo ipython
 </code></pre><p>e al suo interno scriviamo</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">1</span>]: <span style="color:#f92672">import</span> odoorpc
-
-In [<span style="color:#ae81ff">2</span>]: odoo <span style="color:#f92672">=</span> odoorpc<span style="color:#f92672">.</span>ODOO(<span style="color:#e6db74">&#39;odoo&#39;</span>,port<span style="color:#f92672">=</span><span style="color:#ae81ff">8069</span>)
-
-In [<span style="color:#ae81ff">3</span>]: odoo<span style="color:#f92672">.</span>login(<span style="color:#e6db74">&#39;demo&#39;</span>,<span style="color:#e6db74">&#39;admin&#39;</span>,<span style="color:#e6db74">&#39;admin&#39;</span>)
-
-In [<span style="color:#ae81ff">4</span>]: user <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>user
-
-In [<span style="color:#ae81ff">5</span>]: print(user<span style="color:#f92672">.</span>name)
-Administrator
-
-In [<span style="color:#ae81ff">6</span>]: print(user<span style="color:#f92672">.</span>company_id<span style="color:#f92672">.</span>name)
-My Company
-</code></pre></div><p>Nel nostro caso specifico l&rsquo;installazione risponde all&rsquo;indirizzo <em>odoo</em> che abbiamo configurato nel file <em>docker_compose.yml</em>. Nei casi reali corrisponderà all&rsquo;URL della vostra installazione</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>In [<span style="color:#ae81ff">1</span>]: <span style="color:#f92672">import</span> odoorpc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In [<span style="color:#ae81ff">2</span>]: odoo <span style="color:#f92672">=</span> odoorpc<span style="color:#f92672">.</span>ODOO(<span style="color:#e6db74">&#39;odoo&#39;</span>,port<span style="color:#f92672">=</span><span style="color:#ae81ff">8069</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In [<span style="color:#ae81ff">3</span>]: odoo<span style="color:#f92672">.</span>login(<span style="color:#e6db74">&#39;demo&#39;</span>,<span style="color:#e6db74">&#39;admin&#39;</span>,<span style="color:#e6db74">&#39;admin&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In [<span style="color:#ae81ff">4</span>]: user <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>user
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In [<span style="color:#ae81ff">5</span>]: print(user<span style="color:#f92672">.</span>name)
+</span></span><span style="display:flex;"><span>Administrator
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In [<span style="color:#ae81ff">6</span>]: print(user<span style="color:#f92672">.</span>company_id<span style="color:#f92672">.</span>name)
+</span></span><span style="display:flex;"><span>My Company
+</span></span></code></pre></div><p>Nel nostro caso specifico l&rsquo;installazione risponde all&rsquo;indirizzo <em>odoo</em> che abbiamo configurato nel file <em>docker_compose.yml</em>. Nei casi reali corrisponderà all&rsquo;URL della vostra installazione</p>
 <h2 id="leggere-da-api">Leggere da API</h2>
 <p>Per le operazioni di lettura possiamo utilizzare diverse funzioni, disponibili anche lato backend: <strong>browse</strong>, <strong>search</strong>, <strong>search_read</strong>.</p>
 <ul>
@@ -1071,65 +1071,62 @@ My Company
 <p>Dal momento che le richieste API viaggiano su chiamate di rete che sono notoriamenet lente, la funzione <em>search_read</em> acquista una notevole importanza perchè ci permette di ottimizzare i payload che dovranno poi essere scambiati fra gli endpoint, facendoci restituire solo il necessario.</p>
 <h3 id="browse">Browse</h3>
 <p>Per effettuare una chiamata <em>browse</em> ed accedere alle risorse tramite il loro id, procediamo in questo modo</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">10</span>]: todo <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>browse(<span style="color:#ae81ff">3</span>)
-
-In [<span style="color:#ae81ff">11</span>]: todo<span style="color:#f92672">.</span>name
-Out[<span style="color:#ae81ff">11</span>]: <span style="color:#e6db74">&#39;WorkShop su Odoo&#39;</span>
-</code></pre></div><h3 id="search">Search</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>In [<span style="color:#ae81ff">10</span>]: todo <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>browse(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In [<span style="color:#ae81ff">11</span>]: todo<span style="color:#f92672">.</span>name
+</span></span><span style="display:flex;"><span>Out[<span style="color:#ae81ff">11</span>]: <span style="color:#e6db74">&#39;WorkShop su Odoo&#39;</span>
+</span></span></code></pre></div><h3 id="search">Search</h3>
 <p>Per effettuare una chiamata <em>browse</em> ed accedere alle risorse tramite il loro id, procediamo in questo modo</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">12</span>]: todos <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>search([(<span style="color:#e6db74">&#39;name&#39;</span>,<span style="color:#e6db74">&#39;ilike&#39;</span>,<span style="color:#e6db74">&#39;odoo&#39;</span>)])
-
-In [<span style="color:#ae81ff">13</span>]: todos
-Out[<span style="color:#ae81ff">13</span>]: [<span style="color:#ae81ff">3</span>]
-</code></pre></div><h3 id="search_read">Search_Read</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>In [<span style="color:#ae81ff">12</span>]: todos <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>search([(<span style="color:#e6db74">&#39;name&#39;</span>,<span style="color:#e6db74">&#39;ilike&#39;</span>,<span style="color:#e6db74">&#39;odoo&#39;</span>)])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In [<span style="color:#ae81ff">13</span>]: todos
+</span></span><span style="display:flex;"><span>Out[<span style="color:#ae81ff">13</span>]: [<span style="color:#ae81ff">3</span>]
+</span></span></code></pre></div><h3 id="search_read">Search_Read</h3>
 <p>Per effettuare una chiamata <em>browse</em> ed accedere alle risorse tramite il loro id, procediamo in questo modo</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">15</span>]: todos <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>search_read([(<span style="color:#e6db74">&#39;name&#39;</span>,<span style="color:#e6db74">&#39;ilike&#39;</span>,<span style="color:#e6db74">&#39;odoo&#39;</span>)], [<span style="color:#e6db74">&#39;id&#39;</span>, <span style="color:#e6db74">&#39;name&#39;</span>,<span style="color:#e6db74">&#39;description&#39;</span>])
-
-In [<span style="color:#ae81ff">16</span>]: todos
-Out[<span style="color:#ae81ff">16</span>]: 
-[{<span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;&lt;p&gt;&lt;b&gt;Un interessante descrizione&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&#39;</span>,
-  <span style="color:#e6db74">&#39;id&#39;</span>: <span style="color:#ae81ff">3</span>,
-  <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;WorkShop su Odoo&#39;</span>}]
-</code></pre></div><h2 id="creazione-di-record">Creazione di record</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>In [<span style="color:#ae81ff">15</span>]: todos <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>search_read([(<span style="color:#e6db74">&#39;name&#39;</span>,<span style="color:#e6db74">&#39;ilike&#39;</span>,<span style="color:#e6db74">&#39;odoo&#39;</span>)], [<span style="color:#e6db74">&#39;id&#39;</span>, <span style="color:#e6db74">&#39;name&#39;</span>,<span style="color:#e6db74">&#39;description&#39;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In [<span style="color:#ae81ff">16</span>]: todos
+</span></span><span style="display:flex;"><span>Out[<span style="color:#ae81ff">16</span>]: 
+</span></span><span style="display:flex;"><span>[{<span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;&lt;p&gt;&lt;b&gt;Un interessante descrizione&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;id&#39;</span>: <span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;WorkShop su Odoo&#39;</span>}]
+</span></span></code></pre></div><h2 id="creazione-di-record">Creazione di record</h2>
 <p>Per creare nuovi oggetti possiamo ricorrere alla funzione <em>create</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">15</span>]: todo_id <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>create({<span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Test da API&#39;</span>, <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Sono un test creato da API&#39;</span>})
-
-In [<span style="color:#ae81ff">16</span>]: todo_id
-Out[<span style="color:#ae81ff">16</span>]: <span style="color:#ae81ff">7</span>
-</code></pre></div><h2 id="modifica-dei-record">Modifica dei record</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>In [<span style="color:#ae81ff">15</span>]: todo_id <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>create({<span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Test da API&#39;</span>, <span style="color:#e6db74">&#39;description&#39;</span>: <span style="color:#e6db74">&#39;Sono un test creato da API&#39;</span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In [<span style="color:#ae81ff">16</span>]: todo_id
+</span></span><span style="display:flex;"><span>Out[<span style="color:#ae81ff">16</span>]: <span style="color:#ae81ff">7</span>
+</span></span></code></pre></div><h2 id="modifica-dei-record">Modifica dei record</h2>
 <p>Per modificare oggetti esistenti ricorrere alla funzione <em>write</em>, su un oggetto resistuito da <em>browse</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">20</span>]: todo <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>browse(<span style="color:#ae81ff">3</span>)
-
-In [<span style="color:#ae81ff">21</span>]: todo<span style="color:#f92672">.</span>write({<span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Nuovo titolo&#39;</span>})
-Out[<span style="color:#ae81ff">21</span>]: <span style="color:#66d9ef">True</span>
-
-</code></pre></div><h2 id="cancellazione-dei-record">Cancellazione dei record</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>In [<span style="color:#ae81ff">20</span>]: todo <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>browse(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In [<span style="color:#ae81ff">21</span>]: todo<span style="color:#f92672">.</span>write({<span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Nuovo titolo&#39;</span>})
+</span></span><span style="display:flex;"><span>Out[<span style="color:#ae81ff">21</span>]: <span style="color:#66d9ef">True</span>
+</span></span></code></pre></div><h2 id="cancellazione-dei-record">Cancellazione dei record</h2>
 <p>Per cancellare oggetti esistenti ricorrere alla funzione <em>unlink</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">27</span>]: odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>unlink(<span style="color:#ae81ff">3</span>)
-Out[<span style="color:#ae81ff">27</span>]: <span style="color:#66d9ef">True</span>
-</code></pre></div><p>Oppure con un approccio Active Record</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">20</span>]: todo <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>browse(<span style="color:#ae81ff">3</span>)
-
-In [<span style="color:#ae81ff">21</span>]: todo<span style="color:#f92672">.</span>unlink()
-Out[<span style="color:#ae81ff">21</span>]: <span style="color:#66d9ef">True</span>
-
-</code></pre></div><h2 id="altre-funzioni">Altre funzioni</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>In [<span style="color:#ae81ff">27</span>]: odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>unlink(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>Out[<span style="color:#ae81ff">27</span>]: <span style="color:#66d9ef">True</span>
+</span></span></code></pre></div><p>Oppure con un approccio Active Record</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>In [<span style="color:#ae81ff">20</span>]: todo <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>browse(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In [<span style="color:#ae81ff">21</span>]: todo<span style="color:#f92672">.</span>unlink()
+</span></span><span style="display:flex;"><span>Out[<span style="color:#ae81ff">21</span>]: <span style="color:#66d9ef">True</span>
+</span></span></code></pre></div><h2 id="altre-funzioni">Altre funzioni</h2>
 <p>Ogni volta che dichiariamo un metodo con il decoratore <em>@api.multi</em> o <em>@api.model</em> quello che stiamo facendo è effettivamente dichiarare un nuovo endpoint API su quel modello. Come unica restrizione di sicurezza Odoo non permette a client diversi da il proprio client web di chiamare le funzioni che iniziano con <strong>&quot;_&quot;</strong>.</p>
 <p>Per esempio:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@api</span><span style="color:#f92672">.</span>model
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">io_posso_essere_chiamata_da_client_esterni</span>(self):
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;OK&#34;</span>
-
-<span style="color:#a6e22e">@api</span><span style="color:#f92672">.</span>model
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_io_non_posso_essere_chiamata_da_client_esterni</span>(self):
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;KO&#34;</span>
-</code></pre></div><p>Permette di effetturare una chiamata API come questa</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">In [<span style="color:#ae81ff">20</span>]: todo <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>browse(<span style="color:#ae81ff">3</span>)
-
-In [<span style="color:#ae81ff">21</span>]: todo<span style="color:#f92672">.</span>io_posso_essere_chiamata_da_client_esterni()
-Out[<span style="color:#ae81ff">21</span>]: <span style="color:#e6db74">&#34;OK&#34;</span>
-
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@api.model</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">io_posso_essere_chiamata_da_client_esterni</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;OK&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@api.model</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_io_non_posso_essere_chiamata_da_client_esterni</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;KO&#34;</span>
+</span></span></code></pre></div><p>Permette di effetturare una chiamata API come questa</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>In [<span style="color:#ae81ff">20</span>]: todo <span style="color:#f92672">=</span> odoo<span style="color:#f92672">.</span>env[<span style="color:#e6db74">&#39;todo.task&#39;</span>]<span style="color:#f92672">.</span>browse(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In [<span style="color:#ae81ff">21</span>]: todo<span style="color:#f92672">.</span>io_posso_essere_chiamata_da_client_esterni()
+</span></span><span style="display:flex;"><span>Out[<span style="color:#ae81ff">21</span>]: <span style="color:#e6db74">&#34;OK&#34;</span>
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -1770,19 +1767,19 @@ Out[<span style="color:#ae81ff">21</span>]: <span style="color:#e6db74">&#34;OK&
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/odoo.workshop/js/clipboard.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/jquery.sticky.js?1668612525"></script>
-    <script src="/odoo.workshop/js/featherlight.min.js?1668612525"></script>
-    <script src="/odoo.workshop/js/highlight.pack.js?1668612525"></script>
+    <script src="/odoo.workshop/js/clipboard.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/perfect-scrollbar.jquery.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/jquery.sticky.js?1704214221"></script>
+    <script src="/odoo.workshop/js/featherlight.min.js?1704214221"></script>
+    <script src="/odoo.workshop/js/highlight.pack.js?1704214221"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1668612525"></script>
-    <script src="/odoo.workshop/js/learn.js?1668612525"></script>
-    <script src="/odoo.workshop/js/hugo-learn.js?1668612525"></script>
+    <script src="/odoo.workshop/js/modernizr.custom-3.6.0.js?1704214221"></script>
+    <script src="/odoo.workshop/js/learn.js?1704214221"></script>
+    <script src="/odoo.workshop/js/hugo-learn.js?1704214221"></script>
     
         
-            <script src="/odoo.workshop/mermaid/mermaid.js?1668612525"></script>
+            <script src="/odoo.workshop/mermaid/mermaid.js?1704214221"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
